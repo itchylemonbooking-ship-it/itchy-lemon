@@ -1,0 +1,351 @@
+---
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Music, DJ sets and releases by Itchy Lemon — Portuguese DJ and electronic music producer."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music | Itchy Lemon</title>
+
+    <style>
+      :root {
+        --bg: #07090c;
+        --bg-soft: #10141b;
+        --text: #f4f4f0;
+        --muted: #a7adb8;
+        --acid: #d8ff3e;
+        --line: rgba(255, 255, 255, 0.12);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background:
+          radial-gradient(circle at top right, rgba(216, 255, 62, 0.12), transparent 34%),
+          linear-gradient(135deg, #07090c 0%, #111827 48%, #050608 100%);
+        color: var(--text);
+        min-height: 100vh;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .page {
+        min-height: 100vh;
+        padding: 32px;
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 24px;
+        padding-bottom: 56px;
+      }
+
+      .logo {
+        font-size: 14px;
+        letter-spacing: 0.32em;
+        text-transform: uppercase;
+        color: var(--acid);
+        font-weight: 700;
+      }
+
+      nav {
+        display: flex;
+        gap: 22px;
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--muted);
+      }
+
+      nav a:hover,
+      nav a.active {
+        color: var(--acid);
+      }
+
+      main {
+        max-width: 1080px;
+        margin: 0 auto;
+      }
+
+      .eyebrow {
+        color: var(--acid);
+        text-transform: uppercase;
+        letter-spacing: 0.24em;
+        font-size: 13px;
+        margin-bottom: 18px;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(48px, 8vw, 104px);
+        line-height: 0.9;
+        letter-spacing: -0.06em;
+        text-transform: uppercase;
+      }
+
+      .lead {
+        margin-top: 32px;
+        max-width: 780px;
+        font-size: clamp(22px, 3vw, 34px);
+        line-height: 1.16;
+        color: var(--text);
+      }
+
+      .music-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 22px;
+        margin-top: 72px;
+      }
+
+      .card {
+        border: 1px solid var(--line);
+        background: rgba(16, 20, 27, 0.72);
+        border-radius: 28px;
+        padding: 28px;
+        min-height: 250px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        backdrop-filter: blur(12px);
+        transition: 0.2s ease;
+      }
+
+      .card:hover {
+        transform: translateY(-4px);
+        border-color: rgba(216, 255, 62, 0.6);
+      }
+
+      .card-label {
+        color: var(--acid);
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        font-size: 12px;
+        margin-bottom: 18px;
+      }
+
+      .card h2 {
+        margin: 0;
+        font-size: 30px;
+        line-height: 1;
+        letter-spacing: -0.04em;
+      }
+
+      .card p {
+        margin: 18px 0 0;
+        color: var(--muted);
+        line-height: 1.6;
+        font-size: 15px;
+      }
+
+      .link-list {
+        display: grid;
+        gap: 14px;
+        margin-top: 72px;
+      }
+
+      .music-link {
+        display: flex;
+        justify-content: space-between;
+        gap: 24px;
+        align-items: center;
+        border-top: 1px solid var(--line);
+        padding: 20px 0;
+        color: var(--muted);
+      }
+
+      .music-link strong {
+        color: var(--text);
+        font-size: 20px;
+      }
+
+      .music-link span {
+        color: var(--acid);
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        font-size: 12px;
+      }
+
+      .music-link:hover strong {
+        color: var(--acid);
+      }
+
+      footer {
+        max-width: 1080px;
+        margin: 80px auto 0;
+        color: var(--muted);
+        font-size: 12px;
+        padding-top: 28px;
+        border-top: 1px solid var(--line);
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+      }
+
+      @media (max-width: 900px) {
+        .music-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 860px) {
+        .page {
+          padding: 22px;
+        }
+
+        header {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        nav {
+          flex-wrap: wrap;
+        }
+
+        .music-link {
+          align-items: flex-start;
+          flex-direction: column;
+          gap: 8px;
+        }
+
+        footer {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="page">
+      <header>
+        <a class="logo" href="/">Itchy Lemon</a>
+
+        <nav aria-label="Main navigation">
+          <a class="active" href="/music">Music</a>
+          <a href="/bio">Bio</a>
+          <a href="/discography">Discography</a>
+          <a href="/press-kit">Press Kit</a>
+          <a href="/booking">Booking</a>
+        </nav>
+      </header>
+
+      <main>
+        <p class="eyebrow">Music & Sets</p>
+
+        <h1>Music</h1>
+
+        <p class="lead">
+          Selected DJ sets, original productions, releases and official artist links from Itchy Lemon.
+        </p>
+
+        <section class="music-grid">
+          <article class="card">
+            <div>
+              <p class="card-label">DJ Sets</p>
+              <h2>Curated club journeys</h2>
+              <p>
+                Melodic, deep and progressive selections built for atmosphere, tension and dancefloor movement.
+              </p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div>
+              <p class="card-label">Originals</p>
+              <h2>Electronic productions</h2>
+              <p>
+                Original tracks shaped around groove, emotion, repetition and underground club dynamics.
+              </p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div>
+              <p class="card-label">Archive</p>
+              <h2>Selected releases</h2>
+              <p>
+                A curated archive of previous releases, remixes and collaborations from the Itchy Lemon catalogue.
+              </p>
+            </div>
+          </article>
+        </section>
+
+        <section class="link-list" aria-label="Music platforms and social links">
+          <a class="music-link" href="https://open.spotify.com/artist/5IfFyzIiz1iBO7RZUJyFen" target="_blank" rel="noreferrer">
+            <strong>Spotify</strong>
+            <span>Listen</span>
+          </a>
+
+          <a class="music-link" href="https://itunes.apple.com/ph/artist/itchy-lemon/id656922930" target="_blank" rel="noreferrer">
+            <strong>Apple Music / iTunes</strong>
+            <span>Listen</span>
+          </a>
+
+          <a class="music-link" href="https://www.beatport.com/artist/itchy-lemon/339277" target="_blank" rel="noreferrer">
+            <strong>Beatport</strong>
+            <span>Artist page</span>
+          </a>
+
+          <a class="music-link" href="https://www.traxsource.com/artist/131494/itchy-lemon" target="_blank" rel="noreferrer">
+            <strong>Traxsource</strong>
+            <span>Artist page</span>
+          </a>
+
+          <a class="music-link" href="https://soundcloud.com/itchy-lemon" target="_blank" rel="noreferrer">
+            <strong>SoundCloud</strong>
+            <span>Listen</span>
+          </a>
+
+          <a class="music-link" href="https://www.youtube.com/@ItchyLemonTV" target="_blank" rel="noreferrer">
+            <strong>YouTube</strong>
+            <span>Watch</span>
+          </a>
+
+          <a class="music-link" href="https://www.instagram.com/itchy_lemon/" target="_blank" rel="noreferrer">
+            <strong>Instagram</strong>
+            <span>Follow</span>
+          </a>
+
+          <a class="music-link" href="https://www.facebook.com/ItchyLemondjproducer" target="_blank" rel="noreferrer">
+            <strong>Facebook</strong>
+            <span>Follow</span>
+          </a>
+
+          <a class="music-link" href="https://www.linkedin.com/in/itchy-lemon" target="_blank" rel="noreferrer">
+            <strong>LinkedIn</strong>
+            <span>Connect</span>
+          </a>
+
+          <a class="music-link" href="https://x.com/ItchyLemon" target="_blank" rel="noreferrer">
+            <strong>X</strong>
+            <span>Follow</span>
+          </a>
+
+          <a class="music-link" href="mailto:itchylemon.booking@gmail.com">
+            <strong>Booking Email</strong>
+            <span>Contact</span>
+          </a>
+        </section>
+      </main>
+
+      <footer>
+        <span>© 2026 Itchy Lemon. All rights reserved.</span>
+        <span>DJ sets · Originals · Releases · Social links · Booking</span>
+      </footer>
+    </div>
+  </body>
+</html>

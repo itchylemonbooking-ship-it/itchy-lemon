@@ -1,0 +1,495 @@
+---
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Discography and selected Beatport catalogue by Itchy Lemon — Portuguese DJ and electronic music producer."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Discography | Itchy Lemon</title>
+
+    <style>
+      :root {
+        --bg: #07090c;
+        --bg-soft: #10141b;
+        --text: #f4f4f0;
+        --muted: #a7adb8;
+        --acid: #d8ff3e;
+        --line: rgba(255, 255, 255, 0.12);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background:
+          radial-gradient(circle at top right, rgba(216, 255, 62, 0.12), transparent 34%),
+          linear-gradient(135deg, #07090c 0%, #111827 48%, #050608 100%);
+        color: var(--text);
+        min-height: 100vh;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .page {
+        min-height: 100vh;
+        padding: 32px;
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 24px;
+        padding-bottom: 56px;
+      }
+
+      .logo {
+        font-size: 14px;
+        letter-spacing: 0.32em;
+        text-transform: uppercase;
+        color: var(--acid);
+        font-weight: 700;
+      }
+
+      nav {
+        display: flex;
+        gap: 22px;
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--muted);
+      }
+
+      nav a:hover,
+      nav a.active {
+        color: var(--acid);
+      }
+
+      main {
+        max-width: 1080px;
+        margin: 0 auto;
+      }
+
+      .eyebrow {
+        color: var(--acid);
+        text-transform: uppercase;
+        letter-spacing: 0.24em;
+        font-size: 13px;
+        margin-bottom: 18px;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(48px, 8vw, 104px);
+        line-height: 0.9;
+        letter-spacing: -0.06em;
+        text-transform: uppercase;
+      }
+
+      .lead {
+        margin-top: 32px;
+        max-width: 840px;
+        font-size: clamp(22px, 3vw, 34px);
+        line-height: 1.16;
+      }
+
+      .section-title {
+        margin: 72px 0 22px;
+        color: var(--acid);
+        font-size: 13px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      .release-list {
+        display: grid;
+        gap: 0;
+      }
+
+      .release {
+        display: grid;
+        grid-template-columns: 80px 1fr 160px 110px 130px;
+        gap: 22px;
+        align-items: start;
+        border-top: 1px solid var(--line);
+        padding: 24px 0;
+      }
+
+      .year {
+        color: var(--acid);
+        font-size: 14px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      .release h2 {
+        margin: 0;
+        font-size: 26px;
+        line-height: 1.05;
+        letter-spacing: -0.04em;
+      }
+
+      .release p {
+        margin: 9px 0 0;
+        color: var(--muted);
+        font-size: 15px;
+        line-height: 1.55;
+      }
+
+      .label,
+      .type {
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        font-size: 12px;
+        line-height: 1.45;
+      }
+
+      .type {
+        text-align: right;
+      }
+
+      .listen {
+        justify-self: end;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        padding: 9px 13px;
+        color: var(--muted);
+        font-size: 11px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        white-space: nowrap;
+        transition: 0.2s ease;
+      }
+
+      .listen:hover {
+        color: #050608;
+        background: var(--acid);
+        border-color: var(--acid);
+        transform: translateY(-2px);
+      }
+
+      .catalogue-card {
+        margin-top: 48px;
+        border: 1px solid var(--line);
+        background: rgba(16, 20, 27, 0.72);
+        border-radius: 28px;
+        padding: 28px;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 24px;
+        align-items: center;
+        backdrop-filter: blur(12px);
+      }
+
+      .catalogue-card h2 {
+        margin: 0;
+        font-size: 30px;
+        letter-spacing: -0.04em;
+      }
+
+      .catalogue-card p {
+        margin: 12px 0 0;
+        color: var(--muted);
+        font-size: 16px;
+        line-height: 1.6;
+      }
+
+      .button {
+        display: inline-block;
+        background: var(--acid);
+        color: #050608;
+        border-radius: 999px;
+        padding: 15px 22px;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        white-space: nowrap;
+      }
+
+      footer {
+        max-width: 1080px;
+        margin: 80px auto 0;
+        color: var(--muted);
+        font-size: 12px;
+        padding-top: 28px;
+        border-top: 1px solid var(--line);
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+      }
+
+      @media (max-width: 980px) {
+        .release {
+          grid-template-columns: 1fr;
+          gap: 10px;
+        }
+
+        .type {
+          text-align: left;
+        }
+
+        .listen {
+          justify-self: start;
+          margin-top: 4px;
+        }
+
+        .catalogue-card {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 860px) {
+        .page {
+          padding: 22px;
+        }
+
+        header {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        nav {
+          flex-wrap: wrap;
+        }
+
+        footer {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="page">
+      <header>
+        <a class="logo" href="/">Itchy Lemon</a>
+
+        <nav aria-label="Main navigation">
+          <a href="/music">Music</a>
+          <a href="/bio">Bio</a>
+          <a href="/discography" class="active">Discography</a>
+          <a href="/press-kit">Press Kit</a>
+          <a href="/booking">Booking</a>
+        </nav>
+      </header>
+
+      <main>
+        <p class="eyebrow">Selected Beatport Catalogue</p>
+
+        <h1>Discography</h1>
+
+        <p class="lead">
+          A curated selection of Itchy Lemon releases, originals and remixes from the Beatport catalogue.
+        </p>
+
+        <h2 class="section-title">Featured / Recent</h2>
+
+        <section class="release-list">
+          <article class="release">
+            <div class="year">2026</div>
+            <div>
+              <h2>Hideyoshi</h2>
+              <p>Sixnautic — Itchy Lemon Remix</p>
+            </div>
+            <div class="label">LW Recordings</div>
+            <div class="type">Remix</div>
+            <a class="listen" href="https://www.beatport.com/artist/itchy-lemon/339277/tracks?page=1&per_page=100" target="_blank" rel="noreferrer">Listen</a>
+          </article>
+
+          <article class="release">
+            <div class="year">2024</div>
+            <div>
+              <h2>Love's to Be Loved</h2>
+              <p>Gary B. Lovestone, Parcheri, Lanzara — Itchy Lemon Remix</p>
+            </div>
+            <div class="label">Chart Series</div>
+            <div class="type">Remix</div>
+            <a class="listen" href="https://www.beatport.com/artist/itchy-lemon/339277/tracks?page=1&per_page=100" target="_blank" rel="noreferrer">Listen</a>
+          </article>
+
+          <article class="release">
+            <div class="year">2020</div>
+            <div>
+              <h2>Distant Echoes feat. Cimmone Ferry</h2>
+              <p>Itchy Lemon, Cimmone Ferry — Itchy Lemon Remix</p>
+            </div>
+            <div class="label">IBIZA PARTY SQUAD</div>
+            <div class="type">Remix</div>
+            <a class="listen" href="https://www.beatport.com/artist/itchy-lemon/339277/tracks?page=1&per_page=100" target="_blank" rel="noreferrer">Listen</a>
+          </article>
+
+          <article class="release">
+            <div class="year">2020</div>
+            <div>
+              <h2>Distant Echoes</h2>
+              <p>Itchy Lemon, Cimmone Ferry — Itchy Lemon Remix</p>
+            </div>
+            <div class="label">Urban GorillazY</div>
+            <div class="type">Remix</div>
+            <a class="listen" href="https://www.beatport.com/artist/itchy-lemon/339277/tracks?page=1&per_page=100" target="_blank" rel="noreferrer">Listen</a>
+          </article>
+
+          <article class="release">
+            <div class="year">2019</div>
+            <div>
+              <h2>The Way</h2>
+              <p>Jiggx, Lady TT — Itchy Lemon Remix</p>
+            </div>
+            <div class="label">305 Vibe</div>
+            <div class="type">Remix</div>
+            <a class="listen" href="https://www.beatport.com/artist/itchy-lemon/339277/tracks?page=1&per_page=100" target="_blank" rel="noreferrer">Listen</a>
+          </article>
+        </section>
+
+        <h2 class="section-title">Originals</h2>
+
+        <section class="release-list">
+          <article class="release">
+            <div class="year">2017</div>
+            <div>
+              <h2>Being Free</h2>
+              <p>Itchy Lemon — Original Mix</p>
+            </div>
+            <div class="label">Karmabreeze</div>
+            <div class="type">Original</div>
+            <a class="listen" href="https://www.beatport.com/artist/itchy-lemon/339277/tracks?page=1&per_page=100" target="_blank" rel="noreferrer">Listen</a>
+          </article>
+
+          <article class="release">
+            <div class="year">2016</div>
+            <div>
+              <h2>Come To Me</h2>
+              <p>Itchy Lemon — Original Mix</p>
+            </div>
+            <div class="label">Natural Essence Music</div>
+            <div class="type">Original</div>
+            <a class="listen" href="https://www.beatport.com/artist/itchy-lemon/339277/tracks?page=1&per_page=100" target="_blank" rel="noreferrer">Listen</a>
+          </article>
+
+          <article class="release">
+            <div class="year">2015</div>
+            <div>
+              <h2>London Planes</h2>
+              <p>Itchy Lemon — Original Mix</p>
+            </div>
+            <div class="label">Natural Essence Music</div>
+            <div class="type">Original</div>
+            <a class="listen" href="https://www.beatport.com/artist/itchy-lemon/339277/tracks?page=1&per_page=100" target="_blank" rel="noreferrer">Listen</a>
+          </article>
+
+          <article class="release">
+            <div class="year">2015</div>
+            <div>
+              <h2>Portuguese Djing</h2>
+              <p>Itchy Lemon — Original Mix</p>
+            </div>
+            <div class="label">Ypslon Rec</div>
+            <div class="type">Original</div>
+            <a class="listen" href="https://www.beatport.com/artist/itchy-lemon/339277/tracks?page=1&per_page=100" target="_blank" rel="noreferrer">Listen</a>
+          </article>
+
+          <article class="release">
+            <div class="year">2013</div>
+            <div>
+              <h2>iReborn</h2>
+              <p>Itchy Lemon — Original Mix</p>
+            </div>
+            <div class="label">MAQ Records</div>
+            <div class="type">Original</div>
+            <a class="listen" href="https://www.beatport.com/artist/itchy-lemon/339277/tracks?page=1&per_page=100" target="_blank" rel="noreferrer">Listen</a>
+          </article>
+
+          <article class="release">
+            <div class="year">2013</div>
+            <div>
+              <h2>We Can Make It feat. Anthony Poteat</h2>
+              <p>Anthony Poteat, Itchy Lemon — Original Mix</p>
+            </div>
+            <div class="label">HSR Records</div>
+            <div class="type">Original</div>
+            <a class="listen" href="https://www.beatport.com/artist/itchy-lemon/339277/tracks?page=1&per_page=100" target="_blank" rel="noreferrer">Listen</a>
+          </article>
+        </section>
+
+        <h2 class="section-title">Archive Remixes</h2>
+
+        <section class="release-list">
+          <article class="release">
+            <div class="year">2014</div>
+            <div>
+              <h2>Sunday Morning</h2>
+              <p>SULPHO — Itchy Lemon Remix</p>
+            </div>
+            <div class="label">DKR</div>
+            <div class="type">Remix</div>
+            <a class="listen" href="https://www.beatport.com/artist/itchy-lemon/339277/tracks?page=1&per_page=100" target="_blank" rel="noreferrer">Listen</a>
+          </article>
+
+          <article class="release">
+            <div class="year">2014</div>
+            <div>
+              <h2>Spread Your Love</h2>
+              <p>MP Sant — Itchy Lemon Remix</p>
+            </div>
+            <div class="label">Soul Shift Music</div>
+            <div class="type">Remix</div>
+            <a class="listen" href="https://www.beatport.com/artist/itchy-lemon/339277/tracks?page=1&per_page=100" target="_blank" rel="noreferrer">Listen</a>
+          </article>
+
+          <article class="release">
+            <div class="year">2014</div>
+            <div>
+              <h2>Moscow</h2>
+              <p>Jack Carter — Itchy Lemon Remix</p>
+            </div>
+            <div class="label">System Recordings</div>
+            <div class="type">Remix</div>
+            <a class="listen" href="https://www.beatport.com/artist/itchy-lemon/339277/tracks?page=1&per_page=100" target="_blank" rel="noreferrer">Listen</a>
+          </article>
+
+          <article class="release">
+            <div class="year">2013</div>
+            <div>
+              <h2>Darklight</h2>
+              <p>French Connexion — Itchy Lemon Remix</p>
+            </div>
+            <div class="label">Ducosphere / Sumr</div>
+            <div class="type">Remix</div>
+            <a class="listen" href="https://www.beatport.com/artist/itchy-lemon/339277/tracks?page=1&per_page=100" target="_blank" rel="noreferrer">Listen</a>
+          </article>
+        </section>
+
+        <section class="catalogue-card">
+          <div>
+            <h2>Full Beatport Catalogue</h2>
+            <p>
+              This page highlights a selected catalogue. The full list of tracks and releases is available on the official Beatport artist page.
+            </p>
+          </div>
+
+          <a class="button" href="https://www.beatport.com/artist/itchy-lemon/339277/tracks?page=1&per_page=100" target="_blank" rel="noreferrer">
+            Open Beatport
+          </a>
+        </section>
+      </main>
+
+      <footer>
+        <span>© 2026 Itchy Lemon. All rights reserved.</span>
+        <span>Selected releases · Originals · Remixes · Beatport catalogue</span>
+      </footer>
+    </div>
+  </body>
+</html>

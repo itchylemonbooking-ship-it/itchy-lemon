@@ -1,0 +1,372 @@
+---
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Book Itchy Lemon for DJ sets, guest mixes, electronic music events and selected collaborations."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Booking | Itchy Lemon</title>
+
+    <style>
+      :root {
+        --bg: #07090c;
+        --bg-soft: #10141b;
+        --text: #f4f4f0;
+        --muted: #a7adb8;
+        --acid: #d8ff3e;
+        --line: rgba(255, 255, 255, 0.12);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background:
+          radial-gradient(circle at top right, rgba(216, 255, 62, 0.12), transparent 34%),
+          linear-gradient(135deg, #07090c 0%, #111827 48%, #050608 100%);
+        color: var(--text);
+        min-height: 100vh;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .page {
+        min-height: 100vh;
+        padding: 32px;
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 24px;
+        padding-bottom: 56px;
+      }
+
+      .logo {
+        font-size: 14px;
+        letter-spacing: 0.32em;
+        text-transform: uppercase;
+        color: var(--acid);
+        font-weight: 700;
+      }
+
+      nav {
+        display: flex;
+        gap: 22px;
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--muted);
+      }
+
+      nav a:hover,
+      nav a.active {
+        color: var(--acid);
+      }
+
+      main {
+        max-width: 1080px;
+        margin: 0 auto;
+      }
+
+      .eyebrow {
+        color: var(--acid);
+        text-transform: uppercase;
+        letter-spacing: 0.24em;
+        font-size: 13px;
+        margin-bottom: 18px;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(48px, 8vw, 104px);
+        line-height: 0.9;
+        letter-spacing: -0.06em;
+        text-transform: uppercase;
+      }
+
+      .lead {
+        margin-top: 32px;
+        max-width: 800px;
+        font-size: clamp(22px, 3vw, 34px);
+        line-height: 1.16;
+      }
+
+      .booking-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 28px;
+        margin-top: 72px;
+      }
+
+      .panel {
+        border: 1px solid var(--line);
+        background: rgba(16, 20, 27, 0.72);
+        border-radius: 28px;
+        padding: 28px;
+        backdrop-filter: blur(12px);
+      }
+
+      .panel.wide {
+        grid-column: span 2;
+      }
+
+      .panel h2 {
+        margin: 0 0 20px;
+        color: var(--acid);
+        font-size: 13px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      .panel p {
+        color: var(--muted);
+        font-size: 17px;
+        line-height: 1.7;
+        margin: 0 0 20px;
+      }
+
+      .services {
+        display: grid;
+        gap: 16px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .services li {
+        border-top: 1px solid var(--line);
+        padding-top: 16px;
+        color: var(--muted);
+        line-height: 1.5;
+      }
+
+      .services strong {
+        display: block;
+        color: var(--text);
+        margin-bottom: 4px;
+      }
+
+      .contact-link,
+      .quick-link {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 24px;
+        border-top: 1px solid var(--line);
+        padding: 18px 0;
+        color: var(--muted);
+      }
+
+      .contact-link strong,
+      .quick-link strong {
+        color: var(--text);
+        font-size: 20px;
+      }
+
+      .contact-link span,
+      .quick-link span {
+        color: var(--acid);
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        font-size: 12px;
+      }
+
+      .contact-link:hover strong,
+      .quick-link:hover strong {
+        color: var(--acid);
+      }
+
+      .button {
+        display: inline-block;
+        margin-top: 24px;
+        background: var(--acid);
+        color: #050608;
+        border-radius: 999px;
+        padding: 15px 22px;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .button:hover {
+        transform: translateY(-2px);
+      }
+
+      footer {
+        max-width: 1080px;
+        margin: 80px auto 0;
+        color: var(--muted);
+        font-size: 12px;
+        padding-top: 28px;
+        border-top: 1px solid var(--line);
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+      }
+
+      @media (max-width: 860px) {
+        .page {
+          padding: 22px;
+        }
+
+        header {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        nav {
+          flex-wrap: wrap;
+        }
+
+        .booking-grid {
+          grid-template-columns: 1fr;
+          margin-top: 48px;
+        }
+
+        .panel.wide {
+          grid-column: span 1;
+        }
+
+        .contact-link,
+        .quick-link {
+          align-items: flex-start;
+          flex-direction: column;
+          gap: 8px;
+        }
+
+        footer {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="page">
+      <header>
+        <a class="logo" href="/">Itchy Lemon</a>
+
+        <nav aria-label="Main navigation">
+          <a href="/music">Music</a>
+          <a href="/bio">Bio</a>
+          <a href="/discography">Discography</a>
+          <a href="/press-kit">Press Kit</a>
+          <a class="active" href="/booking">Booking</a>
+        </nav>
+      </header>
+
+      <main>
+        <p class="eyebrow">Booking & Contact</p>
+
+        <h1>Booking</h1>
+
+        <p class="lead">
+          Available for DJ sets, electronic music events, guest mixes and selected creative collaborations.
+        </p>
+
+        <section class="booking-grid">
+          <article class="panel">
+            <h2>Available for</h2>
+
+            <ul class="services">
+              <li>
+                <strong>Club DJ sets</strong>
+                Melodic, deep and progressive electronic selections for intimate rooms and dancefloor-focused events.
+              </li>
+
+              <li>
+                <strong>Guest mixes</strong>
+                Curated mixes for radio shows, podcasts, online platforms and music communities.
+              </li>
+
+              <li>
+                <strong>Electronic music events</strong>
+                Artist appearances, curated concepts and selected underground music formats.
+              </li>
+
+              <li>
+                <strong>Collaborations</strong>
+                Remixes, production ideas, creative projects and selected label opportunities.
+              </li>
+            </ul>
+          </article>
+
+          <article class="panel">
+            <h2>Direct Contact</h2>
+
+            <p>
+              For bookings, guest mixes, press requests or collaborations, use the booking email below.
+            </p>
+
+            <a class="contact-link" href="mailto:itchylemon.booking@gmail.com">
+              <strong>itchylemon.booking@gmail.com</strong>
+              <span>Email</span>
+            </a>
+
+            <a class="contact-link" href="/press-kit">
+              <strong>Press Kit</strong>
+              <span>EPK</span>
+            </a>
+
+            <a class="button" href="mailto:itchylemon.booking@gmail.com">
+              Send Booking Request
+            </a>
+          </article>
+
+          <article class="panel wide">
+            <h2>Quick Verification Links</h2>
+
+            <a class="quick-link" href="https://open.spotify.com/artist/5IfFyzIiz1iBO7RZUJyFen" target="_blank" rel="noreferrer">
+              <strong>Spotify</strong>
+              <span>Listen</span>
+            </a>
+
+            <a class="quick-link" href="https://www.instagram.com/itchy_lemon/" target="_blank" rel="noreferrer">
+              <strong>Instagram</strong>
+              <span>Follow</span>
+            </a>
+
+            <a class="quick-link" href="https://www.facebook.com/ItchyLemondjproducer" target="_blank" rel="noreferrer">
+              <strong>Facebook</strong>
+              <span>Follow</span>
+            </a>
+
+            <a class="quick-link" href="https://www.youtube.com/@ItchyLemonTV" target="_blank" rel="noreferrer">
+              <strong>YouTube</strong>
+              <span>Watch</span>
+            </a>
+
+            <a class="quick-link" href="https://www.beatport.com/artist/itchy-lemon/339277" target="_blank" rel="noreferrer">
+              <strong>Beatport</strong>
+              <span>Artist page</span>
+            </a>
+
+            <a class="quick-link" href="https://www.traxsource.com/artist/131494/itchy-lemon" target="_blank" rel="noreferrer">
+              <strong>Traxsource</strong>
+              <span>Artist page</span>
+            </a>
+          </article>
+        </section>
+      </main>
+
+      <footer>
+        <span>© 2026 Itchy Lemon. All rights reserved.</span>
+        <span>Portugal · Bookings · Guest mixes · Selected collaborations</span>
+      </footer>
+    </div>
+  </body>
+</html>

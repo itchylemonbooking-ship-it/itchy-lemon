@@ -1,0 +1,338 @@
+---
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Biography of Itchy Lemon — Portuguese DJ and electronic music producer with a sound rooted in melodic, deep and underground electronic music."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bio | Itchy Lemon</title>
+
+    <style>
+      :root {
+        --bg: #07090c;
+        --bg-soft: #10141b;
+        --text: #f4f4f0;
+        --muted: #a7adb8;
+        --acid: #d8ff3e;
+        --line: rgba(255, 255, 255, 0.12);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background:
+          radial-gradient(circle at top right, rgba(216, 255, 62, 0.12), transparent 34%),
+          linear-gradient(135deg, #07090c 0%, #111827 48%, #050608 100%);
+        color: var(--text);
+        min-height: 100vh;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .page {
+        min-height: 100vh;
+        padding: 32px;
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 24px;
+        padding-bottom: 56px;
+      }
+
+      .logo {
+        font-size: 14px;
+        letter-spacing: 0.32em;
+        text-transform: uppercase;
+        color: var(--acid);
+        font-weight: 700;
+      }
+
+      nav {
+        display: flex;
+        gap: 22px;
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--muted);
+      }
+
+      nav a:hover,
+      nav a.active {
+        color: var(--acid);
+      }
+
+      main {
+        max-width: 1080px;
+        margin: 0 auto;
+      }
+
+      .eyebrow {
+        color: var(--acid);
+        text-transform: uppercase;
+        letter-spacing: 0.24em;
+        font-size: 13px;
+        margin-bottom: 18px;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(48px, 8vw, 104px);
+        line-height: 0.9;
+        letter-spacing: -0.06em;
+        text-transform: uppercase;
+      }
+
+      .lead {
+        margin-top: 32px;
+        max-width: 860px;
+        font-size: clamp(22px, 3vw, 34px);
+        line-height: 1.16;
+        color: var(--text);
+      }
+
+      .content-grid {
+        display: grid;
+        grid-template-columns: 0.75fr 1.25fr;
+        gap: 48px;
+        margin-top: 72px;
+      }
+
+      .panel {
+        border: 1px solid var(--line);
+        background: rgba(16, 20, 27, 0.72);
+        border-radius: 28px;
+        padding: 28px;
+        height: fit-content;
+        backdrop-filter: blur(12px);
+      }
+
+      .panel h2,
+      .text-block h2 {
+        margin: 0 0 18px;
+        font-size: 13px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--acid);
+      }
+
+      .highlight-list {
+        display: grid;
+        gap: 18px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .highlight-list li {
+        border-top: 1px solid var(--line);
+        padding-top: 16px;
+        color: var(--muted);
+        line-height: 1.55;
+      }
+
+      .highlight-list strong {
+        display: block;
+        color: var(--text);
+        margin-bottom: 4px;
+      }
+
+      .text-block {
+        color: var(--muted);
+        font-size: 17px;
+        line-height: 1.75;
+      }
+
+      .text-block p {
+        margin: 0 0 22px;
+      }
+
+      .text-block strong {
+        color: var(--text);
+      }
+
+      .quote {
+        margin-top: 38px;
+        border-left: 2px solid var(--acid);
+        padding-left: 22px;
+        color: var(--text);
+        font-size: 24px;
+        line-height: 1.25;
+        letter-spacing: -0.02em;
+      }
+
+      .bio-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 34px;
+      }
+
+      .bio-link {
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        padding: 11px 15px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .bio-link:hover {
+        color: #050608;
+        background: var(--acid);
+        border-color: var(--acid);
+      }
+
+      footer {
+        max-width: 1080px;
+        margin: 80px auto 0;
+        color: var(--muted);
+        font-size: 12px;
+        padding-top: 28px;
+        border-top: 1px solid var(--line);
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+      }
+
+      @media (max-width: 860px) {
+        .page {
+          padding: 22px;
+        }
+
+        header {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        nav {
+          flex-wrap: wrap;
+        }
+
+        .content-grid {
+          grid-template-columns: 1fr;
+          gap: 32px;
+          margin-top: 48px;
+        }
+
+        footer {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="page">
+      <header>
+        <a class="logo" href="/">Itchy Lemon</a>
+
+        <nav aria-label="Main navigation">
+          <a href="/music">Music</a>
+          <a class="active" href="/bio">Bio</a>
+          <a href="/discography">Discography</a>
+          <a href="/press-kit">Press Kit</a>
+          <a href="/booking">Booking</a>
+        </nav>
+      </header>
+
+      <main>
+        <p class="eyebrow">Artist Biography</p>
+
+        <h1>Bio</h1>
+
+        <p class="lead">
+          Itchy Lemon is a Portuguese DJ and electronic music producer with a sound shaped by melodic tension, deep groove and underground club energy.
+        </p>
+
+        <section class="content-grid">
+          <aside class="panel">
+            <h2>Highlights</h2>
+
+            <ul class="highlight-list">
+              <li>
+                <strong>Artist name</strong>
+                Itchy Lemon
+              </li>
+
+              <li>
+                <strong>Based in Portugal</strong>
+                DJ sets, original productions, guest mixes and selected collaborations.
+              </li>
+
+              <li>
+                <strong>Sound identity</strong>
+                Melodic house, deep electronic grooves, progressive movement and underground energy.
+              </li>
+
+              <li>
+                <strong>Music platforms</strong>
+                Present across Spotify, Beatport, Traxsource, SoundCloud, YouTube and social channels.
+              </li>
+
+              <li>
+                <strong>Current focus</strong>
+                Repositioning the project with a renewed digital presence, EPK and booking-ready structure.
+              </li>
+            </ul>
+          </aside>
+
+          <section class="text-block">
+            <h2>Short Bio</h2>
+
+            <p>
+              <strong>Itchy Lemon</strong> is the artistic project of a Portuguese DJ and producer with a long-standing connection to electronic music, club culture and independent music production.
+            </p>
+
+            <p>
+              Rooted in melodic house, deep grooves and progressive electronic textures, his sound moves between introspection and dancefloor energy — music built with atmosphere, rhythm and emotional progression at its core.
+            </p>
+
+            <p>
+              Over the years, the project has developed through DJ sets, original productions, remixes and releases across digital music platforms, with artist presence on Beatport, Traxsource, Spotify, SoundCloud and YouTube.
+            </p>
+
+            <p>
+              In 2026, Itchy Lemon is being repositioned with a renewed visual identity and a sharper digital presence, bringing the project closer to promoters, curators, radio shows, labels and selected collaborators.
+            </p>
+
+            <p>
+              The current direction is clear: melodic, deep and underground electronic music with intent — designed for club movement, emotional build-up and carefully selected sonic journeys.
+            </p>
+
+            <div class="quote">
+              Melodic, deep and underground — electronic music with emotion, groove and intent.
+            </div>
+
+            <div class="bio-links" aria-label="Artist links">
+              <a class="bio-link" href="/music">Music</a>
+              <a class="bio-link" href="/discography">Discography</a>
+              <a class="bio-link" href="/press-kit">Press Kit</a>
+              <a class="bio-link" href="/booking">Booking</a>
+              <a class="bio-link" href="https://open.spotify.com/artist/5IfFyzIiz1iBO7RZUJyFen" target="_blank" rel="noreferrer">Spotify</a>
+              <a class="bio-link" href="https://www.instagram.com/itchy_lemon/" target="_blank" rel="noreferrer">Instagram</a>
+            </div>
+          </section>
+        </section>
+      </main>
+
+      <footer>
+        <span>© 2026 Itchy Lemon. All rights reserved.</span>
+        <span>Official Website & EPK · Portugal</span>
+      </footer>
+    </div>
+  </body>
+</html>
