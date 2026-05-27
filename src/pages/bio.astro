@@ -1,16 +1,13 @@
----
----
-
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta
-  name="description"
-  content="Bio of Itchy Lemon — Portuguese DJ and electronic music producer shaped by melodic tension, deep groove and underground club energy."
-/>
+    <meta  
+      name="description"
+      content="Bio of Itchy Lemon — Portuguese DJ and electronic music producer shaped by melodic tension, deep groove and underground club energy."
+    />
     <meta name="author" content="Itchy Lemon" />
-<meta name="theme-color" content="#07090c" />
+    <meta name="theme-color" content="#07090c" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bio | Itchy Lemon</title>
     <link rel="icon" type="image/png" href="/favicon.png" />
@@ -59,11 +56,28 @@
       }
 
       .logo {
-        font-size: 14px;
-        letter-spacing: 0.32em;
-        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        gap: 10px;
         color: var(--acid);
         font-weight: 700;
+        text-transform: uppercase;
+        white-space: nowrap;
+      }
+
+      .logo-icon {
+        display: block;
+        width: 22px;
+        height: 22px;
+        object-fit: contain;
+        flex-shrink: 0;
+      }
+
+      .logo span {
+        display: inline-block;
+        font-size: 14px;
+        letter-spacing: 0.32em;
+        line-height: 1;
       }
 
       nav {
@@ -242,7 +256,10 @@
   <body>
     <div class="page">
       <header>
-        <a class="logo" href="/">Itchy Lemon</a>
+        <a class="logo" href="/" aria-label="Itchy Lemon homepage">
+          <img class="logo-icon" src="/favicon.png" alt="" />
+          <span>Itchy Lemon</span>
+        </a>
 
         <nav aria-label="Main navigation">
           <a href="/music">Music</a>
