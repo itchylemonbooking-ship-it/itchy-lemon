@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://itchy-lemon.pages.dev/sitemap.xml
