@@ -1,43 +1,44 @@
+---
+---
+
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta
-      name="description"
-      content="Official website and EPK for Itchy Lemon — Portuguese DJ and electronic music producer focused on melodic, deep and underground electronic music."
-    />
+  name="description"
+  content="Official website and EPK for Itchy Lemon — Portuguese DJ and electronic music producer focused on melodic, deep and underground electronic music."
+/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <title>Itchy Lemon | Official Website & EPK</title>
-
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="canonical" href="https://itchy-lemon.pages.dev/" />
 
     <meta property="og:title" content="Itchy Lemon | Official Website & EPK" />
-    <meta
-      property="og:description"
-      content="Melodic electronic music with deep groove, emotional tension and dancefloor instinct."
-    />
-    <meta property="og:image" content="https://itchy-lemon.pages.dev/og-image.png" />
-    <meta property="og:url" content="https://itchy-lemon.pages.dev/" />
-    <meta property="og:type" content="website" />
+<meta
+  property="og:description"
+  content="Melodic electronic music with deep groove, emotional tension and dancefloor instinct."
+/>
+<meta property="og:image" content="https://itchy-lemon.pages.dev/og-image.png" />
+<meta property="og:url" content="https://itchy-lemon.pages.dev/" />
+<meta property="og:type" content="website" />
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Itchy Lemon | Official Website & EPK" />
-    <meta
-      name="twitter:description"
-      content="Melodic electronic music with deep groove, emotional tension and dancefloor instinct."
-    />
-    <meta name="twitter:image" content="https://itchy-lemon.pages.dev/og-image.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Itchy Lemon | Official Website & EPK" />
+<meta
+  name="twitter:description"
+  content="Melodic electronic music with deep groove, emotional tension and dancefloor instinct."
+/>
+<meta name="twitter:image" content="https://itchy-lemon.pages.dev/og-image.png" />
 
     <style>
       :root {
         --bg: #07090c;
-        --bg-soft: #0f1318;
+        --bg-soft: #10141b;
         --text: #f4f4f0;
-        --muted: #a8adb4;
+        --muted: #a7adb8;
         --acid: #d8ff3e;
-        --line: rgba(244, 244, 240, 0.14);
+        --line: rgba(255, 255, 255, 0.12);
       }
 
       * {
@@ -48,9 +49,8 @@
         margin: 0;
         font-family: Arial, Helvetica, sans-serif;
         background:
-          radial-gradient(circle at 78% 18%, rgba(216, 255, 62, 0.14), transparent 28%),
-          radial-gradient(circle at 15% 85%, rgba(216, 255, 62, 0.08), transparent 30%),
-          var(--bg);
+          radial-gradient(circle at top right, rgba(216, 255, 62, 0.16), transparent 32%),
+          linear-gradient(135deg, #07090c 0%, #111827 48%, #050608 100%);
         color: var(--text);
         min-height: 100vh;
       }
@@ -61,44 +61,34 @@
       }
 
       .page {
-        width: min(1120px, calc(100% - 40px));
-        margin: 0 auto;
-        padding: 28px 0 56px;
+        min-height: 100vh;
+        padding: 32px;
+        display: flex;
+        flex-direction: column;
       }
 
       header {
         display: flex;
-        align-items: center;
         justify-content: space-between;
-        gap: 24px;
-        padding: 18px 0;
-        border-bottom: 1px solid var(--line);
-      }
-
-      .brand {
-        display: flex;
         align-items: center;
-        gap: 12px;
-        font-size: 14px;
-        font-weight: 800;
-        letter-spacing: 0.16em;
-        text-transform: uppercase;
+        gap: 24px;
+        padding-bottom: 32px;
       }
 
-      .brand-mark {
-        width: 34px;
-        height: 34px;
-        border-radius: 50%;
-        background: var(--acid);
-        box-shadow: 0 0 28px rgba(216, 255, 62, 0.28);
+      .logo {
+        font-size: 14px;
+        letter-spacing: 0.32em;
+        text-transform: uppercase;
+        color: var(--acid);
+        font-weight: 700;
       }
 
       nav {
         display: flex;
-        flex-wrap: wrap;
-        justify-content: flex-end;
-        gap: 16px;
+        gap: 22px;
         font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
         color: var(--muted);
       }
 
@@ -107,148 +97,141 @@
       }
 
       main {
+        flex: 1;
         display: grid;
-        grid-template-columns: 1.1fr 0.9fr;
-        gap: 48px;
+        grid-template-columns: 1.2fr 0.8fr;
         align-items: center;
-        padding: 88px 0 72px;
+        gap: 56px;
+        max-width: 1180px;
+        width: 100%;
+        margin: 0 auto;
       }
 
       .eyebrow {
-        margin: 0 0 18px;
         color: var(--acid);
-        font-size: 13px;
-        font-weight: 800;
-        letter-spacing: 0.22em;
         text-transform: uppercase;
+        letter-spacing: 0.24em;
+        font-size: 13px;
+        margin-bottom: 20px;
       }
 
       h1 {
         margin: 0;
-        font-size: clamp(64px, 11vw, 132px);
-        line-height: 0.86;
-        letter-spacing: -0.08em;
+        font-size: clamp(58px, 10vw, 132px);
+        line-height: 0.88;
+        letter-spacing: -0.07em;
         text-transform: uppercase;
       }
 
       .subtitle {
-        max-width: 720px;
-        margin: 28px 0 0;
+        margin-top: 28px;
+        max-width: 680px;
+        font-size: clamp(22px, 3vw, 38px);
+        line-height: 1.1;
         color: var(--text);
-        font-size: clamp(22px, 3vw, 34px);
-        line-height: 1.18;
-        font-weight: 700;
-        letter-spacing: -0.04em;
       }
 
       .intro {
-        max-width: 650px;
-        margin: 22px 0 0;
-        color: var(--muted);
+        margin-top: 24px;
+        max-width: 640px;
         font-size: 17px;
-        line-height: 1.65;
+        line-height: 1.7;
+        color: var(--muted);
       }
 
       .actions {
         display: flex;
         flex-wrap: wrap;
         gap: 14px;
-        margin-top: 34px;
+        margin-top: 36px;
       }
 
       .button {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        min-height: 46px;
-        padding: 0 22px;
-        border-radius: 999px;
         border: 1px solid var(--line);
+        padding: 14px 20px;
+        border-radius: 999px;
         font-size: 13px;
-        font-weight: 800;
-        letter-spacing: 0.1em;
+        letter-spacing: 0.12em;
         text-transform: uppercase;
+        transition: 0.2s ease;
       }
 
       .button.primary {
         background: var(--acid);
+        color: #050608;
         border-color: var(--acid);
-        color: var(--bg);
+        font-weight: 700;
       }
 
       .button:hover {
+        transform: translateY(-2px);
         border-color: var(--acid);
-        transform: translateY(-1px);
+      }
+
+      .quick-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 22px;
+      }
+
+      .quick-link {
+        color: var(--muted);
+        font-size: 13px;
+        border-bottom: 1px solid var(--line);
+        padding-bottom: 5px;
+      }
+
+      .quick-link:hover {
+        color: var(--acid);
+        border-color: var(--acid);
       }
 
       .visual-card {
-        position: relative;
-        overflow: hidden;
-        min-height: 460px;
-        padding: 34px;
         border: 1px solid var(--line);
-        border-radius: 34px;
-        background:
-          linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02)),
-          rgba(15, 19, 24, 0.72);
-        box-shadow: 0 30px 90px rgba(0, 0, 0, 0.32);
-      }
-
-      .visual-card::before {
-        content: "";
-        position: absolute;
-        width: 260px;
-        height: 260px;
-        top: 42px;
-        right: -45px;
-        border-radius: 50%;
-        background: var(--acid);
-        opacity: 0.94;
-      }
-
-      .visual-card::after {
-        content: "";
-        position: absolute;
-        width: 74px;
-        height: 74px;
-        top: 86px;
-        right: 74px;
-        border-radius: 50%;
-        background: var(--text);
-        opacity: 0.85;
-      }
-
-      .card-content {
-        position: relative;
-        z-index: 2;
+        background: rgba(16, 20, 27, 0.72);
+        border-radius: 28px;
+        padding: 28px;
+        min-height: 460px;
         display: flex;
         flex-direction: column;
-        justify-content: flex-end;
-        min-height: 392px;
+        justify-content: space-between;
+        box-shadow: 0 24px 80px rgba(0, 0, 0, 0.32);
+        backdrop-filter: blur(12px);
+      }
+
+      .orb {
+        width: 180px;
+        height: 180px;
+        border-radius: 999px;
+        background:
+          radial-gradient(circle at 32% 28%, #ffffff, transparent 12%),
+          radial-gradient(circle at 35% 38%, var(--acid), transparent 30%),
+          radial-gradient(circle at 70% 70%, #00d5ff, transparent 36%),
+          #151a22;
+        margin-left: auto;
+        box-shadow: 0 0 80px rgba(216, 255, 62, 0.24);
       }
 
       .card-label {
-        color: var(--acid);
-        font-size: 12px;
-        font-weight: 800;
-        letter-spacing: 0.2em;
+        color: var(--muted);
         text-transform: uppercase;
+        letter-spacing: 0.18em;
+        font-size: 12px;
       }
 
       .card-title {
-        max-width: 340px;
-        margin: 14px 0 0;
-        font-size: 38px;
+        font-size: 34px;
         line-height: 1;
-        letter-spacing: -0.06em;
-        text-transform: uppercase;
+        letter-spacing: -0.04em;
+        margin-top: 12px;
       }
 
-      .card-text {
-        max-width: 360px;
-        margin: 20px 0 0;
+      .card-copy {
         color: var(--muted);
         line-height: 1.6;
+        font-size: 15px;
+        margin-top: 18px;
       }
 
       .stats {
@@ -259,10 +242,8 @@
       }
 
       .stat {
-        padding: 14px;
-        border: 1px solid var(--line);
-        border-radius: 18px;
-        background: rgba(7, 9, 12, 0.42);
+        border-top: 1px solid var(--line);
+        padding-top: 14px;
       }
 
       .stat strong {
@@ -273,92 +254,45 @@
 
       .stat span {
         display: block;
-        margin-top: 4px;
         color: var(--muted);
         font-size: 12px;
-        text-transform: uppercase;
-        letter-spacing: 0.12em;
+        margin-top: 4px;
       }
 
-      .quick-links {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 14px;
-        padding-top: 26px;
-        border-top: 1px solid var(--line);
-      }
-
-      .quick-links a {
-        padding: 18px;
-        border: 1px solid var(--line);
-        border-radius: 22px;
-        background: rgba(255, 255, 255, 0.03);
+      footer {
         color: var(--muted);
-        font-size: 13px;
-        font-weight: 800;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
+        font-size: 12px;
+        padding-top: 32px;
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
       }
 
-      .quick-links a:hover {
-        color: var(--bg);
-        background: var(--acid);
-        border-color: var(--acid);
-      }
+      @media (max-width: 860px) {
+        .page {
+          padding: 22px;
+        }
 
-      @media (max-width: 820px) {
         header {
           align-items: flex-start;
           flex-direction: column;
         }
 
         nav {
-          justify-content: flex-start;
+          flex-wrap: wrap;
         }
 
         main {
           grid-template-columns: 1fr;
-          gap: 32px;
-          padding: 56px 0 48px;
+          gap: 36px;
         }
 
         .visual-card {
-          min-height: 390px;
+          min-height: 360px;
         }
 
-        .card-content {
-          min-height: 320px;
-        }
-
-        .quick-links {
-          grid-template-columns: repeat(2, 1fr);
-        }
-      }
-
-      @media (max-width: 520px) {
-        .page {
-          width: min(100% - 28px, 1120px);
-        }
-
-        nav {
-          gap: 12px;
-          font-size: 12px;
-        }
-
-        h1 {
-          font-size: 62px;
-        }
-
-        .subtitle {
-          font-size: 23px;
-        }
-
-        .stats {
-          grid-template-columns: 1fr;
-        }
-
-        .quick-links {
-          grid-template-columns: 1fr;
+        footer {
+          flex-direction: column;
         }
       }
     </style>
@@ -367,10 +301,7 @@
   <body>
     <div class="page">
       <header>
-        <a class="brand" href="/" aria-label="Itchy Lemon homepage">
-          <span class="brand-mark" aria-hidden="true"></span>
-          <span>Itchy Lemon</span>
-        </a>
+        <a class="logo" href="/">Itchy Lemon</a>
 
         <nav aria-label="Main navigation">
           <a href="/music">Music</a>
@@ -384,17 +315,15 @@
       <main>
         <section>
           <p class="eyebrow">Official Website & EPK</p>
-          <h1>Itchy Lemon</h1>
+
+          <h1>ITCHY<br />LEMON</h1>
 
           <p class="subtitle">
-            Melodic electronic music with deep groove, emotional tension and
-            dancefloor instinct.
+            Melodic electronic music with deep groove, emotional tension and dancefloor instinct.
           </p>
 
           <p class="intro">
-            Selected DJ sets, original productions and official artist links —
-            built around melodic tension, deep groove and underground electronic
-            energy.
+            Selected DJ sets, original productions and official artist links — built around melodic tension, deep groove and underground electronic energy.
           </p>
 
           <div class="actions">
@@ -402,41 +331,61 @@
             <a class="button" href="/booking">Book Itchy Lemon</a>
             <a class="button" href="/press-kit">Press Kit</a>
           </div>
+
+          <div class="quick-links" aria-label="Featured artist links">
+            <a class="quick-link" href="https://open.spotify.com/artist/5IfFyzIiz1iBO7RZUJyFen" target="_blank" rel="noreferrer">
+              Spotify
+            </a>
+
+            <a class="quick-link" href="https://www.instagram.com/itchy_lemon/" target="_blank" rel="noreferrer">
+              Instagram
+            </a>
+
+            <a class="quick-link" href="https://www.youtube.com/@ItchyLemonTV" target="_blank" rel="noreferrer">
+              YouTube
+            </a>
+
+            <a class="quick-link" href="https://www.beatport.com/artist/itchy-lemon/339277" target="_blank" rel="noreferrer">
+              Beatport
+            </a>
+          </div>
         </section>
 
-        <aside class="visual-card" aria-label="Artist profile">
-          <div class="card-content">
+        <aside class="visual-card" aria-label="Artist highlight">
+          <div class="orb"></div>
+
+          <div>
             <p class="card-label">Artist Profile</p>
-            <h2 class="card-title">Melodic · Deep · Underground</h2>
-            <p class="card-text">
-              A Portuguese DJ and producer project focused on atmosphere,
-              rhythm and emotional progression.
+            <div class="card-title">Melodic · Deep · Underground</div>
+
+            <p class="card-copy">
+              A Portuguese DJ and producer project focused on atmosphere, rhythm and emotional progression.
             </p>
 
             <div class="stats">
               <div class="stat">
                 <strong>DJ</strong>
-                <span>Sets</span>
+                <span>Club sets</span>
               </div>
+
               <div class="stat">
                 <strong>Producer</strong>
-                <span>Music</span>
+                <span>Original music</span>
               </div>
+
               <div class="stat">
                 <strong>EPK</strong>
-                <span>Ready</span>
+                <span>Booking ready</span>
               </div>
             </div>
           </div>
         </aside>
       </main>
 
-      <section class="quick-links" aria-label="Official links">
-        <a href="https://open.spotify.com/artist/5IfFyzIiz1iBO7RZUJyFen" target="_blank" rel="noreferrer">Spotify</a>
-        <a href="https://www.instagram.com/itchy_lemon/" target="_blank" rel="noreferrer">Instagram</a>
-        <a href="https://www.youtube.com/@ItchyLemonTV" target="_blank" rel="noreferrer">YouTube</a>
-        <a href="https://www.beatport.com/artist/itchy-lemon/339277" target="_blank" rel="noreferrer">Beatport</a>
-      </section>
+      <footer>
+        <span>© 2026 Itchy Lemon. All rights reserved.</span>
+        <span>Based in Portugal · Available for bookings, guest mixes and selected collaborations.</span>
+      </footer>
     </div>
   </body>
 </html>
