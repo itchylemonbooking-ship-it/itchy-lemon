@@ -1,36 +1,30 @@
 ---
-const title = "Media | Itchy Lemon";
-const description =
-  "Media gallery for Itchy Lemon — photos, flyers, visual archive and selected artist materials.";
+
 ---
 
+<!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-
-    <title>{title}</title>
-    <meta name="description" content={description} />
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Media gallery for Itchy Lemon — photos, flyers, visual archive and selected artist materials."
+    />
     <meta name="author" content="Itchy Lemon" />
-    <meta name="theme-color" content="#0a0d12" />
-
-    <link rel="canonical" href="https://itchy-lemon.pages.dev/media" />
+    <meta name="theme-color" content="#07090c" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Media | Itchy Lemon</title>
     <link rel="icon" type="image/png" href="/favicon.png" />
-
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    <meta property="og:url" content="https://itchy-lemon.pages.dev/media" />
-    <meta property="og:image" content="https://itchy-lemon.pages.dev/og-image.png" />
+    <link rel="canonical" href="https://itchy-lemon.pages.dev/media" />
 
     <style>
       :root {
-        --bg: #0a0d12;
+        --bg: #07090c;
+        --bg-soft: #10141b;
         --text: #f4f4f0;
         --muted: #a7adb8;
         --acid: #d8ff3e;
         --line: rgba(255, 255, 255, 0.12);
-        --card: rgba(16, 20, 27, 0.72);
       }
 
       * {
@@ -39,62 +33,64 @@ const description =
 
       body {
         margin: 0;
-        min-height: 100vh;
-        font-family:
-          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
-          "Segoe UI", sans-serif;
-        color: var(--text);
+        font-family: Arial, Helvetica, sans-serif;
         background:
-          radial-gradient(circle at 20% 15%, rgba(216, 255, 62, 0.12), transparent 30%),
-          radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.07), transparent 26%),
-          var(--bg);
+          radial-gradient(circle at top right, rgba(216, 255, 62, 0.12), transparent 34%),
+          linear-gradient(135deg, #07090c 0%, #111827 48%, #050608 100%);
+        color: var(--text);
+        min-height: 100vh;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
       }
 
       .page {
-        width: min(1120px, calc(100% - 48px));
-        margin: 0 auto;
-        padding: 28px 0 42px;
+        min-height: 100vh;
+        padding: 32px;
       }
 
       header {
         display: flex;
-        align-items: center;
         justify-content: space-between;
+        align-items: center;
         gap: 24px;
-        margin-bottom: 72px;
+        padding-bottom: 56px;
       }
 
-      .brand {
-        display: inline-flex;
+      .logo {
+        display: flex;
         align-items: center;
         gap: 10px;
         color: var(--acid);
-        text-decoration: none;
-        font-size: 0.8rem;
-        font-weight: 800;
-        letter-spacing: 0.18em;
+        font-weight: 700;
         text-transform: uppercase;
+        white-space: nowrap;
       }
 
-      .brand img {
+      .logo-icon {
+        display: block;
         width: 22px;
         height: 22px;
-        display: block;
         object-fit: contain;
+        flex-shrink: 0;
+      }
+
+      .logo span {
+        display: inline-block;
+        font-size: 14px;
+        letter-spacing: 0.32em;
+        line-height: 1;
       }
 
       nav {
         display: flex;
-        gap: 18px;
-        align-items: center;
-      }
-
-      nav a {
-        color: var(--muted);
-        text-decoration: none;
-        font-size: 0.78rem;
-        letter-spacing: 0.14em;
+        gap: 22px;
+        font-size: 13px;
         text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--muted);
       }
 
       nav a:hover,
@@ -103,125 +99,175 @@ const description =
       }
 
       main {
-        display: grid;
-        grid-template-columns: 1fr 0.86fr;
-        gap: 56px;
-        align-items: start;
+        max-width: 1080px;
+        margin: 0 auto;
       }
 
       .eyebrow {
-        margin: 0 0 18px;
         color: var(--acid);
-        font-size: 0.78rem;
-        font-weight: 800;
-        letter-spacing: 0.22em;
         text-transform: uppercase;
+        letter-spacing: 0.24em;
+        font-size: 13px;
+        margin-bottom: 18px;
       }
 
       h1 {
         margin: 0;
-        font-size: clamp(3.6rem, 10vw, 7.8rem);
-        line-height: 0.88;
-        letter-spacing: -0.08em;
+        font-size: clamp(48px, 8vw, 104px);
+        line-height: 0.9;
+        letter-spacing: -0.06em;
         text-transform: uppercase;
       }
 
       .lead {
-        max-width: 680px;
-        margin: 28px 0 0;
-        color: var(--muted);
-        font-size: clamp(1.05rem, 2vw, 1.28rem);
-        line-height: 1.6;
+        margin-top: 32px;
+        max-width: 800px;
+        font-size: clamp(22px, 3vw, 34px);
+        line-height: 1.16;
       }
 
-      .card {
+      .media-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 28px;
+        margin-top: 72px;
+      }
+
+      .panel {
         border: 1px solid var(--line);
-        background: var(--card);
+        background: rgba(16, 20, 27, 0.72);
         border-radius: 28px;
         padding: 28px;
-        backdrop-filter: blur(18px);
+        backdrop-filter: blur(12px);
       }
 
-      .card h2 {
-        margin: 0 0 14px;
+      .panel.wide {
+        grid-column: span 2;
+      }
+
+      .panel h2 {
+        margin: 0 0 20px;
         color: var(--acid);
-        font-size: 0.82rem;
-        letter-spacing: 0.16em;
+        font-size: 13px;
+        letter-spacing: 0.18em;
         text-transform: uppercase;
       }
 
-      .card p {
-        margin: 0;
+      .panel p {
         color: var(--muted);
+        font-size: 17px;
         line-height: 1.7;
+        margin: 0 0 20px;
       }
 
-      .stack {
+      .services {
         display: grid;
-        gap: 18px;
+        gap: 16px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
       }
 
-      .tile {
-        border: 1px solid var(--line);
-        background: rgba(255, 255, 255, 0.04);
-        border-radius: 22px;
-        padding: 22px;
+      .services li {
+        border-top: 1px solid var(--line);
+        padding-top: 16px;
+        color: var(--muted);
+        line-height: 1.5;
       }
 
-      .tile strong {
+      .services strong {
         display: block;
-        margin-bottom: 8px;
+        color: var(--text);
+        margin-bottom: 4px;
+      }
+
+      .media-link,
+      .quick-link {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 24px;
+        border-top: 1px solid var(--line);
+        padding: 18px 0;
+        color: var(--muted);
+      }
+
+      .media-link strong,
+      .quick-link strong {
+        color: var(--text);
+        font-size: 20px;
+      }
+
+      .media-link span,
+      .quick-link span {
         color: var(--acid);
-        font-size: 0.78rem;
+        text-transform: uppercase;
         letter-spacing: 0.16em;
+        font-size: 12px;
+      }
+
+      .media-link:hover strong,
+      .quick-link:hover strong {
+        color: var(--acid);
+      }
+
+      .button {
+        display: inline-block;
+        margin-top: 24px;
+        background: var(--acid);
+        color: #050608;
+        border-radius: 999px;
+        padding: 15px 22px;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.12em;
         text-transform: uppercase;
       }
 
-      .tile span {
-        color: var(--muted);
-        font-size: 0.95rem;
-        line-height: 1.55;
+      .button:hover {
+        transform: translateY(-2px);
       }
 
       footer {
+        max-width: 1080px;
+        margin: 80px auto 0;
+        color: var(--muted);
+        font-size: 12px;
+        padding-top: 28px;
+        border-top: 1px solid var(--line);
         display: flex;
         justify-content: space-between;
-        gap: 18px;
-        margin-top: 74px;
-        padding-top: 22px;
-        border-top: 1px solid var(--line);
-        color: var(--muted);
-        font-size: 0.82rem;
-      }
-
-      footer a {
-        color: var(--muted);
-        text-decoration: none;
-      }
-
-      footer a:hover {
-        color: var(--acid);
+        gap: 20px;
       }
 
       @media (max-width: 860px) {
         .page {
-          width: min(100% - 32px, 1120px);
-          padding-top: 22px;
+          padding: 22px;
         }
 
         header {
           align-items: flex-start;
           flex-direction: column;
-          margin-bottom: 54px;
         }
 
         nav {
           flex-wrap: wrap;
         }
 
-        main {
+        .media-grid {
           grid-template-columns: 1fr;
-          gap: 32px;
+          margin-top: 48px;
+        }
+
+        .panel.wide {
+          grid-column: span 1;
+        }
+
+        .media-link,
+        .quick-link {
+          align-items: flex-start;
+          flex-direction: column;
+          gap: 8px;
         }
 
         footer {
@@ -234,8 +280,8 @@ const description =
   <body>
     <div class="page">
       <header>
-        <a class="brand" href="/">
-          <img src="/favicon.png" alt="Itchy Lemon logo" />
+        <a class="logo" href="/" aria-label="Itchy Lemon homepage">
+          <img class="logo-icon" src="/favicon.png" alt="" />
           <span>Itchy Lemon</span>
         </a>
 
@@ -250,43 +296,103 @@ const description =
       </header>
 
       <main>
-        <section>
-          <p class="eyebrow">Visual Archive</p>
-          <h1>Media</h1>
-          <p class="lead">
-            Photos, flyers, visual archive and selected materials from the Itchy Lemon project.
-          </p>
-        </section>
+        <p class="eyebrow">Visual Archive</p>
 
-        <section class="stack" aria-label="Media categories">
-          <div class="card">
+        <h1>Media</h1>
+
+        <p class="lead">
+          Photos, flyers, visual archive and selected materials from the Itchy Lemon project.
+        </p>
+
+        <section class="media-grid">
+          <article class="panel">
+            <h2>Media Categories</h2>
+
+            <ul class="services">
+              <li>
+                <strong>Photos</strong>
+                Artist images, portraits and event-related photography.
+              </li>
+
+              <li>
+                <strong>Flyers</strong>
+                Selected event flyers, announcements and club materials.
+              </li>
+
+              <li>
+                <strong>Visual Assets</strong>
+                Press-ready images and official visual material for promoters, curators and collaborators.
+              </li>
+
+              <li>
+                <strong>Archive</strong>
+                Selected historical material from the Itchy Lemon project and electronic music journey.
+              </li>
+            </ul>
+          </article>
+
+          <article class="panel">
             <h2>Media Gallery</h2>
+
             <p>
               A dedicated space for artist visuals, event materials and press-ready media.
               More assets will be added gradually.
             </p>
-          </div>
 
-          <div class="tile">
-            <strong>Photos</strong>
-            <span>Artist images, portraits and event-related photography.</span>
-          </div>
+            <a class="media-link" href="/press-kit">
+              <strong>Press Kit</strong>
+              <span>EPK</span>
+            </a>
 
-          <div class="tile">
-            <strong>Flyers</strong>
-            <span>Selected event flyers, announcements and club materials.</span>
-          </div>
+            <a class="media-link" href="mailto:itchylemon.booking@gmail.com">
+              <strong>Request Media Assets</strong>
+              <span>Email</span>
+            </a>
 
-          <div class="tile">
-            <strong>Visual Assets</strong>
-            <span>Press-ready images and official visual material for promoters.</span>
-          </div>
+            <a class="button" href="mailto:itchylemon.booking@gmail.com">
+              Request Media Material
+            </a>
+          </article>
+
+          <article class="panel wide">
+            <h2>Official Links</h2>
+
+            <a class="quick-link" href="https://open.spotify.com/artist/5IfFyzIiz1iBO7RZUJyFen" target="_blank" rel="noreferrer">
+              <strong>Spotify</strong>
+              <span>Listen</span>
+            </a>
+
+            <a class="quick-link" href="https://www.instagram.com/itchy_lemon/" target="_blank" rel="noreferrer">
+              <strong>Instagram</strong>
+              <span>Follow</span>
+            </a>
+
+            <a class="quick-link" href="https://www.facebook.com/ItchyLemondjproducer" target="_blank" rel="noreferrer">
+              <strong>Facebook</strong>
+              <span>Follow</span>
+            </a>
+
+            <a class="quick-link" href="https://www.youtube.com/@ItchyLemonTV" target="_blank" rel="noreferrer">
+              <strong>YouTube</strong>
+              <span>Watch</span>
+            </a>
+
+            <a class="quick-link" href="https://www.beatport.com/artist/itchy-lemon/339277" target="_blank" rel="noreferrer">
+              <strong>Beatport</strong>
+              <span>Artist page</span>
+            </a>
+
+            <a class="quick-link" href="https://www.traxsource.com/artist/131494/itchy-lemon" target="_blank" rel="noreferrer">
+              <strong>Traxsource</strong>
+              <span>Artist page</span>
+            </a>
+          </article>
         </section>
       </main>
 
       <footer>
-        <span>© Itchy Lemon</span>
-        <a href="mailto:itchylemon.booking@gmail.com">itchylemon.booking@gmail.com</a>
+        <span>© 2026 Itchy Lemon. All rights reserved.</span>
+        <span>Portugal · Photos · Flyers · Visual archive · Press assets</span>
       </footer>
     </div>
   </body>
