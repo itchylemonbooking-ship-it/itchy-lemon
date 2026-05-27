@@ -78,12 +78,29 @@
       }
 
       .logo {
-        font-size: 14px;
-        letter-spacing: 0.32em;
-        text-transform: uppercase;
-        color: var(--acid);
-        font-weight: 700;
-      }
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--acid);
+  font-weight: 700;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.logo-icon {
+  display: block;
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.logo span {
+  display: inline-block;
+  font-size: 14px;
+  letter-spacing: 0.32em;
+  line-height: 1;
+}
 
       nav {
         display: flex;
@@ -202,18 +219,16 @@
         backdrop-filter: blur(12px);
       }
 
-      .orb {
-        width: 180px;
-        height: 180px;
-        border-radius: 999px;
-        background:
-          radial-gradient(circle at 32% 28%, #ffffff, transparent 12%),
-          radial-gradient(circle at 35% 38%, var(--acid), transparent 30%),
-          radial-gradient(circle at 70% 70%, #00d5ff, transparent 36%),
-          #151a22;
-        margin-left: auto;
-        box-shadow: 0 0 80px rgba(216, 255, 62, 0.24);
-      }
+      .home-banner {
+  display: block;
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  margin: 8px auto 28px 0;
+  border-radius: 14px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 42px rgba(216, 255, 62, 0.16));
+}
 
       .card-label {
         color: var(--muted);
@@ -303,7 +318,10 @@
   <body>
     <div class="page">
       <header>
-        <a class="logo" href="/">Itchy Lemon</a>
+        <a class="logo" href="/" aria-label="Itchy Lemon homepage">
+  <img class="logo-icon" src="/favicon.png" alt="" />
+  <span>Itchy Lemon</span>
+</a>
 
         <nav aria-label="Main navigation">
           <a href="/music">Music</a>
@@ -354,7 +372,11 @@
         </section>
 
         <aside class="visual-card" aria-label="Artist highlight">
-          <div class="orb"></div>
+          <img
+  class="home-banner"
+  src="/home-banner.jpg"
+  alt="Itchy Lemon artist banner"
+/>
 
           <div>
             <p class="card-label">Artist Profile</p>
