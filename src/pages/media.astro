@@ -302,6 +302,83 @@
         opacity: 0.88;
       }
 
+      .media-cta {
+        margin-top: 64px;
+        border: 1px solid var(--line);
+        border-radius: 28px;
+        background:
+          linear-gradient(135deg, rgba(216, 255, 62, 0.1), transparent),
+          rgba(16, 20, 27, 0.72);
+        padding: 32px;
+        backdrop-filter: blur(12px);
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 28px;
+        align-items: center;
+      }
+
+      .media-cta p {
+        margin: 0 0 14px;
+        color: var(--acid);
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        font-size: 12px;
+      }
+
+      .media-cta h2 {
+        margin: 0;
+        font-size: clamp(32px, 5vw, 56px);
+        line-height: 0.95;
+        letter-spacing: -0.06em;
+        text-transform: uppercase;
+      }
+
+      .media-cta .cta-copy {
+        margin-top: 18px;
+        max-width: 680px;
+        color: var(--muted);
+        font-size: 17px;
+        line-height: 1.7;
+      }
+
+      .cta-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        justify-content: flex-end;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 48px;
+        padding: 0 22px;
+        border-radius: 999px;
+        border: 1px solid var(--line);
+        color: var(--text);
+        font-size: 13px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        white-space: nowrap;
+        transition:
+          transform 0.2s ease,
+          background 0.2s ease,
+          border-color 0.2s ease;
+      }
+
+      .button.primary {
+        background: var(--acid);
+        color: #050608;
+        border-color: var(--acid);
+      }
+
+      .button:hover {
+        transform: translateY(-2px);
+        border-color: var(--acid);
+      }
+
       .archive-note {
         margin-top: 48px;
         border-left: 2px solid var(--acid);
@@ -388,8 +465,13 @@
       }
 
       @media (max-width: 900px) {
-        .media-grid {
+        .media-grid,
+        .media-cta {
           grid-template-columns: 1fr;
+        }
+
+        .cta-actions {
+          justify-content: flex-start;
         }
       }
 
@@ -425,6 +507,15 @@
           border-radius: 20px;
         }
 
+        .media-cta {
+          border-radius: 24px;
+          padding: 18px;
+        }
+
+        .button {
+          width: 100%;
+        }
+
         .media-modal {
           padding: 16px;
         }
@@ -454,14 +545,14 @@
         </a>
 
         <nav>
-  <a href="/music">Music</a>
-  <a href="/bio">Bio</a>
-  <a href="/discography">Discography</a>
-  <a class="active" href="/media">Media</a>
-  <a href="/press-kit">Press Kit</a>
-  <a href="/sets">Sets</a>
-  <a href="/booking">Booking</a>
-</nav>
+          <a href="/music">Music</a>
+          <a href="/bio">Bio</a>
+          <a href="/discography">Discography</a>
+          <a class="active" href="/media">Media</a>
+          <a href="/press-kit">Press Kit</a>
+          <a href="/sets">Sets</a>
+          <a href="/booking">Booking</a>
+        </nav>
       </header>
 
       <main>
@@ -627,6 +718,26 @@
             <button class="gallery-item" type="button" data-full="/media/press-06.jpg" data-title="Press Asset 06">
               <img src="/media/press-06.jpg" alt="Itchy Lemon press asset 06" loading="lazy" />
             </button>
+          </div>
+        </section>
+
+        <section class="media-cta" aria-label="Press material and booking">
+          <div>
+            <p>Need press material?</p>
+            <h2>Press & Booking</h2>
+            <div class="cta-copy">
+              Explore the official press kit or send a booking request for clubs, guest mixes, electronic music events and selected collaborations.
+            </div>
+          </div>
+
+          <div class="cta-actions">
+            <a class="button primary" href="/press-kit">
+              Press Kit
+            </a>
+
+            <a class="button" href="/booking">
+              Request Booking
+            </a>
           </div>
         </section>
 
