@@ -1,6 +1,3 @@
----
----
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -14,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Booking | Itchy Lemon</title>
     <link rel="icon" type="image/png" href="/favicon.png" />
-    <link rel="canonical" href="https://itchy-lemon.pages.dev/booking" />
+    <link rel="canonical" href="https://itchy-lemon.pages.dev/booking/" />
 
     <style>
       :root {
@@ -43,6 +40,13 @@
       a {
         color: inherit;
         text-decoration: none;
+      }
+
+      button,
+      input,
+      select,
+      textarea {
+        font: inherit;
       }
 
       .page {
@@ -125,9 +129,32 @@
         line-height: 1.16;
       }
 
+      .cta-panel {
+        margin-top: 48px;
+        border: 1px solid var(--line);
+        border-radius: 28px;
+        background:
+          linear-gradient(135deg, rgba(216, 255, 62, 0.1), transparent),
+          rgba(16, 20, 27, 0.72);
+        padding: 28px;
+        backdrop-filter: blur(12px);
+      }
+
+      .cta-panel p {
+        margin: 0;
+        max-width: 760px;
+        color: var(--muted);
+        font-size: 18px;
+        line-height: 1.7;
+      }
+
+      .cta-panel strong {
+        color: var(--text);
+      }
+
       .booking-grid {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 0.9fr 1.1fr;
         gap: 28px;
         margin-top: 72px;
       }
@@ -180,6 +207,58 @@
         margin-bottom: 4px;
       }
 
+      .booking-form {
+        display: grid;
+        gap: 16px;
+      }
+
+      .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+
+      .field {
+        display: grid;
+        gap: 8px;
+      }
+
+      .field label {
+        color: var(--acid);
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        font-size: 11px;
+      }
+
+      .field input,
+      .field select,
+      .field textarea {
+        width: 100%;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: rgba(7, 9, 12, 0.62);
+        color: var(--text);
+        padding: 14px 16px;
+        outline: none;
+      }
+
+      .field textarea {
+        min-height: 150px;
+        resize: vertical;
+      }
+
+      .field input:focus,
+      .field select:focus,
+      .field textarea:focus {
+        border-color: var(--acid);
+      }
+
+      .form-note {
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.6;
+      }
+
       .contact-link,
       .quick-link {
         display: flex;
@@ -211,20 +290,38 @@
       }
 
       .button {
-        display: inline-block;
-        margin-top: 24px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 8px;
         background: var(--acid);
         color: #050608;
+        border: 1px solid var(--acid);
         border-radius: 999px;
         padding: 15px 22px;
         font-size: 13px;
         font-weight: 700;
         letter-spacing: 0.12em;
         text-transform: uppercase;
+        cursor: pointer;
+        transition:
+          transform 0.2s ease,
+          background 0.2s ease,
+          border-color 0.2s ease;
       }
 
       .button:hover {
         transform: translateY(-2px);
+      }
+
+      .button-secondary {
+        background: rgba(216, 255, 62, 0.06);
+        color: var(--acid);
+        border-color: var(--line);
+      }
+
+      .button-secondary:hover {
+        border-color: var(--acid);
       }
 
       footer {
@@ -239,6 +336,21 @@
         gap: 20px;
       }
 
+      @media (max-width: 900px) {
+        .booking-grid {
+          grid-template-columns: 1fr;
+          margin-top: 48px;
+        }
+
+        .panel.wide {
+          grid-column: span 1;
+        }
+
+        .form-row {
+          grid-template-columns: 1fr;
+        }
+      }
+
       @media (max-width: 860px) {
         .page {
           padding: 22px;
@@ -251,15 +363,6 @@
 
         nav {
           flex-wrap: wrap;
-        }
-
-        .booking-grid {
-          grid-template-columns: 1fr;
-          margin-top: 48px;
-        }
-
-        .panel.wide {
-          grid-column: span 1;
         }
 
         .contact-link,
@@ -285,13 +388,13 @@
         </a>
 
         <nav>
-  <a href="/music">Music</a>
-  <a href="/bio">Bio</a>
-  <a href="/discography">Discography</a>
-  <a href="/media">Media</a>
-  <a href="/press-kit">Press Kit</a>
-  <a href="/booking">Booking</a>
-</nav>
+          <a href="/music">Music</a>
+          <a href="/bio">Bio</a>
+          <a href="/discography">Discography</a>
+          <a href="/media">Media</a>
+          <a href="/press-kit">Press Kit</a>
+          <a class="active" href="/booking">Booking</a>
+        </nav>
       </header>
 
       <main>
@@ -300,8 +403,15 @@
         <h1>Booking</h1>
 
         <p class="lead">
-          Available for DJ sets, electronic music events, guest mixes and selected creative collaborations.
+          Book Itchy Lemon for DJ sets, electronic music events, guest mixes and selected creative collaborations.
         </p>
+
+        <section class="cta-panel" aria-label="Booking call to action">
+          <p>
+            Looking for a melodic, deep and progressive electronic music journey?
+            <strong>Send a booking request</strong> with the event details and availability will be confirmed as soon as possible.
+          </p>
+        </section>
 
         <section class="booking-grid">
           <article class="panel">
@@ -331,11 +441,91 @@
           </article>
 
           <article class="panel">
-            <h2>Direct Contact</h2>
+            <h2>Booking Request</h2>
 
             <p>
-              For bookings, guest mixes, press requests or collaborations, use the booking email below.
+              Use this form to send the main details. Later, this can be connected directly to HubSpot.
             </p>
+
+            <form class="booking-form" id="booking-form">
+              <div class="form-row">
+                <div class="field">
+                  <label for="name">Name</label>
+                  <input id="name" name="name" type="text" autocomplete="name" required />
+                </div>
+
+                <div class="field">
+                  <label for="email">Email</label>
+                  <input id="email" name="email" type="email" autocomplete="email" required />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="field">
+                  <label for="event-type">Event type</label>
+                  <select id="event-type" name="eventType" required>
+                    <option value="">Select option</option>
+                    <option>Club DJ set</option>
+                    <option>Festival / electronic music event</option>
+                    <option>Guest mix / radio show</option>
+                    <option>Private event</option>
+                    <option>Collaboration / remix</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+
+                <div class="field">
+                  <label for="event-date">Event date</label>
+                  <input id="event-date" name="eventDate" type="date" />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="field">
+                  <label for="location">Location / city</label>
+                  <input id="location" name="location" type="text" />
+                </div>
+
+                <div class="field">
+                  <label for="venue">Venue / promoter</label>
+                  <input id="venue" name="venue" type="text" />
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="budget">Budget range</label>
+                <select id="budget" name="budget">
+                  <option value="">Select option</option>
+                  <option>To be discussed</option>
+                  <option>Up to €250</option>
+                  <option>€250 – €500</option>
+                  <option>€500 – €1,000</option>
+                  <option>€1,000+</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="message">Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  placeholder="Tell me about the event, concept, expected audience, set duration or any relevant details."
+                  required
+                ></textarea>
+              </div>
+
+              <p class="form-note">
+                This first version opens your email app with the booking details. HubSpot integration can be added later.
+              </p>
+
+              <button class="button" type="submit">
+                Send Booking Request
+              </button>
+            </form>
+          </article>
+
+          <article class="panel wide">
+            <h2>Direct Contact & Verification Links</h2>
 
             <a class="contact-link" href="mailto:itchylemon.booking@gmail.com">
               <strong>itchylemon.booking@gmail.com</strong>
@@ -346,14 +536,6 @@
               <strong>Press Kit</strong>
               <span>EPK</span>
             </a>
-
-            <a class="button" href="mailto:itchylemon.booking@gmail.com">
-              Send Booking Request
-            </a>
-          </article>
-
-          <article class="panel wide">
-            <h2>Quick Verification Links</h2>
 
             <a class="quick-link" href="https://open.spotify.com/artist/5IfFyzIiz1iBO7RZUJyFen" target="_blank" rel="noreferrer">
               <strong>Spotify</strong>
@@ -393,5 +575,41 @@
         <span>Portugal · Bookings · Guest mixes · Selected collaborations</span>
       </footer>
     </div>
+
+    <script>
+      const bookingForm = document.querySelector("#booking-form");
+
+      bookingForm?.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        const formData = new FormData(bookingForm);
+
+        const name = formData.get("name") || "";
+        const email = formData.get("email") || "";
+        const eventType = formData.get("eventType") || "";
+        const eventDate = formData.get("eventDate") || "";
+        const location = formData.get("location") || "";
+        const venue = formData.get("venue") || "";
+        const budget = formData.get("budget") || "";
+        const message = formData.get("message") || "";
+
+        const subject = encodeURIComponent(`Booking Request — ${name}`);
+
+        const body = encodeURIComponent(
+`Name: ${name}
+Email: ${email}
+Event type: ${eventType}
+Event date: ${eventDate}
+Location / city: ${location}
+Venue / promoter: ${venue}
+Budget range: ${budget}
+
+Message:
+${message}`
+        );
+
+        window.location.href = `mailto:itchylemon.booking@gmail.com?subject=${subject}&body=${body}`;
+      });
+    </script>
   </body>
 </html>
