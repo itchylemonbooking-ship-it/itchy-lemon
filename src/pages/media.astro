@@ -1,7 +1,3 @@
----
-
----
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -13,9 +9,11 @@
     <meta name="author" content="Itchy Lemon" />
     <meta name="theme-color" content="#07090c" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Media | Itchy Lemon</title>
+
     <link rel="icon" type="image/png" href="/favicon.png" />
-    <link rel="canonical" href="https://itchy-lemon.pages.dev/media" />
+    <link rel="canonical" href="https://itchy-lemon.pages.dev/media/" />
 
     <style>
       :root {
@@ -31,6 +29,10 @@
         box-sizing: border-box;
       }
 
+      html {
+        scroll-behavior: smooth;
+      }
+
       body {
         margin: 0;
         font-family: Arial, Helvetica, sans-serif;
@@ -44,6 +46,10 @@
       a {
         color: inherit;
         text-decoration: none;
+      }
+
+      img {
+        max-width: 100%;
       }
 
       .page {
@@ -93,6 +99,10 @@
         color: var(--muted);
       }
 
+      nav a {
+        transition: color 0.2s ease;
+      }
+
       nav a:hover,
       nav a.active {
         color: var(--acid);
@@ -108,7 +118,7 @@
         text-transform: uppercase;
         letter-spacing: 0.24em;
         font-size: 13px;
-        margin-bottom: 18px;
+        margin: 0 0 18px;
       }
 
       h1 {
@@ -120,112 +130,86 @@
       }
 
       .lead {
-        margin-top: 32px;
-        max-width: 800px;
+        margin: 32px 0 0;
+        max-width: 840px;
         font-size: clamp(22px, 3vw, 34px);
         line-height: 1.16;
+        color: var(--text);
       }
 
-      .media-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 28px;
-        margin-top: 72px;
-      }
-
-      .panel {
+      .hero-image {
+        margin-top: 56px;
         border: 1px solid var(--line);
-        background: rgba(16, 20, 27, 0.72);
         border-radius: 28px;
-        padding: 28px;
-        backdrop-filter: blur(12px);
+        overflow: hidden;
+        background:
+          linear-gradient(135deg, rgba(216, 255, 62, 0.08), transparent),
+          rgba(16, 20, 27, 0.72);
+        box-shadow: 0 24px 80px rgba(0, 0, 0, 0.32);
       }
 
-      .panel.wide {
-        grid-column: span 2;
+      .hero-image img {
+        display: block;
+        width: 100%;
+        height: auto;
       }
 
-      .panel h2 {
-        margin: 0 0 20px;
+      .section-title {
+        margin: 72px 0 22px;
         color: var(--acid);
         font-size: 13px;
         letter-spacing: 0.18em;
         text-transform: uppercase;
       }
 
-      .panel p {
+      .media-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 22px;
+      }
+
+      .media-card {
+        border: 1px solid var(--line);
+        background: rgba(16, 20, 27, 0.72);
+        border-radius: 28px;
+        padding: 24px;
+        min-height: 220px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        backdrop-filter: blur(12px);
+      }
+
+      .media-card h2 {
+        margin: 0;
+        font-size: 28px;
+        line-height: 1;
+        letter-spacing: -0.04em;
+      }
+
+      .media-card p {
+        margin: 18px 0 0;
+        color: var(--muted);
+        font-size: 15px;
+        line-height: 1.6;
+      }
+
+      .card-label {
+        color: var(--acid);
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        font-size: 12px;
+        margin: 0 0 18px;
+      }
+
+      .archive-note {
+        margin-top: 48px;
+        border-left: 2px solid var(--acid);
+        padding-left: 22px;
         color: var(--muted);
         font-size: 17px;
         line-height: 1.7;
-        margin: 0 0 20px;
-      }
-
-      .services {
-        display: grid;
-        gap: 16px;
-        margin: 0;
-        padding: 0;
-        list-style: none;
-      }
-
-      .services li {
-        border-top: 1px solid var(--line);
-        padding-top: 16px;
-        color: var(--muted);
-        line-height: 1.5;
-      }
-
-      .services strong {
-        display: block;
-        color: var(--text);
-        margin-bottom: 4px;
-      }
-
-      .media-link,
-      .quick-link {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 24px;
-        border-top: 1px solid var(--line);
-        padding: 18px 0;
-        color: var(--muted);
-      }
-
-      .media-link strong,
-      .quick-link strong {
-        color: var(--text);
-        font-size: 20px;
-      }
-
-      .media-link span,
-      .quick-link span {
-        color: var(--acid);
-        text-transform: uppercase;
-        letter-spacing: 0.16em;
-        font-size: 12px;
-      }
-
-      .media-link:hover strong,
-      .quick-link:hover strong {
-        color: var(--acid);
-      }
-
-      .button {
-        display: inline-block;
-        margin-top: 24px;
-        background: var(--acid);
-        color: #050608;
-        border-radius: 999px;
-        padding: 15px 22px;
-        font-size: 13px;
-        font-weight: 700;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-      }
-
-      .button:hover {
-        transform: translateY(-2px);
+        max-width: 820px;
       }
 
       footer {
@@ -240,6 +224,12 @@
         gap: 20px;
       }
 
+      @media (max-width: 900px) {
+        .media-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
       @media (max-width: 860px) {
         .page {
           padding: 22px;
@@ -248,26 +238,18 @@
         header {
           align-items: flex-start;
           flex-direction: column;
+          padding-bottom: 44px;
         }
 
         nav {
           flex-wrap: wrap;
+          gap: 14px 18px;
+          font-size: 12px;
         }
 
-        .media-grid {
-          grid-template-columns: 1fr;
-          margin-top: 48px;
-        }
-
-        .panel.wide {
-          grid-column: span 1;
-        }
-
-        .media-link,
-        .quick-link {
-          align-items: flex-start;
-          flex-direction: column;
-          gap: 8px;
+        .hero-image {
+          margin-top: 42px;
+          border-radius: 20px;
         }
 
         footer {
@@ -285,7 +267,7 @@
           <span>Itchy Lemon</span>
         </a>
 
-        <nav>
+        <nav aria-label="Main navigation">
           <a href="/music">Music</a>
           <a href="/bio">Bio</a>
           <a href="/discography">Discography</a>
@@ -296,7 +278,7 @@
       </header>
 
       <main>
-        <p class="eyebrow">Visual Archive</p>
+        <p class="eyebrow">Gallery & Visual Archive</p>
 
         <h1>Media</h1>
 
@@ -304,95 +286,52 @@
           Photos, flyers, visual archive and selected materials from the Itchy Lemon project.
         </p>
 
+        <section class="hero-image" aria-label="Featured media archive banner">
+          <img src="/media-hero.png" alt="Itchy Lemon visual archive banner" />
+        </section>
+
+        <h2 class="section-title">Archive Sections</h2>
+
         <section class="media-grid">
-          <article class="panel">
-            <h2>Media Categories</h2>
-
-            <ul class="services">
-              <li>
-                <strong>Photos</strong>
-                Artist images, portraits and event-related photography.
-              </li>
-
-              <li>
-                <strong>Flyers</strong>
-                Selected event flyers, announcements and club materials.
-              </li>
-
-              <li>
-                <strong>Visual Assets</strong>
-                Press-ready images and official visual material for promoters, curators and collaborators.
-              </li>
-
-              <li>
-                <strong>Archive</strong>
-                Selected historical material from the Itchy Lemon project and electronic music journey.
-              </li>
-            </ul>
+          <article class="media-card">
+            <div>
+              <p class="card-label">Photos</p>
+              <h2>Artist & event images</h2>
+              <p>
+                Selected photos from events, artist sessions, press material and visual moments connected to the project.
+              </p>
+            </div>
           </article>
 
-          <article class="panel">
-            <h2>Media Gallery</h2>
-
-            <p>
-              A dedicated space for artist visuals, event materials and press-ready media.
-              More assets will be added gradually.
-            </p>
-
-            <a class="media-link" href="/press-kit">
-              <strong>Press Kit</strong>
-              <span>EPK</span>
-            </a>
-
-            <a class="media-link" href="mailto:itchylemon.booking@gmail.com">
-              <strong>Request Media Assets</strong>
-              <span>Email</span>
-            </a>
-
-            <a class="button" href="mailto:itchylemon.booking@gmail.com">
-              Request Media Material
-            </a>
+          <article class="media-card">
+            <div>
+              <p class="card-label">Flyers</p>
+              <h2>Events & announcements</h2>
+              <p>
+                Flyers, posters and visual communication from past events, releases, collaborations and milestones.
+              </p>
+            </div>
           </article>
 
-          <article class="panel wide">
-            <h2>Official Links</h2>
-
-            <a class="quick-link" href="https://open.spotify.com/artist/5IfFyzIiz1iBO7RZUJyFen" target="_blank" rel="noreferrer">
-              <strong>Spotify</strong>
-              <span>Listen</span>
-            </a>
-
-            <a class="quick-link" href="https://www.instagram.com/itchy_lemon/" target="_blank" rel="noreferrer">
-              <strong>Instagram</strong>
-              <span>Follow</span>
-            </a>
-
-            <a class="quick-link" href="https://www.facebook.com/ItchyLemondjproducer" target="_blank" rel="noreferrer">
-              <strong>Facebook</strong>
-              <span>Follow</span>
-            </a>
-
-            <a class="quick-link" href="https://www.youtube.com/@ItchyLemonTV" target="_blank" rel="noreferrer">
-              <strong>YouTube</strong>
-              <span>Watch</span>
-            </a>
-
-            <a class="quick-link" href="https://www.beatport.com/artist/itchy-lemon/339277" target="_blank" rel="noreferrer">
-              <strong>Beatport</strong>
-              <span>Artist page</span>
-            </a>
-
-            <a class="quick-link" href="https://www.traxsource.com/artist/131494/itchy-lemon" target="_blank" rel="noreferrer">
-              <strong>Traxsource</strong>
-              <span>Artist page</span>
-            </a>
+          <article class="media-card">
+            <div>
+              <p class="card-label">Visual Assets</p>
+              <h2>Press-ready material</h2>
+              <p>
+                Logos, banners, cover visuals and selected assets prepared for promoters, curators and collaborators.
+              </p>
+            </div>
           </article>
         </section>
+
+        <p class="archive-note">
+          This page will be expanded with selected photos, flyers and downloadable visual assets from the Itchy Lemon archive.
+        </p>
       </main>
 
       <footer>
         <span>© 2026 Itchy Lemon. All rights reserved.</span>
-        <span>Portugal · Photos · Flyers · Visual archive · Press assets</span>
+        <span>Photos · Flyers · Visual archive · Press assets</span>
       </footer>
     </div>
   </body>
