@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Download the official Itchy Lemon EPK — artist bio, highlights, music links and booking contact."
+    />
+    <meta name="author" content="Itchy Lemon" />
+    <meta name="theme-color" content="#07090c" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Download EPK | Itchy Lemon</title>
+
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="canonical" href="https://itchylemon.com/epk-download/" />
+
+    <style>
+      :root {
+        --bg: #07090c;
+        --bg-soft: #10141b;
+        --text: #f4f4f0;
+        --muted: #a7adb8;
+        --acid: #d8ff3e;
+        --line: rgba(255, 255, 255, 0.12);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background:
+          radial-gradient(circle at top right, rgba(216, 255, 62, 0.14), transparent 34%),
+          linear-gradient(135deg, #07090c 0%, #111827 48%, #050608 100%);
+        color: var(--text);
+        min-height: 100vh;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .page {
+        min-height: 100vh;
+        padding: 32px;
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 24px;
+        padding-bottom: 56px;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--acid);
+        font-weight: 700;
+        text-transform: uppercase;
+        white-space: nowrap;
+      }
+
+      .logo-icon {
+        display: block;
+        width: 22px;
+        height: 22px;
+        object-fit: contain;
+        flex-shrink: 0;
+      }
+
+      .logo span {
+        display: inline-block;
+        font-size: 14px;
+        letter-spacing: 0.32em;
+        line-height: 1;
+      }
+
+      nav {
+        display: flex;
+        gap: 22px;
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--muted);
+      }
+
+      nav a:hover {
+        color: var(--acid);
+      }
+
+      main {
+        max-width: 980px;
+        margin: 0 auto;
+        min-height: 62vh;
+        display: grid;
+        align-items: center;
+      }
+
+      .download-card {
+        border: 1px solid var(--line);
+        border-radius: 32px;
+        background:
+          linear-gradient(135deg, rgba(216, 255, 62, 0.1), transparent),
+          rgba(16, 20, 27, 0.72);
+        padding: clamp(28px, 5vw, 56px);
+        backdrop-filter: blur(12px);
+        box-shadow: 0 24px 80px rgba(0, 0, 0, 0.32);
+      }
+
+      .eyebrow {
+        margin: 0 0 18px;
+        color: var(--acid);
+        text-transform: uppercase;
+        letter-spacing: 0.24em;
+        font-size: 13px;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(48px, 8vw, 96px);
+        line-height: 0.9;
+        letter-spacing: -0.06em;
+        text-transform: uppercase;
+      }
+
+      .lead {
+        margin: 28px 0 0;
+        max-width: 760px;
+        color: var(--text);
+        font-size: clamp(22px, 3vw, 34px);
+        line-height: 1.16;
+      }
+
+      .copy {
+        margin: 24px 0 0;
+        max-width: 720px;
+        color: var(--muted);
+        font-size: 17px;
+        line-height: 1.7;
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        margin-top: 34px;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 50px;
+        padding: 0 24px;
+        border-radius: 999px;
+        border: 1px solid var(--line);
+        color: var(--text);
+        font-size: 13px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        transition:
+          transform 0.2s ease,
+          border-color 0.2s ease;
+      }
+
+      .button.primary {
+        background: var(--acid);
+        border-color: var(--acid);
+        color: #050608;
+      }
+
+      .button:hover {
+        transform: translateY(-2px);
+        border-color: var(--acid);
+      }
+
+      footer {
+        max-width: 980px;
+        margin: 80px auto 0;
+        color: var(--muted);
+        font-size: 12px;
+        padding-top: 28px;
+        border-top: 1px solid var(--line);
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+      }
+
+      @media (max-width: 860px) {
+        .page {
+          padding: 22px;
+        }
+
+        header {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        nav {
+          flex-wrap: wrap;
+          gap: 14px 18px;
+          font-size: 12px;
+        }
+
+        .button {
+          width: 100%;
+        }
+
+        footer {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="page">
+      <header>
+        <a class="logo" href="/" aria-label="Itchy Lemon homepage">
+          <img class="logo-icon" src="/favicon.png" alt="" />
+          <span>Itchy Lemon</span>
+        </a>
+
+        <nav>
+          <a href="/music">Music</a>
+          <a href="/bio">Bio</a>
+          <a href="/discography">Discography</a>
+          <a href="/media">Media</a>
+          <a href="/press-kit">Press Kit</a>
+          <a href="/sets">Sets</a>
+          <a href="/booking">Booking</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="download-card">
+          <p class="eyebrow">Official EPK</p>
+
+          <h1>Download<br />EPK</h1>
+
+          <p class="lead">
+            Thank you. Your Itchy Lemon EPK is ready.
+          </p>
+
+          <p class="copy">
+            Download the official EPK with artist bio, project highlights, selected gigs, labels, music links and booking contact.
+          </p>
+
+          <div class="actions">
+            <a class="button primary" href="/downloads/Itchy_Lemon_EPK_2026.pdf" download>
+              Download EPK
+            </a>
+
+            <a class="button" href="/booking">
+              Request Booking
+            </a>
+
+            <a class="button" href="/sets">
+              Listen to Sets
+            </a>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <span>© 2026 Itchy Lemon. All rights reserved.</span>
+        <span>Official EPK · Booking · DJ sets · Press material</span>
+      </footer>
+    </div>
+  </body>
+</html>

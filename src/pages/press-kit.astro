@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Press Kit | Itchy Lemon</title>
     <link rel="icon" type="image/png" href="/favicon.png" />
-    <link rel="canonical" href="https://itchy-lemon.pages.dev/press-kit/" />
+    <link rel="canonical" href="https://itchylemon.com/press-kit/" />
 
     <style>
       :root {
@@ -40,6 +40,10 @@
       a {
         color: inherit;
         text-decoration: none;
+      }
+
+      button {
+        font: inherit;
       }
 
       .page {
@@ -122,7 +126,8 @@
         line-height: 1.16;
       }
 
-      .press-cta {
+      .press-cta,
+      .download-epk {
         margin-top: 48px;
         border: 1px solid var(--line);
         border-radius: 28px;
@@ -131,13 +136,17 @@
           rgba(16, 20, 27, 0.72);
         padding: 30px;
         backdrop-filter: blur(12px);
+      }
+
+      .press-cta {
         display: grid;
         grid-template-columns: 1fr auto;
         gap: 28px;
         align-items: center;
       }
 
-      .press-cta p {
+      .press-cta p,
+      .download-epk p {
         margin: 0;
         max-width: 720px;
         color: var(--muted);
@@ -145,8 +154,56 @@
         line-height: 1.7;
       }
 
-      .press-cta strong {
+      .press-cta strong,
+      .download-epk strong {
         color: var(--text);
+      }
+
+      .download-epk {
+        display: grid;
+        grid-template-columns: 1fr 0.85fr;
+        gap: 28px;
+        align-items: stretch;
+      }
+
+      .download-epk h2 {
+        margin: 0 0 20px;
+        color: var(--acid);
+        font-size: 13px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      .download-title {
+        margin: 0 0 18px;
+        font-size: clamp(34px, 5vw, 58px);
+        line-height: 0.95;
+        letter-spacing: -0.06em;
+        text-transform: uppercase;
+      }
+
+      .hubspot-placeholder {
+        border: 1px dashed rgba(216, 255, 62, 0.38);
+        border-radius: 24px;
+        background: rgba(7, 9, 12, 0.42);
+        padding: 24px;
+        min-height: 260px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .hubspot-placeholder p {
+        font-size: 15px;
+        margin-bottom: 18px;
+      }
+
+      .placeholder-label {
+        color: var(--acid);
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        font-size: 12px;
+        margin-bottom: 14px;
       }
 
       .cta-actions {
@@ -154,6 +211,13 @@
         flex-wrap: wrap;
         gap: 12px;
         justify-content: flex-end;
+      }
+
+      .download-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 28px;
       }
 
       .button {
@@ -164,12 +228,14 @@
         padding: 0 22px;
         border-radius: 999px;
         border: 1px solid var(--line);
+        background: transparent;
         color: var(--text);
         font-size: 13px;
         font-weight: 700;
         text-transform: uppercase;
         letter-spacing: 0.12em;
         white-space: nowrap;
+        cursor: pointer;
         transition:
           transform 0.2s ease,
           background 0.2s ease,
@@ -325,6 +391,98 @@
         line-height: 1.6;
       }
 
+      .epk-modal {
+        position: fixed;
+        inset: 0;
+        z-index: 120;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 28px;
+        background: rgba(0, 0, 0, 0.82);
+        backdrop-filter: blur(10px);
+      }
+
+      .epk-modal.is-open {
+        display: flex;
+      }
+
+      .epk-modal-content {
+        position: relative;
+        width: min(760px, 96vw);
+        max-height: 92vh;
+        overflow-y: auto;
+        border: 1px solid var(--line);
+        border-radius: 32px;
+        background:
+          radial-gradient(circle at top right, rgba(216, 255, 62, 0.12), transparent 32%),
+          rgba(7, 9, 12, 0.96);
+        padding: clamp(24px, 5vw, 42px);
+        box-shadow: 0 24px 90px rgba(0, 0, 0, 0.6);
+      }
+
+      .epk-modal-label {
+        margin: 0 0 16px;
+        color: var(--acid);
+        text-transform: uppercase;
+        letter-spacing: 0.22em;
+        font-size: 12px;
+      }
+
+      .epk-modal-title {
+        margin: 0;
+        font-size: clamp(36px, 6vw, 68px);
+        line-height: 0.92;
+        letter-spacing: -0.06em;
+        text-transform: uppercase;
+      }
+
+      .epk-modal-copy {
+        margin: 22px 0 0;
+        color: var(--muted);
+        font-size: 17px;
+        line-height: 1.7;
+        max-width: 620px;
+      }
+
+      .epk-modal-placeholder {
+        margin-top: 28px;
+        border: 1px dashed rgba(216, 255, 62, 0.38);
+        border-radius: 24px;
+        background: rgba(16, 20, 27, 0.72);
+        padding: 22px;
+      }
+
+      .epk-modal-placeholder strong {
+        color: var(--text);
+      }
+
+      .epk-modal-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 28px;
+      }
+
+      .epk-modal-close {
+        position: absolute;
+        top: 18px;
+        right: 18px;
+        width: 42px;
+        height: 42px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: rgba(16, 20, 27, 0.9);
+        color: var(--acid);
+        cursor: pointer;
+        font-size: 22px;
+        line-height: 1;
+      }
+
+      .epk-modal-close:hover {
+        border-color: var(--acid);
+      }
+
       footer {
         max-width: 1080px;
         margin: 80px auto 0;
@@ -338,7 +496,8 @@
       }
 
       @media (max-width: 900px) {
-        .press-cta {
+        .press-cta,
+        .download-epk {
           grid-template-columns: 1fr;
         }
 
@@ -379,6 +538,18 @@
 
         .button {
           width: 100%;
+        }
+
+        .epk-modal {
+          padding: 16px;
+        }
+
+        .epk-modal-content {
+          border-radius: 24px;
+        }
+
+        .epk-modal-actions {
+          flex-direction: column;
         }
 
         footer {
@@ -424,6 +595,46 @@
           <div class="cta-actions">
             <a class="button primary" href="/booking">Request Booking</a>
             <a class="button" href="/sets">Listen to Sets</a>
+          </div>
+        </section>
+
+        <section class="download-epk" aria-label="Download official EPK">
+          <div>
+            <h2>Download Official EPK</h2>
+
+            <div class="download-title">
+              Get the<br />EPK
+            </div>
+
+            <p>
+              Download the official <strong>Itchy Lemon EPK</strong> with artist bio, project highlights, selected gigs, labels, official links and booking contact.
+            </p>
+
+            <p class="note">
+              In the next stage, this area will be connected to HubSpot so EPK requests can enter the CRM for booking follow-up, email marketing and future contact.
+            </p>
+
+            <div class="download-actions">
+              <a class="button primary" href="/epk-download" data-open-epk-modal>
+                Download EPK
+              </a>
+            </div>
+          </div>
+
+          <div class="hubspot-placeholder">
+            <div class="placeholder-label">HubSpot Form Placeholder</div>
+
+            <p>
+              Future form fields: name, email, company / venue, role, city / country, interest and marketing consent.
+            </p>
+
+            <p>
+              After submission, the visitor should be redirected to <strong>/epk-download</strong>.
+            </p>
+
+            <a class="button" href="/epk-download" data-open-epk-modal>
+              Open Download Form
+            </a>
           </div>
         </section>
 
@@ -582,13 +793,13 @@
             <h2>Press Assets</h2>
 
             <p>
-              Downloadable press material will be added here in the next stage. For now, use the official links, media page and booking contact.
+              The official EPK PDF is now available. Additional downloadable press photos, logo files and artwork packs can be added in the next stage.
             </p>
 
             <ul class="asset-list">
               <li>
                 <strong>EPK PDF</strong>
-                <span>Coming soon</span>
+                <span>Available</span>
               </li>
 
               <li>
@@ -608,7 +819,7 @@
             </ul>
 
             <p class="note">
-              Next step: create the downloadable EPK PDF and organise official images, logo files and selected artwork.
+              Next step: connect the EPK download flow to HubSpot and organise official images, logo files and selected artwork.
             </p>
           </article>
 
@@ -637,5 +848,84 @@
         <span>Official EPK · Music · DJ sets · Bio · Discography · Booking</span>
       </footer>
     </div>
+
+    <div class="epk-modal" data-epk-modal aria-hidden="true">
+      <div class="epk-modal-content" role="dialog" aria-modal="true" aria-label="Download Itchy Lemon EPK">
+        <button class="epk-modal-close" type="button" data-close-epk-modal aria-label="Close EPK download popup">
+          ×
+        </button>
+
+        <p class="epk-modal-label">Official EPK</p>
+
+        <h2 class="epk-modal-title">
+          Download<br />EPK
+        </h2>
+
+        <p class="epk-modal-copy">
+          Get the official Itchy Lemon EPK with artist bio, highlights, selected gigs, labels, music links and booking contact.
+        </p>
+
+        <div class="epk-modal-placeholder">
+          <p class="placeholder-label">HubSpot Form Placeholder</p>
+
+          <p>
+            Future form fields: <strong>name, email, company / venue, role, city / country, interest and marketing consent.</strong>
+          </p>
+
+          <p>
+            After submission, the visitor can access the EPK download and the contact will enter HubSpot CRM.
+          </p>
+        </div>
+
+        <div class="epk-modal-actions">
+          <a class="button primary" href="/downloads/Itchy_Lemon_EPK_2026.pdf" download>
+            Download EPK
+          </a>
+
+          <a class="button" href="/booking">
+            Request Booking
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const epkModal = document.querySelector("[data-epk-modal]");
+      const epkModalTriggers = document.querySelectorAll("[data-open-epk-modal]");
+      const epkModalClose = document.querySelector("[data-close-epk-modal]");
+
+      const openEpkModal = () => {
+        epkModal.classList.add("is-open");
+        epkModal.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+      };
+
+      const closeEpkModal = () => {
+        epkModal.classList.remove("is-open");
+        epkModal.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+      };
+
+      epkModalTriggers.forEach((trigger) => {
+        trigger.addEventListener("click", (event) => {
+          event.preventDefault();
+          openEpkModal();
+        });
+      });
+
+      epkModalClose?.addEventListener("click", closeEpkModal);
+
+      epkModal?.addEventListener("click", (event) => {
+        if (event.target === epkModal) {
+          closeEpkModal();
+        }
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && epkModal.classList.contains("is-open")) {
+          closeEpkModal();
+        }
+      });
+    </script>
   </body>
 </html>
