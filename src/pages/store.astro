@@ -1,3 +1,28 @@
+---
+const tracks = [
+  {
+    label: "Single",
+    title: "New Age",
+    meta: "Melodic House & Techno · 120 BPM · Preview version",
+    price: "€2.49",
+    cover: "/store/new-age-cover.png",
+    preview: "/audio/previews/new-age-preview.mp3",
+    buyUrl: "#",
+    listenUrl: "#",
+  },
+  {
+    label: "Coming Soon",
+    title: "Next Release",
+    meta: "Dark / Melodic / Progressive · Preview coming soon",
+    price: "€2.49",
+    cover: "/store/new-age-cover.png",
+    preview: "/audio/previews/new-age-preview.mp3",
+    buyUrl: "#",
+    listenUrl: "#",
+  },
+];
+---
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -46,6 +71,10 @@
       a {
         color: inherit;
         text-decoration: none;
+      }
+
+      button {
+        font: inherit;
       }
 
       img {
@@ -201,13 +230,68 @@
         line-height: 1.6;
       }
 
-      .track-player {
-        margin-top: 20px;
+      .custom-player {
+        display: grid;
+        grid-template-columns: 46px 1fr auto;
+        gap: 14px;
+        align-items: center;
+        margin-top: 22px;
+        padding: 14px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: rgba(7, 9, 12, 0.46);
       }
 
-      audio {
+      .play-button {
+        width: 46px;
+        height: 46px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: rgba(216, 255, 62, 0.08);
+        color: var(--acid);
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        transition:
+          border-color 0.2s ease,
+          background 0.2s ease,
+          transform 0.2s ease;
+      }
+
+      .play-button:hover {
+        border-color: var(--acid);
+        background: rgba(216, 255, 62, 0.14);
+        transform: translateY(-1px);
+      }
+
+      .progress-wrap {
+        display: grid;
+        gap: 8px;
+      }
+
+      .progress-bar {
         width: 100%;
         accent-color: var(--acid);
+        cursor: pointer;
+      }
+
+      .time-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        color: var(--muted);
+        font-size: 12px;
+        letter-spacing: 0.08em;
+      }
+
+      .player-status {
+        color: var(--acid);
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        white-space: nowrap;
       }
 
       .track-side {
@@ -363,6 +447,18 @@
         }
       }
 
+      @media (max-width: 620px) {
+        .custom-player {
+          grid-template-columns: 46px 1fr;
+          border-radius: 24px;
+        }
+
+        .player-status {
+          grid-column: 1 / -1;
+          padding-left: 4px;
+        }
+      }
+
       @media (max-width: 520px) {
         .track-actions {
           flex-direction: column;
@@ -404,73 +500,67 @@
         </p>
 
         <section class="store-list" aria-label="Itchy Lemon tracks for sale">
-          <article class="track-card">
-            <div class="track-cover">
-              <img src="/store/new-age-cover.png" alt="New Age artwork" />
-            </div>
-
-            <div class="track-info">
-              <p class="track-label">Single</p>
-              <h2 class="track-title">New Age</h2>
-              <p class="track-meta">
-                Melodic House & Techno · 120 BPM · Preview version
-              </p>
-
-              <div class="track-player">
-                <audio controls preload="none">
-                  <source src="/audio/previews/new-age-preview.mp3" type="audio/mpeg" />
-                  Your browser does not support the audio element.
-                </audio>
+          {tracks.map((track, index) => (
+            <article class="track-card">
+              <div class="track-cover">
+                <img src={track.cover} alt={`${track.title} artwork`} />
               </div>
-            </div>
 
-            <div class="track-side">
-              <span class="price">€2.49</span>
+              <div class="track-info">
+                <p class="track-label">{track.label}</p>
+                <h2 class="track-title">{track.title}</h2>
+                <p class="track-meta">{track.meta}</p>
 
-              <div class="track-actions">
-                <a class="button button-primary" href="#" aria-label="Buy New Age">
-                  Buy Track
-                </a>
-                <a class="button button-secondary" href="#" aria-label="Listen to New Age">
-                  Listen
-                </a>
+                <div class="custom-player" data-player>
+                  <audio preload="metadata" src={track.preview}></audio>
+
+                  <button
+                    class="play-button"
+                    type="button"
+                    data-play
+                    aria-label={`Play preview of ${track.title}`}
+                  >
+                    ▶
+                  </button>
+
+                  <div class="progress-wrap">
+                    <input
+                      class="progress-bar"
+                      type="range"
+                      min="0"
+                      max="1000"
+                      value="0"
+                      step="1"
+                      data-progress
+                      aria-label={`Preview progress for ${track.title}`}
+                    />
+
+                    <div class="time-row">
+                      <span data-current>0:00</span>
+                      <span data-duration>0:00</span>
+                    </div>
+                  </div>
+
+                  <span class="player-status" data-status>
+                    Preview
+                  </span>
+                </div>
               </div>
-            </div>
-          </article>
 
-          <article class="track-card">
-            <div class="track-cover">
-              <img src="/store/new-age-cover.png" alt="Next Release artwork" />
-            </div>
+              <div class="track-side">
+                <span class="price">{track.price}</span>
 
-            <div class="track-info">
-              <p class="track-label">Coming Soon</p>
-              <h2 class="track-title">Next Release</h2>
-              <p class="track-meta">
-                Dark / Melodic / Progressive · Preview coming soon
-              </p>
-
-              <div class="track-player">
-                <audio controls preload="none">
-                  <source src="/audio/previews/new-age-preview.mp3" type="audio/mpeg" />
-                  Your browser does not support the audio element.
-                </audio>
+                <div class="track-actions">
+                  <a class="button button-primary" href={track.buyUrl} aria-label={`Buy ${track.title}`}>
+                    Buy Track
+                  </a>
+                  <a class="button button-secondary" href={track.listenUrl} aria-label={`Listen to ${track.title}`}>
+                    Listen
+                  </a>
+                </div>
               </div>
-            </div>
-
-            <div class="track-side">
-              <span class="price">€2.49</span>
-
-              <div class="track-actions">
-                <a class="button button-primary" href="#" aria-label="Buy next release">
-                  Buy Track
-                </a>
-                <a class="button button-secondary" href="#" aria-label="Listen to next release">
-                  Listen
-                </a>
-              </div>
-            </div>
-          </article>
+            </article>
+          ))}
         </section>
 
         <p class="store-note">
@@ -483,5 +573,81 @@
         <span>Original tracks · Previews · Downloads · Store</span>
       </footer>
     </div>
+
+    <script>
+      const players = document.querySelectorAll("[data-player]");
+
+      const formatTime = (seconds) => {
+        if (!Number.isFinite(seconds)) return "0:00";
+
+        const minutes = Math.floor(seconds / 60);
+        const remainingSeconds = Math.floor(seconds % 60)
+          .toString()
+          .padStart(2, "0");
+
+        return `${minutes}:${remainingSeconds}`;
+      };
+
+      const pauseOtherPlayers = (currentAudio) => {
+        players.forEach((player) => {
+          const audio = player.querySelector("audio");
+          const playButton = player.querySelector("[data-play]");
+          const status = player.querySelector("[data-status]");
+
+          if (audio !== currentAudio) {
+            audio.pause();
+            playButton.textContent = "▶";
+            status.textContent = "Preview";
+          }
+        });
+      };
+
+      players.forEach((player) => {
+        const audio = player.querySelector("audio");
+        const playButton = player.querySelector("[data-play]");
+        const progress = player.querySelector("[data-progress]");
+        const currentTime = player.querySelector("[data-current]");
+        const duration = player.querySelector("[data-duration]");
+        const status = player.querySelector("[data-status]");
+
+        audio.addEventListener("loadedmetadata", () => {
+          duration.textContent = formatTime(audio.duration);
+        });
+
+        playButton.addEventListener("click", () => {
+          if (audio.paused) {
+            pauseOtherPlayers(audio);
+            audio.play();
+            playButton.textContent = "❚❚";
+            status.textContent = "Playing";
+          } else {
+            audio.pause();
+            playButton.textContent = "▶";
+            status.textContent = "Paused";
+          }
+        });
+
+        audio.addEventListener("timeupdate", () => {
+          if (audio.duration) {
+            progress.value = (audio.currentTime / audio.duration) * 1000;
+          }
+
+          currentTime.textContent = formatTime(audio.currentTime);
+        });
+
+        progress.addEventListener("input", () => {
+          if (audio.duration) {
+            audio.currentTime = (progress.value / 1000) * audio.duration;
+          }
+        });
+
+        audio.addEventListener("ended", () => {
+          playButton.textContent = "▶";
+          status.textContent = "Preview";
+          progress.value = 0;
+          currentTime.textContent = "0:00";
+        });
+      });
+    </script>
   </body>
 </html>
