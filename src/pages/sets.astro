@@ -1,0 +1,500 @@
+---
+const sets = [
+  {
+    title: "ITCHY LEMON Fresh Beats #41",
+    subtitle: "Jan 2016",
+    duration: "1:01:48",
+    tags: "House · Deep House · Tech House · Mix Series",
+    url: "https://www.mixcloud.com/ITCHY_LEMON_DjProducer/itchy-lemon-fresh-beats-41-jan-2016/",
+  },
+  {
+    title: "ITCHY LEMON Fresh Beats #40",
+    subtitle: "Orange Room Porto · Studio Series Episode 108 · Dec 2015",
+    duration: "1:37:20",
+    tags: "House · Deep House · Tech House · Mix Series",
+    url: "https://www.mixcloud.com/ITCHY_LEMON_DjProducer/itchy-lemon-fresh-beats-40-rec-live-at-orange-room-porto-studio-series-episode-108-dec-2015/",
+  },
+  {
+    title: "ITCHY LEMON Fresh Beats #39",
+    subtitle: "DJ LIVE TV · Griffon's Club · Nov 2015",
+    duration: "1:02:35",
+    tags: "House Music · Deep House · Tech House · Mix Series",
+    url: "https://www.mixcloud.com/ITCHY_LEMON_DjProducer/itchy-lemon-fresh-beats-39-rec-live-at-dj-live-tv-griffons-club-nov-2015/",
+  },
+  {
+    title: "ITCHY LEMON Fresh Beats #38",
+    subtitle: "House Station Radio · Oct 2015",
+    duration: "55:41",
+    tags: "House · Deep House · Tech House · Mix Series",
+    url: "https://www.mixcloud.com/ITCHY_LEMON_DjProducer/itchy-lemon-fresh-beats-38-oct-2015/",
+  },
+  {
+    title: "ITCHY LEMON Fresh Beats #37",
+    subtitle: "Sep 2015",
+    duration: "1:02:19",
+    tags: "House · Deep House · Tech House · Mix Series",
+    url: "https://www.mixcloud.com/ITCHY_LEMON_DjProducer/itchy-lemon-fresh-beats-37-sep-2015/",
+  },
+  {
+    title: "ITCHY LEMON Fresh Beats #36",
+    subtitle: "Ago 2015",
+    duration: "1:00:11",
+    tags: "House · Deep House · Tech House · Mix Series",
+    url: "https://www.mixcloud.com/ITCHY_LEMON_DjProducer/itchy-lemon-fresh-beats-36-ago-2015/",
+  },
+];
+
+const getEmbedUrl = (url) =>
+  `https://www.mixcloud.com/widget/iframe/?hide_cover=1&light=0&feed=${encodeURIComponent(url)}`;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="DJ sets, radio shows and live recordings by Itchy Lemon — House, Deep House, Tech House and Melodic Techno."
+    />
+    <meta name="author" content="Itchy Lemon" />
+    <meta name="theme-color" content="#07090c" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Sets | Itchy Lemon</title>
+
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="canonical" href="https://itchy-lemon.pages.dev/sets/" />
+
+    <style>
+      :root {
+        --bg: #07090c;
+        --bg-soft: #10141b;
+        --text: #f4f4f0;
+        --muted: #a7adb8;
+        --acid: #d8ff3e;
+        --line: rgba(255, 255, 255, 0.12);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background:
+          radial-gradient(circle at top right, rgba(216, 255, 62, 0.12), transparent 34%),
+          linear-gradient(135deg, #07090c 0%, #111827 48%, #050608 100%);
+        color: var(--text);
+        min-height: 100vh;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .page {
+        min-height: 100vh;
+        padding: 32px;
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 24px;
+        padding-bottom: 56px;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--acid);
+        font-weight: 700;
+        text-transform: uppercase;
+        white-space: nowrap;
+      }
+
+      .logo-icon {
+        display: block;
+        width: 22px;
+        height: 22px;
+        object-fit: contain;
+        flex-shrink: 0;
+      }
+
+      .logo span {
+        display: inline-block;
+        font-size: 14px;
+        letter-spacing: 0.32em;
+        line-height: 1;
+      }
+
+      nav {
+        display: flex;
+        gap: 22px;
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--muted);
+      }
+
+      nav a {
+        transition: color 0.2s ease;
+      }
+
+      nav a:hover,
+      nav a.active {
+        color: var(--acid);
+      }
+
+      main {
+        max-width: 1080px;
+        margin: 0 auto;
+      }
+
+      .eyebrow {
+        color: var(--acid);
+        text-transform: uppercase;
+        letter-spacing: 0.24em;
+        font-size: 13px;
+        margin: 0 0 18px;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(48px, 8vw, 104px);
+        line-height: 0.9;
+        letter-spacing: -0.06em;
+        text-transform: uppercase;
+      }
+
+      .lead {
+        margin: 32px 0 0;
+        max-width: 840px;
+        font-size: clamp(22px, 3vw, 34px);
+        line-height: 1.16;
+        color: var(--text);
+      }
+
+      .sets-intro {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 28px;
+        align-items: end;
+        margin-top: 42px;
+      }
+
+      .profile-card {
+        border: 1px solid var(--line);
+        border-radius: 28px;
+        background: rgba(16, 20, 27, 0.72);
+        padding: 24px;
+        min-width: 260px;
+        backdrop-filter: blur(12px);
+      }
+
+      .profile-card p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.6;
+      }
+
+      .profile-card strong {
+        display: block;
+        color: var(--acid);
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        font-size: 12px;
+        margin-bottom: 10px;
+      }
+
+      .sets-list {
+        display: grid;
+        gap: 22px;
+        margin-top: 64px;
+      }
+
+      .set-card {
+        border: 1px solid var(--line);
+        border-radius: 28px;
+        background: rgba(16, 20, 27, 0.72);
+        overflow: hidden;
+        backdrop-filter: blur(12px);
+        box-shadow: 0 24px 80px rgba(0, 0, 0, 0.24);
+      }
+
+      .set-header {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 20px;
+        align-items: start;
+        padding: 24px 24px 18px;
+      }
+
+      .set-title {
+        margin: 0;
+        font-size: clamp(28px, 4vw, 42px);
+        line-height: 0.95;
+        letter-spacing: -0.05em;
+        text-transform: uppercase;
+      }
+
+      .set-subtitle {
+        margin: 14px 0 0;
+        color: var(--muted);
+        font-size: 15px;
+        line-height: 1.6;
+      }
+
+      .set-meta {
+        text-align: right;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.6;
+        white-space: nowrap;
+      }
+
+      .set-meta span {
+        display: block;
+        color: var(--acid);
+        font-size: 20px;
+        font-weight: 700;
+        letter-spacing: -0.04em;
+      }
+
+      .mixcloud-embed {
+        padding: 0 24px 24px;
+      }
+
+      .mixcloud-embed iframe {
+        display: block;
+        width: 100%;
+        height: 120px;
+        border: 0;
+        border-radius: 18px;
+        background: #050608;
+      }
+
+      .set-actions {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 18px;
+        border-top: 1px solid var(--line);
+        padding: 18px 24px 22px;
+      }
+
+      .set-tags {
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.5;
+      }
+
+      .note {
+        margin-top: 48px;
+        border-left: 2px solid var(--acid);
+        padding-left: 22px;
+        color: var(--muted);
+        font-size: 17px;
+        line-height: 1.7;
+        max-width: 820px;
+      }
+
+      footer {
+        max-width: 1080px;
+        margin: 80px auto 0;
+        color: var(--muted);
+        font-size: 12px;
+        padding-top: 28px;
+        border-top: 1px solid var(--line);
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+      }
+
+      @media (max-width: 900px) {
+        .sets-intro {
+          grid-template-columns: 1fr;
+        }
+
+        .profile-card {
+          min-width: 0;
+        }
+
+        .set-header {
+          grid-template-columns: 1fr;
+        }
+
+        .set-meta {
+          text-align: left;
+        }
+
+        .set-actions {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+      }
+
+      @media (max-width: 860px) {
+        .page {
+          padding: 22px;
+        }
+
+        header {
+          align-items: flex-start;
+          flex-direction: column;
+          padding-bottom: 44px;
+        }
+
+        nav {
+          flex-wrap: wrap;
+          gap: 14px 18px;
+          font-size: 12px;
+        }
+
+        .sets-list {
+          margin-top: 48px;
+        }
+
+        .set-card,
+        .profile-card {
+          border-radius: 24px;
+        }
+
+        .set-header,
+        .mixcloud-embed,
+        .set-actions {
+          padding-left: 18px;
+          padding-right: 18px;
+        }
+
+        footer {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="page">
+      <header>
+        <a class="logo" href="/" aria-label="Itchy Lemon homepage">
+          <img class="logo-icon" src="/favicon.png" alt="" />
+          <span>Itchy Lemon</span>
+        </a>
+
+        <nav aria-label="Main navigation">
+          <a href="/music">Music</a>
+          <a href="/bio">Bio</a>
+          <a href="/discography">Discography</a>
+          <a href="/media">Media</a>
+          <a href="/press-kit">Press Kit</a>
+          <a class="active" href="/sets">Sets</a>
+          <a href="/booking">Booking</a>
+        </nav>
+      </header>
+
+      <main>
+        <p class="eyebrow">DJ Sets & Radio Shows</p>
+
+        <h1>Sets</h1>
+
+        <div class="sets-intro">
+          <p class="lead">
+            Selected DJ sets, radio shows and live recordings from the Itchy Lemon archive.
+          </p>
+
+          <aside class="profile-card">
+            <strong>Mixcloud Archive</strong>
+            <p>
+              House, Deep House, Tech House and melodic electronic journeys — curated for listening without leaving the site.
+            </p>
+          </aside>
+        </div>
+
+        <section class="sets-list" aria-label="Itchy Lemon DJ sets">
+          {sets.map((set, index) => (
+            <article class="set-card">
+              <div class="set-header">
+                <div>
+                  <h2 class="set-title">{set.title}</h2>
+                  <p class="set-subtitle">{set.subtitle}</p>
+                </div>
+
+                <div class="set-meta">
+                  Duration
+                  <span>{set.duration}</span>
+                </div>
+              </div>
+
+              <div class="mixcloud-embed">
+                <iframe
+                  id={`mixcloud-player-${index}`}
+                  data-mixcloud-player
+                  width="100%"
+                  height="120"
+                  src={getEmbedUrl(set.url)}
+                  frameborder="0"
+                  allow="encrypted-media; fullscreen; web-share"
+                  loading="lazy"
+                ></iframe>
+              </div>
+
+              <div class="set-actions">
+                <div class="set-tags">{set.tags}</div>
+              </div>
+            </article>
+          ))}
+        </section>
+
+        <p class="note">
+          A persistent footer player can be tested later using the Mixcloud widget approach. For now, this page keeps the listening experience embedded, stable and aligned with the site.
+        </p>
+      </main>
+
+      <footer>
+        <span>© 2026 Itchy Lemon. All rights reserved.</span>
+        <span>DJ sets · Radio shows · Mixcloud archive · Fresh Beats</span>
+      </footer>
+    </div>
+
+    <script src="https://widget.mixcloud.com/media/js/widgetApi.js"></script>
+
+    <script>
+      const mixcloudIframes = document.querySelectorAll("[data-mixcloud-player]");
+      const mixcloudWidgets = [];
+
+      const initialiseMixcloudPlayers = () => {
+        if (!window.Mixcloud || !window.Mixcloud.PlayerWidget) {
+          return;
+        }
+
+        mixcloudIframes.forEach((iframe) => {
+          const widget = window.Mixcloud.PlayerWidget(iframe);
+
+          widget.ready.then(() => {
+            mixcloudWidgets.push(widget);
+
+            widget.events.play.on(() => {
+              mixcloudWidgets.forEach((otherWidget) => {
+                if (otherWidget !== widget) {
+                  otherWidget.pause();
+                }
+              });
+            });
+          });
+        });
+      };
+
+      window.addEventListener("load", initialiseMixcloudPlayers);
+    </script>
+  </body>
+</html>
