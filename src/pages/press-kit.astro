@@ -1,20 +1,17 @@
----
----
-
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta
       name="description"
-      content="Press kit for Itchy Lemon — artist bio, music links, booking contact and essential information for promoters, curators and collaborators."
+      content="Press kit for Itchy Lemon — artist bio, music links, DJ sets, booking contact and essential information for promoters, curators and collaborators."
     />
     <meta name="author" content="Itchy Lemon" />
     <meta name="theme-color" content="#07090c" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Press Kit | Itchy Lemon</title>
     <link rel="icon" type="image/png" href="/favicon.png" />
-    <link rel="canonical" href="https://itchy-lemon.pages.dev/press-kit" />
+    <link rel="canonical" href="https://itchy-lemon.pages.dev/press-kit/" />
 
     <style>
       :root {
@@ -125,6 +122,71 @@
         line-height: 1.16;
       }
 
+      .press-cta {
+        margin-top: 48px;
+        border: 1px solid var(--line);
+        border-radius: 28px;
+        background:
+          linear-gradient(135deg, rgba(216, 255, 62, 0.1), transparent),
+          rgba(16, 20, 27, 0.72);
+        padding: 30px;
+        backdrop-filter: blur(12px);
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 28px;
+        align-items: center;
+      }
+
+      .press-cta p {
+        margin: 0;
+        max-width: 720px;
+        color: var(--muted);
+        font-size: 17px;
+        line-height: 1.7;
+      }
+
+      .press-cta strong {
+        color: var(--text);
+      }
+
+      .cta-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        justify-content: flex-end;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 48px;
+        padding: 0 22px;
+        border-radius: 999px;
+        border: 1px solid var(--line);
+        color: var(--text);
+        font-size: 13px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        white-space: nowrap;
+        transition:
+          transform 0.2s ease,
+          background 0.2s ease,
+          border-color 0.2s ease;
+      }
+
+      .button.primary {
+        background: var(--acid);
+        color: #050608;
+        border-color: var(--acid);
+      }
+
+      .button:hover {
+        transform: translateY(-2px);
+        border-color: var(--acid);
+      }
+
       .kit-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -225,6 +287,37 @@
         margin-bottom: 4px;
       }
 
+      .asset-list {
+        display: grid;
+        gap: 14px;
+        margin: 20px 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .asset-list li {
+        display: flex;
+        justify-content: space-between;
+        gap: 18px;
+        border-top: 1px solid var(--line);
+        padding-top: 14px;
+        color: var(--muted);
+        font-size: 15px;
+        line-height: 1.5;
+      }
+
+      .asset-list strong {
+        color: var(--text);
+      }
+
+      .asset-list span {
+        color: var(--acid);
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        font-size: 11px;
+        white-space: nowrap;
+      }
+
       .note {
         margin-top: 20px;
         color: var(--muted);
@@ -242,6 +335,16 @@
         display: flex;
         justify-content: space-between;
         gap: 20px;
+      }
+
+      @media (max-width: 900px) {
+        .press-cta {
+          grid-template-columns: 1fr;
+        }
+
+        .cta-actions {
+          justify-content: flex-start;
+        }
       }
 
       @media (max-width: 860px) {
@@ -267,10 +370,15 @@
           grid-column: span 1;
         }
 
-        .link-row {
+        .link-row,
+        .asset-list li {
           align-items: flex-start;
           flex-direction: column;
           gap: 8px;
+        }
+
+        .button {
+          width: 100%;
         }
 
         footer {
@@ -288,14 +396,15 @@
           <span>Itchy Lemon</span>
         </a>
 
-       <nav>
-  <a href="/music">Music</a>
-  <a href="/bio">Bio</a>
-  <a href="/discography">Discography</a>
-  <a href="/media">Media</a>
-  <a href="/press-kit">Press Kit</a>
-  <a href="/booking">Booking</a>
-</nav>
+        <nav>
+          <a href="/music">Music</a>
+          <a href="/bio">Bio</a>
+          <a href="/discography">Discography</a>
+          <a href="/media">Media</a>
+          <a class="active" href="/press-kit">Press Kit</a>
+          <a href="/sets">Sets</a>
+          <a href="/booking">Booking</a>
+        </nav>
       </header>
 
       <main>
@@ -304,8 +413,19 @@
         <h1>Press Kit</h1>
 
         <p class="lead">
-          Essential artist information, music links and booking details for promoters, curators, radio shows and selected collaborators.
+          Essential artist information, music links, DJ sets and booking details for promoters, curators, radio shows and selected collaborators.
         </p>
+
+        <section class="press-cta" aria-label="Press kit call to action">
+          <p>
+            Need a quick overview? This page gathers the core <strong>Itchy Lemon</strong> artist information, official links and booking contact in one place.
+          </p>
+
+          <div class="cta-actions">
+            <a class="button primary" href="/booking">Request Booking</a>
+            <a class="button" href="/sets">Listen to Sets</a>
+          </div>
+        </section>
 
         <section class="kit-grid">
           <article class="panel wide">
@@ -329,6 +449,7 @@
               <span class="tag">Progressive</span>
               <span class="tag">Underground Electronic</span>
               <span class="tag">DJ Sets</span>
+              <span class="tag">Guest Mixes</span>
               <span class="tag">Original Productions</span>
               <span class="tag">Portugal</span>
             </div>
@@ -373,6 +494,11 @@
               <span>Open</span>
             </a>
 
+            <a class="link-row" href="/sets">
+              <strong>DJ Sets</strong>
+              <span>Listen</span>
+            </a>
+
             <a class="link-row" href="/bio">
               <strong>Full Bio</strong>
               <span>Open</span>
@@ -383,13 +509,13 @@
               <span>Open</span>
             </a>
 
-            <a class="link-row" href="/booking">
-              <strong>Booking</strong>
-              <span>Open</span>
+            <a class="link-row" href="/media">
+              <strong>Media</strong>
+              <span>View</span>
             </a>
 
-            <a class="link-row" href="mailto:itchylemon.booking@gmail.com">
-              <strong>Email</strong>
+            <a class="link-row" href="/booking">
+              <strong>Booking</strong>
               <span>Contact</span>
             </a>
           </article>
@@ -400,6 +526,11 @@
             <a class="link-row" href="https://open.spotify.com/artist/5IfFyzIiz1iBO7RZUJyFen" target="_blank" rel="noreferrer">
               <strong>Spotify</strong>
               <span>Listen</span>
+            </a>
+
+            <a class="link-row" href="https://www.mixcloud.com/ITCHY_LEMON_DjProducer/" target="_blank" rel="noreferrer">
+              <strong>Mixcloud</strong>
+              <span>Sets</span>
             </a>
 
             <a class="link-row" href="https://www.beatport.com/artist/itchy-lemon/339277" target="_blank" rel="noreferrer">
@@ -451,19 +582,59 @@
             <h2>Press Assets</h2>
 
             <p>
-              Artist photos, logos, artwork and downloadable press material will be added here in the next stage.
+              Downloadable press material will be added here in the next stage. For now, use the official links, media page and booking contact.
             </p>
 
+            <ul class="asset-list">
+              <li>
+                <strong>EPK PDF</strong>
+                <span>Coming soon</span>
+              </li>
+
+              <li>
+                <strong>Press photos</strong>
+                <span>Coming soon</span>
+              </li>
+
+              <li>
+                <strong>Logo files</strong>
+                <span>Coming soon</span>
+              </li>
+
+              <li>
+                <strong>Artwork pack</strong>
+                <span>Coming soon</span>
+              </li>
+            </ul>
+
             <p class="note">
-              Next step: add official images, logo files and a downloadable EPK pack.
+              Next step: create the downloadable EPK PDF and organise official images, logo files and selected artwork.
             </p>
+          </article>
+
+          <article class="panel wide">
+            <h2>Booking Contact</h2>
+
+            <p>
+              For bookings, guest mixes, press requests or selected collaborations, use the booking page or contact directly by email.
+            </p>
+
+            <a class="link-row" href="/booking">
+              <strong>Request Booking</strong>
+              <span>Form</span>
+            </a>
+
+            <a class="link-row" href="mailto:itchylemon.booking@gmail.com">
+              <strong>itchylemon.booking@gmail.com</strong>
+              <span>Email</span>
+            </a>
           </article>
         </section>
       </main>
 
       <footer>
         <span>© 2026 Itchy Lemon. All rights reserved.</span>
-        <span>Official EPK · Music · Bio · Discography · Booking</span>
+        <span>Official EPK · Music · DJ sets · Bio · Discography · Booking</span>
       </footer>
     </div>
   </body>
