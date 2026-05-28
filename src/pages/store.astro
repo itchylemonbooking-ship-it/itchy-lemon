@@ -34,6 +34,7 @@ const tracks = [
     <meta name="author" content="Itchy Lemon" />
     <meta name="theme-color" content="#07090c" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
 
     <title>Store | Itchy Lemon</title>
 
@@ -500,7 +501,7 @@ const tracks = [
         </p>
 
         <section class="store-list" aria-label="Itchy Lemon tracks for sale">
-          {tracks.map((track, index) => (
+          {tracks.map((track) => (
             <article class="track-card">
               <div class="track-cover">
                 <img src={track.cover} alt={`${track.title} artwork`} />
