@@ -184,6 +184,34 @@
         border-color: var(--acid);
       }
 
+      .home-cta {
+        margin-top: 28px;
+        max-width: 680px;
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        background:
+          linear-gradient(135deg, rgba(216, 255, 62, 0.1), transparent),
+          rgba(16, 20, 27, 0.58);
+        padding: 22px;
+        backdrop-filter: blur(12px);
+      }
+
+      .home-cta strong {
+        display: block;
+        color: var(--acid);
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        font-size: 12px;
+        margin-bottom: 10px;
+      }
+
+      .home-cta p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 15px;
+        line-height: 1.7;
+      }
+
       .quick-links {
         display: flex;
         flex-wrap: wrap;
@@ -330,13 +358,14 @@
         </a>
 
         <nav>
-  <a href="/music">Music</a>
-  <a href="/bio">Bio</a>
-  <a href="/discography">Discography</a>
-  <a href="/media">Media</a>
-  <a href="/press-kit">Press Kit</a>
-  <a href="/booking">Booking</a>
-</nav>
+          <a href="/music">Music</a>
+          <a href="/bio">Bio</a>
+          <a href="/discography">Discography</a>
+          <a href="/media">Media</a>
+          <a href="/press-kit">Press Kit</a>
+          <a href="/sets">Sets</a>
+          <a href="/booking">Booking</a>
+        </nav>
       </header>
 
       <main>
@@ -354,9 +383,16 @@
           </p>
 
           <div class="actions">
-            <a class="button primary" href="/music">Listen</a>
+            <a class="button primary" href="/sets">Explore Sets</a>
             <a class="button" href="/booking">Book Itchy Lemon</a>
             <a class="button" href="/press-kit">Press Kit</a>
+          </div>
+
+          <div class="home-cta">
+            <strong>Listen. Feel. Book.</strong>
+            <p>
+              From melodic club journeys to guest mixes and selected electronic music events, Itchy Lemon is available for bookings, collaborations and curated appearances.
+            </p>
           </div>
 
           <div class="quick-links" aria-label="Featured artist links">
