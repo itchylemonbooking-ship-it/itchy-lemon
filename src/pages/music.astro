@@ -1,20 +1,17 @@
----
----
-
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta
       name="description"
-      content="Music by Itchy Lemon — DJ sets, original productions, releases and official links on Spotify, Beatport, Traxsource, SoundCloud and YouTube."
+      content="Music by Itchy Lemon — original productions, releases, remixes and official links on Spotify, Apple Music, Beatport, Traxsource, SoundCloud and YouTube."
     />
     <meta name="author" content="Itchy Lemon" />
     <meta name="theme-color" content="#07090c" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Music | Itchy Lemon</title>
     <link rel="icon" type="image/png" href="/favicon.png" />
-    <link rel="canonical" href="https://itchy-lemon.pages.dev/music" />
+    <link rel="canonical" href="https://itchy-lemon.pages.dev/music/" />
 
     <style>
       :root {
@@ -173,10 +170,83 @@
         font-size: 15px;
       }
 
+      .music-cta {
+        margin-top: 48px;
+        border: 1px solid var(--line);
+        border-radius: 28px;
+        background:
+          linear-gradient(135deg, rgba(216, 255, 62, 0.1), transparent),
+          rgba(16, 20, 27, 0.72);
+        padding: 30px;
+        backdrop-filter: blur(12px);
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 28px;
+        align-items: center;
+      }
+
+      .music-cta p {
+        margin: 0;
+        max-width: 720px;
+        color: var(--muted);
+        font-size: 17px;
+        line-height: 1.7;
+      }
+
+      .music-cta strong {
+        color: var(--text);
+      }
+
+      .cta-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        justify-content: flex-end;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 48px;
+        padding: 0 22px;
+        border-radius: 999px;
+        border: 1px solid var(--line);
+        color: var(--text);
+        font-size: 13px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        white-space: nowrap;
+        transition:
+          transform 0.2s ease,
+          background 0.2s ease,
+          border-color 0.2s ease;
+      }
+
+      .button.primary {
+        background: var(--acid);
+        color: #050608;
+        border-color: var(--acid);
+      }
+
+      .button:hover {
+        transform: translateY(-2px);
+        border-color: var(--acid);
+      }
+
       .link-list {
         display: grid;
         gap: 14px;
         margin-top: 72px;
+      }
+
+      .section-label {
+        color: var(--acid);
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        font-size: 13px;
+        margin: 0 0 8px;
       }
 
       .music-link {
@@ -218,8 +288,13 @@
       }
 
       @media (max-width: 900px) {
-        .music-grid {
+        .music-grid,
+        .music-cta {
           grid-template-columns: 1fr;
+        }
+
+        .cta-actions {
+          justify-content: flex-start;
         }
       }
 
@@ -243,6 +318,10 @@
           gap: 8px;
         }
 
+        .button {
+          width: 100%;
+        }
+
         footer {
           flex-direction: column;
         }
@@ -259,58 +338,71 @@
         </a>
 
         <nav>
-  <a class="active" href="/music">Music</a>
-  <a href="/bio">Bio</a>
-  <a href="/discography">Discography</a>
-  <a href="/media">Media</a>
-  <a href="/press-kit">Press Kit</a>
-  <a href="/sets">Sets</a>
-  <a href="/booking">Booking</a>
-</nav>
+          <a class="active" href="/music">Music</a>
+          <a href="/bio">Bio</a>
+          <a href="/discography">Discography</a>
+          <a href="/media">Media</a>
+          <a href="/press-kit">Press Kit</a>
+          <a href="/sets">Sets</a>
+          <a href="/booking">Booking</a>
+        </nav>
       </header>
 
       <main>
-        <p class="eyebrow">Music & Sets</p>
+        <p class="eyebrow">Original Music & Releases</p>
 
         <h1>Music</h1>
 
         <p class="lead">
-          Selected DJ sets, original productions, releases and official artist links from Itchy Lemon.
+          Original productions, releases, remixes and official music platforms from Itchy Lemon.
         </p>
 
         <section class="music-grid">
           <article class="card">
             <div>
-              <p class="card-label">DJ Sets</p>
-              <h2>Curated club journeys</h2>
-              <p>
-                Melodic, deep and progressive selections built for atmosphere, tension and dancefloor movement.
-              </p>
-            </div>
-          </article>
-
-          <article class="card">
-            <div>
               <p class="card-label">Originals</p>
               <h2>Electronic productions</h2>
               <p>
-                Original tracks shaped around groove, emotion, repetition and underground club dynamics.
+                Tracks shaped around groove, emotional progression, repetition and underground club dynamics.
               </p>
             </div>
           </article>
 
           <article class="card">
             <div>
-              <p class="card-label">Archive</p>
-              <h2>Selected releases</h2>
+              <p class="card-label">Releases</p>
+              <h2>Catalogue archive</h2>
               <p>
-                A curated archive of previous releases, remixes and collaborations from the Itchy Lemon catalogue.
+                A selected archive of original releases, remixes and collaborations from the Itchy Lemon catalogue.
+              </p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div>
+              <p class="card-label">Platforms</p>
+              <h2>Official links</h2>
+              <p>
+                Listen, verify and explore the project through official music platforms and artist pages.
               </p>
             </div>
           </article>
         </section>
 
-        <section class="link-list" aria-label="Music platforms and social links">
+        <section class="music-cta" aria-label="DJ sets and booking">
+          <p>
+            Looking for <strong>DJ sets, mixes or booking availability?</strong> Explore selected Itchy Lemon sets or send a booking request directly.
+          </p>
+
+          <div class="cta-actions">
+            <a class="button primary" href="/sets">Explore Sets</a>
+            <a class="button" href="/booking">Request Booking</a>
+          </div>
+        </section>
+
+        <section class="link-list" aria-label="Music platforms and official links">
+          <p class="section-label">Official Music Links</p>
+
           <a class="music-link" href="https://open.spotify.com/artist/5IfFyzIiz1iBO7RZUJyFen" target="_blank" rel="noreferrer">
             <strong>Spotify</strong>
             <span>Listen</span>
@@ -341,36 +433,21 @@
             <span>Watch</span>
           </a>
 
-          <a class="music-link" href="https://www.instagram.com/itchy_lemon/" target="_blank" rel="noreferrer">
-            <strong>Instagram</strong>
-            <span>Follow</span>
+          <a class="music-link" href="/discography">
+            <strong>Discography</strong>
+            <span>View</span>
           </a>
 
-          <a class="music-link" href="https://www.facebook.com/ItchyLemondjproducer" target="_blank" rel="noreferrer">
-            <strong>Facebook</strong>
-            <span>Follow</span>
-          </a>
-
-          <a class="music-link" href="https://www.linkedin.com/in/itchy-lemon" target="_blank" rel="noreferrer">
-            <strong>LinkedIn</strong>
-            <span>Connect</span>
-          </a>
-
-          <a class="music-link" href="https://x.com/ItchyLemon" target="_blank" rel="noreferrer">
-            <strong>X</strong>
-            <span>Follow</span>
-          </a>
-
-          <a class="music-link" href="mailto:itchylemon.booking@gmail.com">
-            <strong>Booking Email</strong>
-            <span>Contact</span>
+          <a class="music-link" href="/press-kit">
+            <strong>Press Kit</strong>
+            <span>EPK</span>
           </a>
         </section>
       </main>
 
       <footer>
         <span>© 2026 Itchy Lemon. All rights reserved.</span>
-        <span>DJ sets · Originals · Releases · Social links · Booking</span>
+        <span>Originals · Releases · Remixes · Music platforms · Booking</span>
       </footer>
     </div>
   </body>
