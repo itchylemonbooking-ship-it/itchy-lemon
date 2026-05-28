@@ -2,44 +2,26 @@
 const sets = [
   {
     title: "ITCHY LEMON Fresh Beats #41",
-    subtitle: "Jan 2016",
-    duration: "1:01:48",
-    tags: "House · Deep House · Tech House · Mix Series",
     url: "https://www.mixcloud.com/ITCHY_LEMON_DjProducer/itchy-lemon-fresh-beats-41-jan-2016/",
   },
   {
     title: "ITCHY LEMON Fresh Beats #40",
-    subtitle: "Orange Room Porto · Studio Series Episode 108 · Dec 2015",
-    duration: "1:37:20",
-    tags: "House · Deep House · Tech House · Mix Series",
     url: "https://www.mixcloud.com/ITCHY_LEMON_DjProducer/itchy-lemon-fresh-beats-40-rec-live-at-orange-room-porto-studio-series-episode-108-dec-2015/",
   },
   {
     title: "ITCHY LEMON Fresh Beats #39",
-    subtitle: "DJ LIVE TV · Griffon's Club · Nov 2015",
-    duration: "1:02:35",
-    tags: "House Music · Deep House · Tech House · Mix Series",
     url: "https://www.mixcloud.com/ITCHY_LEMON_DjProducer/itchy-lemon-fresh-beats-39-rec-live-at-dj-live-tv-griffons-club-nov-2015/",
   },
   {
     title: "ITCHY LEMON Fresh Beats #38",
-    subtitle: "House Station Radio · Oct 2015",
-    duration: "55:41",
-    tags: "House · Deep House · Tech House · Mix Series",
     url: "https://www.mixcloud.com/ITCHY_LEMON_DjProducer/itchy-lemon-fresh-beats-38-oct-2015/",
   },
   {
     title: "ITCHY LEMON Fresh Beats #37",
-    subtitle: "Sep 2015",
-    duration: "1:02:19",
-    tags: "House · Deep House · Tech House · Mix Series",
     url: "https://www.mixcloud.com/ITCHY_LEMON_DjProducer/itchy-lemon-fresh-beats-37-sep-2015/",
   },
   {
     title: "ITCHY LEMON Fresh Beats #36",
-    subtitle: "Ago 2015",
-    duration: "1:00:11",
-    tags: "House · Deep House · Tech House · Mix Series",
     url: "https://www.mixcloud.com/ITCHY_LEMON_DjProducer/itchy-lemon-fresh-beats-36-ago-2015/",
   },
 ];
@@ -229,49 +211,7 @@ const getEmbedUrl = (url) =>
         overflow: hidden;
         backdrop-filter: blur(12px);
         box-shadow: 0 24px 80px rgba(0, 0, 0, 0.24);
-      }
-
-      .set-header {
-        display: grid;
-        grid-template-columns: 1fr auto;
-        gap: 20px;
-        align-items: start;
-        padding: 24px 24px 18px;
-      }
-
-      .set-title {
-        margin: 0;
-        font-size: clamp(28px, 4vw, 42px);
-        line-height: 0.95;
-        letter-spacing: -0.05em;
-        text-transform: uppercase;
-      }
-
-      .set-subtitle {
-        margin: 14px 0 0;
-        color: var(--muted);
-        font-size: 15px;
-        line-height: 1.6;
-      }
-
-      .set-meta {
-        text-align: right;
-        color: var(--muted);
-        font-size: 13px;
-        line-height: 1.6;
-        white-space: nowrap;
-      }
-
-      .set-meta span {
-        display: block;
-        color: var(--acid);
-        font-size: 20px;
-        font-weight: 700;
-        letter-spacing: -0.04em;
-      }
-
-      .mixcloud-embed {
-        padding: 0 24px 24px;
+        padding: 24px;
       }
 
       .mixcloud-embed iframe {
@@ -281,21 +221,6 @@ const getEmbedUrl = (url) =>
         border: 0;
         border-radius: 18px;
         background: #050608;
-      }
-
-      .set-actions {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 18px;
-        border-top: 1px solid var(--line);
-        padding: 18px 24px 22px;
-      }
-
-      .set-tags {
-        color: var(--muted);
-        font-size: 13px;
-        line-height: 1.5;
       }
 
       .note {
@@ -328,19 +253,6 @@ const getEmbedUrl = (url) =>
         .profile-card {
           min-width: 0;
         }
-
-        .set-header {
-          grid-template-columns: 1fr;
-        }
-
-        .set-meta {
-          text-align: left;
-        }
-
-        .set-actions {
-          align-items: flex-start;
-          flex-direction: column;
-        }
       }
 
       @media (max-width: 860px) {
@@ -369,11 +281,8 @@ const getEmbedUrl = (url) =>
           border-radius: 24px;
         }
 
-        .set-header,
-        .mixcloud-embed,
-        .set-actions {
-          padding-left: 18px;
-          padding-right: 18px;
+        .set-card {
+          padding: 18px;
         }
 
         footer {
@@ -423,22 +332,11 @@ const getEmbedUrl = (url) =>
         <section class="sets-list" aria-label="Itchy Lemon DJ sets">
           {sets.map((set, index) => (
             <article class="set-card">
-              <div class="set-header">
-                <div>
-                  <h2 class="set-title">{set.title}</h2>
-                  <p class="set-subtitle">{set.subtitle}</p>
-                </div>
-
-                <div class="set-meta">
-                  Duration
-                  <span>{set.duration}</span>
-                </div>
-              </div>
-
               <div class="mixcloud-embed">
                 <iframe
                   id={`mixcloud-player-${index}`}
                   data-mixcloud-player
+                  title={set.title}
                   width="100%"
                   height="120"
                   src={getEmbedUrl(set.url)}
@@ -446,10 +344,6 @@ const getEmbedUrl = (url) =>
                   allow="encrypted-media; fullscreen; web-share"
                   loading="lazy"
                 ></iframe>
-              </div>
-
-              <div class="set-actions">
-                <div class="set-tags">{set.tags}</div>
               </div>
             </article>
           ))}
