@@ -223,6 +223,70 @@ const getEmbedUrl = (url) =>
         background: #050608;
       }
 
+      .booking-cta {
+        margin-top: 64px;
+        border: 1px solid var(--line);
+        border-radius: 28px;
+        background:
+          linear-gradient(135deg, rgba(216, 255, 62, 0.1), transparent),
+          rgba(16, 20, 27, 0.72);
+        padding: 32px;
+        backdrop-filter: blur(12px);
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 28px;
+        align-items: center;
+      }
+
+      .booking-cta p {
+        margin: 0 0 14px;
+        color: var(--acid);
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        font-size: 12px;
+      }
+
+      .booking-cta h2 {
+        margin: 0;
+        font-size: clamp(32px, 5vw, 56px);
+        line-height: 0.95;
+        letter-spacing: -0.06em;
+        text-transform: uppercase;
+      }
+
+      .booking-cta .cta-copy {
+        margin-top: 18px;
+        max-width: 680px;
+        color: var(--muted);
+        font-size: 17px;
+        line-height: 1.7;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 48px;
+        padding: 0 22px;
+        border-radius: 999px;
+        border: 1px solid var(--acid);
+        background: var(--acid);
+        color: #050608;
+        font-size: 13px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        white-space: nowrap;
+        transition:
+          transform 0.2s ease,
+          background 0.2s ease,
+          border-color 0.2s ease;
+      }
+
+      .button:hover {
+        transform: translateY(-2px);
+      }
+
       .note {
         margin-top: 48px;
         border-left: 2px solid var(--acid);
@@ -246,7 +310,8 @@ const getEmbedUrl = (url) =>
       }
 
       @media (max-width: 900px) {
-        .sets-intro {
+        .sets-intro,
+        .booking-cta {
           grid-template-columns: 1fr;
         }
 
@@ -277,11 +342,13 @@ const getEmbedUrl = (url) =>
         }
 
         .set-card,
-        .profile-card {
+        .profile-card,
+        .booking-cta {
           border-radius: 24px;
         }
 
-        .set-card {
+        .set-card,
+        .booking-cta {
           padding: 18px;
         }
 
@@ -347,6 +414,20 @@ const getEmbedUrl = (url) =>
               </div>
             </article>
           ))}
+        </section>
+
+        <section class="booking-cta" aria-label="Book Itchy Lemon">
+          <div>
+            <p>Like the sound?</p>
+            <h2>Book Itchy Lemon</h2>
+            <div class="cta-copy">
+              Available for club DJ sets, guest mixes, electronic music events and selected collaborations.
+            </div>
+          </div>
+
+          <a class="button" href="/booking">
+            Request Booking
+          </a>
         </section>
 
         <p class="note">
