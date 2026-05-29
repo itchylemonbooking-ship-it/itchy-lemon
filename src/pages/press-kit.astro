@@ -915,6 +915,7 @@
             class="button primary"
             href="/downloads/Itchy_Lemon_EPK_2026.pdf"
             download="Itchy_Lemon_EPK_2026.pdf"
+            data-download-epk-file
           >
             Download EPK
           </a>
@@ -935,6 +936,7 @@
       const epkModalTriggers = document.querySelectorAll("[data-open-epk-modal]");
       const epkModalClose = document.querySelector("[data-close-epk-modal]");
       const epkDownloadConfirmation = document.querySelector("[data-epk-download-confirmation]");
+      const epkDownloadButton = document.querySelector("[data-download-epk-file]");
 
       const openEpkModal = () => {
         epkModal.classList.add("is-open");
@@ -977,6 +979,12 @@
         ) {
           epkDownloadConfirmation?.classList.add("is-visible");
         }
+      });
+
+      epkDownloadButton?.addEventListener("click", () => {
+        setTimeout(() => {
+          closeEpkModal();
+        }, 300);
       });
     </script>
   </body>
