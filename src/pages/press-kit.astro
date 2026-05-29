@@ -182,7 +182,7 @@
         text-transform: uppercase;
       }
 
-      .hubspot-placeholder {
+      .hubspot-form-card {
         border: 1px dashed rgba(216, 255, 62, 0.38);
         border-radius: 24px;
         background: rgba(7, 9, 12, 0.42);
@@ -193,9 +193,11 @@
         justify-content: center;
       }
 
-      .hubspot-placeholder p {
+      .hubspot-form-card p {
         font-size: 15px;
-        margin-bottom: 18px;
+        margin: 0 0 18px;
+        color: var(--muted);
+        line-height: 1.7;
       }
 
       .placeholder-label {
@@ -445,16 +447,16 @@
         max-width: 620px;
       }
 
-      .epk-modal-placeholder {
+      .epk-modal-form {
         margin-top: 28px;
-        border: 1px dashed rgba(216, 255, 62, 0.38);
+        border: 1px solid rgba(216, 255, 62, 0.22);
         border-radius: 24px;
         background: rgba(16, 20, 27, 0.72);
         padding: 22px;
       }
 
-      .epk-modal-placeholder strong {
-        color: var(--text);
+      .epk-modal-form iframe {
+        width: 100%;
       }
 
       .epk-modal-actions {
@@ -462,6 +464,10 @@
         flex-wrap: wrap;
         gap: 12px;
         margin-top: 28px;
+      }
+
+      .epk-modal-actions-secondary {
+        justify-content: flex-start;
       }
 
       .epk-modal-close {
@@ -611,30 +617,26 @@
             </p>
 
             <p class="note">
-              In the next stage, this area will be connected to HubSpot so EPK requests can enter the CRM for booking follow-up, email marketing and future contact.
+              Fill in the EPK request form and access the official press kit. Your contact will be stored in HubSpot for booking, press and collaboration follow-up.
             </p>
 
             <div class="download-actions">
-              <a class="button primary" href="/epk-download" data-open-epk-modal>
+              <button class="button primary" type="button" data-open-epk-modal>
                 Download EPK
-              </a>
+              </button>
             </div>
           </div>
 
-          <div class="hubspot-placeholder">
-            <div class="placeholder-label">HubSpot Form Placeholder</div>
+          <div class="hubspot-form-card">
+            <div class="placeholder-label">Request the Official EPK</div>
 
             <p>
-              Future form fields: name, email, company / venue, role, city / country, interest and marketing consent.
+              Fill in your details to access the official Itchy Lemon EPK. Your request will be stored in HubSpot for booking, press and collaboration follow-up.
             </p>
 
-            <p>
-              After submission, the visitor should be redirected to <strong>/epk-download</strong>.
-            </p>
-
-            <a class="button" href="/epk-download" data-open-epk-modal>
-              Open Download Form
-            </a>
+            <button class="button primary" type="button" data-open-epk-modal>
+              Open EPK Form
+            </button>
           </div>
         </section>
 
@@ -819,7 +821,7 @@
             </ul>
 
             <p class="note">
-              Next step: connect the EPK download flow to HubSpot and organise official images, logo files and selected artwork.
+              Next step: organise official images, logo files and selected artwork for promoters, curators and press contacts.
             </p>
           </article>
 
@@ -865,29 +867,24 @@
           Get the official Itchy Lemon EPK with artist bio, highlights, selected gigs, labels, music links and booking contact.
         </p>
 
-        <div class="epk-modal-placeholder">
-          <p class="placeholder-label">HubSpot Form Placeholder</p>
-
-          <p>
-            Future form fields: <strong>name, email, company / venue, role, city / country, interest and marketing consent.</strong>
-          </p>
-
-          <p>
-            After submission, the visitor can access the EPK download and the contact will enter HubSpot CRM.
-          </p>
+        <div class="epk-modal-form">
+          <div
+            class="hs-form-frame"
+            data-region="eu1"
+            data-form-id="c48c62f5-f0b6-4153-8aaa-b4f9f4b952ab"
+            data-portal-id="148590426"
+          ></div>
         </div>
 
-        <div class="epk-modal-actions">
-          <a class="button primary" href="/downloads/Itchy_Lemon_EPK_2026.pdf" download>
-            Download EPK
-          </a>
-
+        <div class="epk-modal-actions epk-modal-actions-secondary">
           <a class="button" href="/booking">
             Request Booking
           </a>
         </div>
       </div>
     </div>
+
+    <script src="https://js-eu1.hsforms.net/forms/embed/148590426.js" defer></script>
 
     <script>
       const epkModal = document.querySelector("[data-epk-modal]");
