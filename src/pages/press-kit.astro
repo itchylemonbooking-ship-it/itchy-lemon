@@ -222,26 +222,9 @@
         border-color: var(--acid);
       }
 
-      .button.secondary-site {
-        min-height: 48px;
-        padding: 0 24px;
-        border: 1px solid rgba(244, 244, 240, 0.18);
-        border-radius: 999px;
-        background: transparent;
-        color: var(--text);
-        font-size: 13px;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 0.18em;
-      }
-
       .button:hover {
         transform: translateY(-2px);
         border-color: var(--acid);
-      }
-
-      .button.secondary-site:hover {
-        color: var(--acid);
       }
 
       .kit-grid {
@@ -407,7 +390,7 @@
         border-radius: 32px;
         background:
           radial-gradient(circle at top right, rgba(216, 255, 62, 0.14), transparent 34%),
-          rgba(7, 9, 12, 0.88);
+          rgba(7, 9, 12, 0.96);
         padding: clamp(24px, 5vw, 42px);
         box-shadow: 0 24px 90px rgba(0, 0, 0, 0.6);
         backdrop-filter: blur(16px);
@@ -439,9 +422,9 @@
 
       .epk-modal-form {
         margin-top: 28px;
-        border: 1px solid rgba(216, 255, 62, 0.28);
+        border: 1px solid rgba(216, 255, 62, 0.22);
         border-radius: 24px;
-        background: rgba(244, 244, 240, 0.9);
+        background: rgba(16, 20, 27, 0.72);
         padding: 22px;
         backdrop-filter: blur(10px);
       }
@@ -449,6 +432,56 @@
       .epk-modal-form iframe {
         width: 100%;
         background: transparent;
+      }
+
+      /* Best effort styling para o formulário HubSpot */
+      .epk-modal-form .hs-form,
+      .epk-modal-form .hs-form fieldset,
+      .epk-modal-form .hs-form label,
+      .epk-modal-form .hs-form legend,
+      .epk-modal-form .hs-form p,
+      .epk-modal-form .hs-form span,
+      .epk-modal-form .hs-form div,
+      .epk-modal-form .hs-form .hs-richtext,
+      .epk-modal-form .hs-form .legal-consent-container,
+      .epk-modal-form .hs-form .hs-form-field label,
+      .epk-modal-form .hs-form .hs-field-desc,
+      .epk-modal-form .hs-form .hs-error-msgs,
+      .epk-modal-form .hs-form .hs-main-font-element {
+        color: rgba(244, 244, 240, 0.82) !important;
+      }
+
+      .epk-modal-form .hs-form input[type="text"],
+      .epk-modal-form .hs-form input[type="email"],
+      .epk-modal-form .hs-form input[type="tel"],
+      .epk-modal-form .hs-form input[type="number"],
+      .epk-modal-form .hs-form select,
+      .epk-modal-form .hs-form textarea {
+        background: rgba(255, 255, 255, 0.06) !important;
+        border: 1px solid rgba(244, 244, 240, 0.16) !important;
+        color: #f4f4f0 !important;
+        border-radius: 8px !important;
+      }
+
+      .epk-modal-form .hs-form input::placeholder,
+      .epk-modal-form .hs-form textarea::placeholder {
+        color: rgba(244, 244, 240, 0.5) !important;
+      }
+
+      .epk-modal-form .hs-form input:focus,
+      .epk-modal-form .hs-form select:focus,
+      .epk-modal-form .hs-form textarea:focus {
+        border-color: rgba(216, 255, 62, 0.42) !important;
+        outline: none !important;
+        box-shadow: 0 0 0 1px rgba(216, 255, 62, 0.18) !important;
+      }
+
+      .epk-modal-form .hs-button,
+      .epk-modal-form input[type="submit"] {
+        background: #ff8a6b !important;
+        border: 1px solid #ff8a6b !important;
+        color: #ffffff !important;
+        border-radius: 8px !important;
       }
 
       .epk-modal-actions {
@@ -854,7 +887,7 @@
         </div>
 
         <div class="epk-modal-actions epk-modal-actions-secondary">
-          <a class="button secondary-site" href="/booking">
+          <a class="button primary" href="/booking">
             Request Booking
           </a>
         </div>
