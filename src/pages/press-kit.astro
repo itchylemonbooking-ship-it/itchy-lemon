@@ -434,6 +434,26 @@
         background: transparent;
       }
 
+      .epk-download-confirmation {
+        display: none;
+        margin-top: 22px;
+        padding: 22px;
+        border: 1px solid rgba(216, 255, 62, 0.24);
+        border-radius: 22px;
+        background: rgba(216, 255, 62, 0.08);
+      }
+
+      .epk-download-confirmation.is-visible {
+        display: block;
+      }
+
+      .epk-download-confirmation p {
+        margin: 0 0 18px;
+        color: rgba(244, 244, 240, 0.82);
+        font-size: 15px;
+        line-height: 1.6;
+      }
+
       /* Best effort styling para o formulário HubSpot */
       .epk-modal-form .hs-form,
       .epk-modal-form .hs-form fieldset,
@@ -886,6 +906,20 @@
           ></div>
         </div>
 
+        <div class="epk-download-confirmation" data-epk-download-confirmation>
+          <p>
+            Thank you. You can now download the official Itchy Lemon EPK.
+          </p>
+
+          <a
+            class="button primary"
+            href="/downloads/Itchy_Lemon_EPK_2026.pdf"
+            download="Itchy_Lemon_EPK_2026.pdf"
+          >
+            Download EPK
+          </a>
+        </div>
+
         <div class="epk-modal-actions epk-modal-actions-secondary">
           <a class="button primary" href="/booking">
             Request Booking
@@ -900,6 +934,7 @@
       const epkModal = document.querySelector("[data-epk-modal]");
       const epkModalTriggers = document.querySelectorAll("[data-open-epk-modal]");
       const epkModalClose = document.querySelector("[data-close-epk-modal]");
+      const epkDownloadConfirmation = document.querySelector("[data-epk-download-confirmation]");
 
       const openEpkModal = () => {
         epkModal.classList.add("is-open");
@@ -931,6 +966,16 @@
       document.addEventListener("keydown", (event) => {
         if (event.key === "Escape" && epkModal.classList.contains("is-open")) {
           closeEpkModal();
+        }
+      });
+
+      window.addEventListener("message", (event) => {
+        if (
+          event.data &&
+          event.data.type === "hsFormCallback" &&
+          event.data.eventName === "onFormSubmitted"
+        ) {
+          epkDownloadConfirmation?.classList.add("is-visible");
         }
       });
     </script>
