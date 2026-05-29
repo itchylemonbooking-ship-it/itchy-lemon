@@ -212,7 +212,8 @@
         transition:
           transform 0.2s ease,
           background 0.2s ease,
-          border-color 0.2s ease;
+          border-color 0.2s ease,
+          color 0.2s ease;
       }
 
       .button.primary {
@@ -221,9 +222,26 @@
         border-color: var(--acid);
       }
 
+      .button.secondary-site {
+        min-height: 48px;
+        padding: 0 24px;
+        border: 1px solid rgba(244, 244, 240, 0.18);
+        border-radius: 999px;
+        background: transparent;
+        color: var(--text);
+        font-size: 13px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+      }
+
       .button:hover {
         transform: translateY(-2px);
         border-color: var(--acid);
+      }
+
+      .button.secondary-site:hover {
+        color: var(--acid);
       }
 
       .kit-grid {
@@ -372,8 +390,8 @@
         align-items: center;
         justify-content: center;
         padding: 28px;
-        background: rgba(0, 0, 0, 0.82);
-        backdrop-filter: blur(10px);
+        background: rgba(0, 0, 0, 0.72);
+        backdrop-filter: blur(12px);
       }
 
       .epk-modal.is-open {
@@ -385,13 +403,14 @@
         width: min(760px, 96vw);
         max-height: 92vh;
         overflow-y: auto;
-        border: 1px solid var(--line);
+        border: 1px solid rgba(216, 255, 62, 0.18);
         border-radius: 32px;
         background:
-          radial-gradient(circle at top right, rgba(216, 255, 62, 0.12), transparent 32%),
-          rgba(7, 9, 12, 0.96);
+          radial-gradient(circle at top right, rgba(216, 255, 62, 0.14), transparent 34%),
+          rgba(7, 9, 12, 0.88);
         padding: clamp(24px, 5vw, 42px);
         box-shadow: 0 24px 90px rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(16px);
       }
 
       .epk-modal-label {
@@ -412,7 +431,7 @@
 
       .epk-modal-copy {
         margin: 22px 0 0;
-        color: var(--muted);
+        color: rgba(244, 244, 240, 0.76);
         font-size: 17px;
         line-height: 1.7;
         max-width: 620px;
@@ -420,14 +439,16 @@
 
       .epk-modal-form {
         margin-top: 28px;
-        border: 1px solid rgba(216, 255, 62, 0.22);
+        border: 1px solid rgba(216, 255, 62, 0.28);
         border-radius: 24px;
-        background: rgba(16, 20, 27, 0.72);
+        background: rgba(244, 244, 240, 0.9);
         padding: 22px;
+        backdrop-filter: blur(10px);
       }
 
       .epk-modal-form iframe {
         width: 100%;
+        background: transparent;
       }
 
       .epk-modal-actions {
@@ -447,7 +468,7 @@
         right: 18px;
         width: 42px;
         height: 42px;
-        border: 1px solid var(--line);
+        border: 1px solid rgba(244, 244, 240, 0.14);
         border-radius: 999px;
         background: rgba(16, 20, 27, 0.9);
         color: var(--acid);
@@ -833,7 +854,7 @@
         </div>
 
         <div class="epk-modal-actions epk-modal-actions-secondary">
-          <a class="button" href="/booking">
+          <a class="button secondary-site" href="/booking">
             Request Booking
           </a>
         </div>
