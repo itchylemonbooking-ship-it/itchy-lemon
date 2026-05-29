@@ -160,10 +160,7 @@
       }
 
       .download-epk {
-        display: grid;
-        grid-template-columns: 1fr 0.85fr;
-        gap: 28px;
-        align-items: stretch;
+        display: block;
       }
 
       .download-epk h2 {
@@ -182,30 +179,11 @@
         text-transform: uppercase;
       }
 
-      .hubspot-form-card {
-        border: 1px dashed rgba(216, 255, 62, 0.38);
-        border-radius: 24px;
-        background: rgba(7, 9, 12, 0.42);
-        padding: 24px;
-        min-height: 260px;
+      .download-actions {
         display: flex;
-        flex-direction: column;
-        justify-content: center;
-      }
-
-      .hubspot-form-card p {
-        font-size: 15px;
-        margin: 0 0 18px;
-        color: var(--muted);
-        line-height: 1.7;
-      }
-
-      .placeholder-label {
-        color: var(--acid);
-        text-transform: uppercase;
-        letter-spacing: 0.18em;
-        font-size: 12px;
-        margin-bottom: 14px;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 28px;
       }
 
       .cta-actions {
@@ -213,13 +191,6 @@
         flex-wrap: wrap;
         gap: 12px;
         justify-content: flex-end;
-      }
-
-      .download-actions {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 12px;
-        margin-top: 28px;
       }
 
       .button {
@@ -502,8 +473,7 @@
       }
 
       @media (max-width: 900px) {
-        .press-cta,
-        .download-epk {
+        .press-cta {
           grid-template-columns: 1fr;
         }
 
@@ -605,37 +575,23 @@
         </section>
 
         <section class="download-epk" aria-label="Download official EPK">
-          <div>
-            <h2>Download Official EPK</h2>
+          <h2>Download Official EPK</h2>
 
-            <div class="download-title">
-              Get the<br />EPK
-            </div>
-
-            <p>
-              Download the official <strong>Itchy Lemon EPK</strong> with artist bio, project highlights, selected gigs, labels, official links and booking contact.
-            </p>
-
-            <p class="note">
-              Fill in the EPK request form and access the official press kit. Your contact will be stored in HubSpot for booking, press and collaboration follow-up.
-            </p>
-
-            <div class="download-actions">
-              <button class="button primary" type="button" data-open-epk-modal>
-                Download EPK
-              </button>
-            </div>
+          <div class="download-title">
+            Get the<br />EPK
           </div>
 
-          <div class="hubspot-form-card">
-            <div class="placeholder-label">Request the Official EPK</div>
+          <p>
+            Download the official <strong>Itchy Lemon EPK</strong> with artist bio, project highlights, selected gigs, labels, official links and booking contact.
+          </p>
 
-            <p>
-              Fill in your details to access the official Itchy Lemon EPK. Your request will be stored in HubSpot for booking, press and collaboration follow-up.
-            </p>
+          <p class="note">
+            Fill in the EPK request form and access the official press kit. Your contact will be stored in HubSpot for booking, press and collaboration follow-up.
+          </p>
 
+          <div class="download-actions">
             <button class="button primary" type="button" data-open-epk-modal>
-              Open EPK Form
+              Download EPK
             </button>
           </div>
         </section>
