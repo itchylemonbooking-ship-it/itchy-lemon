@@ -10,7 +10,7 @@ const sets = [
   },
   {
     title: "ITCHY LEMON Fresh Beats #39",
-    url: "https://www.mixcloud.com/ITCHY_LEEMON_DjProducer/itchy-lemon-fresh-beats-39-rec-live-at-dj-live-tv-griffons-club-nov-2015/",
+    url: "https://www.mixcloud.com/ITCHY_LEMON_DjProducer/itchy-lemon-fresh-beats-39-rec-live-at-dj-live-tv-griffons-club-nov-2015/",
   },
   {
     title: "ITCHY LEMON Fresh Beats #38",
@@ -98,7 +98,7 @@ const featuredSet = enhancedSets[0];
 
       .page {
         min-height: 100vh;
-        padding: 32px 32px 190px;
+        padding: 32px 32px 150px;
       }
 
       header {
@@ -370,30 +370,30 @@ const featuredSet = enhancedSets[0];
       .footer-player {
         position: fixed;
         left: 50%;
-        bottom: 18px;
+        bottom: 14px;
         z-index: 100;
-        width: min(1080px, calc(100% - 36px));
+        width: min(1180px, calc(100% - 28px));
         transform: translateX(-50%);
-        border: 1px solid rgba(216, 255, 62, 0.24);
-        border-radius: 24px;
+        border: 1px solid rgba(216, 255, 62, 0.22);
+        border-radius: 22px;
         background:
-          linear-gradient(135deg, rgba(216, 255, 62, 0.08), transparent),
-          rgba(7, 9, 12, 0.94);
-        box-shadow: 0 20px 80px rgba(0, 0, 0, 0.55);
+          linear-gradient(135deg, rgba(216, 255, 62, 0.07), transparent),
+          rgba(7, 9, 12, 0.96);
+        box-shadow: 0 18px 70px rgba(0, 0, 0, 0.55);
         backdrop-filter: blur(18px);
-        padding: 14px;
+        padding: 12px;
       }
 
       .footer-player-inner {
         display: grid;
-        grid-template-columns: auto minmax(160px, 240px) 1fr auto;
-        gap: 14px;
+        grid-template-columns: 42px minmax(160px, 240px) 1fr 42px;
+        gap: 12px;
         align-items: center;
       }
 
       .player-control {
-        width: 44px;
-        height: 44px;
+        width: 42px;
+        height: 42px;
         border: 1px solid var(--line);
         border-radius: 999px;
         background: rgba(216, 255, 62, 0.06);
@@ -449,30 +449,6 @@ const featuredSet = enhancedSets[0];
         background: #050608;
       }
 
-      .player-timeline {
-        display: grid;
-        grid-template-columns: 44px 1fr 44px;
-        gap: 10px;
-        align-items: center;
-        margin-top: 10px;
-      }
-
-      .player-time {
-        color: var(--muted);
-        font-size: 11px;
-        font-variant-numeric: tabular-nums;
-      }
-
-      .player-time:last-child {
-        text-align: right;
-      }
-
-      .timeline-range {
-        width: 100%;
-        accent-color: var(--acid);
-        cursor: pointer;
-      }
-
       @media (max-width: 900px) {
         .sets-intro,
         .booking-cta {
@@ -488,8 +464,35 @@ const featuredSet = enhancedSets[0];
         }
 
         .footer-player-inner {
-          grid-template-columns: auto 1fr auto;
+          grid-template-columns: 1fr;
           gap: 10px;
+        }
+
+        .footer-player-info {
+          order: 1;
+        }
+
+        .footer-player-main {
+          order: 2;
+        }
+
+        .player-control {
+          order: 3;
+          width: 100%;
+          height: 42px;
+        }
+
+        .player-control[data-player-previous] {
+          grid-column: auto;
+        }
+
+        .player-control[data-player-next] {
+          grid-column: auto;
+        }
+
+        .footer-player-inner {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
         }
 
         .footer-player-info,
@@ -500,7 +503,7 @@ const featuredSet = enhancedSets[0];
 
       @media (max-width: 860px) {
         .page {
-          padding: 22px 22px 270px;
+          padding: 22px 22px 230px;
         }
 
         header {
@@ -543,14 +546,19 @@ const featuredSet = enhancedSets[0];
         }
 
         .footer-player {
-          bottom: 12px;
-          width: calc(100% - 24px);
-          border-radius: 20px;
-          padding: 12px;
+          bottom: 10px;
+          width: calc(100% - 20px);
+          border-radius: 18px;
+          padding: 10px;
         }
 
         .footer-player-title {
           white-space: normal;
+        }
+
+        .footer-player iframe {
+          height: 60px;
+          border-radius: 12px;
         }
       }
     </style>
@@ -660,23 +668,6 @@ const featuredSet = enhancedSets[0];
             allow="encrypted-media; fullscreen; web-share"
             loading="lazy"
           ></iframe>
-
-          <div class="player-timeline" aria-label="Player timeline">
-            <span class="player-time" data-current-time>00:00</span>
-
-            <input
-              class="timeline-range"
-              type="range"
-              min="0"
-              max="100"
-              value="0"
-              step="1"
-              data-player-timeline
-              aria-label="Seek in current set"
-            />
-
-            <span class="player-time" data-duration>00:00</span>
-          </div>
         </div>
 
         <button class="player-control" type="button" data-player-next aria-label="Next set">
@@ -695,80 +686,10 @@ const featuredSet = enhancedSets[0];
       const setCards = document.querySelectorAll("[data-set-card]");
       const previousButton = document.querySelector("[data-player-previous]");
       const nextButton = document.querySelector("[data-player-next]");
-      const timelineRange = document.querySelector("[data-player-timeline]");
-      const currentTimeElement = document.querySelector("[data-current-time]");
-      const durationElement = document.querySelector("[data-duration]");
 
       let footerWidget = null;
       let currentSetIndex = 0;
       let widgetIsReady = false;
-      let timelineInterval = null;
-      let isSeeking = false;
-
-      const formatTime = (seconds) => {
-        if (!Number.isFinite(seconds) || seconds <= 0) {
-          return "00:00";
-        }
-
-        const roundedSeconds = Math.floor(seconds);
-        const minutes = Math.floor(roundedSeconds / 60);
-        const remainingSeconds = roundedSeconds % 60;
-
-        return `${String(minutes).padStart(2, "0")}:${String(remainingSeconds).padStart(2, "0")}`;
-      };
-
-      const resetTimeline = () => {
-        if (timelineRange) {
-          timelineRange.value = "0";
-        }
-
-        if (currentTimeElement) {
-          currentTimeElement.textContent = "00:00";
-        }
-
-        if (durationElement) {
-          durationElement.textContent = "00:00";
-        }
-      };
-
-      const updateTimeline = async () => {
-        if (!footerWidget || !widgetIsReady || isSeeking) {
-          return;
-        }
-
-        try {
-          const position = await footerWidget.getPosition();
-          const duration = await footerWidget.getDuration();
-
-          if (!Number.isFinite(position) || !Number.isFinite(duration) || duration <= 0) {
-            return;
-          }
-
-          if (timelineRange) {
-            timelineRange.max = String(Math.floor(duration));
-            timelineRange.value = String(Math.floor(position));
-          }
-
-          if (currentTimeElement) {
-            currentTimeElement.textContent = formatTime(position);
-          }
-
-          if (durationElement) {
-            durationElement.textContent = formatTime(duration);
-          }
-        } catch (error) {
-          // Mixcloud may delay timeline data depending on the widget state.
-        }
-      };
-
-      const startTimelinePolling = () => {
-        if (timelineInterval) {
-          window.clearInterval(timelineInterval);
-        }
-
-        updateTimeline();
-        timelineInterval = window.setInterval(updateTimeline, 1000);
-      };
 
       const updateActiveSet = (index) => {
         setCards.forEach((card) => {
@@ -793,14 +714,12 @@ const featuredSet = enhancedSets[0];
 
         currentSetIndex = index;
         updateActiveSet(index);
-        resetTimeline();
 
         if (!footerWidget || !widgetIsReady) {
           return;
         }
 
         footerWidget.load(sets[index].key, shouldPlay);
-        window.setTimeout(updateTimeline, 1200);
       };
 
       const playNextSet = () => {
@@ -822,14 +741,9 @@ const featuredSet = enhancedSets[0];
 
         footerWidget.ready.then(() => {
           widgetIsReady = true;
-          startTimelinePolling();
 
           footerWidget.events.ended.on(() => {
             playNextSet();
-          });
-
-          footerWidget.events.play.on(() => {
-            startTimelinePolling();
           });
         });
       };
@@ -843,34 +757,6 @@ const featuredSet = enhancedSets[0];
 
       previousButton?.addEventListener("click", playPreviousSet);
       nextButton?.addEventListener("click", playNextSet);
-
-      timelineRange?.addEventListener("input", () => {
-        isSeeking = true;
-
-        const value = Number(timelineRange.value);
-
-        if (currentTimeElement) {
-          currentTimeElement.textContent = formatTime(value);
-        }
-      });
-
-      timelineRange?.addEventListener("change", async () => {
-        if (!footerWidget || !widgetIsReady || !timelineRange) {
-          isSeeking = false;
-          return;
-        }
-
-        const value = Number(timelineRange.value);
-
-        try {
-          await footerWidget.seek(value);
-        } catch (error) {
-          // Some browser/widget states may block seeking.
-        } finally {
-          isSeeking = false;
-          updateTimeline();
-        }
-      });
 
       window.addEventListener("load", initialiseFooterPlayer);
     </script>
