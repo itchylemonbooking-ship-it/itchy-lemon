@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Booking | Itchy Lemon</title>
     <link rel="icon" type="image/png" href="/favicon.png" />
-    <link rel="canonical" href="https://itchy-lemon.pages.dev/booking/" />
+    <link rel="canonical" href="https://itchylemon.com/booking/" />
 
     <style>
       :root {
@@ -42,10 +42,7 @@
         text-decoration: none;
       }
 
-      button,
-      input,
-      select,
-      textarea {
+      button {
         font: inherit;
       }
 
@@ -152,6 +149,13 @@
         color: var(--text);
       }
 
+      .cta-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 24px;
+      }
+
       .booking-grid {
         display: grid;
         grid-template-columns: 0.9fr 1.1fr;
@@ -186,6 +190,10 @@
         margin: 0 0 20px;
       }
 
+      .panel strong {
+        color: var(--text);
+      }
+
       .services {
         display: grid;
         gap: 16px;
@@ -205,52 +213,6 @@
         display: block;
         color: var(--text);
         margin-bottom: 4px;
-      }
-
-      .booking-form {
-        display: grid;
-        gap: 16px;
-      }
-
-      .form-row {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 16px;
-      }
-
-      .field {
-        display: grid;
-        gap: 8px;
-      }
-
-      .field label {
-        color: var(--acid);
-        text-transform: uppercase;
-        letter-spacing: 0.14em;
-        font-size: 11px;
-      }
-
-      .field input,
-      .field select,
-      .field textarea {
-        width: 100%;
-        border: 1px solid var(--line);
-        border-radius: 18px;
-        background: rgba(7, 9, 12, 0.62);
-        color: var(--text);
-        padding: 14px 16px;
-        outline: none;
-      }
-
-      .field textarea {
-        min-height: 150px;
-        resize: vertical;
-      }
-
-      .field input:focus,
-      .field select:focus,
-      .field textarea:focus {
-        border-color: var(--acid);
       }
 
       .form-note {
@@ -293,34 +255,135 @@
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        margin-top: 8px;
-        background: var(--acid);
-        color: #050608;
-        border: 1px solid var(--acid);
+        min-height: 48px;
+        padding: 0 22px;
         border-radius: 999px;
-        padding: 15px 22px;
+        border: 1px solid var(--line);
+        background: transparent;
+        color: var(--text);
         font-size: 13px;
         font-weight: 700;
-        letter-spacing: 0.12em;
         text-transform: uppercase;
+        letter-spacing: 0.12em;
+        white-space: nowrap;
         cursor: pointer;
         transition:
           transform 0.2s ease,
           background 0.2s ease,
-          border-color 0.2s ease;
+          border-color 0.2s ease,
+          color 0.2s ease;
       }
 
-      .button:hover {
-        transform: translateY(-2px);
+      .button.primary {
+        background: var(--acid);
+        color: #050608;
+        border-color: var(--acid);
       }
 
-      .button-secondary {
+      .button.secondary {
         background: rgba(216, 255, 62, 0.06);
         color: var(--acid);
         border-color: var(--line);
       }
 
-      .button-secondary:hover {
+      .button:hover {
+        transform: translateY(-2px);
+        border-color: var(--acid);
+      }
+
+      .booking-modal {
+        position: fixed;
+        inset: 0;
+        z-index: 120;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 28px;
+        background: rgba(0, 0, 0, 0.72);
+        backdrop-filter: blur(12px);
+      }
+
+      .booking-modal.is-open {
+        display: flex;
+      }
+
+      .booking-modal-content {
+        position: relative;
+        width: min(760px, 96vw);
+        max-height: 92vh;
+        overflow-y: auto;
+        border: 1px solid rgba(216, 255, 62, 0.18);
+        border-radius: 32px;
+        background:
+          radial-gradient(circle at top right, rgba(216, 255, 62, 0.14), transparent 34%),
+          rgba(7, 9, 12, 0.96);
+        padding: clamp(24px, 5vw, 42px);
+        box-shadow: 0 24px 90px rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(16px);
+      }
+
+      .booking-modal-label {
+        margin: 0 0 16px;
+        color: var(--acid);
+        text-transform: uppercase;
+        letter-spacing: 0.22em;
+        font-size: 12px;
+      }
+
+      .booking-modal-title {
+        margin: 0;
+        font-size: clamp(36px, 6vw, 68px);
+        line-height: 0.92;
+        letter-spacing: -0.06em;
+        text-transform: uppercase;
+      }
+
+      .booking-modal-copy {
+        margin: 22px 0 0;
+        color: rgba(244, 244, 240, 0.76);
+        font-size: 17px;
+        line-height: 1.7;
+        max-width: 620px;
+      }
+
+      .booking-modal-form {
+        margin-top: 28px;
+        border: 1px solid rgba(216, 255, 62, 0.22);
+        border-radius: 24px;
+        background: #ffffff;
+        padding: 22px;
+        overflow: hidden;
+      }
+
+      .booking-modal-form iframe {
+        width: 100%;
+        background: #ffffff;
+        border: 0;
+      }
+
+      .booking-modal-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 28px;
+      }
+
+      .booking-modal-close {
+        position: absolute;
+        top: 18px;
+        right: 18px;
+        width: 42px;
+        height: 42px;
+        border: 1px solid rgba(244, 244, 240, 0.14);
+        border-radius: 999px;
+        background: rgba(16, 20, 27, 0.9);
+        color: var(--acid);
+        cursor: pointer;
+        font-size: 22px;
+        line-height: 1;
+      }
+
+      .booking-modal-close:hover {
         border-color: var(--acid);
       }
 
@@ -345,10 +408,6 @@
         .panel.wide {
           grid-column: span 1;
         }
-
-        .form-row {
-          grid-template-columns: 1fr;
-        }
       }
 
       @media (max-width: 860px) {
@@ -372,6 +431,22 @@
           gap: 8px;
         }
 
+        .button {
+          width: 100%;
+        }
+
+        .booking-modal {
+          padding: 16px;
+        }
+
+        .booking-modal-content {
+          border-radius: 24px;
+        }
+
+        .booking-modal-actions {
+          flex-direction: column;
+        }
+
         footer {
           flex-direction: column;
         }
@@ -388,14 +463,14 @@
         </a>
 
         <nav>
-  <a href="/music">Music</a>
-  <a href="/bio">Bio</a>
-  <a href="/discography">Discography</a>
-  <a href="/media">Media</a>
-  <a href="/press-kit">Press Kit</a>
-  <a href="/sets">Sets</a>
-  <a class="active" href="/booking">Booking</a>
-</nav>
+          <a href="/music">Music</a>
+          <a href="/bio">Bio</a>
+          <a href="/discography">Discography</a>
+          <a href="/media">Media</a>
+          <a href="/press-kit">Press Kit</a>
+          <a href="/sets">Sets</a>
+          <a class="active" href="/booking">Booking</a>
+        </nav>
       </header>
 
       <main>
@@ -412,6 +487,16 @@
             Looking for a melodic, deep and progressive electronic music journey?
             <strong>Send a booking request</strong> with the event details and availability will be confirmed as soon as possible.
           </p>
+
+          <div class="cta-actions">
+            <button class="button primary" type="button" data-open-booking-modal>
+              Check Availability
+            </button>
+
+            <a class="button secondary" href="/press-kit">
+              View Press Kit
+            </a>
+          </div>
         </section>
 
         <section class="booking-grid">
@@ -445,84 +530,20 @@
             <h2>Booking Request</h2>
 
             <p>
-              Use this form to send the main details. Later, this can be connected directly to HubSpot.
+              Send the main booking details through the form. Your request will be reviewed and followed up according to the event context, location and availability.
             </p>
 
-            <form class="booking-form" id="booking-form">
-              <div class="form-row">
-                <div class="field">
-                  <label for="name">Name</label>
-                  <input id="name" name="name" type="text" autocomplete="name" required />
-                </div>
+            <p>
+              Use the booking form for DJ sets, electronic music events, guest mixes, radio shows and selected collaborations.
+            </p>
 
-                <div class="field">
-                  <label for="email">Email</label>
-                  <input id="email" name="email" type="email" autocomplete="email" required />
-                </div>
-              </div>
+            <p class="form-note">
+              Please include event date, location, expected attendance, budget range and any relevant details in your message.
+            </p>
 
-              <div class="form-row">
-                <div class="field">
-                  <label for="event-type">Event type</label>
-                  <select id="event-type" name="eventType" required>
-                    <option value="">Select option</option>
-                    <option>Club DJ set</option>
-                    <option>Festival / electronic music event</option>
-                    <option>Guest mix / radio show</option>
-                    <option>Private event</option>
-                    <option>Collaboration / remix</option>
-                    <option>Other</option>
-                  </select>
-                </div>
-
-                <div class="field">
-                  <label for="event-date">Event date</label>
-                  <input id="event-date" name="eventDate" type="date" />
-                </div>
-              </div>
-
-              <div class="form-row">
-                <div class="field">
-                  <label for="location">Location / city</label>
-                  <input id="location" name="location" type="text" />
-                </div>
-
-                <div class="field">
-                  <label for="venue">Venue / promoter</label>
-                  <input id="venue" name="venue" type="text" />
-                </div>
-              </div>
-
-              <div class="field">
-                <label for="budget">Budget range</label>
-                <select id="budget" name="budget">
-                  <option value="">Select option</option>
-                  <option>To be discussed</option>
-                  <option>Up to €250</option>
-                  <option>€250 – €500</option>
-                  <option>€500 – €1,000</option>
-                  <option>€1,000+</option>
-                </select>
-              </div>
-
-              <div class="field">
-                <label for="message">Message</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  placeholder="Tell me about the event, concept, expected audience, set duration or any relevant details."
-                  required
-                ></textarea>
-              </div>
-
-              <p class="form-note">
-                This first version opens your email app with the booking details. HubSpot integration can be added later.
-              </p>
-
-              <button class="button" type="submit">
-                Send Booking Request
-              </button>
-            </form>
+            <button class="button primary" type="button" data-open-booking-modal>
+              Book Now
+            </button>
           </article>
 
           <article class="panel wide">
@@ -541,6 +562,11 @@
             <a class="quick-link" href="https://open.spotify.com/artist/5IfFyzIiz1iBO7RZUJyFen" target="_blank" rel="noreferrer">
               <strong>Spotify</strong>
               <span>Listen</span>
+            </a>
+
+            <a class="quick-link" href="https://www.mixcloud.com/ITCHY_LEMON_DjProducer/" target="_blank" rel="noreferrer">
+              <strong>Mixcloud</strong>
+              <span>Sets</span>
             </a>
 
             <a class="quick-link" href="https://www.instagram.com/itchy_lemon/" target="_blank" rel="noreferrer">
@@ -577,39 +603,81 @@
       </footer>
     </div>
 
+    <div class="booking-modal" data-booking-modal aria-hidden="true">
+      <div class="booking-modal-content" role="dialog" aria-modal="true" aria-label="Request Itchy Lemon Booking">
+        <button class="booking-modal-close" type="button" data-close-booking-modal aria-label="Close booking popup">
+          ×
+        </button>
+
+        <p class="booking-modal-label">Booking Request</p>
+
+        <h2 class="booking-modal-title">
+          Request<br />Booking
+        </h2>
+
+        <p class="booking-modal-copy">
+          Send your event details, booking type, location and relevant context. Your request will be reviewed and followed up as soon as possible.
+        </p>
+
+        <div class="booking-modal-form">
+          <div
+            class="hs-form-frame"
+            data-region="eu1"
+            data-form-id="06399ad4-ccd6-4cfa-a1a0-9b7eb2d587a2"
+            data-portal-id="148590426"
+          ></div>
+        </div>
+
+        <div class="booking-modal-actions">
+          <a class="button secondary" href="/press-kit">
+            View Press Kit
+          </a>
+
+          <a class="button secondary" href="mailto:itchylemon.booking@gmail.com">
+            Email Directly
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://js-eu1.hsforms.net/forms/embed/148590426.js" defer></script>
+
     <script>
-      const bookingForm = document.querySelector("#booking-form");
+      const bookingModal = document.querySelector("[data-booking-modal]");
+      const bookingModalTriggers = document.querySelectorAll("[data-open-booking-modal]");
+      const bookingModalClose = document.querySelector("[data-close-booking-modal]");
 
-      bookingForm?.addEventListener("submit", (event) => {
-        event.preventDefault();
+      const openBookingModal = () => {
+        bookingModal.classList.add("is-open");
+        bookingModal.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+      };
 
-        const formData = new FormData(bookingForm);
+      const closeBookingModal = () => {
+        bookingModal.classList.remove("is-open");
+        bookingModal.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+      };
 
-        const name = formData.get("name") || "";
-        const email = formData.get("email") || "";
-        const eventType = formData.get("eventType") || "";
-        const eventDate = formData.get("eventDate") || "";
-        const location = formData.get("location") || "";
-        const venue = formData.get("venue") || "";
-        const budget = formData.get("budget") || "";
-        const message = formData.get("message") || "";
+      bookingModalTriggers.forEach((trigger) => {
+        trigger.addEventListener("click", (event) => {
+          event.preventDefault();
+          openBookingModal();
+        });
+      });
 
-        const subject = encodeURIComponent(`Booking Request — ${name}`);
+      bookingModalClose?.addEventListener("click", closeBookingModal);
 
-        const body = encodeURIComponent(
-`Name: ${name}
-Email: ${email}
-Event type: ${eventType}
-Event date: ${eventDate}
-Location / city: ${location}
-Venue / promoter: ${venue}
-Budget range: ${budget}
+      bookingModal?.addEventListener("click", (event) => {
+        if (event.target === bookingModal) {
+          closeBookingModal();
+        }
+      });
 
-Message:
-${message}`
-        );
-
-        window.location.href = `mailto:itchylemon.booking@gmail.com?subject=${subject}&body=${body}`;
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && bookingModal.classList.contains("is-open")) {
+          closeBookingModal();
+        }
       });
     </script>
   </body>
