@@ -1,4 +1,6 @@
 ---
+import GlobalMixcloudPlayer from "../components/GlobalMixcloudPlayer.astro";
+
 const sets = [
   {
     title: "ITCHY LEMON Fresh Beats #41",
@@ -26,9 +28,6 @@ const sets = [
   },
 ];
 
-const getEmbedUrl = (url) =>
-  `https://www.mixcloud.com/widget/iframe/?hide_cover=1&light=0&feed=${encodeURIComponent(url)}`;
-
 const getCloudcastKey = (url) => {
   const parsedUrl = new URL(url);
   return parsedUrl.pathname;
@@ -38,8 +37,6 @@ const enhancedSets = sets.map((set) => ({
   ...set,
   key: getCloudcastKey(set.url),
 }));
-
-const featuredSet = enhancedSets[0];
 ---
 
 <!doctype html>
@@ -98,7 +95,8 @@ const featuredSet = enhancedSets[0];
 
       .page {
         min-height: 100vh;
-        padding: 32px 32px 150px;
+        padding: 32px;
+        transition: padding-bottom 0.2s ease;
       }
 
       header {
@@ -367,88 +365,6 @@ const featuredSet = enhancedSets[0];
         color: var(--acid);
       }
 
-      .footer-player {
-        position: fixed;
-        left: 50%;
-        bottom: 14px;
-        z-index: 100;
-        width: min(1180px, calc(100% - 28px));
-        transform: translateX(-50%);
-        border: 1px solid rgba(216, 255, 62, 0.22);
-        border-radius: 22px;
-        background:
-          linear-gradient(135deg, rgba(216, 255, 62, 0.07), transparent),
-          rgba(7, 9, 12, 0.96);
-        box-shadow: 0 18px 70px rgba(0, 0, 0, 0.55);
-        backdrop-filter: blur(18px);
-        padding: 12px;
-      }
-
-      .footer-player-inner {
-        display: grid;
-        grid-template-columns: 42px minmax(160px, 240px) 1fr 42px;
-        gap: 12px;
-        align-items: center;
-      }
-
-      .player-control {
-        width: 42px;
-        height: 42px;
-        border: 1px solid var(--line);
-        border-radius: 999px;
-        background: rgba(216, 255, 62, 0.06);
-        color: var(--acid);
-        cursor: pointer;
-        font-size: 18px;
-        line-height: 1;
-        transition:
-          transform 0.2s ease,
-          border-color 0.2s ease,
-          background 0.2s ease;
-      }
-
-      .player-control:hover {
-        transform: translateY(-2px);
-        border-color: var(--acid);
-        background: rgba(216, 255, 62, 0.12);
-      }
-
-      .footer-player-info {
-        min-width: 0;
-      }
-
-      .footer-player-label {
-        display: block;
-        color: var(--acid);
-        text-transform: uppercase;
-        letter-spacing: 0.16em;
-        font-size: 10px;
-        margin-bottom: 5px;
-      }
-
-      .footer-player-title {
-        display: block;
-        color: var(--text);
-        font-size: 13px;
-        font-weight: 700;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-      }
-
-      .footer-player-main {
-        min-width: 0;
-      }
-
-      .footer-player iframe {
-        display: block;
-        width: 100%;
-        height: 60px;
-        border: 0;
-        border-radius: 14px;
-        background: #050608;
-      }
-
       @media (max-width: 900px) {
         .sets-intro,
         .booking-cta {
@@ -462,48 +378,11 @@ const featuredSet = enhancedSets[0];
         .sets-list {
           grid-template-columns: 1fr;
         }
-
-        .footer-player-inner {
-          grid-template-columns: 1fr;
-          gap: 10px;
-        }
-
-        .footer-player-info {
-          order: 1;
-        }
-
-        .footer-player-main {
-          order: 2;
-        }
-
-        .player-control {
-          order: 3;
-          width: 100%;
-          height: 42px;
-        }
-
-        .player-control[data-player-previous] {
-          grid-column: auto;
-        }
-
-        .player-control[data-player-next] {
-          grid-column: auto;
-        }
-
-        .footer-player-inner {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-        }
-
-        .footer-player-info,
-        .footer-player-main {
-          grid-column: 1 / -1;
-        }
       }
 
       @media (max-width: 860px) {
         .page {
-          padding: 22px 22px 230px;
+          padding: 22px;
         }
 
         header {
@@ -543,22 +422,6 @@ const featuredSet = enhancedSets[0];
 
         footer {
           flex-direction: column;
-        }
-
-        .footer-player {
-          bottom: 10px;
-          width: calc(100% - 20px);
-          border-radius: 18px;
-          padding: 10px;
-        }
-
-        .footer-player-title {
-          white-space: normal;
-        }
-
-        .footer-player iframe {
-          height: 60px;
-          border-radius: 12px;
         }
       }
     </style>
@@ -646,52 +509,12 @@ const featuredSet = enhancedSets[0];
       </footer>
     </div>
 
-    <div class="footer-player" aria-label="Featured Mixcloud player">
-      <div class="footer-player-inner">
-        <button class="player-control" type="button" data-player-previous aria-label="Previous set">
-          ‹
-        </button>
+    <GlobalMixcloudPlayer />
 
-        <div class="footer-player-info">
-          <span class="footer-player-label">Now playing</span>
-          <span class="footer-player-title" data-now-playing-title>{featuredSet.title}</span>
-        </div>
-
-        <div class="footer-player-main">
-          <iframe
-            id="mixcloud-footer-player"
-            title={`Footer player - ${featuredSet.title}`}
-            width="100%"
-            height="60"
-            src={getEmbedUrl(featuredSet.url)}
-            frameborder="0"
-            allow="encrypted-media; fullscreen; web-share"
-            loading="lazy"
-          ></iframe>
-        </div>
-
-        <button class="player-control" type="button" data-player-next aria-label="Next set">
-          ›
-        </button>
-      </div>
-    </div>
-
-    <script src="https://widget.mixcloud.com/media/js/widgetApi.js"></script>
-
-    <script define:vars={{ playerSets: enhancedSets }}>
-      const sets = playerSets;
-
-      const footerIframe = document.querySelector("#mixcloud-footer-player");
-      const nowPlayingTitle = document.querySelector("[data-now-playing-title]");
+    <script>
       const setCards = document.querySelectorAll("[data-set-card]");
-      const previousButton = document.querySelector("[data-player-previous]");
-      const nextButton = document.querySelector("[data-player-next]");
 
-      let footerWidget = null;
-      let currentSetIndex = 0;
-      let widgetIsReady = false;
-
-      const updateActiveSet = (index) => {
+      const updateActiveCard = (index) => {
         setCards.forEach((card) => {
           card.classList.remove("is-active");
         });
@@ -701,64 +524,29 @@ const featuredSet = enhancedSets[0];
         if (activeCard) {
           activeCard.classList.add("is-active");
         }
-
-        if (nowPlayingTitle && sets[index]) {
-          nowPlayingTitle.textContent = sets[index].title;
-        }
       };
 
-      const loadSet = (index, shouldPlay = true) => {
-        if (!sets[index]) {
-          return;
-        }
-
-        currentSetIndex = index;
-        updateActiveSet(index);
-
-        if (!footerWidget || !widgetIsReady) {
-          return;
-        }
-
-        footerWidget.load(sets[index].key, shouldPlay);
-      };
-
-      const playNextSet = () => {
-        const nextIndex = currentSetIndex + 1 < sets.length ? currentSetIndex + 1 : 0;
-        loadSet(nextIndex, true);
-      };
-
-      const playPreviousSet = () => {
-        const previousIndex = currentSetIndex - 1 >= 0 ? currentSetIndex - 1 : sets.length - 1;
-        loadSet(previousIndex, true);
-      };
-
-      const initialiseFooterPlayer = () => {
-        if (!window.Mixcloud || !window.Mixcloud.PlayerWidget || !footerIframe) {
-          return;
-        }
-
-        footerWidget = window.Mixcloud.PlayerWidget(footerIframe);
-
-        footerWidget.ready.then(() => {
-          widgetIsReady = true;
-
-          footerWidget.events.ended.on(() => {
-            playNextSet();
-          });
-        });
-      };
+      const storedIndex = Number(localStorage.getItem("itchyLemonPlayerIndex") || "0");
+      updateActiveCard(storedIndex);
 
       setCards.forEach((card) => {
         card.addEventListener("click", () => {
-          const index = Number(card.dataset.setIndex);
-          loadSet(index, true);
+          const index = Number(card.dataset.setIndex || "0");
+
+          updateActiveCard(index);
+
+          document.dispatchEvent(
+            new CustomEvent("itchy-lemon-load-set", {
+              detail: { index },
+            })
+          );
         });
       });
 
-      previousButton?.addEventListener("click", playPreviousSet);
-      nextButton?.addEventListener("click", playNextSet);
-
-      window.addEventListener("load", initialiseFooterPlayer);
+      document.addEventListener("itchy-lemon-player-active-set", (event) => {
+        const index = Number(event.detail?.index || "0");
+        updateActiveCard(index);
+      });
     </script>
   </body>
 </html>

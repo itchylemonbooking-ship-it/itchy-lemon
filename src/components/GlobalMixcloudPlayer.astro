@@ -1,0 +1,339 @@
+---
+const sets = [
+  {
+    title: "ITCHY LEMON Fresh Beats #41",
+    url: "https://www.mixcloud.com/ITCHY_LEMON_DjProducer/itchy-lemon-fresh-beats-41-jan-2016/",
+  },
+  {
+    title: "ITCHY LEMON Fresh Beats #40",
+    url: "https://www.mixcloud.com/ITCHY_LEMON_DjProducer/itchy-lemon-fresh-beats-40-rec-live-at-orange-room-porto-studio-series-episode-108-dec-2015/",
+  },
+  {
+    title: "ITCHY LEMON Fresh Beats #39",
+    url: "https://www.mixcloud.com/ITCHY_LEMON_DjProducer/itchy-lemon-fresh-beats-39-rec-live-at-dj-live-tv-griffons-club-nov-2015/",
+  },
+  {
+    title: "ITCHY LEMON Fresh Beats #38",
+    url: "https://www.mixcloud.com/ITCHY_LEMON_DjProducer/itchy-lemon-fresh-beats-38-oct-2015/",
+  },
+  {
+    title: "ITCHY LEMON Fresh Beats #37",
+    url: "https://www.mixcloud.com/ITCHY_LEMON_DjProducer/itchy-lemon-fresh-beats-37-sep-2015/",
+  },
+  {
+    title: "ITCHY LEMON Fresh Beats #36",
+    url: "https://www.mixcloud.com/ITCHY_LEMON_DjProducer/itchy-lemon-fresh-beats-36-ago-2015/",
+  },
+];
+
+const getEmbedUrl = (url) =>
+  `https://www.mixcloud.com/widget/iframe/?hide_cover=1&light=0&feed=${encodeURIComponent(url)}`;
+
+const getCloudcastKey = (url) => {
+  const parsedUrl = new URL(url);
+  return parsedUrl.pathname;
+};
+
+const playerSets = sets.map((set) => ({
+  ...set,
+  key: getCloudcastKey(set.url),
+}));
+
+const featuredSet = playerSets[0];
+---
+
+<style is:global>
+  body.player-visible .page {
+    padding-bottom: 96px;
+  }
+
+  .global-mixcloud-player {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    width: 100%;
+    border-top: 1px solid rgba(216, 255, 62, 0.16);
+    background:
+      linear-gradient(135deg, rgba(216, 255, 62, 0.04), transparent),
+      rgba(7, 9, 12, 0.985);
+    box-shadow: 0 -10px 44px rgba(0, 0, 0, 0.48);
+    backdrop-filter: blur(18px);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(100%);
+    transition:
+      opacity 0.22s ease,
+      transform 0.22s ease;
+  }
+
+  .global-mixcloud-player.is-visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .global-player-shell {
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 4px 32px;
+  }
+
+  .global-player-inner {
+    display: grid;
+    grid-template-columns: 34px minmax(150px, 230px) 1fr 34px 34px;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .global-player-control,
+  .global-player-close {
+    width: 34px;
+    height: 34px;
+    border: 1px solid rgba(216, 255, 62, 0.16);
+    border-radius: 999px;
+    background: rgba(216, 255, 62, 0.04);
+    color: #d8ff3e;
+    cursor: pointer;
+    font-size: 15px;
+    line-height: 1;
+    transition:
+      transform 0.2s ease,
+      border-color 0.2s ease,
+      background 0.2s ease;
+  }
+
+  .global-player-control:hover,
+  .global-player-close:hover {
+    transform: translateY(-2px);
+    border-color: #d8ff3e;
+    background: rgba(216, 255, 62, 0.1);
+  }
+
+  .global-player-info {
+    min-width: 0;
+  }
+
+  .global-player-label {
+    display: block;
+    color: #d8ff3e;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-size: 9px;
+    margin-bottom: 2px;
+  }
+
+  .global-player-title {
+    display: block;
+    color: #f4f4f0;
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .global-player-main {
+    min-width: 0;
+  }
+
+  .global-player-main iframe {
+    display: block;
+    width: 100%;
+    height: 60px;
+    border: 0;
+    border-radius: 8px;
+    background: #050608;
+    overflow: hidden;
+  }
+
+  @media (max-width: 900px) {
+    body.player-visible .page {
+      padding-bottom: 142px;
+    }
+
+    .global-player-shell {
+      padding: 5px 12px 7px;
+    }
+
+    .global-player-inner {
+      grid-template-columns: 34px 1fr 34px 34px;
+      gap: 8px;
+    }
+
+    .global-player-info {
+      grid-column: 1 / -1;
+    }
+
+    .global-player-main {
+      grid-column: 1 / -1;
+    }
+
+    .global-player-main iframe {
+      height: 60px;
+      border-radius: 8px;
+    }
+  }
+</style>
+
+<div class="global-mixcloud-player" data-global-player aria-label="Global Mixcloud player">
+  <div class="global-player-shell">
+    <div class="global-player-inner">
+      <button class="global-player-control" type="button" data-global-previous aria-label="Previous set">
+        ‹
+      </button>
+
+      <div class="global-player-info">
+        <span class="global-player-label">Now playing</span>
+        <span class="global-player-title" data-global-title>{featuredSet.title}</span>
+      </div>
+
+      <div class="global-player-main">
+        <iframe
+          id="global-mixcloud-iframe"
+          title={`Global player - ${featuredSet.title}`}
+          width="100%"
+          height="60"
+          src={getEmbedUrl(featuredSet.url)}
+          frameborder="0"
+          allow="encrypted-media; fullscreen; web-share"
+          loading="lazy"
+          scrolling="no"
+        ></iframe>
+      </div>
+
+      <button class="global-player-control" type="button" data-global-next aria-label="Next set">
+        ›
+      </button>
+
+      <button class="global-player-close" type="button" data-global-close aria-label="Close player">
+        ×
+      </button>
+    </div>
+  </div>
+</div>
+
+<script src="https://widget.mixcloud.com/media/js/widgetApi.js"></script>
+
+<script define:vars={{ playerSets }}>
+  const sets = playerSets;
+
+  const storageKeys = {
+    visible: "itchyLemonPlayerVisible",
+    index: "itchyLemonPlayerIndex",
+  };
+
+  const player = document.querySelector("[data-global-player]");
+  const iframe = document.querySelector("#global-mixcloud-iframe");
+  const titleElement = document.querySelector("[data-global-title]");
+  const previousButton = document.querySelector("[data-global-previous]");
+  const nextButton = document.querySelector("[data-global-next]");
+  const closeButton = document.querySelector("[data-global-close]");
+
+  let widget = null;
+  let widgetIsReady = false;
+  let currentIndex = Number(localStorage.getItem(storageKeys.index) || "0");
+
+  if (!sets[currentIndex]) {
+    currentIndex = 0;
+  }
+
+  const updateTitle = (index) => {
+    if (titleElement && sets[index]) {
+      titleElement.textContent = sets[index].title;
+    }
+  };
+
+  const showPlayer = () => {
+    player?.classList.add("is-visible");
+    document.body.classList.add("player-visible");
+    localStorage.setItem(storageKeys.visible, "true");
+  };
+
+  const hidePlayer = () => {
+  if (widget && widgetIsReady) {
+    widget.pause();
+  }
+
+  player?.classList.remove("is-visible");
+  document.body.classList.remove("player-visible");
+  localStorage.setItem(storageKeys.visible, "false");
+  };
+
+  const saveCurrentIndex = () => {
+    localStorage.setItem(storageKeys.index, String(currentIndex));
+  };
+
+  const notifyActiveSet = () => {
+    document.dispatchEvent(
+      new CustomEvent("itchy-lemon-player-active-set", {
+        detail: { index: currentIndex },
+      })
+    );
+  };
+
+  const loadSet = (index, shouldPlay = true) => {
+    if (!sets[index]) {
+      return;
+    }
+
+    currentIndex = index;
+    saveCurrentIndex();
+    updateTitle(index);
+    showPlayer();
+    notifyActiveSet();
+
+    if (!widget || !widgetIsReady) {
+      return;
+    }
+
+    widget.load(sets[index].key, shouldPlay);
+  };
+
+  const playNext = () => {
+    const nextIndex = currentIndex + 1 < sets.length ? currentIndex + 1 : 0;
+    loadSet(nextIndex, true);
+  };
+
+  const playPrevious = () => {
+    const previousIndex = currentIndex - 1 >= 0 ? currentIndex - 1 : sets.length - 1;
+    loadSet(previousIndex, true);
+  };
+
+  const initialiseWidget = () => {
+    if (!window.Mixcloud || !window.Mixcloud.PlayerWidget || !iframe) {
+      return;
+    }
+
+    updateTitle(currentIndex);
+
+    widget = window.Mixcloud.PlayerWidget(iframe);
+
+    widget.ready.then(() => {
+      widgetIsReady = true;
+
+      if (localStorage.getItem(storageKeys.visible) === "true") {
+        showPlayer();
+        widget.load(sets[currentIndex].key, false);
+        notifyActiveSet();
+      }
+
+      widget.events.ended.on(() => {
+        playNext();
+      });
+    });
+  };
+
+  previousButton?.addEventListener("click", playPrevious);
+  nextButton?.addEventListener("click", playNext);
+  closeButton?.addEventListener("click", hidePlayer);
+
+  document.addEventListener("itchy-lemon-load-set", (event) => {
+    const index = Number(event.detail?.index || 0);
+    loadSet(index, true);
+  });
+
+  window.addEventListener("load", initialiseWidget);
+</script>
