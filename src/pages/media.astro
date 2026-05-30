@@ -1,3 +1,7 @@
+---
+import GlobalMixcloudPlayer from "../components/GlobalMixcloudPlayer.astro";
+---
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -404,7 +408,7 @@
       .media-modal {
         position: fixed;
         inset: 0;
-        z-index: 100;
+        z-index: 2000;
         display: none;
         align-items: center;
         justify-content: center;
@@ -748,8 +752,10 @@
 
       <footer>
         <span>© 2026 Itchy Lemon. All rights reserved.</span>
-        <span>Photos · Flyers · Visual archive · Press assets · 
-        <a href="/privacy-policy">Privacy Policy</a></span>
+        <span>
+          Photos · Flyers · Visual archive · Press assets ·
+          <a href="/privacy-policy">Privacy Policy</a>
+        </span>
       </footer>
     </div>
 
@@ -760,6 +766,8 @@
         <button class="modal-close" type="button" data-modal-close aria-label="Close preview">×</button>
       </div>
     </div>
+
+    <GlobalMixcloudPlayer />
 
     <script>
       const carousels = document.querySelectorAll("[data-carousel]");

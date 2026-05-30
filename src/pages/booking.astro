@@ -1,3 +1,7 @@
+---
+import GlobalMixcloudPlayer from "../components/GlobalMixcloudPlayer.astro";
+---
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -294,7 +298,7 @@
       .booking-modal {
         position: fixed;
         inset: 0;
-        z-index: 120;
+        z-index: 2000;
         display: none;
         align-items: center;
         justify-content: center;
@@ -598,12 +602,12 @@
       </main>
 
       <footer>
-  <span>© 2026 Itchy Lemon. All rights reserved.</span>
-  <span>
-    Portugal · Bookings · Guest mixes · Selected collaborations ·
-    <a href="/privacy-policy">Privacy Policy</a>
-  </span>
-</footer>
+        <span>© 2026 Itchy Lemon. All rights reserved.</span>
+        <span>
+          Portugal · Bookings · Guest mixes · Selected collaborations ·
+          <a href="/privacy-policy">Privacy Policy</a>
+        </span>
+      </footer>
     </div>
 
     <div class="booking-modal" data-booking-modal aria-hidden="true">
@@ -642,6 +646,8 @@
         </div>
       </div>
     </div>
+
+    <GlobalMixcloudPlayer />
 
     <script src="https://js-eu1.hsforms.net/forms/embed/148590426.js" defer></script>
 

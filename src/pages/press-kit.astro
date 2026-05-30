@@ -1,3 +1,7 @@
+---
+import GlobalMixcloudPlayer from "../components/GlobalMixcloudPlayer.astro";
+---
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -368,7 +372,7 @@
       .epk-modal {
         position: fixed;
         inset: 0;
-        z-index: 120;
+        z-index: 2000;
         display: none;
         align-items: center;
         justify-content: center;
@@ -421,19 +425,19 @@
       }
 
       .epk-modal-form {
-  margin-top: 28px;
-  border: 1px solid rgba(216, 255, 62, 0.22);
-  border-radius: 24px;
-  background: #ffffff;
-  padding: 22px;
-  overflow: hidden;
-}
+        margin-top: 28px;
+        border: 1px solid rgba(216, 255, 62, 0.22);
+        border-radius: 24px;
+        background: #ffffff;
+        padding: 22px;
+        overflow: hidden;
+      }
 
-.epk-modal-form iframe {
-  width: 100%;
-  background: #ffffff;
-  border: 0;
-}
+      .epk-modal-form iframe {
+        width: 100%;
+        background: #ffffff;
+        border: 0;
+      }
 
       .epk-download-confirmation {
         display: none;
@@ -827,12 +831,12 @@
       </main>
 
       <footer>
-  <span>© 2026 Itchy Lemon. All rights reserved.</span>
-  <span>
-    Official EPK · Music · DJ sets · Bio · Discography · Booking ·
-    <a href="/privacy-policy">Privacy Policy</a>
-  </span>
-</footer>
+        <span>© 2026 Itchy Lemon. All rights reserved.</span>
+        <span>
+          Official EPK · Music · DJ sets · Bio · Discography · Booking ·
+          <a href="/privacy-policy">Privacy Policy</a>
+        </span>
+      </footer>
     </div>
 
     <div class="epk-modal" data-epk-modal aria-hidden="true">
@@ -882,6 +886,8 @@
         </div>
       </div>
     </div>
+
+    <GlobalMixcloudPlayer />
 
     <script src="https://js-eu1.hsforms.net/forms/embed/148590426.js" defer></script>
 

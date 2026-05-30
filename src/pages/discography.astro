@@ -1,4 +1,5 @@
 ---
+import GlobalMixcloudPlayer from "../components/GlobalMixcloudPlayer.astro";
 ---
 
 <!doctype html>
@@ -302,14 +303,14 @@
         </a>
 
         <nav>
-  <a href="/music">Music</a>
-  <a href="/bio">Bio</a>
-  <a class="active" href="/discography">Discography</a>
-  <a href="/media">Media</a>
-  <a href="/press-kit">Press Kit</a>
-  <a href="/sets">Sets</a>
-  <a href="/booking">Booking</a>
-</nav>
+          <a href="/music">Music</a>
+          <a href="/bio">Bio</a>
+          <a class="active" href="/discography">Discography</a>
+          <a href="/media">Media</a>
+          <a href="/press-kit">Press Kit</a>
+          <a href="/sets">Sets</a>
+          <a href="/booking">Booking</a>
+        </nav>
       </header>
 
       <main>
@@ -514,9 +515,13 @@
 
       <footer>
         <span>© 2026 Itchy Lemon. All rights reserved.</span>
-        <span>Selected releases · Originals · Remixes · Beatport catalogue · 
-        <a href="/privacy-policy">Privacy Policy</a></span>
+        <span>
+          Selected releases · Originals · Remixes · Beatport catalogue ·
+          <a href="/privacy-policy">Privacy Policy</a>
+        </span>
       </footer>
     </div>
+
+    <GlobalMixcloudPlayer />
   </body>
 </html>
