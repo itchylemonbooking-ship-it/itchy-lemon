@@ -149,6 +149,22 @@ const featuredSet = playerSets[0];
     overflow: hidden;
   }
 
+  body.player-visible #hubspot-messages-iframe-container {
+    bottom: 96px !important;
+  }
+
+  body.beatport-preview-visible #hubspot-messages-iframe-container {
+    bottom: 114px !important;
+  }
+
+  body.player-visible.beatport-preview-visible #hubspot-messages-iframe-container {
+    bottom: 114px !important;
+  }
+
+  #hubspot-messages-iframe-container {
+    transition: bottom 0.22s ease !important;
+  }
+
   @media (max-width: 900px) {
     body.player-visible .page {
       padding-bottom: 142px;
@@ -174,6 +190,18 @@ const featuredSet = playerSets[0];
     .global-player-main iframe {
       height: 60px;
       border-radius: 8px;
+    }
+
+    body.player-visible #hubspot-messages-iframe-container {
+      bottom: 142px !important;
+    }
+
+    body.beatport-preview-visible #hubspot-messages-iframe-container {
+      bottom: 114px !important;
+    }
+
+    body.player-visible.beatport-preview-visible #hubspot-messages-iframe-container {
+      bottom: 114px !important;
     }
   }
 </style>
@@ -253,13 +281,13 @@ const featuredSet = playerSets[0];
   };
 
   const hidePlayer = () => {
-  if (widget && widgetIsReady) {
-    widget.pause();
-  }
+    if (widget && widgetIsReady) {
+      widget.pause();
+    }
 
-  player?.classList.remove("is-visible");
-  document.body.classList.remove("player-visible");
-  localStorage.setItem(storageKeys.visible, "false");
+    player?.classList.remove("is-visible");
+    document.body.classList.remove("player-visible");
+    localStorage.setItem(storageKeys.visible, "false");
   };
 
   const saveCurrentIndex = () => {
