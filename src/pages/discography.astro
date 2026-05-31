@@ -2,145 +2,448 @@
 import GlobalMixcloudPlayer from "../components/GlobalMixcloudPlayer.astro";
 import HubSpotTracking from "../components/HubSpotTracking.astro";
 
-const beatportCatalogue =
-  "https://www.beatport.com/artist/itchy-lemon/339277/tracks?page=1&per_page=100";
+const fullCatalogueLinks = [
+  {
+    label: "Beatport",
+    url: "https://www.beatport.com/pt/artist/itchy-lemon/339277/tracks?page=1&per_page=100",
+  },
+  {
+    label: "Traxsource",
+    url: "https://www.traxsource.com/artist/131494/itchy-lemon",
+  },
+  {
+    label: "Juno Download",
+    url: "https://www.junodownload.com/artists/Itchy+Lemon/",
+  },
+  {
+    label: "Amazon Music",
+    url: "https://www.amazon.com/music/player/artists/B00D4U244I/itchy-lemon",
+  },
+  {
+    label: "Apple Music / iTunes",
+    url: "https://music.apple.com/us/artist/itchy-lemon/656922930",
+  },
+];
 
-const sections = [
+const releases = [
   {
-    title: "Featured / Recent",
-    releases: [
+    year: "2018",
+    title: "Brainstorm",
+    description: "Itchy Lemon — Original Mix",
+    label: "Juno Download",
+    preview: {
+      type: "juno",
+      url: "https://www.junodownload.com/player-embed/3686158-02.m3u/?pl=true&ed=26-05-31",
+      height: "255",
+    },
+    stores: [
       {
-        year: "2026",
-        title: "Hideyoshi",
-        description: "Sixnautic — Itchy Lemon Remix",
-        label: "LW Recordings",
-        type: "Remix",
-        buyUrl: "https://www.beatport.com/track/hideyoshi/27916178",
-        previewId: "27916178",
-      },
-      {
-        year: "2024",
-        title: "Love's to Be Loved",
-        description: "Gary B. Lovestone, Parcheri, Lanzara — Itchy Lemon Remix",
-        label: "Chart Series",
-        type: "Remix",
-        buyUrl: "https://www.beatport.com/release/melodic-house-techno-chart-series-vol-7/4516881",
-      },
-      {
-        year: "2020",
-        title: "Distant Echoes feat. Cimmone Ferry",
-        description: "Itchy Lemon, Cimmone Ferry — Itchy Lemon Remix",
-        label: "IBIZA PARTY SQUAD",
-        type: "Remix",
-        buyUrl: beatportCatalogue,
-      },
-      {
-        year: "2020",
-        title: "Distant Echoes",
-        description: "Itchy Lemon, Cimmone Ferry — Itchy Lemon Remix",
-        label: "Urban GorillazY",
-        type: "Remix",
-        buyUrl: beatportCatalogue,
-      },
-      {
-        year: "2019",
-        title: "The Way",
-        description: "Jiggx, Lady TT — Itchy Lemon Remix",
-        label: "305 Vibe",
-        type: "Remix",
-        buyUrl: "https://www.beatport.com/track/the-way/11696423",
-        previewId: "11696423",
+        label: "Juno",
+        url: "https://www.junodownload.com/products/3686158-02/",
       },
     ],
   },
   {
-    title: "Originals",
-    releases: [
+    year: "2026",
+    title: "Hideyoshi",
+    description: "Sixnautic — Itchy Lemon Remix",
+    label: "LW Recordings",
+    preview: {
+      type: "beatport",
+      id: "27916178",
+    },
+    stores: [
       {
-        year: "2017",
-        title: "Being Free",
-        description: "Itchy Lemon — Original Mix",
-        label: "Karmabreeze",
-        type: "Original",
-        buyUrl: beatportCatalogue,
+        label: "Beatport",
+        url: "https://www.beatport.com/pt/track/hideyoshi/27916178",
       },
       {
-        year: "2016",
-        title: "Come To Me",
-        description: "Itchy Lemon — Original Mix",
-        label: "Natural Essence Music",
-        type: "Original",
-        buyUrl: "https://www.beatport.com/release/natural-essence-media-presents-miami-2016/1723300",
+        label: "Traxsource",
+        url: "https://www.traxsource.com/track/14538037/hideyoshi-itchy-lemon-remix",
       },
       {
-        year: "2015",
-        title: "London Planes",
-        description: "Itchy Lemon — Original Mix",
-        label: "Natural Essence Music",
-        type: "Original",
-        buyUrl: beatportCatalogue,
-      },
-      {
-        year: "2015",
-        title: "Portuguese Djing",
-        description: "Itchy Lemon — Original Mix",
-        label: "Ypslon Rec",
-        type: "Original",
-        buyUrl: "https://www.beatport.com/label/ypslon-rec/14408/tracks?page=2&per_page=25&preorders=false",
-      },
-      {
-        year: "2013",
-        title: "iReborn",
-        description: "Itchy Lemon — Original Mix",
-        label: "MAQ Records",
-        type: "Original",
-        buyUrl: beatportCatalogue,
-      },
-      {
-        year: "2013",
-        title: "We Can Make It feat. Anthony Poteat",
-        description: "Anthony Poteat, Itchy Lemon — Original Mix",
-        label: "HSR Records",
-        type: "Original",
-        buyUrl: "https://www.beatport.com/track/we-can-make-it-feat-anthony-poteat/4596546",
-        previewId: "4596546",
+        label: "Juno",
+        url: "https://www.junodownload.com/search/?q%5Ball%5D%5B%5D=hideyoshi+itchy+lemon",
       },
     ],
   },
   {
-    title: "Archive Remixes",
-    releases: [
+    year: "2024",
+    title: "Love's To Be Loved",
+    description: "Parcheri, Lanzara, Gary B. Lovestone — Itchy Lemon Remix",
+    label: "Chart Series",
+    preview: {
+      type: "juno",
+      url: "https://www.junodownload.com/player-embed/6567281-02.m3u/?pl=true&ed=26-05-31",
+      height: "255",
+    },
+    stores: [
       {
-        year: "2014",
-        title: "Sunday Morning",
-        description: "SULPHO — Itchy Lemon Remix",
-        label: "DKR",
-        type: "Remix",
-        buyUrl: "https://www.beatport.com/release/sunday-morning/1363602",
+        label: "Beatport",
+        url: "https://www.beatport.com/release/melodic-house-techno-chart-series-vol-7/4516881",
       },
       {
-        year: "2014",
-        title: "Spread Your Love",
-        description: "MP Sant — Itchy Lemon Remix",
-        label: "Soul Shift Music",
-        type: "Remix",
-        buyUrl: beatportCatalogue,
+        label: "Juno",
+        url: "https://www.junodownload.com/products/melodic-house-techno-chart-series-vol-7/6567281-02/?track_number=6",
+      },
+    ],
+  },
+  {
+    year: "2020",
+    title: "Distant Echoes feat. Cimmone Ferry",
+    description: "Itchy Lemon, Cimmone Ferry — Itchy Lemon Remix",
+    label: "IBIZA PARTY SQUAD",
+    preview: {
+      type: "beatport",
+      id: "14063794",
+    },
+    stores: [
+      {
+        label: "Beatport",
+        url: "https://www.beatport.com/pt/track/distant-echoes-feat-cimmone-ferry/14063794",
       },
       {
-        year: "2014",
-        title: "Moscow",
-        description: "Jack Carter — Itchy Lemon Remix",
-        label: "System Recordings",
-        type: "Remix",
-        buyUrl: beatportCatalogue,
+        label: "Traxsource",
+        url: "https://www.traxsource.com/track/7829041/distant-echoes-itchy-lemon-remix",
       },
       {
-        year: "2013",
-        title: "Darklight",
-        description: "French Connexion — Itchy Lemon Remix",
-        label: "Ducosphere / Sumr",
-        type: "Remix",
-        buyUrl: beatportCatalogue,
+        label: "Juno",
+        url: "https://www.junodownload.com/products/sweet-night-vol-19/2858255-02/",
+      },
+    ],
+  },
+  {
+    year: "2019",
+    title: "The Way",
+    description: "Jiggx, Lady TT — Itchy Lemon Remix",
+    label: "305 Vibe",
+    preview: {
+      type: "beatport",
+      id: "11696423",
+    },
+    stores: [
+      {
+        label: "Beatport",
+        url: "https://www.beatport.com/pt/track/the-way/11696423",
+      },
+      {
+        label: "Traxsource",
+        url: "https://www.traxsource.com/track/6096158/the-way-itchy-lemon-remix",
+      },
+    ],
+  },
+  {
+    year: "2018",
+    title: "Walk Away",
+    description: "TraceBeatz, Bob feat. Dezz — Itchy Lemon Remix",
+    label: "Sound Chronicles",
+    preview: {
+      type: "juno",
+      url: "https://www.junodownload.com/player-embed/2438597-02.m3u/?pl=true&ed=26-05-31",
+      height: "255",
+    },
+    stores: [
+      {
+        label: "Juno",
+        url: "https://www.junodownload.com/products/tracebeatz-bob-dezz-walk-away-remixes/2438597-02/?track_number=3",
+      },
+    ],
+  },
+  {
+    year: "2017",
+    title: "Being Free",
+    description: "Itchy Lemon — Original Mix",
+    label: "Karmabreeze",
+    preview: {
+      type: "beatport",
+      id: "8806467",
+    },
+    stores: [
+      {
+        label: "Beatport",
+        url: "https://www.beatport.com/pt/track/being-free/8806467",
+      },
+      {
+        label: "Traxsource",
+        url: "https://www.traxsource.com/track/2401522/being-free-original-mix",
+      },
+      {
+        label: "Juno",
+        url: "https://www.junodownload.com/search/?q%5Ball%5D%5B%5D=Being+Free+Itchy+Lemon",
+      },
+    ],
+  },
+  {
+    year: "2016",
+    title: "So Hight",
+    description: "Deep Fresh feat. Alina Petko — Itchy Lemon Remix",
+    label: "Deep Soulful Recordings",
+    preview: {
+      type: "juno",
+      url: "https://www.junodownload.com/player-embed/3246874-02.m3u/?pl=true&ed=26-05-31",
+      height: "255",
+    },
+    stores: [
+      {
+        label: "Beatport",
+        url: "https://www.beatport.com/pt/track/so-hight/8518741",
+      },
+      {
+        label: "Traxsource",
+        url: "https://www.traxsource.com/track/3774447/so-hight-itchy-lemon-remix",
+      },
+      {
+        label: "Juno",
+        url: "https://www.junodownload.com/products/deep-fresh-alina-petko-so-hight/3246874-02/?track_number=3",
+      },
+    ],
+  },
+  {
+    year: "2016",
+    title: "Come To Me",
+    description: "Itchy Lemon — Original Mix",
+    label: "Natural Essence Music",
+    preview: {
+      type: "beatport",
+      id: "7716172",
+    },
+    stores: [
+      {
+        label: "Beatport",
+        url: "https://www.beatport.com/pt/track/come-to-me/7716172",
+      },
+    ],
+  },
+  {
+    year: "2015",
+    title: "London Planes",
+    description: "Itchy Lemon — Original Mix",
+    label: "Natural Essence Music",
+    preview: {
+      type: "beatport",
+      id: "7458855",
+    },
+    stores: [
+      {
+        label: "Beatport",
+        url: "https://www.beatport.com/pt/track/london-planes/7458855",
+      },
+      {
+        label: "Juno",
+        url: "https://www.junodownload.com/products/s-natural-essence-media-presents-ade-sampler-2015/2920106-02/",
+      },
+    ],
+  },
+  {
+    year: "2015",
+    title: "What Is Love?",
+    description: "Bob, Itchy Lemon, TraceBeatz — Original Mix",
+    label: "Natural Essence Music",
+    preview: {
+      type: "beatport",
+      id: "7458857",
+    },
+    stores: [
+      {
+        label: "Beatport",
+        url: "https://www.beatport.com/pt/track/what-is-love/7458857",
+      },
+      {
+        label: "Juno",
+        url: "https://www.junodownload.com/products/itchy-lemon-with-tracebeatz-what-is-love-remixes/2702107-02/",
+      },
+    ],
+  },
+  {
+    year: "2015",
+    title: "Portuguese Djing",
+    description: "Itchy Lemon — Original Mix",
+    label: "Ypslon Rec",
+    preview: {
+      type: "beatport",
+      id: "6816722",
+    },
+    stores: [
+      {
+        label: "Beatport",
+        url: "https://www.beatport.com/pt/track/portuguese-djing/6816722",
+      },
+    ],
+  },
+  {
+    year: "2015",
+    title: "Tomorrow",
+    description: "Itchy Lemon — Original Mix",
+    label: "Natural Essence Media",
+    preview: {
+      type: "juno",
+      url: "https://www.junodownload.com/player-embed/2741754-02.m3u/?pl=true&ed=26-05-31",
+      height: "255",
+    },
+    stores: [
+      {
+        label: "Beatport",
+        url: "https://www.beatport.com/pt/track/tomorrow/6449183",
+      },
+      {
+        label: "Juno",
+        url: "https://www.junodownload.com/products/natural-essence-media-presents-miami-2015/2741754-02/?track_number=4",
+      },
+    ],
+  },
+  {
+    year: "2014",
+    title: "Welcome 2 Club In",
+    description: "Itchy Lemon feat. Zoubida Mebarki — Original Mix",
+    label: "Natural Essence Media",
+    preview: {
+      type: "juno",
+      url: "https://www.junodownload.com/player-embed/2437966-02.m3u/?pl=true&ed=26-05-31",
+      height: "255",
+    },
+    stores: [
+      {
+        label: "Juno",
+        url: "https://www.junodownload.com/products/natural-essence-media-presents-miami-sampler-2014/2437966-02/?track_number=10",
+      },
+    ],
+  },
+  {
+    year: "2014",
+    title: "When You're In Love",
+    description: "Cheryl Pineda — Itchy Lemon Porto Mix",
+    label: "Basement Collective Music",
+    preview: {
+      type: "juno",
+      url: "https://www.junodownload.com/player-embed/2595960-02.m3u/?pl=true&ed=26-05-31",
+      height: "255",
+    },
+    stores: [
+      {
+        label: "Traxsource",
+        url: "https://www.traxsource.com/track/2048749/when-youre-in-love-itchy-lemon-porto-mix",
+      },
+      {
+        label: "Juno",
+        url: "https://www.junodownload.com/products/cheryl-pineda-when-you-re-in-love/2595960-02/?track_number=5",
+      },
+    ],
+  },
+  {
+    year: "2014",
+    title: "Sunday Morning",
+    description: "SULPHO — Itchy Lemon Remix",
+    label: "DKR",
+    preview: {
+      type: "juno",
+      url: "https://www.junodownload.com/player-embed/2559185-02.m3u/?pl=true&ed=26-05-31",
+      height: "255",
+    },
+    stores: [
+      {
+        label: "Beatport",
+        url: "https://www.beatport.com/pt/track/sunday-morning/5731366",
+      },
+      {
+        label: "Juno",
+        url: "https://www.junodownload.com/products/sulpho-sunday-morning/2559185-02/?track_number=2",
+      },
+    ],
+  },
+  {
+    year: "2014",
+    title: "Spread Your Love",
+    description: "MP Sant — Itchy Lemon Remix",
+    label: "Soul Shift Music",
+    preview: {
+      type: "beatport",
+      id: "11035989",
+    },
+    stores: [
+      {
+        label: "Beatport",
+        url: "https://www.beatport.com/pt/track/spread-your-love/11035989",
+      },
+    ],
+  },
+  {
+    year: "2014",
+    title: "Giving You",
+    description: "Alvaro Blanco — Itchy Lemon Remix",
+    label: "Disco Balls Records",
+    preview: {
+      type: "beatport",
+      id: "5657429",
+    },
+    stores: [
+      {
+        label: "Beatport",
+        url: "https://www.beatport.com/pt/track/giving-you/5657429",
+      },
+    ],
+  },
+  {
+    year: "2014",
+    title: "This Time",
+    description: "Donovan Blackwood — Itchy Lemon Remix",
+    label: "Natural Essence Media",
+    preview: {
+      type: "juno",
+      url: "https://www.junodownload.com/player-embed/2463538-02.m3u/?pl=true&ed=26-05-31",
+      height: "255",
+    },
+    stores: [
+      {
+        label: "Beatport",
+        url: "https://www.beatport.com/pt/track/this-time/5330109",
+      },
+      {
+        label: "Traxsource",
+        url: "https://www.traxsource.com/track/1714726/this-time-itchy-lemon-remix",
+      },
+      {
+        label: "Juno",
+        url: "https://www.junodownload.com/products/donovan-blackwood-this-time/2463538-02/?track_number=4",
+      },
+    ],
+  },
+  {
+    year: "2014",
+    title: "Anything You Want",
+    description: "LaVeda, Itchy Lemon — Itchy Lemon Re-Edit",
+    label: "Natural Essence Music",
+    preview: {
+      type: "beatport",
+      id: "5274246",
+    },
+    stores: [
+      {
+        label: "Beatport",
+        url: "https://www.beatport.com/pt/track/anything-you-want/5274246",
+      },
+      {
+        label: "Traxsource",
+        url: "https://www.traxsource.com/title/311344/anything-you-want",
+      },
+      {
+        label: "Juno",
+        url: "https://www.junodownload.com/products/itchy-lemon-laveda-anything-you-want/2446017-02/",
+      },
+    ],
+  },
+  {
+    year: "2013",
+    title: "We Can Make It feat. Anthony Poteat",
+    description: "Anthony Poteat, Itchy Lemon — Original Mix",
+    label: "HSR Records",
+    preview: {
+      type: "beatport",
+      id: "4596544",
+    },
+    stores: [
+      {
+        label: "Beatport",
+        url: "https://www.beatport.com/pt/track/we-can-make-it-feat-anthony-poteat/4596544",
       },
     ],
   },
@@ -153,7 +456,7 @@ const sections = [
     <meta charset="UTF-8" />
     <meta
       name="description"
-      content="Discography of Itchy Lemon — selected originals, remixes and electronic music releases from the Beatport catalogue."
+      content="Discography of Itchy Lemon — selected electronic music releases from Beatport, Traxsource, Juno Download, Amazon Music and Apple Music."
     />
     <meta name="author" content="Itchy Lemon" />
     <meta name="theme-color" content="#07090c" />
@@ -275,23 +578,16 @@ const sections = [
         line-height: 1.16;
       }
 
-      .section-title {
-        margin: 72px 0 22px;
-        color: var(--acid);
-        font-size: 13px;
-        letter-spacing: 0.18em;
-        text-transform: uppercase;
-      }
-
       .release-list {
         display: grid;
         gap: 0;
+        margin-top: 64px;
       }
 
       .release {
         display: grid;
-        grid-template-columns: 80px 1fr 160px 110px 170px;
-        gap: 22px;
+        grid-template-columns: 80px 44px 1fr 180px 260px;
+        gap: 18px;
         align-items: start;
         border-top: 1px solid var(--line);
         padding: 24px 0;
@@ -302,6 +598,13 @@ const sections = [
         font-size: 14px;
         letter-spacing: 0.18em;
         text-transform: uppercase;
+        padding-top: 8px;
+      }
+
+      .play-cell {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
       }
 
       .release h2 {
@@ -318,27 +621,32 @@ const sections = [
         line-height: 1.55;
       }
 
-      .label,
-      .type {
+      .label {
         color: var(--muted);
         text-transform: uppercase;
         letter-spacing: 0.14em;
         font-size: 12px;
         line-height: 1.45;
-      }
-
-      .type {
-        text-align: right;
+        padding-top: 8px;
       }
 
       .release-actions {
         display: flex;
         justify-content: flex-end;
         gap: 10px;
-        align-items: center;
+        align-items: flex-start;
+        flex-wrap: wrap;
       }
 
-      .buy,
+      .store-links {
+        display: flex;
+        justify-content: flex-end;
+        gap: 8px;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .store-link,
       .preview-button {
         border: 1px solid var(--line);
         color: var(--muted);
@@ -348,11 +656,11 @@ const sections = [
         transition: 0.2s ease;
       }
 
-      .buy {
+      .store-link {
         border-radius: 999px;
-        padding: 9px 13px;
-        font-size: 11px;
-        letter-spacing: 0.14em;
+        padding: 9px 12px;
+        font-size: 10px;
+        letter-spacing: 0.12em;
         text-transform: uppercase;
         white-space: nowrap;
       }
@@ -368,6 +676,7 @@ const sections = [
         color: var(--acid);
         font-size: 13px;
         line-height: 1;
+        flex-shrink: 0;
       }
 
       .preview-button span {
@@ -375,7 +684,7 @@ const sections = [
         transform: translateX(1px);
       }
 
-      .buy:hover,
+      .store-link:hover,
       .preview-button:hover,
       .preview-button.is-active {
         color: #050608;
@@ -389,6 +698,11 @@ const sections = [
         color: #050608;
       }
 
+      .no-preview {
+        width: 34px;
+        height: 34px;
+      }
+
       .catalogue-card {
         margin-top: 48px;
         border: 1px solid var(--line);
@@ -396,7 +710,7 @@ const sections = [
         border-radius: 28px;
         padding: 28px;
         display: grid;
-        grid-template-columns: 1fr auto;
+        grid-template-columns: 1fr;
         gap: 24px;
         align-items: center;
         backdrop-filter: blur(12px);
@@ -415,6 +729,12 @@ const sections = [
         line-height: 1.6;
       }
 
+      .catalogue-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
       .button {
         display: inline-block;
         background: var(--acid);
@@ -428,7 +748,19 @@ const sections = [
         white-space: nowrap;
       }
 
-      .beatport-preview-player {
+      .button.secondary {
+        background: transparent;
+        color: var(--text);
+        border: 1px solid var(--line);
+      }
+
+      .button.secondary:hover {
+        background: var(--acid);
+        color: #050608;
+        border-color: var(--acid);
+      }
+
+      .catalogue-preview-player {
         position: fixed;
         left: 0;
         right: 0;
@@ -448,25 +780,29 @@ const sections = [
           transform 0.22s ease;
       }
 
-      .beatport-preview-player.is-visible {
+      .catalogue-preview-player.is-visible {
         opacity: 1;
         pointer-events: auto;
         transform: translateY(0);
       }
 
-      .beatport-preview-frame {
+      .catalogue-preview-frame {
         width: 100%;
         height: 114px;
         background: #000;
         overflow: hidden;
       }
 
-      .beatport-preview-frame iframe {
+      .catalogue-preview-frame iframe {
         display: block;
         width: 100%;
         height: 162px;
         border: 0;
         background: #000;
+      }
+
+      .catalogue-preview-frame.is-juno iframe {
+        height: 255px;
       }
 
       footer {
@@ -487,33 +823,39 @@ const sections = [
         }
 
         .release {
-          grid-template-columns: 1fr;
-          gap: 10px;
+          grid-template-columns: 62px 44px 1fr;
+          gap: 12px;
         }
 
-        .type {
-          text-align: left;
+        .label {
+          grid-column: 3;
+          padding-top: 0;
         }
 
         .release-actions {
+          grid-column: 3;
           justify-content: flex-start;
           margin-top: 4px;
         }
 
-        .catalogue-card {
-          grid-template-columns: 1fr;
+        .store-links {
+          justify-content: flex-start;
         }
 
-        .beatport-preview-player {
+        .catalogue-preview-player {
           height: 162px;
         }
 
-        .beatport-preview-frame {
+        .catalogue-preview-frame {
           height: 162px;
         }
 
-        .beatport-preview-frame iframe {
+        .catalogue-preview-frame iframe {
           height: 162px;
+        }
+
+        .catalogue-preview-frame.is-juno iframe {
+          height: 255px;
         }
       }
 
@@ -533,6 +875,37 @@ const sections = [
 
         footer {
           flex-direction: column;
+        }
+      }
+
+      @media (max-width: 520px) {
+        .release {
+          grid-template-columns: 1fr;
+          gap: 10px;
+        }
+
+        .year,
+        .label,
+        .release-actions {
+          grid-column: auto;
+        }
+
+        .year {
+          padding-top: 0;
+        }
+
+        .play-cell {
+          order: -1;
+        }
+
+        .catalogue-links {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .button {
+          width: 100%;
+          text-align: center;
         }
       }
     </style>
@@ -558,85 +931,103 @@ const sections = [
       </header>
 
       <main>
-        <p class="eyebrow">Selected Beatport Catalogue</p>
+        <p class="eyebrow">Selected Catalogue</p>
 
         <h1>Discography</h1>
 
         <p class="lead">
-          A curated selection of Itchy Lemon releases, originals and remixes from the Beatport catalogue.
+          A working catalogue selection of Itchy Lemon releases across Beatport, Traxsource, Juno Download, Amazon Music and Apple Music. This list can be refined later into a final curated discography.
         </p>
 
-        {sections.map((section) => (
-          <>
-            <h2 class="section-title">{section.title}</h2>
+        <section class="release-list">
+          {releases.map((release) => (
+            <article class="release">
+              <div class="year">{release.year}</div>
 
-            <section class="release-list">
-              {section.releases.map((release) => (
-                <article class="release">
-                  <div class="year">{release.year}</div>
+              <div class="play-cell">
+                {release.preview ? (
+                  <button
+                    class="preview-button"
+                    type="button"
+                    data-preview-type={release.preview.type}
+                    data-preview-id={release.preview.id}
+                    data-preview-url={release.preview.url}
+                    data-preview-height={release.preview.height}
+                    aria-label={`Play preview of ${release.title}`}
+                    title={`Play preview of ${release.title}`}
+                  >
+                    <span>▶</span>
+                  </button>
+                ) : (
+                  <span class="no-preview" aria-hidden="true"></span>
+                )}
+              </div>
 
-                  <div>
-                    <h2>{release.title}</h2>
-                    <p>{release.description}</p>
-                  </div>
+              <div>
+                <h2>{release.title}</h2>
+                <p>{release.description}</p>
+              </div>
 
-                  <div class="label">{release.label}</div>
-                  <div class="type">{release.type}</div>
+              <div class="label">{release.label}</div>
 
-                  <div class="release-actions">
-                    {release.previewId && (
-                      <button
-                        class="preview-button"
-                        type="button"
-                        data-preview-id={release.previewId}
-                        aria-label={`Play preview of ${release.title}`}
-                        title={`Play preview of ${release.title}`}
-                      >
-                        <span>▶</span>
-                      </button>
-                    )}
-
-                    <a class="buy" href={release.buyUrl} target="_blank" rel="noreferrer">
-                      Buy
+              <div class="release-actions">
+                <div class="store-links" aria-label={`Buy ${release.title}`}>
+                  {release.stores.map((store) => (
+                    <a
+                      class="store-link"
+                      href={store.url}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      {store.label}
                     </a>
-                  </div>
-                </article>
-              ))}
-            </section>
-          </>
-        ))}
+                  ))}
+                </div>
+              </div>
+            </article>
+          ))}
+        </section>
 
         <section class="catalogue-card">
           <div>
-            <h2>Full Beatport Catalogue</h2>
+            <h2>Full Catalogue</h2>
             <p>
-              This page highlights a selected catalogue. The full list of tracks and releases is available on the official Beatport artist page.
+              Explore the complete Itchy Lemon catalogue across the main electronic music stores and streaming platforms where releases are available.
             </p>
           </div>
 
-          <a class="button" href={beatportCatalogue} target="_blank" rel="noreferrer">
-            Open Beatport
-          </a>
+          <div class="catalogue-links" aria-label="Full catalogue links">
+            {fullCatalogueLinks.map((store, index) => (
+              <a
+                class={index === 0 ? "button" : "button secondary"}
+                href={store.url}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {store.label}
+              </a>
+            ))}
+          </div>
         </section>
       </main>
 
       <footer>
         <span>© 2026 Itchy Lemon. All rights reserved.</span>
         <span>
-          Selected releases · Originals · Remixes · Beatport catalogue ·
+          Selected releases · Beatport · Traxsource · Juno Download · Amazon Music · Apple Music ·
           <a href="/privacy-policy">Privacy Policy</a>
         </span>
       </footer>
     </div>
 
-    <div class="beatport-preview-player" data-beatport-player aria-label="Beatport preview player">
-      <div class="beatport-preview-frame" data-beatport-frame></div>
+    <div class="catalogue-preview-player" data-catalogue-player aria-label="Catalogue preview player">
+      <div class="catalogue-preview-frame" data-catalogue-frame></div>
     </div>
 
     <script>
-      const beatportPlayer = document.querySelector("[data-beatport-player]");
-      const beatportFrame = document.querySelector("[data-beatport-frame]");
-      const previewButtons = document.querySelectorAll("[data-preview-id]");
+      const cataloguePlayer = document.querySelector("[data-catalogue-player]");
+      const catalogueFrame = document.querySelector("[data-catalogue-frame]");
+      const previewButtons = document.querySelectorAll("[data-preview-type]");
 
       const resetActivePreviewButtons = () => {
         previewButtons.forEach((button) => {
@@ -644,61 +1035,87 @@ const sections = [
         });
       };
 
-      const hideBeatportPlayer = () => {
-        beatportPlayer?.classList.remove("is-visible");
+      const resetPlayerType = () => {
+        catalogueFrame?.classList.remove("is-juno");
+      };
+
+      const hideCataloguePlayer = () => {
+        cataloguePlayer?.classList.remove("is-visible");
         document.body.classList.remove("beatport-preview-visible");
-        beatportFrame.innerHTML = "";
+        resetPlayerType();
+
+        if (catalogueFrame) {
+          catalogueFrame.innerHTML = "";
+        }
+
         resetActivePreviewButtons();
       };
 
-      const showBeatportPlayer = (previewId, activeButton) => {
+      const showCataloguePlayer = (button) => {
+        const previewType = button.getAttribute("data-preview-type");
+        const previewId = button.getAttribute("data-preview-id");
+        const previewUrl = button.getAttribute("data-preview-url");
+        const previewHeight = button.getAttribute("data-preview-height") || "162";
+
         document.dispatchEvent(new CustomEvent("itchy-lemon-close-mixcloud-player"));
 
         resetActivePreviewButtons();
-        activeButton.classList.add("is-active");
+        resetPlayerType();
 
-        beatportFrame.innerHTML = `
-          <iframe
-            src="https://embed.beatport.com/?id=${previewId}&type=track"
-            width="100%"
-            height="162"
-            frameborder="0"
-            scrolling="no"
-            title="Beatport preview player"
-          ></iframe>
-        `;
+        button.classList.add("is-active");
 
-        beatportPlayer?.classList.add("is-visible");
+        if (previewType === "beatport" && previewId) {
+          catalogueFrame.innerHTML = `
+            <iframe
+              src="https://embed.beatport.com/?id=${previewId}&type=track"
+              width="100%"
+              height="162"
+              frameborder="0"
+              scrolling="no"
+              title="Beatport preview player"
+            ></iframe>
+          `;
+        }
+
+        if (previewType === "juno" && previewUrl) {
+          catalogueFrame?.classList.add("is-juno");
+
+          catalogueFrame.innerHTML = `
+            <iframe
+              src="${previewUrl}"
+              width="100%"
+              height="${previewHeight}"
+              frameborder="no"
+              scrolling="no"
+              title="Juno Download preview player"
+            ></iframe>
+          `;
+        }
+
+        cataloguePlayer?.classList.add("is-visible");
         document.body.classList.add("beatport-preview-visible");
       };
 
       previewButtons.forEach((button) => {
         button.addEventListener("click", (event) => {
           event.stopPropagation();
-
-          const previewId = button.getAttribute("data-preview-id");
-
-          if (!previewId) {
-            return;
-          }
-
-          showBeatportPlayer(previewId, button);
+          showCataloguePlayer(button);
         });
       });
 
-      beatportPlayer?.addEventListener("click", (event) => {
+      cataloguePlayer?.addEventListener("click", (event) => {
         event.stopPropagation();
       });
 
       document.addEventListener("click", () => {
-        if (beatportPlayer?.classList.contains("is-visible")) {
-          hideBeatportPlayer();
+        if (cataloguePlayer?.classList.contains("is-visible")) {
+          hideCataloguePlayer();
         }
       });
 
       document.addEventListener("keydown", (event) => {
         if (event.key === "Escape") {
-          hideBeatportPlayer();
+          hideCataloguePlayer();
         }
       });
     </script>
