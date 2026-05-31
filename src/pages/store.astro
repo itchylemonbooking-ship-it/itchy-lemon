@@ -29,14 +29,14 @@ const tracks = [
     <meta charset="UTF-8" />
     <meta
       name="description"
-      content="Itchy Lemon Store — original tracks, previews and selected electronic music releases."
+      content="Private preview store for Itchy Lemon — original tracks, audio previews and selected electronic music releases."
     />
     <meta name="author" content="Itchy Lemon" />
     <meta name="theme-color" content="#07090c" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex, nofollow" />
 
-    <title>Store | Itchy Lemon</title>
+    <title>Store Preview | Itchy Lemon</title>
 
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="canonical" href="https://itchy-lemon.pages.dev/store/" />
@@ -133,8 +133,7 @@ const tracks = [
         transition: color 0.2s ease;
       }
 
-      nav a:hover,
-      nav a.active {
+      nav a:hover {
         color: var(--acid);
       }
 
@@ -165,6 +164,24 @@ const tracks = [
         font-size: clamp(22px, 3vw, 34px);
         line-height: 1.16;
         color: var(--text);
+      }
+
+      .private-note {
+        margin-top: 42px;
+        border: 1px solid var(--line);
+        border-radius: 28px;
+        background:
+          linear-gradient(135deg, rgba(216, 255, 62, 0.08), transparent),
+          rgba(16, 20, 27, 0.72);
+        padding: 24px;
+        color: var(--muted);
+        font-size: 15px;
+        line-height: 1.7;
+        backdrop-filter: blur(12px);
+      }
+
+      .private-note strong {
+        color: var(--acid);
       }
 
       .store-list {
@@ -378,6 +395,14 @@ const tracks = [
         gap: 20px;
       }
 
+      footer a {
+        color: var(--muted);
+      }
+
+      footer a:hover {
+        color: var(--acid);
+      }
+
       @media (max-width: 980px) {
         .track-card {
           grid-template-columns: 150px 1fr;
@@ -486,19 +511,24 @@ const tracks = [
           <a href="/discography">Discography</a>
           <a href="/media">Media</a>
           <a href="/press-kit">Press Kit</a>
-          <a class="active" href="/store">Store</a>
+          <a href="/sets">Sets</a>
           <a href="/booking">Booking</a>
         </nav>
       </header>
 
       <main>
-        <p class="eyebrow">Original Tracks & Releases</p>
+        <p class="eyebrow">Private Store Preview</p>
 
         <h1>Store</h1>
 
         <p class="lead">
-          Listen to selected previews and buy original Itchy Lemon tracks directly from the official store.
+          Listen to selected previews and prepare original Itchy Lemon tracks for future direct purchase.
         </p>
+
+        <section class="private-note" aria-label="Private store status">
+          <strong>Private preview page.</strong>
+          This store is currently hidden from the public menu and search engines. Purchase links, final artworks, previews, delivery settings and refund policy will be connected later.
+        </section>
 
         <section class="store-list" aria-label="Itchy Lemon tracks for sale">
           {tracks.map((track) => (
@@ -565,14 +595,16 @@ const tracks = [
         </section>
 
         <p class="store-note">
-          Full downloads and purchase links will be connected soon. For now, this page is prepared for previews, track information and external checkout links.
+          Full downloads and purchase links will be connected later through Payhip, Gumroad, Stripe, Bandcamp or another checkout solution. For now, this page is prepared for previews, track metadata and future external checkout links.
         </p>
       </main>
 
       <footer>
         <span>© 2026 Itchy Lemon. All rights reserved.</span>
-        <span>Original tracks · Previews · Downloads · Store · 
-        <a href="/privacy-policy">Privacy Policy</a></span>
+        <span>
+          Private store preview · Original tracks · Previews · Downloads ·
+          <a href="/privacy-policy">Privacy Policy</a>
+        </span>
       </footer>
     </div>
 

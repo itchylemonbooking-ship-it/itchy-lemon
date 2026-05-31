@@ -1,5 +1,6 @@
 ---
 import GlobalMixcloudPlayer from "../components/GlobalMixcloudPlayer.astro";
+import HubSpotTracking from "../components/HubSpotTracking.astro";
 
 const sets = [
   {
@@ -510,6 +511,7 @@ const enhancedSets = sets.map((set) => ({
     </div>
 
     <GlobalMixcloudPlayer />
+    <HubSpotTracking />
 
     <script>
       const setCards = document.querySelectorAll("[data-set-card]");
