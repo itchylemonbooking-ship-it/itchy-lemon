@@ -197,11 +197,11 @@ const featuredSet = playerSets[0];
     }
 
     body.beatport-preview-visible #hubspot-messages-iframe-container {
-      bottom: 114px !important;
+      bottom: 162px !important;
     }
 
     body.player-visible.beatport-preview-visible #hubspot-messages-iframe-container {
-      bottom: 114px !important;
+      bottom: 162px !important;
     }
   }
 </style>
@@ -362,6 +362,8 @@ const featuredSet = playerSets[0];
     const index = Number(event.detail?.index || 0);
     loadSet(index, true);
   });
+
+  document.addEventListener("itchy-lemon-close-mixcloud-player", hidePlayer);
 
   window.addEventListener("load", initialiseWidget);
 </script>
