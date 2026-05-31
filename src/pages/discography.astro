@@ -1,6 +1,150 @@
 ---
 import GlobalMixcloudPlayer from "../components/GlobalMixcloudPlayer.astro";
 import HubSpotTracking from "../components/HubSpotTracking.astro";
+
+const beatportCatalogue =
+  "https://www.beatport.com/artist/itchy-lemon/339277/tracks?page=1&per_page=100";
+
+const sections = [
+  {
+    title: "Featured / Recent",
+    releases: [
+      {
+        year: "2026",
+        title: "Hideyoshi",
+        description: "Sixnautic — Itchy Lemon Remix",
+        label: "LW Recordings",
+        type: "Remix",
+        buyUrl: "https://www.beatport.com/track/hideyoshi/27916178",
+        previewId: "27916178",
+      },
+      {
+        year: "2024",
+        title: "Love's to Be Loved",
+        description: "Gary B. Lovestone, Parcheri, Lanzara — Itchy Lemon Remix",
+        label: "Chart Series",
+        type: "Remix",
+        buyUrl: "https://www.beatport.com/release/melodic-house-techno-chart-series-vol-7/4516881",
+      },
+      {
+        year: "2020",
+        title: "Distant Echoes feat. Cimmone Ferry",
+        description: "Itchy Lemon, Cimmone Ferry — Itchy Lemon Remix",
+        label: "IBIZA PARTY SQUAD",
+        type: "Remix",
+        buyUrl: beatportCatalogue,
+      },
+      {
+        year: "2020",
+        title: "Distant Echoes",
+        description: "Itchy Lemon, Cimmone Ferry — Itchy Lemon Remix",
+        label: "Urban GorillazY",
+        type: "Remix",
+        buyUrl: beatportCatalogue,
+      },
+      {
+        year: "2019",
+        title: "The Way",
+        description: "Jiggx, Lady TT — Itchy Lemon Remix",
+        label: "305 Vibe",
+        type: "Remix",
+        buyUrl: "https://www.beatport.com/track/the-way/11696423",
+        previewId: "11696423",
+      },
+    ],
+  },
+  {
+    title: "Originals",
+    releases: [
+      {
+        year: "2017",
+        title: "Being Free",
+        description: "Itchy Lemon — Original Mix",
+        label: "Karmabreeze",
+        type: "Original",
+        buyUrl: beatportCatalogue,
+      },
+      {
+        year: "2016",
+        title: "Come To Me",
+        description: "Itchy Lemon — Original Mix",
+        label: "Natural Essence Music",
+        type: "Original",
+        buyUrl: "https://www.beatport.com/release/natural-essence-media-presents-miami-2016/1723300",
+      },
+      {
+        year: "2015",
+        title: "London Planes",
+        description: "Itchy Lemon — Original Mix",
+        label: "Natural Essence Music",
+        type: "Original",
+        buyUrl: beatportCatalogue,
+      },
+      {
+        year: "2015",
+        title: "Portuguese Djing",
+        description: "Itchy Lemon — Original Mix",
+        label: "Ypslon Rec",
+        type: "Original",
+        buyUrl: "https://www.beatport.com/label/ypslon-rec/14408/tracks?page=2&per_page=25&preorders=false",
+      },
+      {
+        year: "2013",
+        title: "iReborn",
+        description: "Itchy Lemon — Original Mix",
+        label: "MAQ Records",
+        type: "Original",
+        buyUrl: beatportCatalogue,
+      },
+      {
+        year: "2013",
+        title: "We Can Make It feat. Anthony Poteat",
+        description: "Anthony Poteat, Itchy Lemon — Original Mix",
+        label: "HSR Records",
+        type: "Original",
+        buyUrl: "https://www.beatport.com/track/we-can-make-it-feat-anthony-poteat/4596546",
+        previewId: "4596546",
+      },
+    ],
+  },
+  {
+    title: "Archive Remixes",
+    releases: [
+      {
+        year: "2014",
+        title: "Sunday Morning",
+        description: "SULPHO — Itchy Lemon Remix",
+        label: "DKR",
+        type: "Remix",
+        buyUrl: "https://www.beatport.com/release/sunday-morning/1363602",
+      },
+      {
+        year: "2014",
+        title: "Spread Your Love",
+        description: "MP Sant — Itchy Lemon Remix",
+        label: "Soul Shift Music",
+        type: "Remix",
+        buyUrl: beatportCatalogue,
+      },
+      {
+        year: "2014",
+        title: "Moscow",
+        description: "Jack Carter — Itchy Lemon Remix",
+        label: "System Recordings",
+        type: "Remix",
+        buyUrl: beatportCatalogue,
+      },
+      {
+        year: "2013",
+        title: "Darklight",
+        description: "French Connexion — Itchy Lemon Remix",
+        label: "Ducosphere / Sumr",
+        type: "Remix",
+        buyUrl: beatportCatalogue,
+      },
+    ],
+  },
+];
 ---
 
 <!doctype html>
@@ -40,6 +184,10 @@ import HubSpotTracking from "../components/HubSpotTracking.astro";
           linear-gradient(135deg, #07090c 0%, #111827 48%, #050608 100%);
         color: var(--text);
         min-height: 100vh;
+      }
+
+      body.beatport-preview-visible .page {
+        padding-bottom: 230px;
       }
 
       a {
@@ -142,7 +290,7 @@ import HubSpotTracking from "../components/HubSpotTracking.astro";
 
       .release {
         display: grid;
-        grid-template-columns: 80px 1fr 160px 110px 130px;
+        grid-template-columns: 80px 1fr 160px 110px 170px;
         gap: 22px;
         align-items: start;
         border-top: 1px solid var(--line);
@@ -183,20 +331,32 @@ import HubSpotTracking from "../components/HubSpotTracking.astro";
         text-align: right;
       }
 
-      .listen {
-        justify-self: end;
+      .release-actions {
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px;
+        align-items: center;
+      }
+
+      .buy,
+      .preview-button {
         border: 1px solid var(--line);
         border-radius: 999px;
         padding: 9px 13px;
         color: var(--muted);
+        background: transparent;
+        font-family: inherit;
         font-size: 11px;
         letter-spacing: 0.14em;
         text-transform: uppercase;
         white-space: nowrap;
+        cursor: pointer;
         transition: 0.2s ease;
       }
 
-      .listen:hover {
+      .buy:hover,
+      .preview-button:hover,
+      .preview-button.is-active {
         color: #050608;
         background: var(--acid);
         border-color: var(--acid);
@@ -242,6 +402,117 @@ import HubSpotTracking from "../components/HubSpotTracking.astro";
         white-space: nowrap;
       }
 
+      .beatport-preview-player {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1001;
+        width: 100%;
+        border-top: 1px solid rgba(216, 255, 62, 0.16);
+        background:
+          linear-gradient(135deg, rgba(216, 255, 62, 0.04), transparent),
+          rgba(7, 9, 12, 0.985);
+        box-shadow: 0 -10px 44px rgba(0, 0, 0, 0.48);
+        backdrop-filter: blur(18px);
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(100%);
+        transition:
+          opacity 0.22s ease,
+          transform 0.22s ease;
+      }
+
+      .beatport-preview-player.is-visible {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+      }
+
+      .beatport-player-shell {
+        width: 100%;
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 8px 32px 10px;
+      }
+
+      .beatport-player-inner {
+        display: grid;
+        grid-template-columns: minmax(150px, 230px) 1fr 34px;
+        gap: 8px;
+        align-items: center;
+      }
+
+      .beatport-player-info {
+        min-width: 0;
+      }
+
+      .beatport-player-label {
+        display: block;
+        color: var(--acid);
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        font-size: 9px;
+        margin-bottom: 2px;
+      }
+
+      .beatport-player-title {
+        display: block;
+        color: var(--text);
+        font-size: 12px;
+        font-weight: 700;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .beatport-player-subtitle {
+        display: block;
+        margin-top: 3px;
+        color: var(--muted);
+        font-size: 11px;
+        line-height: 1.25;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .beatport-player-main {
+        min-width: 0;
+      }
+
+      .beatport-player-main iframe {
+        display: block;
+        width: 100%;
+        height: 162px;
+        border: 0;
+        border-radius: 8px;
+        background: #050608;
+        overflow: hidden;
+      }
+
+      .beatport-player-close {
+        width: 34px;
+        height: 34px;
+        border: 1px solid rgba(216, 255, 62, 0.16);
+        border-radius: 999px;
+        background: rgba(216, 255, 62, 0.04);
+        color: var(--acid);
+        cursor: pointer;
+        font-size: 15px;
+        line-height: 1;
+        transition:
+          transform 0.2s ease,
+          border-color 0.2s ease,
+          background 0.2s ease;
+      }
+
+      .beatport-player-close:hover {
+        transform: translateY(-2px);
+        border-color: var(--acid);
+        background: rgba(216, 255, 62, 0.1);
+      }
+
       footer {
         max-width: 1080px;
         margin: 80px auto 0;
@@ -255,6 +526,10 @@ import HubSpotTracking from "../components/HubSpotTracking.astro";
       }
 
       @media (max-width: 980px) {
+        body.beatport-preview-visible .page {
+          padding-bottom: 250px;
+        }
+
         .release {
           grid-template-columns: 1fr;
           gap: 10px;
@@ -264,13 +539,40 @@ import HubSpotTracking from "../components/HubSpotTracking.astro";
           text-align: left;
         }
 
-        .listen {
-          justify-self: start;
+        .release-actions {
+          justify-content: flex-start;
           margin-top: 4px;
         }
 
         .catalogue-card {
           grid-template-columns: 1fr;
+        }
+
+        .beatport-player-shell {
+          padding: 7px 12px 9px;
+        }
+
+        .beatport-player-inner {
+          grid-template-columns: 1fr 34px;
+          gap: 8px;
+        }
+
+        .beatport-player-info {
+          grid-column: 1 / 2;
+        }
+
+        .beatport-player-main {
+          grid-column: 1 / -1;
+          order: 2;
+        }
+
+        .beatport-player-main iframe {
+          height: 162px;
+          border-radius: 8px;
+        }
+
+        .beatport-player-close {
+          align-self: start;
         }
       }
 
@@ -323,182 +625,45 @@ import HubSpotTracking from "../components/HubSpotTracking.astro";
           A curated selection of Itchy Lemon releases, originals and remixes from the Beatport catalogue.
         </p>
 
-        <h2 class="section-title">Featured / Recent</h2>
+        {sections.map((section) => (
+          <>
+            <h2 class="section-title">{section.title}</h2>
 
-        <section class="release-list">
-          <article class="release">
-            <div class="year">2026</div>
-            <div>
-              <h2>Hideyoshi</h2>
-              <p>Sixnautic — Itchy Lemon Remix</p>
-            </div>
-            <div class="label">LW Recordings</div>
-            <div class="type">Remix</div>
-            <a class="listen" href="https://www.beatport.com/artist/itchy-lemon/339277/tracks?page=1&per_page=100" target="_blank" rel="noreferrer">Listen</a>
-          </article>
+            <section class="release-list">
+              {section.releases.map((release) => (
+                <article class="release">
+                  <div class="year">{release.year}</div>
 
-          <article class="release">
-            <div class="year">2024</div>
-            <div>
-              <h2>Love's to Be Loved</h2>
-              <p>Gary B. Lovestone, Parcheri, Lanzara — Itchy Lemon Remix</p>
-            </div>
-            <div class="label">Chart Series</div>
-            <div class="type">Remix</div>
-            <a class="listen" href="https://www.beatport.com/artist/itchy-lemon/339277/tracks?page=1&per_page=100" target="_blank" rel="noreferrer">Listen</a>
-          </article>
+                  <div>
+                    <h2>{release.title}</h2>
+                    <p>{release.description}</p>
+                  </div>
 
-          <article class="release">
-            <div class="year">2020</div>
-            <div>
-              <h2>Distant Echoes feat. Cimmone Ferry</h2>
-              <p>Itchy Lemon, Cimmone Ferry — Itchy Lemon Remix</p>
-            </div>
-            <div class="label">IBIZA PARTY SQUAD</div>
-            <div class="type">Remix</div>
-            <a class="listen" href="https://www.beatport.com/artist/itchy-lemon/339277/tracks?page=1&per_page=100" target="_blank" rel="noreferrer">Listen</a>
-          </article>
+                  <div class="label">{release.label}</div>
+                  <div class="type">{release.type}</div>
 
-          <article class="release">
-            <div class="year">2020</div>
-            <div>
-              <h2>Distant Echoes</h2>
-              <p>Itchy Lemon, Cimmone Ferry — Itchy Lemon Remix</p>
-            </div>
-            <div class="label">Urban GorillazY</div>
-            <div class="type">Remix</div>
-            <a class="listen" href="https://www.beatport.com/artist/itchy-lemon/339277/tracks?page=1&per_page=100" target="_blank" rel="noreferrer">Listen</a>
-          </article>
+                  <div class="release-actions">
+                    {release.previewId && (
+                      <button
+                        class="preview-button"
+                        type="button"
+                        data-preview-id={release.previewId}
+                        data-preview-title={release.title}
+                        data-preview-description={release.description}
+                      >
+                        Preview
+                      </button>
+                    )}
 
-          <article class="release">
-            <div class="year">2019</div>
-            <div>
-              <h2>The Way</h2>
-              <p>Jiggx, Lady TT — Itchy Lemon Remix</p>
-            </div>
-            <div class="label">305 Vibe</div>
-            <div class="type">Remix</div>
-            <a class="listen" href="https://www.beatport.com/artist/itchy-lemon/339277/tracks?page=1&per_page=100" target="_blank" rel="noreferrer">Listen</a>
-          </article>
-        </section>
-
-        <h2 class="section-title">Originals</h2>
-
-        <section class="release-list">
-          <article class="release">
-            <div class="year">2017</div>
-            <div>
-              <h2>Being Free</h2>
-              <p>Itchy Lemon — Original Mix</p>
-            </div>
-            <div class="label">Karmabreeze</div>
-            <div class="type">Original</div>
-            <a class="listen" href="https://www.beatport.com/artist/itchy-lemon/339277/tracks?page=1&per_page=100" target="_blank" rel="noreferrer">Listen</a>
-          </article>
-
-          <article class="release">
-            <div class="year">2016</div>
-            <div>
-              <h2>Come To Me</h2>
-              <p>Itchy Lemon — Original Mix</p>
-            </div>
-            <div class="label">Natural Essence Music</div>
-            <div class="type">Original</div>
-            <a class="listen" href="https://www.beatport.com/artist/itchy-lemon/339277/tracks?page=1&per_page=100" target="_blank" rel="noreferrer">Listen</a>
-          </article>
-
-          <article class="release">
-            <div class="year">2015</div>
-            <div>
-              <h2>London Planes</h2>
-              <p>Itchy Lemon — Original Mix</p>
-            </div>
-            <div class="label">Natural Essence Music</div>
-            <div class="type">Original</div>
-            <a class="listen" href="https://www.beatport.com/artist/itchy-lemon/339277/tracks?page=1&per_page=100" target="_blank" rel="noreferrer">Listen</a>
-          </article>
-
-          <article class="release">
-            <div class="year">2015</div>
-            <div>
-              <h2>Portuguese Djing</h2>
-              <p>Itchy Lemon — Original Mix</p>
-            </div>
-            <div class="label">Ypslon Rec</div>
-            <div class="type">Original</div>
-            <a class="listen" href="https://www.beatport.com/artist/itchy-lemon/339277/tracks?page=1&per_page=100" target="_blank" rel="noreferrer">Listen</a>
-          </article>
-
-          <article class="release">
-            <div class="year">2013</div>
-            <div>
-              <h2>iReborn</h2>
-              <p>Itchy Lemon — Original Mix</p>
-            </div>
-            <div class="label">MAQ Records</div>
-            <div class="type">Original</div>
-            <a class="listen" href="https://www.beatport.com/artist/itchy-lemon/339277/tracks?page=1&per_page=100" target="_blank" rel="noreferrer">Listen</a>
-          </article>
-
-          <article class="release">
-            <div class="year">2013</div>
-            <div>
-              <h2>We Can Make It feat. Anthony Poteat</h2>
-              <p>Anthony Poteat, Itchy Lemon — Original Mix</p>
-            </div>
-            <div class="label">HSR Records</div>
-            <div class="type">Original</div>
-            <a class="listen" href="https://www.beatport.com/artist/itchy-lemon/339277/tracks?page=1&per_page=100" target="_blank" rel="noreferrer">Listen</a>
-          </article>
-        </section>
-
-        <h2 class="section-title">Archive Remixes</h2>
-
-        <section class="release-list">
-          <article class="release">
-            <div class="year">2014</div>
-            <div>
-              <h2>Sunday Morning</h2>
-              <p>SULPHO — Itchy Lemon Remix</p>
-            </div>
-            <div class="label">DKR</div>
-            <div class="type">Remix</div>
-            <a class="listen" href="https://www.beatport.com/artist/itchy-lemon/339277/tracks?page=1&per_page=100" target="_blank" rel="noreferrer">Listen</a>
-          </article>
-
-          <article class="release">
-            <div class="year">2014</div>
-            <div>
-              <h2>Spread Your Love</h2>
-              <p>MP Sant — Itchy Lemon Remix</p>
-            </div>
-            <div class="label">Soul Shift Music</div>
-            <div class="type">Remix</div>
-            <a class="listen" href="https://www.beatport.com/artist/itchy-lemon/339277/tracks?page=1&per_page=100" target="_blank" rel="noreferrer">Listen</a>
-          </article>
-
-          <article class="release">
-            <div class="year">2014</div>
-            <div>
-              <h2>Moscow</h2>
-              <p>Jack Carter — Itchy Lemon Remix</p>
-            </div>
-            <div class="label">System Recordings</div>
-            <div class="type">Remix</div>
-            <a class="listen" href="https://www.beatport.com/artist/itchy-lemon/339277/tracks?page=1&per_page=100" target="_blank" rel="noreferrer">Listen</a>
-          </article>
-
-          <article class="release">
-            <div class="year">2013</div>
-            <div>
-              <h2>Darklight</h2>
-              <p>French Connexion — Itchy Lemon Remix</p>
-            </div>
-            <div class="label">Ducosphere / Sumr</div>
-            <div class="type">Remix</div>
-            <a class="listen" href="https://www.beatport.com/artist/itchy-lemon/339277/tracks?page=1&per_page=100" target="_blank" rel="noreferrer">Listen</a>
-          </article>
-        </section>
+                    <a class="buy" href={release.buyUrl} target="_blank" rel="noreferrer">
+                      Buy
+                    </a>
+                  </div>
+                </article>
+              ))}
+            </section>
+          </>
+        ))}
 
         <section class="catalogue-card">
           <div>
@@ -508,7 +673,7 @@ import HubSpotTracking from "../components/HubSpotTracking.astro";
             </p>
           </div>
 
-          <a class="button" href="https://www.beatport.com/artist/itchy-lemon/339277/tracks?page=1&per_page=100" target="_blank" rel="noreferrer">
+          <a class="button" href={beatportCatalogue} target="_blank" rel="noreferrer">
             Open Beatport
           </a>
         </section>
@@ -522,6 +687,82 @@ import HubSpotTracking from "../components/HubSpotTracking.astro";
         </span>
       </footer>
     </div>
+
+    <div class="beatport-preview-player" data-beatport-player aria-label="Beatport preview player">
+      <div class="beatport-player-shell">
+        <div class="beatport-player-inner">
+          <div class="beatport-player-info">
+            <span class="beatport-player-label">Beatport preview</span>
+            <span class="beatport-player-title" data-beatport-title>Track preview</span>
+            <span class="beatport-player-subtitle" data-beatport-subtitle>Itchy Lemon</span>
+          </div>
+
+          <div class="beatport-player-main" data-beatport-frame></div>
+
+          <button class="beatport-player-close" type="button" data-beatport-close aria-label="Close Beatport preview">
+            ×
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const beatportPlayer = document.querySelector("[data-beatport-player]");
+      const beatportFrame = document.querySelector("[data-beatport-frame]");
+      const beatportTitle = document.querySelector("[data-beatport-title]");
+      const beatportSubtitle = document.querySelector("[data-beatport-subtitle]");
+      const beatportClose = document.querySelector("[data-beatport-close]");
+      const previewButtons = document.querySelectorAll("[data-preview-id]");
+
+      const resetActivePreviewButtons = () => {
+        previewButtons.forEach((button) => {
+          button.classList.remove("is-active");
+        });
+      };
+
+      const hideBeatportPlayer = () => {
+        beatportPlayer?.classList.remove("is-visible");
+        document.body.classList.remove("beatport-preview-visible");
+        beatportFrame.innerHTML = "";
+        resetActivePreviewButtons();
+      };
+
+      previewButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const previewId = button.getAttribute("data-preview-id");
+          const title = button.getAttribute("data-preview-title") || "Track preview";
+          const description = button.getAttribute("data-preview-description") || "Itchy Lemon";
+
+          resetActivePreviewButtons();
+          button.classList.add("is-active");
+
+          beatportTitle.textContent = title;
+          beatportSubtitle.textContent = description;
+
+          beatportFrame.innerHTML = `
+            <iframe
+              src="https://embed.beatport.com/?id=${previewId}&type=track"
+              width="100%"
+              height="162"
+              frameborder="0"
+              scrolling="no"
+              title="Beatport player — ${title}"
+            ></iframe>
+          `;
+
+          beatportPlayer?.classList.add("is-visible");
+          document.body.classList.add("beatport-preview-visible");
+        });
+      });
+
+      beatportClose?.addEventListener("click", hideBeatportPlayer);
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+          hideBeatportPlayer();
+        }
+      });
+    </script>
 
     <GlobalMixcloudPlayer />
     <HubSpotTracking />
