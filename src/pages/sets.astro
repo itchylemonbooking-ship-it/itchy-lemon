@@ -55,24 +55,24 @@ const radioShows = [
 
 const videoSets = [
   {
-    title: "Itchy Lemon Live DJ Set 01",
-    embedUrl: "https://www.youtube.com/embed/zFDTLWB483Q",
+    title: "DJ LIVE TV - Itchy Lemon - Session #21",
+    embedUrl: "https://www.youtube.com/embed/rnIKZc25WNk",
   },
   {
     title: "Itchy Lemon Live DJ Set 02",
-    embedUrl: "https://www.youtube.com/embed/QvmN2MWRmxk",
+    embedUrl: "https://www.youtube.com/embed/zFDTLWB483Q",
   },
   {
     title: "Itchy Lemon Live DJ Set 03",
-    embedUrl: "https://www.youtube.com/embed/6iyZGzSfsBI",
+    embedUrl: "https://www.youtube.com/embed/QvmN2MWRmxk",
   },
   {
     title: "Itchy Lemon Live DJ Set 04",
-    embedUrl: "https://www.youtube.com/embed/77RmqNOxkDw",
+    embedUrl: "https://www.youtube.com/embed/6iyZGzSfsBI",
   },
   {
     title: "Itchy Lemon Live DJ Set 05",
-    embedUrl: "https://www.youtube.com/embed/rnIKZc25WNk",
+    embedUrl: "https://www.youtube.com/embed/77RmqNOxkDw",
   },
   {
     title: "Itchy Lemon Live DJ Set 06",
@@ -82,13 +82,15 @@ const videoSets = [
 
 const audioSets = [
   {
-    year: "Soon",
+    label: "Audio",
     title: "Live DJ Sets",
     meta: "Selected audio recordings hosted directly on the website will be added here.",
-    source: "Audio File",
+    type: "Audio",
     status: "Coming soon",
   },
 ];
+
+const mixcloudUrl = "https://www.mixcloud.com/ITCHY_LEMON_DjProducer/";
 
 const getCloudcastKey = (url) => {
   const parsedUrl = new URL(url);
@@ -294,7 +296,7 @@ const enhancedRadioShows = radioShows.map((set) => ({
       .set-row {
         width: 100%;
         display: grid;
-        grid-template-columns: 80px 1fr 150px 120px 110px;
+        grid-template-columns: 80px 1fr 120px 110px;
         gap: 22px;
         align-items: start;
         border: 0;
@@ -335,7 +337,7 @@ const enhancedRadioShows = radioShows.map((set) => ({
         transform: none;
       }
 
-      .set-year {
+      .set-episode {
         color: var(--acid);
         font-size: 14px;
         letter-spacing: 0.18em;
@@ -358,16 +360,12 @@ const enhancedRadioShows = radioShows.map((set) => ({
         line-height: 1.55;
       }
 
-      .set-number,
       .set-type {
         color: var(--muted);
         text-transform: uppercase;
         letter-spacing: 0.14em;
         font-size: 12px;
         line-height: 1.45;
-      }
-
-      .set-type {
         text-align: right;
       }
 
@@ -382,6 +380,35 @@ const enhancedRadioShows = radioShows.map((set) => ({
         text-transform: uppercase;
         white-space: nowrap;
         transition: 0.2s ease;
+      }
+
+      .mixcloud-text-cta {
+        margin-top: 34px;
+        padding-top: 28px;
+        border-top: 1px solid var(--line);
+      }
+
+      .mixcloud-text-cta p {
+        margin: 0;
+        max-width: 760px;
+        color: var(--muted);
+        font-size: 17px;
+        line-height: 1.7;
+      }
+
+      .mixcloud-text-cta a {
+        color: var(--acid);
+        font-weight: 700;
+        text-decoration: none;
+        border-bottom: 1px solid rgba(216, 255, 62, 0.45);
+        transition:
+          color 0.2s ease,
+          border-color 0.2s ease;
+      }
+
+      .mixcloud-text-cta a:hover {
+        color: var(--text);
+        border-color: var(--text);
       }
 
       .video-grid {
@@ -694,6 +721,15 @@ const enhancedRadioShows = radioShows.map((set) => ({
           margin-top: 56px;
         }
 
+        .mixcloud-text-cta {
+          margin-top: 28px;
+          padding-top: 24px;
+        }
+
+        .mixcloud-text-cta p {
+          font-size: 16px;
+        }
+
         .video-grid {
           grid-template-columns: 1fr;
           gap: 24px;
@@ -793,14 +829,12 @@ const enhancedRadioShows = radioShows.map((set) => ({
               data-set-card
               data-set-index={index}
             >
-              <div class="set-year">{set.year}</div>
+              <div class="set-episode">{set.number}</div>
 
               <div>
                 <h2 class="set-title">{set.title}</h2>
                 <p class="set-meta">{set.meta}</p>
               </div>
-
-              <div class="set-number">{set.number}</div>
 
               <div class="set-type">{set.type}</div>
 
@@ -809,6 +843,15 @@ const enhancedRadioShows = radioShows.map((set) => ({
               </span>
             </button>
           ))}
+        </section>
+
+        <section class="mixcloud-text-cta" aria-label="Listen to more Itchy Lemon sets on Mixcloud">
+          <p>
+            Want to hear more Itchy Lemon radio shows and DJ sets?
+            <a href={mixcloudUrl} target="_blank" rel="noreferrer">
+              Explore the full Mixcloud archive
+            </a>.
+          </p>
         </section>
 
         <h2 class="section-title">Live DJ Sets · Video</h2>
@@ -842,16 +885,14 @@ const enhancedRadioShows = radioShows.map((set) => ({
         <section class="sets-list" aria-label="Itchy Lemon live DJ sets from audio files">
           {audioSets.map((set) => (
             <article class="set-row is-disabled">
-              <div class="set-year">{set.year}</div>
+              <div class="set-episode">{set.label}</div>
 
               <div>
                 <h2 class="set-title">{set.title}</h2>
                 <p class="set-meta">{set.meta}</p>
               </div>
 
-              <div class="set-number">{set.source}</div>
-
-              <div class="set-type">Audio</div>
+              <div class="set-type">{set.type}</div>
 
               <span class="listen">
                 {set.status}
