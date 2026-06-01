@@ -2,30 +2,91 @@
 import GlobalMixcloudPlayer from "../components/GlobalMixcloudPlayer.astro";
 import HubSpotTracking from "../components/HubSpotTracking.astro";
 
-const sets = [
+const radioShows = [
   {
-    title: "ITCHY LEMON Fresh Beats #41",
+    number: "#41",
+    year: "2016",
+    title: "Fresh Beats Radio Show #41",
+    meta: "January 2016",
+    type: "Radio Show",
     url: "https://www.mixcloud.com/ITCHY_LEMON_DjProducer/itchy-lemon-fresh-beats-41-jan-2016/",
   },
   {
-    title: "ITCHY LEMON Fresh Beats #40",
+    number: "#40",
+    year: "2015",
+    title: "Fresh Beats Radio Show #40",
+    meta: "Recorded live at Orange Room Porto · Studio Series Episode 108 · December 2015",
+    type: "Radio Show",
     url: "https://www.mixcloud.com/ITCHY_LEMON_DjProducer/itchy-lemon-fresh-beats-40-rec-live-at-orange-room-porto-studio-series-episode-108-dec-2015/",
   },
   {
-    title: "ITCHY LEMON Fresh Beats #39",
+    number: "#39",
+    year: "2015",
+    title: "Fresh Beats Radio Show #39",
+    meta: "Recorded live at DJ Live TV / Griffon's Club · November 2015",
+    type: "Radio Show",
     url: "https://www.mixcloud.com/ITCHY_LEMON_DjProducer/itchy-lemon-fresh-beats-39-rec-live-at-dj-live-tv-griffons-club-nov-2015/",
   },
   {
-    title: "ITCHY LEMON Fresh Beats #38",
+    number: "#38",
+    year: "2015",
+    title: "Fresh Beats Radio Show #38",
+    meta: "October 2015",
+    type: "Radio Show",
     url: "https://www.mixcloud.com/ITCHY_LEMON_DjProducer/itchy-lemon-fresh-beats-38-oct-2015/",
   },
   {
-    title: "ITCHY LEMON Fresh Beats #37",
+    number: "#37",
+    year: "2015",
+    title: "Fresh Beats Radio Show #37",
+    meta: "September 2015",
+    type: "Radio Show",
     url: "https://www.mixcloud.com/ITCHY_LEMON_DjProducer/itchy-lemon-fresh-beats-37-sep-2015/",
   },
   {
-    title: "ITCHY LEMON Fresh Beats #36",
+    number: "#36",
+    year: "2015",
+    title: "Fresh Beats Radio Show #36",
+    meta: "August 2015",
+    type: "Radio Show",
     url: "https://www.mixcloud.com/ITCHY_LEMON_DjProducer/itchy-lemon-fresh-beats-36-ago-2015/",
+  },
+];
+
+const videoSets = [
+  {
+    title: "Itchy Lemon Live DJ Set 01",
+    embedUrl: "https://www.youtube.com/embed/zFDTLWB483Q",
+  },
+  {
+    title: "Itchy Lemon Live DJ Set 02",
+    embedUrl: "https://www.youtube.com/embed/QvmN2MWRmxk",
+  },
+  {
+    title: "Itchy Lemon Live DJ Set 03",
+    embedUrl: "https://www.youtube.com/embed/6iyZGzSfsBI",
+  },
+  {
+    title: "Itchy Lemon Live DJ Set 04",
+    embedUrl: "https://www.youtube.com/embed/77RmqNOxkDw",
+  },
+  {
+    title: "Itchy Lemon Live DJ Set 05",
+    embedUrl: "https://www.youtube.com/embed/rnIKZc25WNk",
+  },
+  {
+    title: "Itchy Lemon Live DJ Set 06",
+    embedUrl: "https://www.youtube.com/embed/8-kOMD1khsM",
+  },
+];
+
+const audioSets = [
+  {
+    year: "Soon",
+    title: "Live DJ Sets",
+    meta: "Selected audio recordings hosted directly on the website will be added here.",
+    source: "Audio File",
+    status: "Coming soon",
   },
 ];
 
@@ -34,7 +95,7 @@ const getCloudcastKey = (url) => {
   return parsedUrl.pathname;
 };
 
-const enhancedSets = sets.map((set) => ({
+const enhancedRadioShows = radioShows.map((set) => ({
   ...set,
   key: getCloudcastKey(set.url),
 }));
@@ -46,7 +107,7 @@ const enhancedSets = sets.map((set) => ({
     <meta charset="UTF-8" />
     <meta
       name="description"
-      content="DJ sets, radio shows and live recordings by Itchy Lemon — House, Deep House, Tech House and Melodic Techno."
+      content="Radio shows, DJ sets and live recordings by Itchy Lemon — House, Deep House, Tech House and Melodic Techno."
     />
     <meta name="author" content="Itchy Lemon" />
     <meta name="theme-color" content="#07090c" />
@@ -83,6 +144,10 @@ const enhancedSets = sets.map((set) => ({
           linear-gradient(135deg, #07090c 0%, #111827 48%, #050608 100%);
         color: var(--text);
         min-height: 100vh;
+      }
+
+      body.modal-open {
+        overflow: hidden;
       }
 
       a {
@@ -213,73 +278,295 @@ const enhancedSets = sets.map((set) => ({
         margin-bottom: 10px;
       }
 
+      .section-title {
+        margin: 72px 0 22px;
+        color: var(--acid);
+        font-size: 13px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
       .sets-list {
         display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 18px;
-        margin-top: 64px;
+        gap: 0;
       }
 
-      .set-card {
+      .set-row {
         width: 100%;
-        min-height: 150px;
-        border: 1px solid var(--line);
-        border-radius: 26px;
-        background: rgba(16, 20, 27, 0.72);
+        display: grid;
+        grid-template-columns: 80px 1fr 150px 120px 110px;
+        gap: 22px;
+        align-items: start;
+        border: 0;
+        border-top: 1px solid var(--line);
+        padding: 24px 0;
+        background: transparent;
         color: var(--text);
-        padding: 24px;
-        backdrop-filter: blur(12px);
         cursor: pointer;
         text-align: left;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        gap: 24px;
-        transition:
-          transform 0.2s ease,
-          border-color 0.2s ease,
-          background 0.2s ease;
       }
 
-      .set-card:hover,
-      .set-card.is-active {
+      .set-row:hover .set-title,
+      .set-row.is-active .set-title {
+        color: var(--acid);
+      }
+
+      .set-row:hover .listen,
+      .set-row.is-active .listen {
+        color: #050608;
+        background: var(--acid);
+        border-color: var(--acid);
         transform: translateY(-2px);
-        border-color: rgba(216, 255, 62, 0.42);
-        background:
-          linear-gradient(135deg, rgba(216, 255, 62, 0.08), transparent),
-          rgba(16, 20, 27, 0.86);
       }
 
-      .set-card strong {
-        display: block;
+      .set-row.is-disabled {
+        cursor: default;
+        opacity: 0.68;
+      }
+
+      .set-row.is-disabled:hover .set-title {
         color: var(--text);
-        font-size: clamp(20px, 2.5vw, 28px);
-        line-height: 1.08;
-        letter-spacing: -0.05em;
       }
 
-      .set-card span {
-        display: block;
+      .set-row.is-disabled:hover .listen {
         color: var(--muted);
+        background: transparent;
+        border-color: var(--line);
+        transform: none;
+      }
+
+      .set-year {
+        color: var(--acid);
         font-size: 14px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      .set-title {
+        margin: 0;
+        color: var(--text);
+        font-size: 26px;
+        line-height: 1.05;
+        letter-spacing: -0.04em;
+        transition: color 0.2s ease;
+      }
+
+      .set-meta {
+        margin: 9px 0 0;
+        color: var(--muted);
+        font-size: 15px;
         line-height: 1.55;
       }
 
-      .set-card-footer {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 16px;
-        padding-top: 18px;
-        border-top: 1px solid var(--line);
-      }
-
-      .set-card-footer span {
-        color: var(--acid);
-        font-size: 11px;
-        font-weight: 700;
+      .set-number,
+      .set-type {
+        color: var(--muted);
         text-transform: uppercase;
         letter-spacing: 0.14em;
+        font-size: 12px;
+        line-height: 1.45;
+      }
+
+      .set-type {
+        text-align: right;
+      }
+
+      .listen {
+        justify-self: end;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        padding: 9px 13px;
+        color: var(--muted);
+        font-size: 11px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        white-space: nowrap;
+        transition: 0.2s ease;
+      }
+
+      .video-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 24px;
+        border-top: 1px solid var(--line);
+        padding-top: 24px;
+      }
+
+      .video-card {
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 28px;
+        background: rgba(16, 20, 27, 0.72);
+        backdrop-filter: blur(12px);
+        box-shadow: 0 24px 80px rgba(0, 0, 0, 0.24);
+        transition:
+          border-color 0.25s ease,
+          transform 0.25s ease,
+          background 0.25s ease;
+      }
+
+      .video-card:hover {
+        border-color: rgba(216, 255, 62, 0.45);
+        background: rgba(16, 20, 27, 0.86);
+        transform: translateY(-3px);
+      }
+
+      .video-preview-button {
+        position: relative;
+        display: block;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        border: 0;
+        padding: 0;
+        overflow: hidden;
+        background: #050608;
+        cursor: pointer;
+      }
+
+      .video-preview-button iframe {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+        pointer-events: none;
+      }
+
+      .video-preview-button::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        background:
+          linear-gradient(180deg, rgba(5, 6, 8, 0.02), rgba(5, 6, 8, 0.28)),
+          radial-gradient(circle at center, rgba(216, 255, 62, 0.08), transparent 42%);
+        pointer-events: none;
+      }
+
+      .video-play-icon {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        z-index: 2;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 58px;
+        height: 58px;
+        border: 1px solid rgba(216, 255, 62, 0.72);
+        border-radius: 999px;
+        background: rgba(5, 6, 8, 0.72);
+        color: var(--acid);
+        font-size: 30px;
+        line-height: 1;
+        transform: translate(-50%, -50%);
+        transition:
+          transform 0.25s ease,
+          background 0.25s ease,
+          color 0.25s ease;
+      }
+
+      .video-card:hover .video-play-icon {
+        background: var(--acid);
+        color: #050608;
+        transform: translate(-50%, -50%) scale(1.06);
+      }
+
+      .video-card-content {
+        padding: 20px;
+      }
+
+      .video-card-title {
+        margin: 0;
+        color: var(--text);
+        font-size: 24px;
+        line-height: 1.08;
+        letter-spacing: -0.04em;
+      }
+
+      .video-modal {
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 72px 36px;
+        background: rgba(5, 6, 8, 0.92);
+        backdrop-filter: blur(18px);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.22s ease;
+      }
+
+      .video-modal.is-open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .video-modal-panel {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: min(86vw, 1180px);
+        max-width: calc((100vh - 144px) * 16 / 9);
+        background: transparent;
+        transform: translateY(14px) scale(0.98);
+        transition: transform 0.22s ease;
+      }
+
+      .video-modal.is-open .video-modal-panel {
+        transform: translateY(0) scale(1);
+      }
+
+      .video-modal-frame {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        border-radius: 28px;
+        background: #000;
+        box-shadow: 0 32px 120px rgba(0, 0, 0, 0.65);
+      }
+
+      .video-modal-frame iframe {
+        display: block;
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+
+      .video-modal-close {
+        position: absolute;
+        top: -18px;
+        right: -18px;
+        z-index: 3;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 46px;
+        height: 46px;
+        border: 1px solid rgba(255, 255, 255, 0.24);
+        border-radius: 999px;
+        background: rgba(5, 6, 8, 0.88);
+        color: var(--text);
+        font-size: 26px;
+        line-height: 1;
+        cursor: pointer;
+        transition:
+          color 0.2s ease,
+          border-color 0.2s ease,
+          background 0.2s ease,
+          transform 0.2s ease;
+      }
+
+      .video-modal-close:hover {
+        color: #050608;
+        border-color: var(--acid);
+        background: var(--acid);
+        transform: rotate(90deg);
       }
 
       .booking-cta {
@@ -366,6 +653,26 @@ const enhancedSets = sets.map((set) => ({
         color: var(--acid);
       }
 
+      @media (max-width: 980px) {
+        .set-row {
+          grid-template-columns: 1fr;
+          gap: 10px;
+        }
+
+        .set-type {
+          text-align: left;
+        }
+
+        .listen {
+          justify-self: start;
+          margin-top: 4px;
+        }
+
+        .video-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
       @media (max-width: 900px) {
         .sets-intro,
         .booking-cta {
@@ -374,10 +681,6 @@ const enhancedSets = sets.map((set) => ({
 
         .profile-card {
           min-width: 0;
-        }
-
-        .sets-list {
-          grid-template-columns: 1fr;
         }
       }
 
@@ -398,22 +701,51 @@ const enhancedSets = sets.map((set) => ({
           font-size: 12px;
         }
 
-        .sets-list {
-          margin-top: 48px;
+        .section-title {
+          margin-top: 56px;
         }
 
-        .set-card {
-          min-height: 140px;
-          padding: 20px;
-          border-radius: 24px;
+        .video-card {
+          border-radius: 22px;
         }
 
-        .profile-card,
+        .video-card-content {
+          padding: 18px;
+        }
+
+        .video-card-title {
+          font-size: 22px;
+        }
+
+        .video-play-icon {
+          width: 52px;
+          height: 52px;
+          font-size: 27px;
+        }
+
+        .video-modal {
+          padding: 44px 16px;
+        }
+
+        .video-modal-panel {
+          width: 100%;
+          max-width: calc((100vh - 88px) * 16 / 9);
+        }
+
+        .video-modal-frame {
+          border-radius: 20px;
+        }
+
+        .video-modal-close {
+          top: -12px;
+          right: -8px;
+          width: 42px;
+          height: 42px;
+          font-size: 24px;
+        }
+
         .booking-cta {
           border-radius: 24px;
-        }
-
-        .booking-cta {
           padding: 18px;
         }
 
@@ -448,13 +780,13 @@ const enhancedSets = sets.map((set) => ({
       </header>
 
       <main>
-        <p class="eyebrow">DJ Sets & Radio Shows</p>
+        <p class="eyebrow">Radio Shows & DJ Sets</p>
 
         <h1>Sets</h1>
 
         <div class="sets-intro">
           <p class="lead">
-            Selected DJ sets, radio shows and live recordings from the Itchy Lemon archive.
+            Selected radio shows, live DJ sets and recordings from the Itchy Lemon archive.
           </p>
 
           <aside class="profile-card">
@@ -465,24 +797,84 @@ const enhancedSets = sets.map((set) => ({
           </aside>
         </div>
 
-        <section class="sets-list" aria-label="Itchy Lemon DJ sets">
-          {enhancedSets.map((set, index) => (
+        <h2 class="section-title">Fresh Beats Radio Show</h2>
+
+        <section class="sets-list" aria-label="Itchy Lemon radio shows">
+          {enhancedRadioShows.map((set, index) => (
             <button
-              class={`set-card ${index === 0 ? "is-active" : ""}`}
+              class={`set-row ${index === 0 ? "is-active" : ""}`}
               type="button"
               data-set-card
               data-set-index={index}
             >
-              <span>
-                <strong>{set.title}</strong>
-                <span>Load this set in the footer player</span>
-              </span>
+              <div class="set-year">{set.year}</div>
 
-              <span class="set-card-footer">
-                <span>Fresh Beats Archive</span>
-                <span>Play</span>
+              <div>
+                <h2 class="set-title">{set.title}</h2>
+                <p class="set-meta">{set.meta}</p>
+              </div>
+
+              <div class="set-number">{set.number}</div>
+
+              <div class="set-type">{set.type}</div>
+
+              <span class="listen" aria-label={`Play ${set.title}`}>
+                Play
               </span>
             </button>
+          ))}
+        </section>
+
+        <h2 class="section-title">Live DJ Sets · Video</h2>
+
+        <section class="video-grid" aria-label="Itchy Lemon live DJ sets from YouTube">
+          {videoSets.map((set) => (
+            <article class="video-card">
+              <button
+                class="video-preview-button"
+                type="button"
+                data-video-trigger
+                data-video-title={set.title}
+                data-video-url={set.embedUrl}
+                aria-label={`Play ${set.title}`}
+              >
+                <iframe
+                  src={`${set.embedUrl}?controls=0&modestbranding=1&rel=0`}
+                  title={`${set.title} preview`}
+                  loading="lazy"
+                  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                ></iframe>
+
+                <span class="video-play-icon" aria-hidden="true">›</span>
+              </button>
+
+              <div class="video-card-content">
+                <h2 class="video-card-title">{set.title}</h2>
+              </div>
+            </article>
+          ))}
+        </section>
+
+        <h2 class="section-title">Live DJ Sets · Audio</h2>
+
+        <section class="sets-list" aria-label="Itchy Lemon live DJ sets from audio files">
+          {audioSets.map((set) => (
+            <article class="set-row is-disabled">
+              <div class="set-year">{set.year}</div>
+
+              <div>
+                <h2 class="set-title">{set.title}</h2>
+                <p class="set-meta">{set.meta}</p>
+              </div>
+
+              <div class="set-number">{set.source}</div>
+
+              <div class="set-type">Audio</div>
+
+              <span class="listen">
+                {set.status}
+              </span>
+            </article>
           ))}
         </section>
 
@@ -504,10 +896,33 @@ const enhancedSets = sets.map((set) => ({
       <footer>
         <span>© 2026 Itchy Lemon. All rights reserved.</span>
         <span>
-          DJ sets · Radio shows · Mixcloud archive · Fresh Beats ·
+          Radio shows · DJ sets · YouTube videos · Audio recordings ·
           <a href="/privacy-policy">Privacy Policy</a>
         </span>
       </footer>
+    </div>
+
+    <div class="video-modal" data-video-modal aria-hidden="true">
+      <div class="video-modal-panel" role="dialog" aria-modal="true" aria-label="Live DJ Set video player">
+        <button
+          class="video-modal-close"
+          type="button"
+          data-video-close
+          aria-label="Close video"
+        >
+          ×
+        </button>
+
+        <div class="video-modal-frame">
+          <iframe
+            data-video-player
+            src=""
+            title="Live DJ Set video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
     </div>
 
     <GlobalMixcloudPlayer />
@@ -548,6 +963,61 @@ const enhancedSets = sets.map((set) => ({
       document.addEventListener("itchy-lemon-player-active-set", (event) => {
         const index = Number(event.detail?.index || "0");
         updateActiveCard(index);
+      });
+
+      const videoModal = document.querySelector("[data-video-modal]");
+      const videoPlayer = document.querySelector("[data-video-player]");
+      const videoTriggers = document.querySelectorAll("[data-video-trigger]");
+      const videoClose = document.querySelector("[data-video-close]");
+
+      const openVideoModal = (title, url) => {
+        if (!videoModal || !videoPlayer) return;
+
+        videoPlayer.setAttribute("title", title);
+        videoPlayer.setAttribute("src", `${url}?autoplay=1&rel=0`);
+
+        videoModal.classList.add("is-open");
+        videoModal.setAttribute("aria-hidden", "false");
+        document.body.classList.add("modal-open");
+      };
+
+      const closeVideoModal = () => {
+        if (!videoModal || !videoPlayer) return;
+
+        videoModal.classList.remove("is-open");
+        videoModal.setAttribute("aria-hidden", "true");
+        document.body.classList.remove("modal-open");
+
+        videoPlayer.setAttribute("src", "");
+      };
+
+      videoTriggers.forEach((trigger) => {
+        trigger.addEventListener("click", () => {
+          const title = trigger.dataset.videoTitle || "Live DJ Set";
+          const url = trigger.dataset.videoUrl;
+
+          if (url) {
+            openVideoModal(title, url);
+          }
+        });
+      });
+
+      if (videoClose) {
+        videoClose.addEventListener("click", closeVideoModal);
+      }
+
+      if (videoModal) {
+        videoModal.addEventListener("click", (event) => {
+          if (event.target === videoModal) {
+            closeVideoModal();
+          }
+        });
+      }
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+          closeVideoModal();
+        }
       });
     </script>
   </body>
