@@ -249,25 +249,6 @@ import HubSpotTracking from "../components/HubSpotTracking.astro";
         backdrop-filter: blur(12px);
       }
 
-      .featured-video {
-        width: 100%;
-        max-width: 520px;
-        aspect-ratio: 16 / 9;
-        margin: 8px auto 28px 0;
-        border-radius: 18px;
-        overflow: hidden;
-        background: #050608;
-        border: 1px solid var(--line);
-        filter: drop-shadow(0 0 42px rgba(216, 255, 62, 0.16));
-      }
-
-      .featured-video iframe {
-        width: 100%;
-        height: 100%;
-        border: 0;
-        display: block;
-      }
-
       .card-label {
         color: var(--muted);
         text-transform: uppercase;
@@ -287,6 +268,31 @@ import HubSpotTracking from "../components/HubSpotTracking.astro";
         line-height: 1.6;
         font-size: 15px;
         margin-top: 18px;
+      }
+
+      .featured-videos {
+        display: grid;
+        gap: 18px;
+        margin-top: 28px;
+      }
+
+      .featured-video {
+        width: 100%;
+        max-width: 520px;
+        aspect-ratio: 16 / 9;
+        margin: 0 auto 0 0;
+        border-radius: 18px;
+        overflow: hidden;
+        background: #050608;
+        border: 1px solid var(--line);
+        filter: drop-shadow(0 0 42px rgba(216, 255, 62, 0.16));
+      }
+
+      .featured-video iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+        display: block;
       }
 
       .stats {
@@ -345,6 +351,10 @@ import HubSpotTracking from "../components/HubSpotTracking.astro";
 
         .visual-card {
           min-height: 360px;
+        }
+
+        .featured-video {
+          max-width: none;
         }
 
         footer {
@@ -420,15 +430,6 @@ import HubSpotTracking from "../components/HubSpotTracking.astro";
         </section>
 
         <aside class="visual-card" aria-label="Artist highlight">
-          <div class="featured-video">
-            <iframe
-              src="https://www.youtube.com/embed/KJQfMcy3Hws?controls=1&rel=0&modestbranding=1&playsinline=1&fs=0&iv_load_policy=3"
-              title="Itchy Lemon featured video"
-              allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen
-            ></iframe>
-          </div>
-
           <div>
             <p class="card-label">Artist Profile</p>
             <div class="card-title">Melodic · Deep · Underground</div>
@@ -436,6 +437,28 @@ import HubSpotTracking from "../components/HubSpotTracking.astro";
             <p class="card-copy">
               A Portuguese DJ and producer project focused on atmosphere, rhythm and emotional progression.
             </p>
+
+            <div class="featured-videos" aria-label="Featured Itchy Lemon videos">
+              <div class="featured-video">
+                <iframe
+                  id="featured-music-video"
+                  src="https://www.youtube.com/embed/KJQfMcy3Hws?enablejsapi=1&controls=1&rel=0&modestbranding=1&playsinline=1&fs=0&iv_load_policy=3"
+                  title="Itchy Lemon featured music video"
+                  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                ></iframe>
+              </div>
+
+              <div class="featured-video">
+                <iframe
+                  id="featured-dj-set-video"
+                  src="https://www.youtube.com/embed/rnIKZc25WNk?enablejsapi=1&controls=1&rel=0&modestbranding=1&playsinline=1&fs=0&iv_load_policy=3"
+                  title="Itchy Lemon DJ Live TV performance"
+                  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
 
             <div class="stats">
               <div class="stat">
@@ -468,5 +491,62 @@ import HubSpotTracking from "../components/HubSpotTracking.astro";
 
     <GlobalMixcloudPlayer />
     <HubSpotTracking />
+
+    <script>
+      const loadYouTubeApi = () => {
+        if (window.YT && window.YT.Player) {
+          return Promise.resolve(window.YT);
+        }
+
+        return new Promise((resolve) => {
+          const existingScript = document.querySelector('script[src="https://www.youtube.com/iframe_api"]');
+
+          window.onYouTubeIframeAPIReady = () => {
+            resolve(window.YT);
+          };
+
+          if (!existingScript) {
+            const script = document.createElement("script");
+            script.src = "https://www.youtube.com/iframe_api";
+            document.body.appendChild(script);
+          }
+        });
+      };
+
+      loadYouTubeApi().then((YT) => {
+        let musicPlayer;
+        let djSetPlayer;
+
+        const pauseOtherPlayer = (activePlayer) => {
+          const players = [musicPlayer, djSetPlayer];
+
+          players.forEach((player) => {
+            if (player && player !== activePlayer && typeof player.pauseVideo === "function") {
+              player.pauseVideo();
+            }
+          });
+        };
+
+        musicPlayer = new YT.Player("featured-music-video", {
+          events: {
+            onStateChange: (event) => {
+              if (event.data === YT.PlayerState.PLAYING) {
+                pauseOtherPlayer(musicPlayer);
+              }
+            },
+          },
+        });
+
+        djSetPlayer = new YT.Player("featured-dj-set-video", {
+          events: {
+            onStateChange: (event) => {
+              if (event.data === YT.PlayerState.PLAYING) {
+                pauseOtherPlayer(djSetPlayer);
+              }
+            },
+          },
+        });
+      });
+    </script>
   </body>
 </html>
