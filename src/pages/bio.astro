@@ -1,4 +1,5 @@
 ---
+import SiteHeader from "../components/SiteHeader.astro";
 import GlobalMixcloudPlayer from "../components/GlobalMixcloudPlayer.astro";
 import HubSpotTracking from "../components/HubSpotTracking.astro";
 ---
@@ -50,53 +51,6 @@ import HubSpotTracking from "../components/HubSpotTracking.astro";
       .page {
         min-height: 100vh;
         padding: 32px;
-      }
-
-      header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 24px;
-        padding-bottom: 56px;
-      }
-
-      .logo {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        color: var(--acid);
-        font-weight: 700;
-        text-transform: uppercase;
-        white-space: nowrap;
-      }
-
-      .logo-icon {
-        display: block;
-        width: 22px;
-        height: 22px;
-        object-fit: contain;
-        flex-shrink: 0;
-      }
-
-      .logo span {
-        display: inline-block;
-        font-size: 14px;
-        letter-spacing: 0.32em;
-        line-height: 1;
-      }
-
-      nav {
-        display: flex;
-        gap: 22px;
-        font-size: 13px;
-        text-transform: uppercase;
-        letter-spacing: 0.12em;
-        color: var(--muted);
-      }
-
-      nav a:hover,
-      nav a.active {
-        color: var(--acid);
       }
 
       main {
@@ -231,28 +185,29 @@ import HubSpotTracking from "../components/HubSpotTracking.astro";
         gap: 20px;
       }
 
-      @media (max-width: 860px) {
+      footer a {
+        color: var(--muted);
+      }
+
+      footer a:hover {
+        color: var(--acid);
+      }
+
+      @media (max-width: 1024px) {
         .page {
           padding: 22px;
         }
 
-        header {
-          align-items: flex-start;
+        footer {
           flex-direction: column;
         }
+      }
 
-        nav {
-          flex-wrap: wrap;
-        }
-
+      @media (max-width: 860px) {
         .content-grid {
           grid-template-columns: 1fr;
           gap: 32px;
           margin-top: 48px;
-        }
-
-        footer {
-          flex-direction: column;
         }
       }
     </style>
@@ -260,22 +215,7 @@ import HubSpotTracking from "../components/HubSpotTracking.astro";
 
   <body>
     <div class="page">
-      <header>
-        <a class="logo" href="/" aria-label="Itchy Lemon homepage">
-          <img class="logo-icon" src="/favicon.png" alt="" />
-          <span>Itchy Lemon</span>
-        </a>
-
-        <nav>
-          <a href="/music">Music</a>
-          <a class="active" href="/bio">Bio</a>
-          <a href="/discography">Discography</a>
-          <a href="/media">Media</a>
-          <a href="/press-kit">Press Kit</a>
-          <a href="/sets">Sets</a>
-          <a href="/booking">Booking</a>
-        </nav>
-      </header>
+      <SiteHeader activePage="bio" />
 
       <main>
         <p class="eyebrow">Artist Biography</p>

@@ -1,4 +1,5 @@
 ---
+import SiteHeader from "../components/SiteHeader.astro";
 import GlobalMixcloudPlayer from "../components/GlobalMixcloudPlayer.astro";
 import HubSpotTracking from "../components/HubSpotTracking.astro";
 ---
@@ -54,131 +55,6 @@ import HubSpotTracking from "../components/HubSpotTracking.astro";
       .page {
         min-height: 100vh;
         padding: 32px;
-      }
-
-      header {
-        position: relative;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 24px;
-        padding-bottom: 56px;
-      }
-
-      .logo {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        color: var(--acid);
-        font-weight: 700;
-        text-transform: uppercase;
-        white-space: nowrap;
-        z-index: 3;
-      }
-
-      .logo-icon {
-        display: block;
-        width: 22px;
-        height: 22px;
-        object-fit: contain;
-        flex-shrink: 0;
-      }
-
-      .logo span {
-        display: inline-block;
-        font-size: 14px;
-        letter-spacing: 0.32em;
-        line-height: 1;
-      }
-
-      nav {
-        display: flex;
-        gap: 22px;
-        font-size: 13px;
-        text-transform: uppercase;
-        letter-spacing: 0.12em;
-        color: var(--muted);
-      }
-
-      nav a:hover,
-      nav a.active {
-        color: var(--acid);
-      }
-
-      .mobile-menu-toggle {
-        display: none;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        min-height: 42px;
-        padding: 0 16px;
-        border: 1px solid var(--line);
-        border-radius: 999px;
-        background: rgba(16, 20, 27, 0.78);
-        color: var(--text);
-        cursor: pointer;
-        text-transform: uppercase;
-        letter-spacing: 0.14em;
-        font-size: 12px;
-        font-weight: 700;
-        z-index: 3;
-        transition:
-          border-color 0.2s ease,
-          background 0.2s ease,
-          color 0.2s ease;
-      }
-
-      .mobile-menu-toggle:hover,
-      .mobile-menu-toggle.is-open {
-        border-color: var(--acid);
-        color: var(--acid);
-        background: rgba(216, 255, 62, 0.08);
-      }
-
-      .menu-icon {
-        position: relative;
-        width: 18px;
-        height: 12px;
-        display: inline-block;
-      }
-
-      .menu-icon span {
-        position: absolute;
-        left: 0;
-        width: 18px;
-        height: 2px;
-        border-radius: 999px;
-        background: currentColor;
-        transition:
-          transform 0.2s ease,
-          opacity 0.2s ease,
-          top 0.2s ease;
-      }
-
-      .menu-icon span:nth-child(1) {
-        top: 0;
-      }
-
-      .menu-icon span:nth-child(2) {
-        top: 5px;
-      }
-
-      .menu-icon span:nth-child(3) {
-        top: 10px;
-      }
-
-      .mobile-menu-toggle.is-open .menu-icon span:nth-child(1) {
-        top: 5px;
-        transform: rotate(45deg);
-      }
-
-      .mobile-menu-toggle.is-open .menu-icon span:nth-child(2) {
-        opacity: 0;
-      }
-
-      .mobile-menu-toggle.is-open .menu-icon span:nth-child(3) {
-        top: 5px;
-        transform: rotate(-45deg);
       }
 
       main {
@@ -382,97 +258,9 @@ import HubSpotTracking from "../components/HubSpotTracking.astro";
         color: var(--acid);
       }
 
-      @media (max-width: 900px) {
-        .music-grid,
-        .music-cta {
-          grid-template-columns: 1fr;
-        }
-
-        .cta-actions {
-          justify-content: flex-start;
-        }
-      }
-
       @media (max-width: 1024px) {
         .page {
           padding: 22px;
-        }
-
-        header {
-          align-items: center;
-          flex-direction: row;
-          flex-wrap: wrap;
-          gap: 16px;
-          padding-bottom: 48px;
-        }
-
-        .logo span {
-          font-size: 13px;
-          letter-spacing: 0.26em;
-        }
-
-        .mobile-menu-toggle {
-          display: inline-flex;
-          margin-left: auto;
-        }
-
-        nav {
-          width: 100%;
-          max-height: 0;
-          overflow: hidden;
-          display: grid;
-          grid-template-columns: 1fr;
-          gap: 0;
-          padding: 0;
-          border: 0;
-          border-radius: 24px;
-          background: rgba(16, 20, 27, 0.92);
-          backdrop-filter: blur(14px);
-          opacity: 0;
-          transform: translateY(-8px);
-          transition:
-            max-height 0.25s ease,
-            opacity 0.2s ease,
-            transform 0.2s ease,
-            padding 0.2s ease,
-            border-color 0.2s ease;
-        }
-
-        nav.is-open {
-          max-height: 520px;
-          opacity: 1;
-          transform: translateY(0);
-          padding: 10px;
-          border: 1px solid var(--line);
-        }
-
-        nav a {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          min-height: 46px;
-          padding: 0 14px;
-          border-radius: 16px;
-          border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-          font-size: 13px;
-          letter-spacing: 0.16em;
-        }
-
-        nav a:last-child {
-          border-bottom: 0;
-        }
-
-        nav a::after {
-          content: "›";
-          color: var(--acid);
-          opacity: 0.65;
-          font-size: 20px;
-          line-height: 1;
-        }
-
-        nav a:hover,
-        nav a.active {
-          background: rgba(216, 255, 62, 0.08);
         }
 
         .music-link {
@@ -489,42 +277,23 @@ import HubSpotTracking from "../components/HubSpotTracking.astro";
           flex-direction: column;
         }
       }
+
+      @media (max-width: 900px) {
+        .music-grid,
+        .music-cta {
+          grid-template-columns: 1fr;
+        }
+
+        .cta-actions {
+          justify-content: flex-start;
+        }
+      }
     </style>
   </head>
 
   <body>
     <div class="page">
-      <header>
-        <a class="logo" href="/" aria-label="Itchy Lemon homepage">
-          <img class="logo-icon" src="/favicon.png" alt="" />
-          <span>Itchy Lemon</span>
-        </a>
-
-        <button
-          class="mobile-menu-toggle"
-          type="button"
-          aria-label="Open navigation menu"
-          aria-expanded="false"
-          data-mobile-menu-toggle
-        >
-          <span class="menu-icon" aria-hidden="true">
-            <span></span>
-            <span></span>
-            <span></span>
-          </span>
-          Menu
-        </button>
-
-        <nav data-mobile-menu>
-          <a class="active" href="/music">Music</a>
-          <a href="/bio">Bio</a>
-          <a href="/discography">Discography</a>
-          <a href="/media">Media</a>
-          <a href="/press-kit">Press Kit</a>
-          <a href="/sets">Sets</a>
-          <a href="/booking">Booking</a>
-        </nav>
-      </header>
+      <SiteHeader activePage="music" />
 
       <main>
         <p class="eyebrow">Original Music & Releases</p>
@@ -634,30 +403,5 @@ import HubSpotTracking from "../components/HubSpotTracking.astro";
 
     <GlobalMixcloudPlayer />
     <HubSpotTracking />
-
-    <script>
-      const mobileMenuToggle = document.querySelector("[data-mobile-menu-toggle]");
-      const mobileMenu = document.querySelector("[data-mobile-menu]");
-
-      mobileMenuToggle?.addEventListener("click", () => {
-        const isOpen = mobileMenu?.classList.toggle("is-open");
-
-        mobileMenuToggle.classList.toggle("is-open", isOpen);
-        mobileMenuToggle.setAttribute("aria-expanded", String(isOpen));
-        mobileMenuToggle.setAttribute(
-          "aria-label",
-          isOpen ? "Close navigation menu" : "Open navigation menu"
-        );
-      });
-
-      mobileMenu?.querySelectorAll("a").forEach((link) => {
-        link.addEventListener("click", () => {
-          mobileMenu.classList.remove("is-open");
-          mobileMenuToggle?.classList.remove("is-open");
-          mobileMenuToggle?.setAttribute("aria-expanded", "false");
-          mobileMenuToggle?.setAttribute("aria-label", "Open navigation menu");
-        });
-      });
-    </script>
   </body>
 </html>
