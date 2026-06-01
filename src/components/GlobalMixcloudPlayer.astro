@@ -26,12 +26,15 @@ const sets = [
   },
 ];
 
-const getEmbedUrl = (url) =>
-  `https://www.mixcloud.com/widget/iframe/?hide_cover=1&light=0&feed=${encodeURIComponent(url)}`;
-
 const getCloudcastKey = (url) => {
   const parsedUrl = new URL(url);
   return parsedUrl.pathname;
+};
+
+const getEmbedUrl = (url) => {
+  const parsedUrl = new URL(url);
+
+  return `https://player-widget.mixcloud.com/widget/iframe/?hide_cover=1&feed=${encodeURIComponent(parsedUrl.pathname)}`;
 };
 
 const playerSets = sets.map((set) => ({
@@ -44,7 +47,7 @@ const featuredSet = playerSets[0];
 
 <style is:global>
   body.player-visible .page {
-    padding-bottom: 96px;
+    padding-bottom: 160px;
   }
 
   .global-mixcloud-player {
@@ -78,26 +81,64 @@ const featuredSet = playerSets[0];
     width: 100%;
     max-width: 1180px;
     margin: 0 auto;
-    padding: 4px 32px;
+    padding: 8px 32px 10px;
   }
 
   .global-player-inner {
     display: grid;
-    grid-template-columns: 34px minmax(150px, 230px) 1fr 34px 34px;
-    gap: 8px;
+    grid-template-columns: auto 1fr auto;
+    gap: 14px;
     align-items: center;
+  }
+
+  .global-player-info {
+    min-width: 0;
+  }
+
+  .global-player-label {
+    display: block;
+    color: #d8ff3e;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-size: 10px;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  .global-player-main {
+    min-width: 0;
+  }
+
+  .global-player-main iframe {
+    display: block;
+    width: 100%;
+    height: 120px;
+    border: 0;
+    border-radius: 10px;
+    background: #050608;
+    overflow: hidden;
+  }
+
+  .global-player-controls {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
   }
 
   .global-player-control,
   .global-player-close {
-    width: 34px;
-    height: 34px;
-    border: 1px solid rgba(216, 255, 62, 0.16);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border: 1px solid rgba(216, 255, 62, 0.18);
     border-radius: 999px;
     background: rgba(216, 255, 62, 0.04);
     color: #d8ff3e;
     cursor: pointer;
-    font-size: 15px;
+    font-size: 17px;
     line-height: 1;
     transition:
       transform 0.2s ease,
@@ -112,53 +153,16 @@ const featuredSet = playerSets[0];
     background: rgba(216, 255, 62, 0.1);
   }
 
-  .global-player-info {
-    min-width: 0;
-  }
-
-  .global-player-label {
-    display: block;
-    color: #d8ff3e;
-    text-transform: uppercase;
-    letter-spacing: 0.14em;
-    font-size: 9px;
-    margin-bottom: 2px;
-  }
-
-  .global-player-title {
-    display: block;
-    color: #f4f4f0;
-    font-size: 12px;
-    font-weight: 700;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
-  .global-player-main {
-    min-width: 0;
-  }
-
-  .global-player-main iframe {
-    display: block;
-    width: 100%;
-    height: 60px;
-    border: 0;
-    border-radius: 8px;
-    background: #050608;
-    overflow: hidden;
-  }
-
   body.player-visible #hubspot-messages-iframe-container {
-    bottom: 96px !important;
+    bottom: 160px !important;
   }
 
   body.beatport-preview-visible #hubspot-messages-iframe-container {
-    bottom: 114px !important;
+    bottom: 174px !important;
   }
 
   body.player-visible.beatport-preview-visible #hubspot-messages-iframe-container {
-    bottom: 114px !important;
+    bottom: 174px !important;
   }
 
   #hubspot-messages-iframe-container {
@@ -167,41 +171,104 @@ const featuredSet = playerSets[0];
 
   @media (max-width: 900px) {
     body.player-visible .page {
-      padding-bottom: 142px;
+      padding-bottom: 214px;
     }
 
     .global-player-shell {
-      padding: 5px 12px 7px;
+      padding: 12px 14px 18px;
     }
 
     .global-player-inner {
-      grid-template-columns: 34px 1fr 34px 34px;
-      gap: 8px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 9px;
     }
 
     .global-player-info {
-      grid-column: 1 / -1;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      min-width: 0;
+    }
+
+    .global-player-label {
+      font-size: 10px;
+      letter-spacing: 0.16em;
     }
 
     .global-player-main {
-      grid-column: 1 / -1;
+      width: 100%;
+      min-width: 0;
     }
 
     .global-player-main iframe {
-      height: 60px;
-      border-radius: 8px;
+      width: 100%;
+      height: 120px;
+      border-radius: 10px;
+    }
+
+    .global-player-controls {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 12px;
+    }
+
+    .global-player-control,
+    .global-player-close {
+      width: 42px;
+      height: 42px;
+      font-size: 18px;
     }
 
     body.player-visible #hubspot-messages-iframe-container {
-      bottom: 142px !important;
+      bottom: 214px !important;
     }
 
     body.beatport-preview-visible #hubspot-messages-iframe-container {
-      bottom: 162px !important;
+      bottom: 232px !important;
     }
 
     body.player-visible.beatport-preview-visible #hubspot-messages-iframe-container {
-      bottom: 162px !important;
+      bottom: 232px !important;
+    }
+  }
+
+  @media (max-width: 480px) {
+    body.player-visible .page {
+      padding-bottom: 222px;
+    }
+
+    .global-player-shell {
+      padding: 12px 12px 20px;
+    }
+
+    .global-player-main iframe {
+      height: 120px;
+    }
+
+    .global-player-controls {
+      gap: 10px;
+    }
+
+    .global-player-control,
+    .global-player-close {
+      width: 40px;
+      height: 40px;
+      font-size: 17px;
+    }
+
+    body.player-visible #hubspot-messages-iframe-container {
+      bottom: 222px !important;
+    }
+
+    body.beatport-preview-visible #hubspot-messages-iframe-container {
+      bottom: 240px !important;
+    }
+
+    body.player-visible.beatport-preview-visible #hubspot-messages-iframe-container {
+      bottom: 240px !important;
     }
   }
 </style>
@@ -209,13 +276,8 @@ const featuredSet = playerSets[0];
 <div class="global-mixcloud-player" data-global-player aria-label="Global Mixcloud player">
   <div class="global-player-shell">
     <div class="global-player-inner">
-      <button class="global-player-control" type="button" data-global-previous aria-label="Previous set">
-        ‹
-      </button>
-
       <div class="global-player-info">
         <span class="global-player-label">Now playing</span>
-        <span class="global-player-title" data-global-title>{featuredSet.title}</span>
       </div>
 
       <div class="global-player-main">
@@ -223,22 +285,28 @@ const featuredSet = playerSets[0];
           id="global-mixcloud-iframe"
           title={`Global player - ${featuredSet.title}`}
           width="100%"
-          height="60"
+          height="120"
           src={getEmbedUrl(featuredSet.url)}
           frameborder="0"
-          allow="encrypted-media; fullscreen; web-share"
+          allow="encrypted-media; fullscreen; autoplay; idle-detection; speaker-selection; web-share;"
           loading="lazy"
           scrolling="no"
         ></iframe>
       </div>
 
-      <button class="global-player-control" type="button" data-global-next aria-label="Next set">
-        ›
-      </button>
+      <div class="global-player-controls" aria-label="Player controls">
+        <button class="global-player-control" type="button" data-global-previous aria-label="Previous set">
+          ‹
+        </button>
 
-      <button class="global-player-close" type="button" data-global-close aria-label="Close player">
-        ×
-      </button>
+        <button class="global-player-control" type="button" data-global-next aria-label="Next set">
+          ›
+        </button>
+
+        <button class="global-player-close" type="button" data-global-close aria-label="Close player">
+          ×
+        </button>
+      </div>
     </div>
   </div>
 </div>
@@ -255,7 +323,6 @@ const featuredSet = playerSets[0];
 
   const player = document.querySelector("[data-global-player]");
   const iframe = document.querySelector("#global-mixcloud-iframe");
-  const titleElement = document.querySelector("[data-global-title]");
   const previousButton = document.querySelector("[data-global-previous]");
   const nextButton = document.querySelector("[data-global-next]");
   const closeButton = document.querySelector("[data-global-close]");
@@ -267,12 +334,6 @@ const featuredSet = playerSets[0];
   if (!sets[currentIndex]) {
     currentIndex = 0;
   }
-
-  const updateTitle = (index) => {
-    if (titleElement && sets[index]) {
-      titleElement.textContent = sets[index].title;
-    }
-  };
 
   const showPlayer = () => {
     player?.classList.add("is-visible");
@@ -309,7 +370,6 @@ const featuredSet = playerSets[0];
 
     currentIndex = index;
     saveCurrentIndex();
-    updateTitle(index);
     showPlayer();
     notifyActiveSet();
 
@@ -334,8 +394,6 @@ const featuredSet = playerSets[0];
     if (!window.Mixcloud || !window.Mixcloud.PlayerWidget || !iframe) {
       return;
     }
-
-    updateTitle(currentIndex);
 
     widget = window.Mixcloud.PlayerWidget(iframe);
 

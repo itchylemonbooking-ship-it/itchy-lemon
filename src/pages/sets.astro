@@ -386,16 +386,16 @@ const enhancedRadioShows = radioShows.map((set) => ({
 
       .video-grid {
         display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 24px;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 32px 30px;
         border-top: 1px solid var(--line);
-        padding-top: 24px;
+        padding-top: 30px;
       }
 
       .video-card {
         overflow: hidden;
         border: 1px solid var(--line);
-        border-radius: 28px;
+        border-radius: 22px;
         background: rgba(16, 20, 27, 0.72);
         backdrop-filter: blur(12px);
         box-shadow: 0 24px 80px rgba(0, 0, 0, 0.24);
@@ -451,13 +451,13 @@ const enhancedRadioShows = radioShows.map((set) => ({
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        width: 58px;
-        height: 58px;
+        width: 52px;
+        height: 52px;
         border: 1px solid rgba(216, 255, 62, 0.72);
         border-radius: 999px;
         background: rgba(5, 6, 8, 0.72);
         color: var(--acid);
-        font-size: 30px;
+        font-size: 27px;
         line-height: 1;
         transform: translate(-50%, -50%);
         transition:
@@ -470,18 +470,6 @@ const enhancedRadioShows = radioShows.map((set) => ({
         background: var(--acid);
         color: #050608;
         transform: translate(-50%, -50%) scale(1.06);
-      }
-
-      .video-card-content {
-        padding: 20px;
-      }
-
-      .video-card-title {
-        margin: 0;
-        color: var(--text);
-        font-size: 24px;
-        line-height: 1.08;
-        letter-spacing: -0.04em;
       }
 
       .video-modal {
@@ -669,7 +657,8 @@ const enhancedRadioShows = radioShows.map((set) => ({
         }
 
         .video-grid {
-          grid-template-columns: 1fr;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 28px;
         }
       }
 
@@ -705,22 +694,19 @@ const enhancedRadioShows = radioShows.map((set) => ({
           margin-top: 56px;
         }
 
+        .video-grid {
+          grid-template-columns: 1fr;
+          gap: 24px;
+        }
+
         .video-card {
-          border-radius: 22px;
-        }
-
-        .video-card-content {
-          padding: 18px;
-        }
-
-        .video-card-title {
-          font-size: 22px;
+          border-radius: 20px;
         }
 
         .video-play-icon {
-          width: 52px;
-          height: 52px;
-          font-size: 27px;
+          width: 48px;
+          height: 48px;
+          font-size: 25px;
         }
 
         .video-modal {
@@ -847,10 +833,6 @@ const enhancedRadioShows = radioShows.map((set) => ({
 
                 <span class="video-play-icon" aria-hidden="true">›</span>
               </button>
-
-              <div class="video-card-content">
-                <h2 class="video-card-title">{set.title}</h2>
-              </div>
             </article>
           ))}
         </section>
