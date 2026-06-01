@@ -67,8 +67,6 @@ import HubSpotTracking from "../components/HubSpotTracking.astro";
       .page {
         min-height: 100vh;
         padding: 32px;
-        display: flex;
-        flex-direction: column;
       }
 
       header {
@@ -118,14 +116,14 @@ import HubSpotTracking from "../components/HubSpotTracking.astro";
       }
 
       main {
-        flex: 1;
-        display: grid;
-        grid-template-columns: 1.2fr 0.8fr;
-        align-items: center;
-        gap: 56px;
-        max-width: 1180px;
+        max-width: 1080px;
         width: 100%;
         margin: 0 auto;
+        padding-top: 12px;
+        display: grid;
+        grid-template-columns: minmax(0, 1.05fr) minmax(360px, 0.95fr);
+        align-items: start;
+        gap: 56px;
       }
 
       .eyebrow {
@@ -133,22 +131,22 @@ import HubSpotTracking from "../components/HubSpotTracking.astro";
         text-transform: uppercase;
         letter-spacing: 0.24em;
         font-size: 13px;
-        margin-bottom: 20px;
+        margin: 0 0 18px;
       }
 
       h1 {
         margin: 0;
-        font-size: clamp(58px, 10vw, 132px);
+        font-size: clamp(56px, 8.5vw, 118px);
         line-height: 0.88;
         letter-spacing: -0.07em;
         text-transform: uppercase;
       }
 
       .subtitle {
-        margin-top: 28px;
+        margin-top: 32px;
         max-width: 680px;
-        font-size: clamp(22px, 3vw, 38px);
-        line-height: 1.1;
+        font-size: clamp(22px, 3vw, 34px);
+        line-height: 1.16;
         color: var(--text);
       }
 
@@ -168,20 +166,28 @@ import HubSpotTracking from "../components/HubSpotTracking.astro";
       }
 
       .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 48px;
         border: 1px solid var(--line);
-        padding: 14px 20px;
+        padding: 0 22px;
         border-radius: 999px;
         font-size: 13px;
+        font-weight: 700;
         letter-spacing: 0.12em;
         text-transform: uppercase;
-        transition: 0.2s ease;
+        white-space: nowrap;
+        transition:
+          transform 0.2s ease,
+          background 0.2s ease,
+          border-color 0.2s ease;
       }
 
       .button.primary {
         background: var(--acid);
         color: #050608;
         border-color: var(--acid);
-        font-weight: 700;
       }
 
       .button:hover {
@@ -241,7 +247,7 @@ import HubSpotTracking from "../components/HubSpotTracking.astro";
         background: rgba(16, 20, 27, 0.72);
         border-radius: 28px;
         padding: 28px;
-        min-height: 460px;
+        min-height: 0;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -254,13 +260,14 @@ import HubSpotTracking from "../components/HubSpotTracking.astro";
         text-transform: uppercase;
         letter-spacing: 0.18em;
         font-size: 12px;
+        margin: 0;
       }
 
       .card-title {
         font-size: 34px;
         line-height: 1;
         letter-spacing: -0.04em;
-        margin-top: 12px;
+        margin-top: 16px;
       }
 
       .card-copy {
@@ -278,9 +285,7 @@ import HubSpotTracking from "../components/HubSpotTracking.astro";
 
       .featured-video {
         width: 100%;
-        max-width: 520px;
         aspect-ratio: 16 / 9;
-        margin: 0 auto 0 0;
         border-radius: 18px;
         overflow: hidden;
         background: #050608;
@@ -321,8 +326,7 @@ import HubSpotTracking from "../components/HubSpotTracking.astro";
       }
 
       footer {
-        width: 100%;
-        max-width: 1180px;
+        max-width: 1080px;
         margin: 80px auto 0;
         color: var(--muted);
         font-size: 12px;
@@ -341,6 +345,17 @@ import HubSpotTracking from "../components/HubSpotTracking.astro";
         color: var(--acid);
       }
 
+      @media (max-width: 980px) {
+        main {
+          grid-template-columns: 1fr;
+          gap: 48px;
+        }
+
+        .visual-card {
+          max-width: 680px;
+        }
+      }
+
       @media (max-width: 860px) {
         .page {
           padding: 22px;
@@ -355,18 +370,8 @@ import HubSpotTracking from "../components/HubSpotTracking.astro";
           flex-wrap: wrap;
         }
 
-        main {
-          display: flex;
-          flex-direction: column;
-          gap: 36px;
-        }
-
-        .visual-card {
-          min-height: 360px;
-        }
-
-        .featured-video {
-          max-width: none;
+        .button {
+          width: 100%;
         }
 
         footer {
