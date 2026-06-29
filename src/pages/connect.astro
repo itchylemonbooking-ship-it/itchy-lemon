@@ -1,0 +1,462 @@
+---
+const pageTitle = "Itchy Lemon Connect";
+const pageDescription =
+  "Connect with Itchy Lemon — Melodic House & Techno DJ / Producer. Listen, press kit, booking and contact.";
+
+const siteUrl = "https://itchylemon.com";
+
+const links = [
+  {
+    label: "Listen",
+    description: "DJ sets, releases & latest music",
+    href: "/sets",
+    type: "internal",
+  },
+  {
+    label: "Press Kit / EPK",
+    description: "Artist info, links & assets",
+    href: "/press-kit",
+    type: "internal",
+  },
+  {
+    label: "Booking",
+    description: "Events, DJ sets & collaborations",
+    href: "/booking",
+    type: "internal",
+  },
+  {
+    label: "Save Contact",
+    description: "Add Itchy Lemon to your contacts",
+    href: "/itchy-lemon-contact.vcf",
+    type: "download",
+  },
+  {
+    label: "Instagram",
+    description: "Follow the project",
+    href: "https://www.instagram.com/itchylemon",
+    type: "external",
+  },
+  {
+    label: "Email",
+    description: "Direct contact",
+    href: "mailto:alberto.vilela.digital@gmail.com",
+    type: "external",
+  },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={pageDescription} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow" />
+
+    <title>{pageTitle}</title>
+
+    <link rel="canonical" href={`${siteUrl}/connect`} />
+
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDescription} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={`${siteUrl}/connect`} />
+    <meta property="og:image" content={`${siteUrl}/og-image.png`} />
+
+    <link rel="icon" type="image/png" href="/favicon.png" />
+  </head>
+
+  <body>
+    <main class="connect-page">
+      <section class="connect-card" aria-labelledby="connect-title">
+        <div class="visual-frame">
+          <div class="visual-noise"></div>
+          <div class="visual-orb visual-orb-one"></div>
+          <div class="visual-orb visual-orb-two"></div>
+
+          <div class="brand-mark" aria-hidden="true">
+            IL
+          </div>
+        </div>
+
+        <div class="content">
+          <p class="eyebrow">Artist Connect</p>
+
+          <h1 id="connect-title">Itchy Lemon</h1>
+
+          <p class="claim">Melodic House &amp; Techno / DJ / Producer</p>
+
+          <p class="intro">
+            Dark melodic energy for clubs, festivals and late-night rooms.
+          </p>
+
+          <nav class="link-list" aria-label="Itchy Lemon contact links">
+            {
+              links.map((link) => (
+                <a
+                  class="connect-link"
+                  href={link.href}
+                  target={link.type === "external" ? "_blank" : undefined}
+                  rel={link.type === "external" ? "noopener noreferrer" : undefined}
+                  download={link.type === "download" ? true : undefined}
+                >
+                  <span class="link-text">
+                    <span class="link-label">{link.label}</span>
+                    <span class="link-description">{link.description}</span>
+                  </span>
+                  <span class="link-arrow" aria-hidden="true">
+                    ↗
+                  </span>
+                </a>
+              ))
+            }
+          </nav>
+
+          <p class="context-note">
+            For bookings, collaborations, press or music-related contacts.
+          </p>
+        </div>
+
+        <footer class="connect-footer">
+          <span>Itchy Lemon · Porto, Portugal</span>
+          <span>itchylemon.com/connect</span>
+        </footer>
+      </section>
+    </main>
+  </body>
+</html>
+
+<style>
+  :root {
+    --color-bg: #050605;
+    --color-panel: rgba(12, 14, 12, 0.82);
+    --color-panel-strong: rgba(18, 21, 18, 0.96);
+    --color-text: #f3f5ef;
+    --color-muted: rgba(243, 245, 239, 0.68);
+    --color-soft: rgba(243, 245, 239, 0.44);
+    --color-acid: #d8ff3e;
+    --color-acid-soft: rgba(216, 255, 62, 0.22);
+    --color-border: rgba(216, 255, 62, 0.18);
+    --shadow-acid: 0 0 44px rgba(216, 255, 62, 0.2);
+    --font-main:
+      Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+      "Segoe UI", sans-serif;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    min-height: 100%;
+    background: var(--color-bg);
+  }
+
+  body {
+    min-height: 100vh;
+    margin: 0;
+    font-family: var(--font-main);
+    color: var(--color-text);
+    background:
+      radial-gradient(circle at top left, rgba(216, 255, 62, 0.16), transparent 32rem),
+      radial-gradient(circle at bottom right, rgba(95, 72, 255, 0.22), transparent 28rem),
+      linear-gradient(135deg, #030403 0%, #080908 48%, #10120e 100%);
+  }
+
+  body::before {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    content: "";
+    opacity: 0.08;
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.18) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.18) 1px, transparent 1px);
+    background-size: 44px 44px;
+    mask-image: radial-gradient(circle at center, black 0%, transparent 78%);
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .connect-page {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    min-height: 100vh;
+    padding: 22px;
+    place-items: center;
+  }
+
+  .connect-card {
+    position: relative;
+    width: min(100%, 460px);
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    border-radius: 32px;
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.06), transparent 22%),
+      var(--color-panel);
+    box-shadow:
+      0 24px 90px rgba(0, 0, 0, 0.58),
+      var(--shadow-acid);
+    backdrop-filter: blur(18px);
+  }
+
+  .connect-card::after {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    content: "";
+    border-radius: inherit;
+    background:
+      linear-gradient(135deg, rgba(216, 255, 62, 0.16), transparent 24%),
+      linear-gradient(315deg, rgba(255, 255, 255, 0.08), transparent 28%);
+  }
+
+  .visual-frame {
+    position: relative;
+    display: grid;
+    height: 188px;
+    overflow: hidden;
+    place-items: center;
+    background:
+      linear-gradient(135deg, rgba(216, 255, 62, 0.2), transparent 36%),
+      radial-gradient(circle at 35% 35%, rgba(216, 255, 62, 0.22), transparent 16rem),
+      radial-gradient(circle at 70% 40%, rgba(121, 84, 255, 0.38), transparent 15rem),
+      #060706;
+  }
+
+  .visual-frame::before {
+    position: absolute;
+    inset: 0;
+    content: "";
+    background:
+      linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.08) 50%, transparent 100%),
+      repeating-linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 0.04) 0,
+        rgba(255, 255, 255, 0.04) 1px,
+        transparent 1px,
+        transparent 6px
+      );
+    mix-blend-mode: screen;
+    opacity: 0.32;
+  }
+
+  .visual-noise {
+    position: absolute;
+    inset: -30%;
+    opacity: 0.22;
+    background-image:
+      radial-gradient(circle, rgba(255, 255, 255, 0.32) 1px, transparent 1px);
+    background-size: 14px 14px;
+    transform: rotate(8deg);
+  }
+
+  .visual-orb {
+    position: absolute;
+    border-radius: 999px;
+    filter: blur(4px);
+  }
+
+  .visual-orb-one {
+    width: 152px;
+    height: 152px;
+    border: 1px solid rgba(216, 255, 62, 0.54);
+    box-shadow: 0 0 54px rgba(216, 255, 62, 0.32);
+  }
+
+  .visual-orb-two {
+    right: 48px;
+    bottom: -48px;
+    width: 130px;
+    height: 130px;
+    background: rgba(216, 255, 62, 0.18);
+  }
+
+  .brand-mark {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    width: 92px;
+    height: 92px;
+    border: 1px solid rgba(216, 255, 62, 0.64);
+    border-radius: 28px;
+    place-items: center;
+    color: var(--color-acid);
+    font-size: 2.25rem;
+    font-weight: 800;
+    letter-spacing: -0.08em;
+    text-transform: uppercase;
+    background: rgba(5, 6, 5, 0.72);
+    box-shadow: 0 0 32px rgba(216, 255, 62, 0.26);
+  }
+
+  .content {
+    position: relative;
+    z-index: 2;
+    padding: 28px 24px 18px;
+  }
+
+  .eyebrow {
+    margin: 0 0 10px;
+    color: var(--color-acid);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  h1 {
+    margin: 0;
+    font-size: clamp(2.6rem, 12vw, 4.6rem);
+    line-height: 0.9;
+    letter-spacing: -0.08em;
+    text-transform: uppercase;
+  }
+
+  .claim {
+    margin: 16px 0 0;
+    color: var(--color-text);
+    font-size: 0.94rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .intro {
+    max-width: 34ch;
+    margin: 12px 0 24px;
+    color: var(--color-muted);
+    font-size: 0.98rem;
+    line-height: 1.55;
+  }
+
+  .link-list {
+    display: grid;
+    gap: 10px;
+  }
+
+  .connect-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    min-height: 68px;
+    padding: 14px 16px;
+    border: 1px solid rgba(243, 245, 239, 0.1);
+    border-radius: 18px;
+    background:
+      linear-gradient(135deg, rgba(255, 255, 255, 0.08), transparent),
+      rgba(255, 255, 255, 0.035);
+    transition:
+      transform 180ms ease,
+      border-color 180ms ease,
+      background 180ms ease,
+      box-shadow 180ms ease;
+  }
+
+  .connect-link:hover,
+  .connect-link:focus-visible {
+    border-color: rgba(216, 255, 62, 0.62);
+    background:
+      linear-gradient(135deg, rgba(216, 255, 62, 0.16), transparent),
+      rgba(255, 255, 255, 0.055);
+    box-shadow: 0 0 28px rgba(216, 255, 62, 0.12);
+    outline: none;
+    transform: translateY(-2px);
+  }
+
+  .link-text {
+    display: grid;
+    gap: 4px;
+  }
+
+  .link-label {
+    color: var(--color-text);
+    font-size: 1rem;
+    font-weight: 750;
+    letter-spacing: -0.01em;
+  }
+
+  .link-description {
+    color: var(--color-muted);
+    font-size: 0.82rem;
+    line-height: 1.3;
+  }
+
+  .link-arrow {
+    display: grid;
+    flex: 0 0 auto;
+    width: 34px;
+    height: 34px;
+    border-radius: 999px;
+    place-items: center;
+    color: #050605;
+    font-size: 1rem;
+    font-weight: 800;
+    background: var(--color-acid);
+  }
+
+  .context-note {
+    margin: 18px 0 0;
+    color: var(--color-soft);
+    font-size: 0.78rem;
+    line-height: 1.45;
+  }
+
+  .connect-footer {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    gap: 4px;
+    padding: 18px 24px 24px;
+    color: rgba(243, 245, 239, 0.48);
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 420px) {
+    .connect-page {
+      padding: 14px;
+      align-items: start;
+    }
+
+    .connect-card {
+      border-radius: 26px;
+    }
+
+    .visual-frame {
+      height: 164px;
+    }
+
+    .content {
+      padding: 24px 18px 16px;
+    }
+
+    .connect-link {
+      min-height: 64px;
+      padding: 13px 14px;
+    }
+
+    .connect-footer {
+      padding: 16px 18px 22px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .connect-link {
+      transition: none;
+    }
+
+    .connect-link:hover,
+    .connect-link:focus-visible {
+      transform: none;
+    }
+  }
+</style>
