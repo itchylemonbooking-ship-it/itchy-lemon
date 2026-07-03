@@ -12,36 +12,42 @@ const links = [
     description: "DJ sets, releases & latest music",
     href: "/sets",
     type: "internal",
+    trackingName: "listen",
   },
   {
     label: "Press Kit / EPK",
     description: "Artist info, links & assets",
     href: "/press-kit",
     type: "internal",
+    trackingName: "press_kit_epk",
   },
   {
     label: "Booking",
     description: "Events, DJ sets & collaborations",
     href: "/booking",
     type: "internal",
+    trackingName: "booking",
   },
   {
     label: "Save Contact",
     description: "Add Itchy Lemon to your contacts",
     href: "/itchy-lemon-contact.vcf",
     type: "download",
+    trackingName: "save_contact",
   },
   {
     label: "Instagram",
     description: "Follow the project",
-    href: "https://www.instagram.com/itchylemon",
+    href: "https://www.instagram.com/itchy_lemon/",
     type: "external",
+    trackingName: "instagram",
   },
   {
     label: "Email",
     description: "Direct contact",
     href: "mailto:alberto.vilela.digital@gmail.com",
     type: "external",
+    trackingName: "email",
   },
 ];
 ---
@@ -71,12 +77,7 @@ const links = [
     <main class="connect-page">
       <section class="connect-card" aria-labelledby="connect-title">
         <div class="visual-frame" aria-hidden="true">
-          <img
-            src={heroImage}
-            alt=""
-            loading="eager"
-            decoding="async"
-          />
+          <img src={heroImage} alt="" loading="eager" decoding="async" />
         </div>
 
         <div class="content">
@@ -100,6 +101,10 @@ const links = [
                   target={link.type === "external" ? "_blank" : undefined}
                   rel={link.type === "external" ? "noopener noreferrer" : undefined}
                   download={link.type === "download" ? true : undefined}
+                  data-track="connect_click"
+                  data-track-name={link.trackingName}
+                  data-track-label={link.label}
+                  data-track-type={link.type}
                 >
                   <span class="link-text">
                     <span class="link-label">{link.label}</span>
@@ -124,6 +129,123 @@ const links = [
         </footer>
       </section>
     </main>
+
+    <script>
+      const campaignDefaults = {
+        utm_source: "eletrico2026",
+        utm_medium: "qr",
+        utm_campaign: "connect_card",
+      };
+
+      const utmKeys = [
+        "utm_source",
+        "utm_medium",
+        "utm_campaign",
+        "utm_content",
+        "utm_term",
+      ];
+
+      const currentUrl = new URL(window.location.href);
+      const currentParams = currentUrl.searchParams;
+
+      const getCampaignParams = () => {
+        const params = new URLSearchParams();
+
+        utmKeys.forEach((key) => {
+          const value = currentParams.get(key);
+
+          if (value) {
+            params.set(key, value);
+          }
+        });
+
+        if (!params.get("utm_source")) {
+          params.set("utm_source", campaignDefaults.utm_source);
+        }
+
+        if (!params.get("utm_medium")) {
+          params.set("utm_medium", campaignDefaults.utm_medium);
+        }
+
+        if (!params.get("utm_campaign")) {
+          params.set("utm_campaign", campaignDefaults.utm_campaign);
+        }
+
+        return params;
+      };
+
+      const campaignParams = getCampaignParams();
+
+      const getCampaignValue = (key) => {
+        return campaignParams.get(key) || "";
+      };
+
+      const appendCampaignParamsToInternalLinks = () => {
+        const trackedInternalLinks = document.querySelectorAll(
+          'a[data-track][href^="/"]:not([href$=".vcf"])'
+        );
+
+        trackedInternalLinks.forEach((link) => {
+          const href = link.getAttribute("href");
+
+          if (!href) {
+            return;
+          }
+
+          const linkUrl = new URL(href, window.location.origin);
+
+          campaignParams.forEach((value, key) => {
+            if (value && !linkUrl.searchParams.get(key)) {
+              linkUrl.searchParams.set(key, value);
+            }
+          });
+
+          link.setAttribute("href", `${linkUrl.pathname}${linkUrl.search}`);
+        });
+      };
+
+      const trackConnectClick = (link) => {
+        const eventName = "connect_click";
+
+        const eventParams = {
+          button_name: link.dataset.trackName || "",
+          button_label: link.dataset.trackLabel || "",
+          button_type: link.dataset.trackType || "",
+          button_url: link.getAttribute("href") || "",
+          source_page: "connect",
+          utm_source: getCampaignValue("utm_source"),
+          utm_medium: getCampaignValue("utm_medium"),
+          utm_campaign: getCampaignValue("utm_campaign"),
+        };
+
+        if (typeof window.gtag === "function") {
+          window.gtag("event", eventName, eventParams);
+        }
+
+        if (window._hsq && Array.isArray(window._hsq)) {
+          window._hsq.push([
+            "trackCustomBehavioralEvent",
+            {
+              name: "connect_click",
+              properties: eventParams,
+            },
+          ]);
+        }
+      };
+
+      const setupClickTracking = () => {
+        const trackedLinks = document.querySelectorAll("a[data-track]");
+
+        trackedLinks.forEach((link) => {
+          link.addEventListener("click", () => {
+            trackConnectClick(link);
+          });
+        });
+      };
+
+      appendCampaignParamsToInternalLinks();
+      setupClickTracking();
+    </script>
   </body>
 </html>
 
