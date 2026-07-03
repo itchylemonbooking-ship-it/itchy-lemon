@@ -4,6 +4,7 @@ const pageDescription =
   "Connect with Itchy Lemon — Melodic House & Techno DJ / Producer. Listen, press kit, booking and contact.";
 
 const siteUrl = "https://itchylemon.com";
+const heroImage = "/media/connect-hero.jpg";
 
 const links = [
   {
@@ -69,14 +70,13 @@ const links = [
   <body>
     <main class="connect-page">
       <section class="connect-card" aria-labelledby="connect-title">
-        <div class="visual-frame">
-          <div class="visual-noise"></div>
-          <div class="visual-orb visual-orb-one"></div>
-          <div class="visual-orb visual-orb-two"></div>
-
-          <div class="brand-mark" aria-hidden="true">
-            IL
-          </div>
+        <div class="visual-frame" aria-hidden="true">
+          <img
+            src={heroImage}
+            alt=""
+            loading="eager"
+            decoding="async"
+          />
         </div>
 
         <div class="content">
@@ -130,13 +130,11 @@ const links = [
 <style>
   :root {
     --color-bg: #050605;
-    --color-panel: rgba(12, 14, 12, 0.82);
-    --color-panel-strong: rgba(18, 21, 18, 0.96);
+    --color-panel: rgba(12, 14, 12, 0.88);
     --color-text: #f3f5ef;
     --color-muted: rgba(243, 245, 239, 0.68);
     --color-soft: rgba(243, 245, 239, 0.44);
     --color-acid: #d8ff3e;
-    --color-acid-soft: rgba(216, 255, 62, 0.22);
     --color-border: rgba(216, 255, 62, 0.18);
     --shadow-acid: 0 0 44px rgba(216, 255, 62, 0.2);
     --font-main:
@@ -214,87 +212,38 @@ const links = [
     content: "";
     border-radius: inherit;
     background:
-      linear-gradient(135deg, rgba(216, 255, 62, 0.16), transparent 24%),
-      linear-gradient(315deg, rgba(255, 255, 255, 0.08), transparent 28%);
+      linear-gradient(135deg, rgba(216, 255, 62, 0.1), transparent 24%),
+      linear-gradient(315deg, rgba(255, 255, 255, 0.05), transparent 28%);
   }
 
   .visual-frame {
     position: relative;
-    display: grid;
     height: 188px;
     overflow: hidden;
-    place-items: center;
-    background:
-      linear-gradient(135deg, rgba(216, 255, 62, 0.2), transparent 36%),
-      radial-gradient(circle at 35% 35%, rgba(216, 255, 62, 0.22), transparent 16rem),
-      radial-gradient(circle at 70% 40%, rgba(121, 84, 255, 0.38), transparent 15rem),
-      #060706;
+    background: #060706;
   }
 
-  .visual-frame::before {
+  .visual-frame img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    transform: scale(1.08);
+  }
+
+  .visual-frame::after {
     position: absolute;
     inset: 0;
+    pointer-events: none;
     content: "";
     background:
-      linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.08) 50%, transparent 100%),
-      repeating-linear-gradient(
-        0deg,
-        rgba(255, 255, 255, 0.04) 0,
-        rgba(255, 255, 255, 0.04) 1px,
-        transparent 1px,
-        transparent 6px
+      linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 0.08) 48%,
+        rgba(5, 6, 5, 0.82) 100%
       );
-    mix-blend-mode: screen;
-    opacity: 0.32;
-  }
-
-  .visual-noise {
-    position: absolute;
-    inset: -30%;
-    opacity: 0.22;
-    background-image:
-      radial-gradient(circle, rgba(255, 255, 255, 0.32) 1px, transparent 1px);
-    background-size: 14px 14px;
-    transform: rotate(8deg);
-  }
-
-  .visual-orb {
-    position: absolute;
-    border-radius: 999px;
-    filter: blur(4px);
-  }
-
-  .visual-orb-one {
-    width: 152px;
-    height: 152px;
-    border: 1px solid rgba(216, 255, 62, 0.54);
-    box-shadow: 0 0 54px rgba(216, 255, 62, 0.32);
-  }
-
-  .visual-orb-two {
-    right: 48px;
-    bottom: -48px;
-    width: 130px;
-    height: 130px;
-    background: rgba(216, 255, 62, 0.18);
-  }
-
-  .brand-mark {
-    position: relative;
-    z-index: 2;
-    display: grid;
-    width: 92px;
-    height: 92px;
-    border: 1px solid rgba(216, 255, 62, 0.64);
-    border-radius: 28px;
-    place-items: center;
-    color: var(--color-acid);
-    font-size: 2.25rem;
-    font-weight: 800;
-    letter-spacing: -0.08em;
-    text-transform: uppercase;
-    background: rgba(5, 6, 5, 0.72);
-    box-shadow: 0 0 32px rgba(216, 255, 62, 0.26);
   }
 
   .content {
