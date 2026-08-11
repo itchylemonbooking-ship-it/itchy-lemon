@@ -783,8 +783,18 @@ import MetaPixel from "../components/MetaPixel.astro";
     </div>
 
     <div class="epk-modal" data-epk-modal aria-hidden="true">
-      <div class="epk-modal-content" role="dialog" aria-modal="true" aria-label="Download Itchy Lemon EPK">
-        <button class="epk-modal-close" type="button" data-close-epk-modal aria-label="Close EPK download popup">
+      <div
+        class="epk-modal-content"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Download Itchy Lemon EPK"
+      >
+        <button
+          class="epk-modal-close"
+          type="button"
+          data-close-epk-modal
+          aria-label="Close EPK download popup"
+        >
           ×
         </button>
 
@@ -807,7 +817,10 @@ import MetaPixel from "../components/MetaPixel.astro";
           ></div>
         </div>
 
-        <div class="epk-download-confirmation" data-epk-download-confirmation>
+        <div
+          class="epk-download-confirmation"
+          data-epk-download-confirmation
+        >
           <p>
             Thank you. You can now download the official Itchy Lemon EPK.
           </p>
@@ -837,16 +850,81 @@ import MetaPixel from "../components/MetaPixel.astro";
     <script src="https://js-eu1.hsforms.net/forms/embed/148590426.js" defer></script>
 
     <script>
-      const epkModal = document.querySelector("[data-epk-modal]");
-      const epkModalTriggers = document.querySelectorAll("[data-open-epk-modal]");
-      const epkModalClose = document.querySelector("[data-close-epk-modal]");
-      const epkDownloadConfirmation = document.querySelector("[data-epk-download-confirmation]");
-      const epkDownloadButton = document.querySelector("[data-download-epk-file]");
+      const epkFormId = "c48c62f5-f0b6-4153-8aaa-b4f9f4b952ab";
 
-      const openEpkModal = () => {
+      const epkModal = document.querySelector("[data-epk-modal]");
+      const epkModalTriggers = document.querySelectorAll(
+        "[data-open-epk-modal]"
+      );
+      const epkModalClose = document.querySelector(
+        "[data-close-epk-modal]"
+      );
+      const epkDownloadConfirmation = document.querySelector(
+        "[data-epk-download-confirmation]"
+      );
+      const epkDownloadButton = document.querySelector(
+        "[data-download-epk-file]"
+      );
+
+      let epkLeadTracked = false;
+
+      const trackEpkIntent = (trigger) => {
+        if (typeof window.fbq !== "function") {
+          return;
+        }
+
+        const triggerLabel =
+          trigger?.textContent?.trim().replace(/\s+/g, " ") ||
+          "Download EPK";
+
+        window.fbq("trackCustom", "EPKIntent", {
+          source_page: "press-kit",
+          trigger_label: triggerLabel,
+          form_id: epkFormId,
+        });
+      };
+
+      const trackEpkLead = () => {
+        if (
+          epkLeadTracked ||
+          typeof window.fbq !== "function"
+        ) {
+          return;
+        }
+
+        window.fbq("track", "Lead", {
+          content_name: "EPK Request",
+          content_category: "Press Kit",
+          source_page: "press-kit",
+          form_id: epkFormId,
+        });
+
+        epkLeadTracked = true;
+      };
+
+      const trackEpkDownload = () => {
+        if (typeof window.fbq !== "function") {
+          return;
+        }
+
+        window.fbq("trackCustom", "EPKDownload", {
+          content_name: "Itchy Lemon EPK 2026",
+          source_page: "press-kit",
+          file_name: "Itchy_Lemon_EPK_2026.pdf",
+        });
+      };
+
+      const handleSuccessfulEpkSubmission = () => {
+        epkDownloadConfirmation?.classList.add("is-visible");
+        trackEpkLead();
+      };
+
+      const openEpkModal = (trigger) => {
         epkModal.classList.add("is-open");
         epkModal.setAttribute("aria-hidden", "false");
         document.body.style.overflow = "hidden";
+
+        trackEpkIntent(trigger);
       };
 
       const closeEpkModal = () => {
@@ -858,7 +936,7 @@ import MetaPixel from "../components/MetaPixel.astro";
       epkModalTriggers.forEach((trigger) => {
         trigger.addEventListener("click", (event) => {
           event.preventDefault();
-          openEpkModal();
+          openEpkModal(trigger);
         });
       });
 
@@ -871,22 +949,62 @@ import MetaPixel from "../components/MetaPixel.astro";
       });
 
       document.addEventListener("keydown", (event) => {
-        if (event.key === "Escape" && epkModal.classList.contains("is-open")) {
+        if (
+          event.key === "Escape" &&
+          epkModal.classList.contains("is-open")
+        ) {
           closeEpkModal();
         }
       });
 
+      /*
+       * Current HubSpot forms:
+       * fires only after a successful form submission.
+       */
+      window.addEventListener(
+        "hs-form-event:on-submission:success",
+        (event) => {
+          const submittedFormId = event.detail?.formId || "";
+
+          if (submittedFormId !== epkFormId) {
+            return;
+          }
+
+          handleSuccessfulEpkSubmission();
+        }
+      );
+
+      /*
+       * Legacy HubSpot forms fallback.
+       * epkLeadTracked prevents duplicate Meta Lead events.
+       */
       window.addEventListener("message", (event) => {
         if (
-          event.data &&
-          event.data.type === "hsFormCallback" &&
-          event.data.eventName === "onFormSubmitted"
+          !event.data ||
+          event.data.type !== "hsFormCallback" ||
+          event.data.eventName !== "onFormSubmitted"
         ) {
-          epkDownloadConfirmation?.classList.add("is-visible");
+          return;
         }
+
+        const submittedFormId =
+          event.data.id ||
+          event.data.formId ||
+          "";
+
+        if (
+          submittedFormId &&
+          submittedFormId !== epkFormId
+        ) {
+          return;
+        }
+
+        handleSuccessfulEpkSubmission();
       });
 
       epkDownloadButton?.addEventListener("click", () => {
+        trackEpkDownload();
+
         setTimeout(() => {
           closeEpkModal();
         }, 300);
