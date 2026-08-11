@@ -1,29 +1,333 @@
 <script is:inline>
-  !function(f,b,e,v,n,t,s)
-  {
-    if(f.fbq)return;
-    n=f.fbq=function(){
-      n.callMethod
-        ? n.callMethod.apply(n,arguments)
-        : n.queue.push(arguments)
-    };
-    if(!f._fbq)f._fbq=n;
-    n.push=n;
-    n.loaded=!0;
-    n.version='2.0';
-    n.queue=[];
-    t=b.createElement(e);
-    t.async=!0;
-    t.src=v;
-    s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)
-  }(
-    window,
-    document,
-    'script',
-    'https://connect.facebook.net/en_US/fbevents.js'
-  );
+  (() => {
+    const pixelId = "2110078442878718";
+    const consentKey = "itchyLemonMetaConsent";
 
-  fbq('init', '2110078442878718');
-  fbq('track', 'PageView');
+    let metaPixelLoaded = false;
+
+    const getStoredConsent = () => {
+      try {
+        return localStorage.getItem(consentKey);
+      } catch {
+        return null;
+      }
+    };
+
+    const storeConsent = (value) => {
+      try {
+        localStorage.setItem(consentKey, value);
+      } catch {
+        // Consent applies only to the current page if storage is unavailable.
+      }
+    };
+
+    const createFbq = () => {
+      if (window.fbq) {
+        return window.fbq;
+      }
+
+      !function(f,b,e,v,n,t,s)
+      {
+        if(f.fbq)return;
+
+        n=f.fbq=function(){
+          n.callMethod
+            ? n.callMethod.apply(n,arguments)
+            : n.queue.push(arguments)
+        };
+
+        if(!f._fbq)f._fbq=n;
+
+        n.push=n;
+        n.loaded=!0;
+        n.version='2.0';
+        n.queue=[];
+
+        t=b.createElement(e);
+        t.async=!0;
+        t.src=v;
+
+        s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s);
+
+      }(
+        window,
+        document,
+        'script',
+        'https://connect.facebook.net/en_US/fbevents.js'
+      );
+
+      return window.fbq;
+    };
+
+    const loadMetaPixel = () => {
+      if (metaPixelLoaded && typeof window.fbq === "function") {
+        window.fbq("consent", "grant");
+        return;
+      }
+
+      const fbq = createFbq();
+
+      fbq("consent", "grant");
+      fbq("init", pixelId);
+      fbq("track", "PageView");
+
+      metaPixelLoaded = true;
+    };
+
+    const revokeMetaPixel = () => {
+      if (typeof window.fbq === "function") {
+        window.fbq("consent", "revoke");
+      }
+    };
+
+    /*
+     * Returning visitor:
+     * only load Meta if consent was previously granted.
+     */
+    if (getStoredConsent() === "granted") {
+      loadMetaPixel();
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const banner = document.querySelector("[data-meta-consent]");
+      const acceptButton = document.querySelector(
+        "[data-meta-consent-accept]"
+      );
+      const rejectButton = document.querySelector(
+        "[data-meta-consent-reject]"
+      );
+      const settingsButton = document.querySelector(
+        "[data-meta-consent-settings]"
+      );
+
+      if (!banner) {
+        return;
+      }
+
+      const updateConsentInterface = () => {
+        const consent = getStoredConsent();
+
+        if (consent === "granted" || consent === "denied") {
+          banner.hidden = true;
+
+          if (settingsButton) {
+            settingsButton.hidden = false;
+          }
+
+          return;
+        }
+
+        banner.hidden = false;
+
+        if (settingsButton) {
+          settingsButton.hidden = true;
+        }
+      };
+
+      acceptButton?.addEventListener("click", () => {
+        storeConsent("granted");
+
+        loadMetaPixel();
+
+        banner.hidden = true;
+
+        if (settingsButton) {
+          settingsButton.hidden = false;
+        }
+      });
+
+      rejectButton?.addEventListener("click", () => {
+        storeConsent("denied");
+
+        revokeMetaPixel();
+
+        banner.hidden = true;
+
+        if (settingsButton) {
+          settingsButton.hidden = false;
+        }
+      });
+
+      settingsButton?.addEventListener("click", () => {
+        banner.hidden = false;
+        settingsButton.hidden = true;
+      });
+
+      updateConsentInterface();
+    });
+  })();
 </script>
+
+<div
+  class="meta-consent"
+  data-meta-consent
+  hidden
+  role="dialog"
+  aria-label="Privacy preferences"
+>
+  <div class="meta-consent__content">
+    <div class="meta-consent__copy">
+      <strong>Privacy preferences</strong>
+
+      <p>
+        We use the Meta Pixel to measure website visits and advertising
+        performance. You can accept or reject this tracking.
+        <a href="/privacy-policy">Privacy Policy</a>
+      </p>
+    </div>
+
+    <div class="meta-consent__actions">
+      <button
+        class="meta-consent__button"
+        type="button"
+        data-meta-consent-reject
+      >
+        Reject
+      </button>
+
+      <button
+        class="meta-consent__button meta-consent__button--accept"
+        type="button"
+        data-meta-consent-accept
+      >
+        Accept
+      </button>
+    </div>
+  </div>
+</div>
+
+<button
+  class="meta-consent-settings"
+  type="button"
+  data-meta-consent-settings
+  hidden
+>
+  Privacy
+</button>
+
+<style>
+  .meta-consent {
+    position: fixed;
+    left: 50%;
+    bottom: 20px;
+    z-index: 2147483640;
+    width: min(calc(100% - 28px), 720px);
+    transform: translateX(-50%);
+    border: 1px solid rgba(216, 255, 62, 0.24);
+    border-radius: 22px;
+    background: rgba(7, 9, 12, 0.97);
+    color: #f4f4f0;
+    box-shadow: 0 20px 70px rgba(0, 0, 0, 0.56);
+    backdrop-filter: blur(18px);
+  }
+
+  .meta-consent[hidden],
+  .meta-consent-settings[hidden] {
+    display: none;
+  }
+
+  .meta-consent__content {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 22px;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .meta-consent__copy strong {
+    display: block;
+    margin-bottom: 8px;
+    color: #d8ff3e;
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  .meta-consent__copy p {
+    margin: 0;
+    color: rgba(244, 244, 240, 0.72);
+    font-size: 13px;
+    line-height: 1.55;
+  }
+
+  .meta-consent__copy a {
+    color: #d8ff3e;
+    text-decoration: none;
+  }
+
+  .meta-consent__actions {
+    display: flex;
+    gap: 10px;
+  }
+
+  .meta-consent__button {
+    min-height: 42px;
+    padding: 0 18px;
+    border: 1px solid rgba(244, 244, 240, 0.32);
+    border-radius: 999px;
+    background: transparent;
+    color: #f4f4f0;
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+
+  .meta-consent__button--accept {
+    border-color: #d8ff3e;
+    color: #d8ff3e;
+  }
+
+  .meta-consent__button:hover {
+    border-color: #d8ff3e;
+    color: #d8ff3e;
+  }
+
+  .meta-consent-settings {
+    position: fixed;
+    left: 14px;
+    bottom: 14px;
+    z-index: 2147483639;
+    min-height: 34px;
+    padding: 0 13px;
+    border: 1px solid rgba(216, 255, 62, 0.26);
+    border-radius: 999px;
+    background: rgba(7, 9, 12, 0.9);
+    color: rgba(244, 244, 240, 0.72);
+    font-family: inherit;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    backdrop-filter: blur(12px);
+  }
+
+  .meta-consent-settings:hover {
+    border-color: #d8ff3e;
+    color: #d8ff3e;
+  }
+
+  @media (max-width: 640px) {
+    .meta-consent {
+      bottom: 12px;
+    }
+
+    .meta-consent__content {
+      grid-template-columns: 1fr;
+      gap: 16px;
+      padding: 18px;
+    }
+
+    .meta-consent__actions {
+      width: 100%;
+    }
+
+    .meta-consent__button {
+      flex: 1;
+    }
+  }
+</style>

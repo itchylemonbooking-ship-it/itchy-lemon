@@ -2,6 +2,7 @@
 import SiteHeader from "../components/SiteHeader.astro";
 import GlobalMixcloudPlayer from "../components/GlobalMixcloudPlayer.astro";
 import HubSpotTracking from "../components/HubSpotTracking.astro";
+import MetaPixel from "../components/MetaPixel.astro";
 ---
 
 <!doctype html>
@@ -290,8 +291,22 @@ import HubSpotTracking from "../components/HubSpotTracking.astro";
               <a class="bio-link" href="/discography">Discography</a>
               <a class="bio-link" href="/press-kit">Press Kit</a>
               <a class="bio-link" href="/booking">Booking</a>
-              <a class="bio-link" href="https://open.spotify.com/artist/5IfFyzIiz1iBO7RZUJyFen" target="_blank" rel="noreferrer">Spotify</a>
-              <a class="bio-link" href="https://www.instagram.com/itchy_lemon/" target="_blank" rel="noreferrer">Instagram</a>
+              <a
+                class="bio-link"
+                href="https://open.spotify.com/artist/5IfFyzIiz1iBO7RZUJyFen"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Spotify
+              </a>
+              <a
+                class="bio-link"
+                href="https://www.instagram.com/itchy_lemon/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Instagram
+              </a>
             </div>
           </section>
         </section>
@@ -306,6 +321,7 @@ import HubSpotTracking from "../components/HubSpotTracking.astro";
       </footer>
     </div>
 
+    <MetaPixel />
     <GlobalMixcloudPlayer />
     <HubSpotTracking />
   </body>

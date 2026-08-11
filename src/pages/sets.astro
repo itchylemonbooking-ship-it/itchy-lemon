@@ -2,6 +2,7 @@
 import SiteHeader from "../components/SiteHeader.astro";
 import GlobalMixcloudPlayer from "../components/GlobalMixcloudPlayer.astro";
 import HubSpotTracking from "../components/HubSpotTracking.astro";
+import MetaPixel from "../components/MetaPixel.astro";
 
 const radioShows = [
   {
@@ -858,7 +859,12 @@ const enhancedRadioShows = radioShows.map((set) => ({
     </div>
 
     <div class="video-modal" data-video-modal aria-hidden="true">
-      <div class="video-modal-panel" role="dialog" aria-modal="true" aria-label="Live DJ Set video player">
+      <div
+        class="video-modal-panel"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Live DJ Set video player"
+      >
         <button
           class="video-modal-close"
           type="button"
@@ -880,6 +886,7 @@ const enhancedRadioShows = radioShows.map((set) => ({
       </div>
     </div>
 
+    <MetaPixel />
     <GlobalMixcloudPlayer />
     <HubSpotTracking />
 

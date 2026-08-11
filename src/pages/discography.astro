@@ -2,6 +2,7 @@
 import SiteHeader from "../components/SiteHeader.astro";
 import GlobalMixcloudPlayer from "../components/GlobalMixcloudPlayer.astro";
 import HubSpotTracking from "../components/HubSpotTracking.astro";
+import MetaPixel from "../components/MetaPixel.astro";
 
 const fullCatalogueLinks = [
   {
@@ -243,20 +244,20 @@ const releases = [
     ],
   },
   {
-  year: "2014",
-  title: "Welcome 2 Club In",
-  description: "Itchy Lemon feat. Zoubida Mebarki — Original Mix",
-  label: "Natural Essence Media",
-  spotifyEmbedUrl: "https://open.spotify.com/embed/track/01VkL56XoqPeNq7SfoMtaQ?utm_source=generator",
-  beatportPreviewId: "",
-  traxsourcePreviewId: "",
-  stores: [
-    {
-      label: "Beatport",
-      url: "https://www.beatport.com/pt/track/welcome-2-club-in/5238132",
-    },
-  ],
-},
+    year: "2014",
+    title: "Welcome 2 Club In",
+    description: "Itchy Lemon feat. Zoubida Mebarki — Original Mix",
+    label: "Natural Essence Media",
+    spotifyEmbedUrl: "https://open.spotify.com/embed/track/01VkL56XoqPeNq7SfoMtaQ?utm_source=generator",
+    beatportPreviewId: "",
+    traxsourcePreviewId: "",
+    stores: [
+      {
+        label: "Beatport",
+        url: "https://www.beatport.com/pt/track/welcome-2-club-in/5238132",
+      },
+    ],
+  },
   {
     year: "2014",
     title: "When You're In Love",
@@ -934,6 +935,8 @@ const releases = [
     <div class="catalogue-preview-player" data-catalogue-player aria-label="Catalogue player">
       <div class="catalogue-preview-frame" data-catalogue-frame></div>
     </div>
+
+    <MetaPixel />
 
     <script>
       const cataloguePlayer = document.querySelector("[data-catalogue-player]");
