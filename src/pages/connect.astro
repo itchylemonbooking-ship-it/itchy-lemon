@@ -235,11 +235,11 @@ const links = [
             },
           ]);
         }
-      };
 
-      if (typeof window.fbq === "function") {
-    window.fbq("trackCustom", "ConnectClick", eventParams);
-  }
+    if (typeof window.fbq === "function") {
+      window.fbq("trackCustom", "ConnectClick", eventParams);
+    }
+      };
 
   const setupClickTracking = () => {
         const trackedLinks = document.querySelectorAll("a[data-track]");
