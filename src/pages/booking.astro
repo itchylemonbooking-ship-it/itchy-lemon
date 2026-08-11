@@ -726,6 +726,27 @@ import MetaPixel from "../components/MetaPixel.astro";
         }
       });
 
+      /*
+       * Current HubSpot forms:
+       * fires only after a successful form submission.
+       */
+      window.addEventListener(
+        "hs-form-event:on-submission:success",
+        (event) => {
+          const submittedFormId = event.detail?.formId || "";
+
+          if (submittedFormId !== bookingFormId) {
+            return;
+          }
+
+          trackBookingLead();
+        }
+      );
+
+      /*
+       * Legacy HubSpot forms fallback.
+       * bookingLeadTracked prevents duplicate Meta Lead events.
+       */
       window.addEventListener("message", (event) => {
         if (
           !event.data ||
