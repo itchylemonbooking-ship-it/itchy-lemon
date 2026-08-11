@@ -957,10 +957,6 @@ import MetaPixel from "../components/MetaPixel.astro";
         }
       });
 
-      /*
-       * Current HubSpot forms:
-       * fires only after a successful form submission.
-       */
       window.addEventListener(
         "hs-form-event:on-submission:success",
         (event) => {
@@ -974,10 +970,6 @@ import MetaPixel from "../components/MetaPixel.astro";
         }
       );
 
-      /*
-       * Legacy HubSpot forms fallback.
-       * epkLeadTracked prevents duplicate Meta Lead events.
-       */
       window.addEventListener("message", (event) => {
         if (
           !event.data ||
@@ -1002,12 +994,31 @@ import MetaPixel from "../components/MetaPixel.astro";
         handleSuccessfulEpkSubmission();
       });
 
-      epkDownloadButton?.addEventListener("click", () => {
+      epkDownloadButton?.addEventListener("click", (event) => {
+        event.preventDefault();
+
+        const downloadUrl = epkDownloadButton.getAttribute("href");
+        const downloadName =
+          epkDownloadButton.getAttribute("download") ||
+          "Itchy_Lemon_EPK_2026.pdf";
+
         trackEpkDownload();
 
         setTimeout(() => {
+          if (downloadUrl) {
+            const downloadLink = document.createElement("a");
+
+            downloadLink.href = downloadUrl;
+            downloadLink.download = downloadName;
+            downloadLink.style.display = "none";
+
+            document.body.appendChild(downloadLink);
+            downloadLink.click();
+            downloadLink.remove();
+          }
+
           closeEpkModal();
-        }, 300);
+        }, 700);
       });
     </script>
   </body>
