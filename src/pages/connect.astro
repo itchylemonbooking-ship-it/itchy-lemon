@@ -237,7 +237,11 @@ const links = [
         }
       };
 
-      const setupClickTracking = () => {
+      if (typeof window.fbq === "function") {
+    window.fbq("trackCustom", "ConnectClick", eventParams);
+  }
+
+  const setupClickTracking = () => {
         const trackedLinks = document.querySelectorAll("a[data-track]");
 
         trackedLinks.forEach((link) => {
