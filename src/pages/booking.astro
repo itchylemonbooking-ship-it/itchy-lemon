@@ -642,14 +642,58 @@ import MetaPixel from "../components/MetaPixel.astro";
     <script src="https://js-eu1.hsforms.net/forms/embed/148590426.js" defer></script>
 
     <script>
-      const bookingModal = document.querySelector("[data-booking-modal]");
-      const bookingModalTriggers = document.querySelectorAll("[data-open-booking-modal]");
-      const bookingModalClose = document.querySelector("[data-close-booking-modal]");
+      const bookingFormId = "06399ad4-ccd6-4cfa-a1a0-9b7eb2d587a2";
 
-      const openBookingModal = () => {
+      const bookingModal = document.querySelector("[data-booking-modal]");
+      const bookingModalTriggers = document.querySelectorAll(
+        "[data-open-booking-modal]"
+      );
+      const bookingModalClose = document.querySelector(
+        "[data-close-booking-modal]"
+      );
+
+      let bookingLeadTracked = false;
+
+      const trackBookingIntent = (trigger) => {
+        if (typeof window.fbq !== "function") {
+          return;
+        }
+
+        const triggerLabel =
+          trigger?.textContent?.trim().replace(/\s+/g, " ") ||
+          "Booking Request";
+
+        window.fbq("trackCustom", "BookingIntent", {
+          source_page: "booking",
+          trigger_label: triggerLabel,
+          form_id: bookingFormId,
+        });
+      };
+
+      const trackBookingLead = () => {
+        if (
+          bookingLeadTracked ||
+          typeof window.fbq !== "function"
+        ) {
+          return;
+        }
+
+        window.fbq("track", "Lead", {
+          content_name: "Booking Request",
+          content_category: "Booking",
+          source_page: "booking",
+          form_id: bookingFormId,
+        });
+
+        bookingLeadTracked = true;
+      };
+
+      const openBookingModal = (trigger) => {
         bookingModal.classList.add("is-open");
         bookingModal.setAttribute("aria-hidden", "false");
         document.body.style.overflow = "hidden";
+
+        trackBookingIntent(trigger);
       };
 
       const closeBookingModal = () => {
@@ -661,7 +705,7 @@ import MetaPixel from "../components/MetaPixel.astro";
       bookingModalTriggers.forEach((trigger) => {
         trigger.addEventListener("click", (event) => {
           event.preventDefault();
-          openBookingModal();
+          openBookingModal(trigger);
         });
       });
 
@@ -674,9 +718,36 @@ import MetaPixel from "../components/MetaPixel.astro";
       });
 
       document.addEventListener("keydown", (event) => {
-        if (event.key === "Escape" && bookingModal.classList.contains("is-open")) {
+        if (
+          event.key === "Escape" &&
+          bookingModal.classList.contains("is-open")
+        ) {
           closeBookingModal();
         }
+      });
+
+      window.addEventListener("message", (event) => {
+        if (
+          !event.data ||
+          event.data.type !== "hsFormCallback" ||
+          event.data.eventName !== "onFormSubmitted"
+        ) {
+          return;
+        }
+
+        const submittedFormId =
+          event.data.id ||
+          event.data.formId ||
+          "";
+
+        if (
+          submittedFormId &&
+          submittedFormId !== bookingFormId
+        ) {
+          return;
+        }
+
+        trackBookingLead();
       });
     </script>
   </body>
