@@ -867,6 +867,7 @@ import MetaPixel from "../components/MetaPixel.astro";
       );
 
       let epkLeadTracked = false;
+      let epkDownloadTracked = false;
 
       const trackEpkIntent = (trigger) => {
         if (typeof window.fbq !== "function") {
@@ -903,7 +904,10 @@ import MetaPixel from "../components/MetaPixel.astro";
       };
 
       const trackEpkDownload = () => {
-        if (typeof window.fbq !== "function") {
+        if (
+          epkDownloadTracked ||
+          typeof window.fbq !== "function"
+        ) {
           return;
         }
 
@@ -912,6 +916,8 @@ import MetaPixel from "../components/MetaPixel.astro";
           source_page: "press-kit",
           file_name: "Itchy_Lemon_EPK_2026.pdf",
         });
+
+        epkDownloadTracked = true;
       };
 
       const handleSuccessfulEpkSubmission = () => {
