@@ -866,11 +866,15 @@ import MetaPixel from "../components/MetaPixel.astro";
         "[data-download-epk-file]"
       );
 
+      let epkIntentTracked = false;
       let epkLeadTracked = false;
       let epkDownloadTracked = false;
 
       const trackEpkIntent = (trigger) => {
-        if (typeof window.fbq !== "function") {
+        if (
+          epkIntentTracked ||
+          typeof window.fbq !== "function"
+        ) {
           return;
         }
 
@@ -883,6 +887,8 @@ import MetaPixel from "../components/MetaPixel.astro";
           trigger_label: triggerLabel,
           form_id: epkFormId,
         });
+
+        epkIntentTracked = true;
       };
 
       const trackEpkLead = () => {
