@@ -1,3 +1,4 @@
+
 ---
 import SiteHeader from "../components/SiteHeader.astro";
 import GlobalMixcloudPlayer from "../components/GlobalMixcloudPlayer.astro";
@@ -5,6 +6,14 @@ import HubSpotTracking from "../components/HubSpotTracking.astro";
 import MetaPixel from "../components/MetaPixel.astro";
 
 const radioShows = [
+  {
+    number: "#42",
+    year: "2026",
+    title: "Fresh Beats Radio Show #42",
+    meta: "2026 · New episode",
+    type: "Radio Show",
+    url: "https://www.mixcloud.com/ITCHY_LEMON_DjProducer/itchy-lemon-fresh-beats-42/",
+  },
   {
     number: "#41",
     year: "2016",
@@ -761,6 +770,7 @@ const enhancedRadioShows = radioShows.map((set) => ({
               type="button"
               data-set-card
               data-set-index={index}
+              data-set-key={set.key}
             >
               <div class="set-episode">{set.number}</div>
 
@@ -905,8 +915,20 @@ const enhancedRadioShows = radioShows.map((set) => ({
         }
       };
 
-      const storedIndex = Number(localStorage.getItem("itchyLemonPlayerIndex") || "0");
-      updateActiveCard(storedIndex);
+      // Prefer the saved Mixcloud key. Existing visitors only have an index;
+      // their old index is shifted by one because #42 is the new first item.
+      const savedKey = localStorage.getItem("itchyLemonPlayerKey");
+      const savedIndex = localStorage.getItem("itchyLemonPlayerIndex");
+      const savedKeyIndex = savedKey
+        ? Array.from(setCards).findIndex((card) => card.dataset.setKey === savedKey)
+        : -1;
+      const initialIndex = savedKeyIndex >= 0
+        ? savedKeyIndex
+        : savedIndex !== null && !savedKey
+          ? Number(savedIndex) + 1
+          : 0;
+
+      updateActiveCard(initialIndex >= 0 && initialIndex < setCards.length ? initialIndex : 0);
 
       setCards.forEach((card) => {
         card.addEventListener("click", () => {

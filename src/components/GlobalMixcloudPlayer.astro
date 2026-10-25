@@ -1,5 +1,10 @@
+
 ---
 const sets = [
+  {
+    title: "ITCHY LEMON Fresh Beats #42",
+    url: "https://www.mixcloud.com/ITCHY_LEMON_DjProducer/itchy-lemon-fresh-beats-42/",
+  },
   {
     title: "ITCHY LEMON Fresh Beats #41",
     url: "https://www.mixcloud.com/ITCHY_LEMON_DjProducer/itchy-lemon-fresh-beats-41-jan-2016/",
@@ -319,6 +324,7 @@ const featuredSet = playerSets[0];
   const storageKeys = {
     visible: "itchyLemonPlayerVisible",
     index: "itchyLemonPlayerIndex",
+    key: "itchyLemonPlayerKey",
   };
 
   const player = document.querySelector("[data-global-player]");
@@ -329,9 +335,19 @@ const featuredSet = playerSets[0];
 
   let widget = null;
   let widgetIsReady = false;
-  let currentIndex = Number(localStorage.getItem(storageKeys.index) || "0");
 
-  if (!sets[currentIndex]) {
+  // Keep the visitor's selected show when the catalogue grows.
+  // Older visits stored only the numeric index, which moves by +1 with #42.
+  const savedKey = localStorage.getItem(storageKeys.key);
+  const savedIndex = localStorage.getItem(storageKeys.index);
+
+  let currentIndex = savedKey
+    ? sets.findIndex((set) => set.key === savedKey)
+    : savedIndex !== null
+      ? Number(savedIndex) + 1
+      : 0;
+
+  if (!Number.isInteger(currentIndex) || !sets[currentIndex]) {
     currentIndex = 0;
   }
 
@@ -353,7 +369,11 @@ const featuredSet = playerSets[0];
 
   const saveCurrentIndex = () => {
     localStorage.setItem(storageKeys.index, String(currentIndex));
+    localStorage.setItem(storageKeys.key, sets[currentIndex].key);
   };
+
+  // Migrate legacy index-only preferences once; next visits use the stable key.
+  saveCurrentIndex();
 
   const notifyActiveSet = () => {
     document.dispatchEvent(
