@@ -1,21 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://itchy-lemon.pages.dev/</loc>
+    <loc>https://itchylemon.com/</loc>
   </url>
   <url>
-    <loc>https://itchy-lemon.pages.dev/music</loc>
+    <loc>https://itchylemon.com/music/</loc>
   </url>
   <url>
-    <loc>https://itchy-lemon.pages.dev/bio</loc>
+    <loc>https://itchylemon.com/bio/</loc>
   </url>
   <url>
-    <loc>https://itchy-lemon.pages.dev/discography</loc>
+    <loc>https://itchylemon.com/discography/</loc>
   </url>
   <url>
-    <loc>https://itchy-lemon.pages.dev/press-kit</loc>
+    <loc>https://itchylemon.com/press-kit/</loc>
   </url>
   <url>
-    <loc>https://itchy-lemon.pages.dev/booking</loc>
+    <loc>https://itchylemon.com/booking/</loc>
+  </url>
+  <url>
+    <loc>https://itchylemon.com/media/</loc>
+  </url>
+  <url>
+    <loc>https://itchylemon.com/sets/</loc>
+  </url>
+  <url>
+    <loc>https://itchylemon.com/connect</loc>
+  </url>
+  <url>
+    <loc>https://itchylemon.com/privacy-policy/</loc>
   </url>
 </urlset>
