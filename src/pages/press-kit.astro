@@ -846,6 +846,42 @@ import MetaPixel from "../components/MetaPixel.astro";
         "[data-download-epk-file]"
       );
 
+      // Only accept legacy HubSpot callbacks from trusted origins.
+      const isTrustedHubSpotOrigin = (origin) => {
+        if (origin === window.location.origin) {
+          return true;
+        }
+
+        try {
+          const url = new URL(origin);
+          const trustedDomains = [
+            "hsforms.com",
+            "hsforms.net",
+            "hubspot.com",
+            "hs-sites.com",
+          ];
+
+          return (
+            url.protocol === "https:" &&
+            trustedDomains.some(
+              (domain) =>
+                url.hostname === domain ||
+                url.hostname.endsWith(`.${domain}`)
+            )
+          );
+        } catch {
+          return false;
+        }
+      };
+
+      const hasMetaConsent = () => {
+        try {
+          return localStorage.getItem("itchyLemonMetaConsent") === "granted";
+        } catch {
+          return false;
+        }
+      };
+
       let epkIntentTracked = false;
       let epkLeadTracked = false;
       let epkDownloadTracked = false;
@@ -853,7 +889,7 @@ import MetaPixel from "../components/MetaPixel.astro";
       const trackEpkIntent = (trigger) => {
         if (
           epkIntentTracked ||
-          typeof window.fbq !== "function"
+          !hasMetaConsent() || typeof window.fbq !== "function"
         ) {
           return;
         }
@@ -874,7 +910,7 @@ import MetaPixel from "../components/MetaPixel.astro";
       const trackEpkLead = () => {
         if (
           epkLeadTracked ||
-          typeof window.fbq !== "function"
+          !hasMetaConsent() || typeof window.fbq !== "function"
         ) {
           return;
         }
@@ -892,7 +928,7 @@ import MetaPixel from "../components/MetaPixel.astro";
       const trackEpkDownload = () => {
         if (
           epkDownloadTracked ||
-          typeof window.fbq !== "function"
+          !hasMetaConsent() || typeof window.fbq !== "function"
         ) {
           return;
         }
@@ -963,6 +999,10 @@ import MetaPixel from "../components/MetaPixel.astro";
       );
 
       window.addEventListener("message", (event) => {
+        if (!isTrustedHubSpotOrigin(event.origin)) {
+          return;
+        }
+
         if (
           !event.data ||
           event.data.type !== "hsFormCallback" ||
@@ -976,10 +1016,7 @@ import MetaPixel from "../components/MetaPixel.astro";
           event.data.formId ||
           "";
 
-        if (
-          submittedFormId &&
-          submittedFormId !== epkFormId
-        ) {
+        if (submittedFormId !== epkFormId) {
           return;
         }
 

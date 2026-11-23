@@ -648,10 +648,46 @@ import MetaPixel from "../components/MetaPixel.astro";
         "[data-close-booking-modal]"
       );
 
+      // Only accept legacy HubSpot callbacks from trusted origins.
+      const isTrustedHubSpotOrigin = (origin) => {
+        if (origin === window.location.origin) {
+          return true;
+        }
+
+        try {
+          const url = new URL(origin);
+          const trustedDomains = [
+            "hsforms.com",
+            "hsforms.net",
+            "hubspot.com",
+            "hs-sites.com",
+          ];
+
+          return (
+            url.protocol === "https:" &&
+            trustedDomains.some(
+              (domain) =>
+                url.hostname === domain ||
+                url.hostname.endsWith(`.${domain}`)
+            )
+          );
+        } catch {
+          return false;
+        }
+      };
+
+      const hasMetaConsent = () => {
+        try {
+          return localStorage.getItem("itchyLemonMetaConsent") === "granted";
+        } catch {
+          return false;
+        }
+      };
+
       let bookingLeadTracked = false;
 
       const trackBookingIntent = (trigger) => {
-        if (typeof window.fbq !== "function") {
+        if (!hasMetaConsent() || typeof window.fbq !== "function") {
           return;
         }
 
@@ -669,7 +705,7 @@ import MetaPixel from "../components/MetaPixel.astro";
       const trackBookingLead = () => {
         if (
           bookingLeadTracked ||
-          typeof window.fbq !== "function"
+          !hasMetaConsent() || typeof window.fbq !== "function"
         ) {
           return;
         }
@@ -744,6 +780,10 @@ import MetaPixel from "../components/MetaPixel.astro";
        * bookingLeadTracked prevents duplicate Meta Lead events.
        */
       window.addEventListener("message", (event) => {
+        if (!isTrustedHubSpotOrigin(event.origin)) {
+          return;
+        }
+
         if (
           !event.data ||
           event.data.type !== "hsFormCallback" ||
@@ -757,10 +797,7 @@ import MetaPixel from "../components/MetaPixel.astro";
           event.data.formId ||
           "";
 
-        if (
-          submittedFormId &&
-          submittedFormId !== bookingFormId
-        ) {
+        if (submittedFormId !== bookingFormId) {
           return;
         }
 

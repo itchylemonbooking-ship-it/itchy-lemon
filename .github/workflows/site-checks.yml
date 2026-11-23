@@ -21,12 +21,14 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version-file: '.node-version'
           cache: npm
       - name: Install dependencies
         run: npm ci
       - name: Build Astro site
         run: npm run build
+      - name: Validate generated internal links
+        run: node scripts/check-built-site.mjs
       - name: Check critical pages and canonical domain
         shell: bash
         run: |
@@ -42,6 +44,11 @@ jobs:
               exit 1
             fi
           done
+          test -s dist/_headers
+          grep -q 'X-Content-Type-Options: nosniff' dist/_headers
+          grep -q 'X-Frame-Options: SAMEORIGIN' dist/_headers
+          grep -q 'https://:version.itchy-lemon.pages.dev/\*' dist/_headers
+          test -s dist/downloads/Itchy_Lemon_EPK_2026.pdf
           test -s dist/robots.txt
           test -s dist/sitemap.xml
           grep -q 'https://itchylemon.com/sitemap.xml' dist/robots.txt
