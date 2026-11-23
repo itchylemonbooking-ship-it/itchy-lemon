@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://itchy-lemon.pages.dev/sitemap.xml
+Sitemap: https://itchylemon.com/sitemap.xml
