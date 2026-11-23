@@ -1,3 +1,24 @@
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: SAMEORIGIN
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+
+# The public canonical domain is itchylemon.com.
+# Prevent duplicate indexing of the direct Pages hostname and branch previews.
+https://itchy-lemon.pages.dev/*
+  X-Robots-Tag: noindex
+
+https://:version.itchy-lemon.pages.dev/*
+  X-Robots-Tag: noindex
+
+# This unfinished preview page is deliberately excluded from search engines.
+/store
+  X-Robots-Tag: noindex, nofollow
+
+/store/*
+  X-Robots-Tag: noindex, nofollow
+
 /downloads/Itchy_Lemon_EPK_2026.pdf
   Content-Type: application/pdf
   Content-Disposition: attachment; filename="Itchy_Lemon_EPK_2026.pdf"
