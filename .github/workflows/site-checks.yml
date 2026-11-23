@@ -1,0 +1,52 @@
+name: Site checks
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Build and smoke-test
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Build Astro site
+        run: npm run build
+      - name: Check critical pages and canonical domain
+        shell: bash
+        run: |
+          set -euo pipefail
+          for page in index bio booking connect discography media music press-kit privacy-policy sets; do
+            if [ "$page" = "index" ]; then
+              file="dist/index.html"
+            else
+              file="dist/$page/index.html"
+            fi
+            if [ ! -s "$file" ]; then
+              echo "::error::Missing or empty $file"
+              exit 1
+            fi
+          done
+          test -s dist/robots.txt
+          test -s dist/sitemap.xml
+          grep -q 'https://itchylemon.com/sitemap.xml' dist/robots.txt
+          grep -q 'https://itchylemon.com/' dist/sitemap.xml
+          if grep -R -n --include='*.html' --include='*.xml' --include='*.txt' 'https://itchy-lemon.pages.dev' dist; then
+            echo "::error::Found old pages.dev URLs in the generated website"
+            exit 1
+          fi
