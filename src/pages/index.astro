@@ -179,6 +179,25 @@ import MetaPixel from "../components/MetaPixel.astro";
         line-height: 1.7;
       }
 
+      .home-cta-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 18px;
+        padding-bottom: 5px;
+        border-bottom: 1px solid rgba(216, 255, 62, 0.52);
+        color: var(--acid);
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        font-size: 12px;
+        font-weight: 700;
+      }
+
+      .home-cta-link:hover,
+      .home-cta-link:focus-visible {
+        border-bottom-color: var(--acid);
+      }
+
       .quick-links {
         display: flex;
         flex-wrap: wrap;
@@ -268,6 +287,16 @@ import MetaPixel from "../components/MetaPixel.astro";
         padding-top: 14px;
       }
 
+      .stat:hover strong,
+      .stat:focus-visible strong {
+        color: var(--text);
+      }
+
+      .stat:hover span,
+      .stat:focus-visible span {
+        color: var(--acid);
+      }
+
       .stat strong {
         display: block;
         color: var(--acid);
@@ -334,29 +363,30 @@ import MetaPixel from "../components/MetaPixel.astro";
 
       <main>
         <section>
-          <p class="eyebrow">Official Website & EPK</p>
+          <p class="eyebrow">Melodic · Deep · Underground</p>
 
           <h1>ITCHY<br />LEMON</h1>
 
           <p class="subtitle">
-            Melodic electronic music with deep groove, emotional tension and dancefloor instinct.
+            Electronic music built on deep grooves, melodic tension and underground energy.
           </p>
 
           <p class="intro">
-            Explore original tracks, DJ sets and selected live appearances from Itchy Lemon.
+            Discover original releases, selected DJ sets and the world of Itchy Lemon.
           </p>
 
           <div class="actions">
-            <a class="button primary" href="/sets">Explore Sets</a>
+            <a class="button primary" href="/music">Listen to Music</a>
             <a class="button" href="/booking">Book Itchy Lemon</a>
             <a class="button" href="/press-kit">Press Kit</a>
           </div>
 
           <div class="home-cta">
-            <strong>Listen. Feel. Book.</strong>
+            <strong>Original music · 2026</strong>
             <p>
-              From melodic club journeys to guest mixes and selected electronic music events, Itchy Lemon is available for bookings, collaborations and curated appearances.
+              From the atmospheric depth of In My Veins to the energy of Wide Open, Blasted and Amsterdam, explore the latest original productions.
             </p>
+            <a class="home-cta-link" href="/music">Explore original music <span aria-hidden="true">↗</span></a>
           </div>
 
           <div class="quick-links" aria-label="Featured artist links">
@@ -400,11 +430,11 @@ import MetaPixel from "../components/MetaPixel.astro";
 
         <aside class="visual-card" aria-label="Artist highlight">
           <div>
-            <p class="card-label">Artist Profile</p>
+            <p class="card-label">Featured music & sets</p>
             <div class="card-title">Melodic · Deep · Underground</div>
 
             <p class="card-copy">
-              A Portuguese DJ and producer project focused on atmosphere, rhythm and emotional progression.
+              Explore the sound through selected music videos and DJ performances.
             </p>
 
             <div class="featured-videos" aria-label="Featured Itchy Lemon videos">
@@ -429,21 +459,19 @@ import MetaPixel from "../components/MetaPixel.astro";
               </div>
             </div>
 
-            <div class="stats">
-              <div class="stat">
-                <strong>DJ</strong>
-                <span>Club sets</span>
-              </div>
-
-              <div class="stat">
-                <strong>Producer</strong>
-                <span>Original music</span>
-              </div>
-
-              <div class="stat">
-                <strong>EPK</strong>
-                <span>Booking ready</span>
-              </div>
+            <div class="stats" aria-label="Explore Itchy Lemon">
+              <a class="stat" href="/music">
+                <strong>2026</strong>
+                <span>Original releases ↗</span>
+              </a>
+              <a class="stat" href="/sets">
+                <strong>Sets</strong>
+                <span>Selected sessions ↗</span>
+              </a>
+              <a class="stat" href="/booking">
+                <strong>Book</strong>
+                <span>Artist enquiries ↗</span>
+              </a>
             </div>
           </div>
         </aside>
