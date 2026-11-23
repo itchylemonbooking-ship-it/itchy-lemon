@@ -65,6 +65,73 @@ assert.match(headers, /X-Content-Type-Options:\s*nosniff/);
 assert.match(headers, /X-Frame-Options:\s*SAMEORIGIN/);
 assert.match(headers, /X-Robots-Tag:\s*noindex/i);
 
+// Guard critical HubSpot form embeds against accidental regressions.
+// These are static integrity checks, not live submission tests.
+for (const config of [
+  {
+    route: "booking",
+    formVar: "bookingFormId",
+    formId: "06399ad4-ccd6-4cfa-a1a0-9b7eb2d587a2",
+    openMarker: "data-open-booking-modal",
+    modalMarker: "data-booking-modal",
+  },
+  {
+    route: "press-kit",
+    formVar: "epkFormId",
+    formId: "c48c62f5-f0b6-4153-8aaa-b4f9f4b952ab",
+    openMarker: "data-open-epk-modal",
+    modalMarker: "data-epk-modal",
+  },
+]) {
+  const html = read(config.route + "/index.html");
+  const source = readFileSync(
+    resolve("src", "pages", config.route + ".astro"),
+    "utf8"
+  );
+  const idAttribute = html.match(/data-form-id=["']([^"']+)["']/i)?.[1];
+  const jsId = source.match(
+    new RegExp("const\\s+" + config.formVar + "\\s*=\\s*[\"']([^\"']+)[\"']")
+  )?.[1];
+
+  assert.equal(idAttribute, config.formId, config.route + ": wrong embed form ID");
+  assert.equal(jsId, config.formId, config.route + ": tracking form ID mismatch");
+  assert.match(html, /class=["']hs-form-frame["']/i);
+  assert.match(html, /data-portal-id=["']148590426["']/i);
+  assert.match(html, /data-region=["']eu1["']/i);
+  assert.ok(html.includes(config.openMarker), "Missing form button: " + config.route);
+  assert.ok(html.includes(config.modalMarker), "Missing modal: " + config.route);
+  assert.ok(
+    html.includes("https://js-eu1.hsforms.net/forms/embed/148590426.js"),
+    "Missing HubSpot form loader: " + config.route
+  );
+  assert.ok(
+    source.includes("isTrustedHubSpotOrigin(event.origin)"),
+    "Missing legacy callback origin check: " + config.route
+  );
+  assert.ok(
+    source.includes("submittedFormId !== " + config.formVar),
+    "Missing exact form ID validation: " + config.route
+  );
+  assert.ok(
+    source.includes('localStorage.getItem("itchyLemonMetaConsent") === "granted"'),
+    "Missing Meta consent check: " + config.route
+  );
+}
+
+const pressKitHtml = read("press-kit/index.html");
+assert.ok(
+  pressKitHtml.includes('href="/downloads/Itchy_Lemon_EPK_2026.pdf"'),
+  "EPK download path missing from Press Kit"
+);
+assert.ok(
+  pressKitHtml.includes("data-epk-download-confirmation"),
+  "EPK download confirmation missing"
+);
+assert.ok(
+  isFile(join(output, "downloads", "Itchy_Lemon_EPK_2026.pdf")),
+  "EPK PDF missing from build"
+);
+
 function allHtmlFiles(dir) {
   const paths = [];
   for (const entry of readdirSync(dir, { withFileTypes: true })) {
