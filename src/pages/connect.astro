@@ -236,12 +236,21 @@ const links = [
           ]);
         }
 
-    if (typeof window.fbq === "function") {
-      window.fbq("trackCustom", "ConnectClick", eventParams);
-    }
+        let metaConsentGranted = false;
+
+        try {
+          metaConsentGranted =
+            localStorage.getItem("itchyLemonMetaConsent") === "granted";
+        } catch {
+          // A blocked storage API must never trigger optional tracking.
+        }
+
+        if (metaConsentGranted && typeof window.fbq === "function") {
+          window.fbq("trackCustom", "ConnectClick", eventParams);
+        }
       };
 
-  const setupClickTracking = () => {
+      const setupClickTracking = () => {
         const trackedLinks = document.querySelectorAll("a[data-track]");
 
         trackedLinks.forEach((link) => {
