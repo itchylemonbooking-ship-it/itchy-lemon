@@ -91,16 +91,6 @@ const videoSets = [
   },
 ];
 
-const audioSets = [
-  {
-    label: "Audio",
-    title: "Live DJ Sets",
-    meta: "Selected audio recordings hosted directly on the website will be added here.",
-    type: "Audio",
-    status: "Coming soon",
-  },
-];
-
 const mixcloudUrl = "https://www.mixcloud.com/ITCHY_LEMON_DjProducer/";
 
 const getCloudcastKey = (url) => {
@@ -756,7 +746,7 @@ const enhancedRadioShows = radioShows.map((set) => ({
           <aside class="profile-card">
             <strong>Mixcloud Archive</strong>
             <p>
-              House, Deep House, Tech House and melodic electronic journeys — curated for listening without leaving the site.
+              Melodic, deep and underground electronic journeys — listen without leaving the site.
             </p>
           </aside>
         </div>
@@ -823,27 +813,6 @@ const enhancedRadioShows = radioShows.map((set) => ({
           ))}
         </section>
 
-        <h2 class="section-title">Live DJ Sets · Audio</h2>
-
-        <section class="sets-list" aria-label="Itchy Lemon live DJ sets from audio files">
-          {audioSets.map((set) => (
-            <article class="set-row is-disabled">
-              <div class="set-episode">{set.label}</div>
-
-              <div>
-                <h2 class="set-title">{set.title}</h2>
-                <p class="set-meta">{set.meta}</p>
-              </div>
-
-              <div class="set-type">{set.type}</div>
-
-              <span class="listen">
-                {set.status}
-              </span>
-            </article>
-          ))}
-        </section>
-
         <section class="booking-cta" aria-label="Book Itchy Lemon">
           <div>
             <p>Like the sound?</p>
@@ -862,7 +831,7 @@ const enhancedRadioShows = radioShows.map((set) => ({
       <footer>
         <span>© 2026 Itchy Lemon. All rights reserved.</span>
         <span>
-          Radio shows · DJ sets · YouTube videos · Audio recordings ·
+          Radio shows · DJ sets · YouTube videos ·
           <a href="/privacy-policy">Privacy Policy</a>
         </span>
       </footer>
