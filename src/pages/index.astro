@@ -116,9 +116,15 @@ import MetaPixel from "../components/MetaPixel.astro";
 
       .actions {
         display: flex;
-        flex-wrap: wrap;
-        gap: 14px;
+        flex-wrap: nowrap;
+        gap: 10px;
         margin-top: 36px;
+      }
+
+      .actions .button {
+        padding: 0 14px;
+        font-size: 12px;
+        letter-spacing: 0.08em;
       }
 
       .button {
@@ -346,6 +352,10 @@ import MetaPixel from "../components/MetaPixel.astro";
           padding: 22px;
         }
 
+        .actions {
+          flex-wrap: wrap;
+        }
+
         .button {
           width: 100%;
         }
@@ -386,7 +396,7 @@ import MetaPixel from "../components/MetaPixel.astro";
             <p>
               From the atmospheric depth of In My Veins to the energy of Wide Open, Blasted and Amsterdam, explore the latest original productions.
             </p>
-            <a class="home-cta-link" href="/music">Explore original music <span aria-hidden="true">↗</span></a>
+            <a class="home-cta-link" href="/discography">Explore Discography <span aria-hidden="true">↗</span></a>
           </div>
 
           <div class="quick-links" aria-label="Featured artist links">
