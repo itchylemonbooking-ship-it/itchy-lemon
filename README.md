@@ -53,6 +53,6 @@ Ruleset ativo: [ITCHY LEMON — Protect main](https://github.com/itchylemonbooki
 
 ## Manutenção pendente
 
-O projeto ainda usa **Astro 4.16.18**. É uma versão antiga: planear uma migração major **numa PR isolada**, com atualização do `package-lock.json`, build e revisão funcional. O Dependabot propõe atualizações do npm e GitHub Actions por PR, sem merge automático.
+O projeto utiliza **Astro 7.4.13** e **Node.js 22.23.4** desde 23/11/2026 (migração [PR #9](https://github.com/itchylemonbooking-ship-it/itchy-lemon/pull/9)). O Cloudflare Pages tem `NODE_VERSION=22.23.4` configurado em **Preview** e **Production**; manter as duas configurações alinhadas com `.node-version` em futuras atualizações. O Dependabot propõe atualizações de npm e GitHub Actions por PR, sem merge automático. Qualquer futura migração major exige atualização de `package-lock.json`, build e revisão funcional.
 
 Alterações visuais e editoriais só devem ser feitas por pedido específico. Não atualizar lançamentos da Discography sem autorização explícita.
