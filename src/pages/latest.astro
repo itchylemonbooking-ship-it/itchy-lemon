@@ -16,7 +16,7 @@ import HubSpotTracking from "../components/HubSpotTracking.astro";
 </head>
 <body>
 <main>
-<header><a href="/" class="brand">ITCHY LEMON</a><p>DJ &amp; Producer</p></header>
+<header><a href="/" class="brand">ITCHY LEMON</a><p>Electronic Music Artist</p><p class="sound-signature">Deep · Melodic · Groovy</p></header>
 <section class="hero" aria-labelledby="latest-title">
 <p class="eyebrow">Latest release</p>
 {latestRelease.cover && <img class="art" src={latestRelease.cover} alt={latestRelease.title + " artwork"} width="800" height="800" decoding="async" />}
@@ -58,6 +58,7 @@ a:focus-visible{outline:2px solid #d8ff3e;outline-offset:4px}
 header{text-align:center;border-bottom:1px solid #ffffff20;padding-bottom:22px}
 .brand{color:#d8ff3e;font-weight:900;font-size:clamp(26px,7vw,38px);letter-spacing:-.05em}
 header p,.muted,.release p{color:#a7adb8;font-size:13px;margin:8px 0}
+header .sound-signature{color:#d8ff3e;letter-spacing:.12em;margin-top:8px}
 .hero{text-align:center;padding:26px 0 32px}
 .eyebrow{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#d8ff3e;font-weight:700}
 .art{display:block;width:min(100%,320px);height:auto;aspect-ratio:1;object-fit:cover;margin:20px auto;border-radius:14px;border:1px solid #ffffff20}
