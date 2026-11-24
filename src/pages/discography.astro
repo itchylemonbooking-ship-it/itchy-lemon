@@ -33,7 +33,7 @@ const releases = [
     year: release.year,
     title: release.title,
     description: "Itchy Lemon — Original Mix",
-    label: release.slug === "inmyveins" ? "Itchy Lemon Records" : "",
+    label: ["inmyveins", "wideopen", "blasted", "amsterdam"].includes(release.slug) ? "Itchy Lemon Records" : "",
     spotifyEmbedUrl: release.spotify.replace("/track/", "/embed/track/"),
     beatportPreviewId: "",
     traxsourcePreviewId: "",
