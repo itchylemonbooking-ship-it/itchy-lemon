@@ -1,4 +1,5 @@
 ---
+import { originalReleases } from "../data/originalReleases";
 import SiteHeader from "../components/SiteHeader.astro";
 import GlobalMixcloudPlayer from "../components/GlobalMixcloudPlayer.astro";
 import HubSpotTracking from "../components/HubSpotTracking.astro";
@@ -28,6 +29,16 @@ const fullCatalogueLinks = [
 ];
 
 const releases = [
+  ...originalReleases.map((release) => ({
+    year: release.year,
+    title: release.title,
+    description: "Itchy Lemon — Original Mix",
+    label: release.slug === "inmyveins" ? "Itchy Lemon Records" : "",
+    spotifyEmbedUrl: release.spotify.replace("/track/", "/embed/track/"),
+    beatportPreviewId: "",
+    traxsourcePreviewId: "",
+    stores: [{ label: "Spotify", url: release.spotify }, ...release.platforms.filter((platform) => platform.label !== "Spotify")],
+  })),
   {
     year: "2018",
     title: "Brainstorm",
