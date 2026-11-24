@@ -1,0 +1,81 @@
+---
+import { latestRelease, previousReleases } from "../data/originalReleases";
+import MetaPixel from "../components/MetaPixel.astro";
+import HubSpotTracking from "../components/HubSpotTracking.astro";
+---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="#07090c" />
+<meta name="description" content="Listen to the latest and previous original releases by Itchy Lemon." />
+<title>Latest Release | Itchy Lemon</title>
+<link rel="canonical" href="https://itchylemon.com/latest/" />
+<link rel="icon" type="image/png" href="/favicon.png" />
+</head>
+<body>
+<main>
+<header><a href="/" class="brand">ITCHY LEMON</a><p>DJ &amp; Producer</p></header>
+<section class="hero" aria-labelledby="latest-title">
+<p class="eyebrow">Latest release</p>
+{latestRelease.cover && <img class="art" src={latestRelease.cover} alt={latestRelease.title + " artwork"} width="800" height="800" decoding="async" />}
+<h1 id="latest-title">{latestRelease.title}</h1>
+<p class="muted">Original Mix · {latestRelease.year}</p>
+{latestRelease.description && <p class="description">{latestRelease.description}</p>}
+<a class="primary" href={latestRelease.spotify} data-release={latestRelease.slug} data-platform="Spotify">Listen on Spotify <span aria-hidden="true">↗</span></a>
+{latestRelease.platforms.map(platform => <a class="secondary" href={platform.url} data-release={latestRelease.slug} data-platform={platform.label}>{platform.label} <span aria-hidden="true">↗</span></a>)}
+</section>
+<section class="previous" aria-labelledby="previous-title">
+<h2 id="previous-title">Previous releases</h2>
+{previousReleases.map(release => <article class="release" id={release.slug}>
+{release.cover && <img class="thumb" src={release.cover} alt="" width="72" height="72" loading="lazy" />}
+<div class="release-info"><h3>{release.title}</h3><p>Original Mix · {release.year}</p></div>
+<a class="listen" href={release.spotify} data-release={release.slug} data-platform="Spotify" aria-label={"Listen to " + release.title + " on Spotify"}>Spotify ↗</a>
+{release.platforms.length > 0 && <div class="extra">{release.platforms.map(platform => <a href={platform.url} data-release={release.slug} data-platform={platform.label}>{platform.label} ↗</a>)}</div>}
+</article>)}
+</section>
+<nav aria-label="Explore Itchy Lemon"><a class="secondary" href="/discography">Explore full discography ↗</a><a class="secondary" href="/booking">Booking &amp; enquiries ↗</a></nav>
+<footer><a href="/">Itchy Lemon</a><a href="/privacy-policy">Privacy Policy</a></footer>
+</main>
+<MetaPixel />
+<HubSpotTracking />
+<script is:inline>
+document.addEventListener("click", function(event) {
+  const link = event.target.closest?.("a[data-release][data-platform]");
+  if (!link) return;
+  if (typeof window.gtag === "function") window.gtag("event", "release_platform_click", {release: link.dataset.release, platform: link.dataset.platform});
+});
+</script>
+</body>
+</html>
+<style>
+:global(*){box-sizing:border-box}
+:global(body){margin:0;background:radial-gradient(ellipse at top,#232b1a 0%,#07090c 42%);color:#f4f4f0;font-family:Arial,Helvetica,sans-serif;min-height:100vh}
+main{width:min(100%,520px);margin:auto;padding:32px 20px 48px}
+a{color:inherit;text-decoration:none}
+a:focus-visible{outline:2px solid #d8ff3e;outline-offset:4px}
+header{text-align:center;border-bottom:1px solid #ffffff20;padding-bottom:22px}
+.brand{color:#d8ff3e;font-weight:900;font-size:clamp(26px,7vw,38px);letter-spacing:-.05em}
+header p,.muted,.release p{color:#a7adb8;font-size:13px;margin:8px 0}
+.hero{text-align:center;padding:26px 0 32px}
+.eyebrow{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#d8ff3e;font-weight:700}
+.art{display:block;width:min(100%,320px);height:auto;aspect-ratio:1;object-fit:cover;margin:20px auto;border-radius:14px;border:1px solid #ffffff20}
+h1{font-size:clamp(38px,9vw,60px);letter-spacing:-.06em;line-height:1;margin:16px 0 8px}
+.description{font-size:15px;line-height:1.6;color:#a7adb8;margin:16px auto 24px;max-width:380px}
+.primary,.secondary{display:flex;align-items:center;justify-content:center;gap:12px;min-height:52px;padding:12px 16px;border-radius:10px;font-weight:700;margin:10px 0}
+.primary{background:#d8ff3e;color:#07090c}
+.secondary{border:1px solid #ffffff30}
+.secondary:hover,.listen:hover{border-color:#d8ff3e;color:#d8ff3e}
+.primary:hover{background:#e5ff78}
+.previous{border-top:1px solid #ffffff20;padding:22px 0}
+h2{font-size:24px;letter-spacing:-.04em;margin:0 0 12px}
+.release{display:flex;align-items:center;flex-wrap:wrap;gap:12px;padding:16px 0;border-bottom:1px solid #ffffff20}
+.thumb{width:64px;height:64px;object-fit:cover;border-radius:6px}
+.release-info{flex:1;min-width:120px}
+h3{font-size:19px;margin:0}
+.listen{border:1px solid #ffffff30;border-radius:8px;padding:12px;font-size:13px;color:#d8ff3e}
+.extra{width:100%;display:flex;gap:12px;flex-wrap:wrap;font-size:13px}
+nav{margin-top:12px}
+footer{display:flex;justify-content:space-between;color:#a7adb8;font-size:12px;margin-top:30px}
+</style>

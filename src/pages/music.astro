@@ -1,4 +1,5 @@
 ---
+import { latestRelease, previousReleases } from "../data/originalReleases";
 import SiteHeader from "../components/SiteHeader.astro";
 import GlobalMixcloudPlayer from "../components/GlobalMixcloudPlayer.astro";
 import HubSpotTracking from "../components/HubSpotTracking.astro";
@@ -450,13 +451,13 @@ import MetaPixel from "../components/MetaPixel.astro";
 
         <section class="release-feature" aria-labelledby="featured-release-title">
           <div class="featured-copy">
-            <p class="section-label">Featured original · 2026</p>
-            <h2 id="featured-release-title">In My Veins</h2>
+            <p class="section-label">Featured original · {latestRelease.year}</p>
+            <h2 id="featured-release-title">{latestRelease.title}</h2>
             <p>
-              A darker, melodic production built around a deep groove, spoken vocals and slow-burning tension.
+              {latestRelease.description}
             </p>
             <div class="release-actions">
-              <a class="button primary" href="https://open.spotify.com/track/029gRb7QR6Cg1TM2YkroDK" target="_blank" rel="noopener noreferrer">
+              <a class="button primary" href={latestRelease.spotify} target="_blank" rel="noopener noreferrer">
                 Listen to the Track
               </a>
             </div>
@@ -464,8 +465,8 @@ import MetaPixel from "../components/MetaPixel.astro";
           </div>
           <div class="featured-art">
             <img
-              src="/media/in-my-veins-cover.webp"
-              alt="Capa do lançamento In My Veins — Itchy Lemon"
+              src={latestRelease.cover || "/favicon.png"}
+              alt={latestRelease.title + " artwork"}
               width="800"
               height="800"
               loading="eager"
@@ -483,24 +484,14 @@ import MetaPixel from "../components/MetaPixel.astro";
             <a href="/discography">View Discography <span aria-hidden="true">↗</span></a>
           </div>
           <div class="music-grid">
-            <a class="track-card" href="https://open.spotify.com/track/2HBqKVXN4kkwiRzVGPOAyN" target="_blank" rel="noopener noreferrer">
-              <span class="track-no">01 / Original release</span>
-              <strong class="track-name">Wide Open</strong>
-              <span class="track-year">Itchy Lemon · 2026</span>
-              <span class="track-action">Listen on Spotify <span aria-hidden="true">↗</span></span>
-            </a>
-            <a class="track-card" href="https://open.spotify.com/track/2sQmYmr3hwOvRKE72Xf9iK" target="_blank" rel="noopener noreferrer">
-              <span class="track-no">02 / Original release</span>
-              <strong class="track-name">Blasted</strong>
-              <span class="track-year">Itchy Lemon · 2026</span>
-              <span class="track-action">Listen on Spotify <span aria-hidden="true">↗</span></span>
-            </a>
-            <a class="track-card" href="https://open.spotify.com/track/0j8uHrkVFCDasMD0LwkL5n" target="_blank" rel="noopener noreferrer">
-              <span class="track-no">03 / Original release</span>
-              <strong class="track-name">Amsterdam</strong>
-              <span class="track-year">Itchy Lemon · 2026</span>
-              <span class="track-action">Listen on Spotify <span aria-hidden="true">↗</span></span>
-            </a>
+            {previousReleases.map((release, index) => (
+              <a class="track-card" href={release.spotify} target="_blank" rel="noopener noreferrer">
+                <span class="track-no">{String(index + 1).padStart(2, "0")} / Original release</span>
+                <strong class="track-name">{release.title}</strong>
+                <span class="track-year">Itchy Lemon · {release.year}</span>
+                <span class="track-action">Listen on Spotify <span aria-hidden="true">↗</span></span>
+              </a>
+            ))}
           </div>
         </section>
 
