@@ -539,9 +539,12 @@ import MetaPixel from "../components/MetaPixel.astro";
       .epk-quick-links a { font-size:12px; color:var(--muted); text-transform:uppercase; letter-spacing:.07em; }
       .epk-quick-links a:hover { color:var(--acid); }
       .epk-hero-photo { position:relative; overflow:hidden; min-height:450px; border:1px solid rgba(216,255,62,.28); border-radius:24px; background:#10141b; }
-      .epk-hero-photo img { display:block; width:100%; height:100%; position:absolute; inset:0; object-fit:cover; }
+      .epk-hero-photo img { display:block; width:100%; height:100%; position:absolute; inset:0; object-fit:cover; object-position: 50% 45%; transform:scale(1.38); transform-origin:50% 45%; }
       .epk-hero-photo::after { content:""; position:absolute; inset:45% 0 0; pointer-events:none; background:linear-gradient(transparent,rgba(0,0,0,.72)); }
-      .photo-mark { position:absolute; z-index:1; bottom:24px; left:24px; font-size:11px; letter-spacing:.18em; color:var(--acid); }
+      .photo-mark { position:absolute; z-index:1; bottom:24px; left:24px; right:auto; width:max-content; max-width:calc(100% - 40px); display:flex; flex-direction:column; align-items:stretch; gap:6px; line-height:1.3; text-transform:uppercase; text-shadow:0 1px 12px rgba(0,0,0,.75); }
+      .photo-mark strong { color:var(--text); font-size:clamp(20px,2.2vw,25px); font-weight:800; letter-spacing:.12em; }
+      .photo-mark > span:nth-child(2) { color:#c6c9c8; font-size:13px; font-weight:600; letter-spacing:.11em; white-space:nowrap; }
+      .photo-mark > span:nth-child(3) { color:var(--acid); font-size:9px; font-weight:700; letter-spacing:.12em; display:flex; width:100%; justify-content:space-between; white-space:nowrap; }
       .epk-section { margin-top:100px; scroll-margin-top:28px; }
       .epk-section-head .eyebrow { margin-bottom:12px; }
       .epk-section-head h2,.epk-contact h2,.epk-download-section h2 { margin:0; color:var(--text); font-size:clamp(36px,5vw,62px); line-height:1; letter-spacing:-.055em; }
@@ -554,7 +557,8 @@ import MetaPixel from "../components/MetaPixel.astro";
       .epk-text-link { display:inline-flex; gap:10px; margin-top:18px; padding-bottom:7px; color:var(--acid); border-bottom:1px solid rgba(216,255,62,.4); font-weight:700; font-size:12px; letter-spacing:.1em; text-transform:uppercase; }
       .epk-sound-grid { display:grid; grid-template-columns:1.25fr .75fr; gap:18px; margin-top:28px; }
       .epk-featured-track { display:flex; gap:22px; padding:24px; border:1px solid rgba(216,255,62,.25); border-radius:24px; background:linear-gradient(135deg,rgba(216,255,62,.08),transparent),#10141b; align-items:center; }
-      .epk-featured-track > img { width:42%; flex-shrink:0; aspect-ratio:1; object-fit:cover; border-radius:14px; }
+      .epk-featured-art { width:42%; flex-shrink:0; aspect-ratio:1; overflow:hidden; border-radius:14px; background:#090d11; }
+      .epk-featured-art img { display:block; width:100%; height:100%; object-fit:contain; object-position:center; transform:none; }
       .epk-featured-track h3 { font-size:clamp(26px,3vw,38px); margin:10px 0; line-height:1; letter-spacing:-.04em; }
       .epk-featured-track p { color:var(--muted); font-size:14px; line-height:1.6; }
       .epk-featured-track .button { margin-top:12px; }
@@ -581,7 +585,7 @@ import MetaPixel from "../components/MetaPixel.astro";
       .epk-contact a[href^="mailto:"] { color:var(--acid); font-size:16px; overflow-wrap:anywhere; }
       .epk-contact .epk-actions { margin-top:0; }
       @media(max-width:900px) { .epk-hero { grid-template-columns:1fr; } .epk-hero-photo { min-height:460px; } .epk-sound-grid { grid-template-columns:1fr; } .epk-download-section,.epk-contact,.epk-set-panel { flex-direction:column; align-items:stretch; } }
-      @media(max-width:600px) { .epk-section { margin-top:64px; } .epk-hero-photo { min-height:350px; } .epk-credentials,.epk-photos { grid-template-columns:1fr; } .epk-photos img { height:260px; } .epk-featured-track { flex-direction:column; align-items:stretch; } .epk-featured-track > img { width:100%; max-height:310px; } .epk-quick-links { gap:12px 16px; } .epk-hero h1 { font-size:clamp(58px,15vw,90px); } }
+      @media(max-width:600px) { .epk-section { margin-top:64px; } .epk-hero-photo { min-height:350px; } .epk-credentials,.epk-photos { grid-template-columns:1fr; } .epk-photos img { height:260px; } .epk-featured-track { flex-direction:column; align-items:stretch; } .epk-featured-art { width:100%; max-height:310px; } .epk-quick-links { gap:12px 16px; } .epk-hero h1 { font-size:clamp(58px,15vw,90px); } }
     </style>
   </head>
 
@@ -606,18 +610,21 @@ import MetaPixel from "../components/MetaPixel.astro";
             </div>
           </div>
           <div class="epk-hero-photo">
-            <img src={latestRelease.cover} alt={latestRelease.title + " official cover artwork — Itchy Lemon"} loading="eager" decoding="async" />
-            <span class="photo-mark">FEATURED RELEASE / {latestRelease.title.toUpperCase()}</span>
+            <img src="/media/itchy-lemon-epk-portrait.png" alt="Itchy Lemon — artist portrait" loading="eager" decoding="async" />
+            <span class="photo-mark"><strong>ITCHY LEMON</strong><span>Electronic Music Artist</span><span><span>Melodic</span><span>·</span><span>Deep</span><span>·</span><span>Groovy</span></span></span>
           </div>
         </section>
 
         <section id="highlights" class="epk-section" aria-labelledby="highlights-title">
           <div class="epk-section-head"><p class="eyebrow">Selected credentials</p><h2 id="highlights-title">Behind the sound.</h2></div>
-          <p class="epk-section-intro">Itchy Lemon is a Portuguese DJ and electronic music producer working at the intersection of melodic, deep and groove-driven electronic music. His sets balance atmosphere, progression and club energy.</p>
+          <p class="epk-section-intro">Itchy Lemon is a Portuguese DJ and electronic music producer with a current focus on melodic, deep and groove-driven electronic music. The project combines recent club and radio activity with an artistic path that includes selected appearances in London and Portugal.</p>
           <div class="epk-credentials">
-            <article><span class="epk-number">01 / London</span><h3>Ministry of Sound</h3><p>Fresh Beats · 2014</p></article>
-            <article><span class="epk-number">02 / London</span><h3>The Qube Project</h3><p>DJ appearance · 2015</p></article>
-            <article><span class="epk-number">03 / Porto</span><h3>Calico</h3><p>Resident DJ · since 2026</p></article>
+            <article><span class="epk-number">01 / Porto · 2026</span><h3>Calico</h3><p>Resident DJ · since August 2026</p></article>
+            <article><span class="epk-number">02 / Radio · 2026</span><h3>Ibiza Stardust Radio</h3><p>Resident DJ · since October 2026</p></article>
+            <article><span class="epk-number">03 / Radio · 2026</span><h3>Pinnacle Nexus Radio</h3><p>World Groove · tracks in rotation</p></article>
+            <article><span class="epk-number">04 / Porto · 2015</span><h3>Orange Room</h3><p>DJ appearance · December 2015</p></article>
+            <article><span class="epk-number">05 / London · 2015</span><h3>The Qube Project</h3><p>DJ appearance · February 2015</p></article>
+            <article><span class="epk-number">06 / London · 2014</span><h3>Ministry of Sound</h3><p>Fresh Beats #28 · December 2014</p></article>
           </div>
           <a class="epk-text-link" href="/bio">Explore the full biography <span aria-hidden="true">↗</span></a>
         </section>
@@ -626,7 +633,7 @@ import MetaPixel from "../components/MetaPixel.astro";
           <div class="epk-section-head"><p class="eyebrow">Listen first</p><h2 id="listen-title">The sound.</h2></div>
           <div class="epk-sound-grid">
             <article class="epk-featured-track">
-              <img src={latestRelease.cover} alt={latestRelease.title + " cover art"} width="480" height="480" loading="lazy" decoding="async" />
+              <div class="epk-featured-art"><img src={latestRelease.cover} alt={latestRelease.title + " original cover artwork"} width="480" height="480" loading="lazy" decoding="async" /></div>
               <div><span class="epk-number">Featured release / {latestRelease.year}</span><h3>{latestRelease.title}</h3><p>{latestRelease.description}</p><a class="button primary" href={latestRelease.spotify} target="_blank" rel="noopener noreferrer">Listen on Spotify ↗</a></div>
             </article>
             <div class="epk-track-list">
