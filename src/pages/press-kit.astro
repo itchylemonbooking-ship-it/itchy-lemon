@@ -582,6 +582,11 @@ import MetaPixel from "../components/MetaPixel.astro";
       .epk-credential-proof-link { display:inline-flex; align-items:center; gap:8px; margin-top:16px; padding-bottom:4px; border-bottom:1px solid rgba(216,255,62,.38); color:var(--acid); font-size:12px; font-weight:700; line-height:1.4; text-decoration:none; }\n      .epk-credential-proof-link:hover,.epk-credential-proof-link:focus-visible { border-bottom-color:var(--acid); color:var(--text); }\n\n      .epk-credential-link { display:inline-flex; align-items:center; gap:8px; margin-top:14px; padding-bottom:4px; border-bottom:1px solid rgba(216,255,62,.38); color:var(--acid); font-size:12px; font-weight:700; line-height:1.4; text-decoration:none; }
       .epk-credential-link:hover,.epk-credential-link:focus-visible { border-bottom-color:var(--acid); color:var(--text); }
       .epk-text-link { display:inline-flex; gap:10px; margin-top:18px; padding-bottom:7px; color:var(--acid); border-bottom:1px solid rgba(216,255,62,.4); font-weight:700; font-size:12px; letter-spacing:.1em; text-transform:uppercase; }
+      .industry-profiles-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; margin-top:28px; }
+      .industry-profiles-grid article { border:1px solid var(--line); border-radius:20px; padding:24px; background:rgba(16,20,27,.62); }
+      .industry-profiles-grid h3 { font-size:clamp(20px,2.5vw,26px); letter-spacing:-.035em; line-height:1.1; margin:22px 0 10px; }
+      .industry-profiles-grid p { margin:0; min-height:48px; color:var(--muted); font-size:13px; line-height:1.6; }
+      @media(max-width:760px) { .industry-profiles-grid { grid-template-columns:1fr; } .industry-profiles-grid p { min-height:0; } }
       .epk-sound-grid { display:grid; grid-template-columns:1.25fr .75fr; gap:18px; margin-top:28px; }
       .epk-featured-track { display:flex; gap:22px; padding:24px; border:1px solid rgba(216,255,62,.25); border-radius:24px; background:linear-gradient(135deg,rgba(216,255,62,.08),transparent),#10141b; align-items:center; }
       .epk-featured-art { width:42%; flex-shrink:0; aspect-ratio:1; overflow:hidden; border-radius:14px; background:#090d11; }
@@ -654,6 +659,34 @@ import MetaPixel from "../components/MetaPixel.astro";
             <article><span class="epk-number">06 / London · 2014</span><h3>Ministry of Sound</h3><p>DJ appearance · 26 December 2014</p><a class="epk-credential-proof-link" href="https://www.fatsoma.com/e/tum8nley/la-bomba" target="_blank" rel="noopener noreferrer" aria-label="View Ministry of Sound event evidence — opens in a new tab">View event evidence <span aria-hidden="true">↗</span></a></article>
           </div>
           <a class="epk-text-link" href="/bio">Explore the full biography <span aria-hidden="true">↗</span></a>
+        </section>
+
+        <section id="industry-profiles" class="epk-section" aria-labelledby="industry-profiles-title">
+          <div class="epk-section-head">
+            <p class="eyebrow">Historical artist profiles</p>
+            <h2 id="industry-profiles-title">Industry references.</h2>
+          </div>
+          <p class="epk-section-intro">Explore archived artist biographies and professional profiles across established music and booking platforms. These references document the artist's history; they are not event-specific performance confirmations.</p>
+          <div class="industry-profiles-grid">
+            <article>
+              <span class="epk-number">Electronic music · Artist profile</span>
+              <h3>Amsterdam Dance Event</h3>
+              <p>Historical artist profile on the ADE website.</p>
+              <a class="epk-credential-link" href="https://www.amsterdam-dance-event.nl/en/artists-speakers/itchy-lemon/20886/" target="_blank" rel="noopener noreferrer">View artist profile <span aria-hidden="true">↗</span></a>
+            </article>
+            <article>
+              <span class="epk-number">Electronic music · Artist biography</span>
+              <h3>Resident Advisor</h3>
+              <p>Artist biography and historical discography references.</p>
+              <a class="epk-credential-link" href="https://ra.co/dj/itchylemon/biography" target="_blank" rel="noopener noreferrer">View artist biography <span aria-hidden="true">↗</span></a>
+            </article>
+            <article>
+              <span class="epk-number">Portugal · Artist directory</span>
+              <h3>Central de Artistas</h3>
+              <p>Historical artist listing and booking directory entry.</p>
+              <a class="epk-credential-link" href="https://centraldeartistas.pt/index.php?Itemid=96&amp;link_id=927&amp;option=com_mtree&amp;task=viewlink" target="_blank" rel="noopener noreferrer">View artist listing <span aria-hidden="true">↗</span></a>
+            </article>
+          </div>
         </section>
 
         <section id="radio-support" class="epk-section" aria-labelledby="radio-support-title">
