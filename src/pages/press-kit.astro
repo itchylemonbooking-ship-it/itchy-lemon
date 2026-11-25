@@ -581,6 +581,19 @@ import MetaPixel from "../components/MetaPixel.astro";
       .epk-credentials p { color:var(--muted); margin:0; font-size:14px; }
       .epk-credential-link { display:inline-flex; align-items:center; gap:8px; margin-top:14px; padding-bottom:4px; border-bottom:1px solid rgba(216,255,62,.38); color:var(--acid); font-size:12px; font-weight:700; line-height:1.4; text-decoration:none; }
       .epk-credential-link:hover,.epk-credential-link:focus-visible { border-bottom-color:var(--acid); color:var(--text); }
+
+      /* Reusable evidence drawer for verified gig, radio and media credentials. */
+      .epk-credential-proof { margin-top:16px; border-top:1px solid var(--line); padding-top:12px; }
+      .epk-credential-proof summary { cursor:pointer; list-style:none; display:flex; align-items:center; justify-content:space-between; gap:12px; color:var(--acid); font-size:12px; font-weight:700; line-height:1.5; }
+      .epk-credential-proof summary::-webkit-details-marker { display:none; }
+      .epk-credential-proof summary span { font-size:18px; line-height:1; }
+      .epk-credential-proof[open] summary span { transform:rotate(45deg); }
+      .epk-credential-proof-content { padding-top:14px; }
+      .epk-credentials .epk-credential-proof-content p { line-height:1.55; margin:0 0 12px; font-size:13px; }
+      .epk-credential-proof-content a { display:inline-flex; align-items:center; gap:8px; color:var(--acid); border-bottom:1px solid rgba(216,255,62,.38); padding-bottom:3px; font-size:12px; font-weight:700; }
+      .epk-credential-proof-content a:hover { color:var(--text); border-color:var(--acid); }
+      .epk-credentials .epk-credential-proof-content .epk-credential-proof-note { margin:14px 0 0; font-size:11px; color:var(--muted); }
+
       .epk-text-link { display:inline-flex; gap:10px; margin-top:18px; padding-bottom:7px; color:var(--acid); border-bottom:1px solid rgba(216,255,62,.4); font-weight:700; font-size:12px; letter-spacing:.1em; text-transform:uppercase; }
       .epk-sound-grid { display:grid; grid-template-columns:1.25fr .75fr; gap:18px; margin-top:28px; }
       .epk-featured-track { display:flex; gap:22px; padding:24px; border:1px solid rgba(216,255,62,.25); border-radius:24px; background:linear-gradient(135deg,rgba(216,255,62,.08),transparent),#10141b; align-items:center; }
@@ -651,7 +664,19 @@ import MetaPixel from "../components/MetaPixel.astro";
             <article><span class="epk-number">03 / Radio · 2026</span><h3>Pinnacle Nexus Radio</h3><p>World Groove · tracks in rotation</p></article>
             <article><span class="epk-number">04 / Porto · 2015</span><h3>Orange Room</h3><p>DJ appearance · December 2015</p></article>
             <article><span class="epk-number">05 / London · 2015</span><h3>The Qube Project</h3><p>DJ appearance · February 2015</p></article>
-            <article><span class="epk-number">06 / London · 2014</span><h3>Ministry of Sound</h3><p>Fresh Beats #28 · December 2014</p></article>
+            <article>
+              <span class="epk-number">06 / London · 2014</span>
+              <h3>Ministry of Sound</h3>
+              <p>DJ performance · Baby Box · 26 December 2014</p>
+              <details class="epk-credential-proof">
+                <summary>View event proof <span aria-hidden="true">+</span></summary>
+                <div class="epk-credential-proof-content">
+                  <p>La Bomba · Boxing Day 2014. Itchy Lemon appears in the published Baby Box line-up.</p>
+                  <a href="https://www.fatsoma.com/e/tum8nley/la-bomba" target="_blank" rel="noopener noreferrer">Original event listing <span aria-hidden="true">↗</span></a>
+                  <p class="epk-credential-proof-note">Fresh Beats #28 · 2014 — archived radio show, separate from this DJ performance. Listening link pending verification.</p>
+                </div>
+              </details>
+            </article>
           </div>
           <a class="epk-text-link" href="/bio">Explore the full biography <span aria-hidden="true">↗</span></a>
         </section>
