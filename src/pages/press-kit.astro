@@ -579,6 +579,8 @@ import MetaPixel from "../components/MetaPixel.astro";
       .epk-number { display:block; font-size:11px; color:var(--acid); letter-spacing:.12em; text-transform:uppercase; font-weight:700; }
       .epk-credentials h3 { margin:24px 0 8px; font-size:clamp(20px,2.5vw,28px); line-height:1.05; letter-spacing:-.035em; }
       .epk-credentials p { color:var(--muted); margin:0; font-size:14px; }
+      .epk-credential-link { display:inline-flex; align-items:center; gap:8px; margin-top:14px; padding-bottom:4px; border-bottom:1px solid rgba(216,255,62,.38); color:var(--acid); font-size:12px; font-weight:700; line-height:1.4; text-decoration:none; }
+      .epk-credential-link:hover,.epk-credential-link:focus-visible { border-bottom-color:var(--acid); color:var(--text); }
       .epk-text-link { display:inline-flex; gap:10px; margin-top:18px; padding-bottom:7px; color:var(--acid); border-bottom:1px solid rgba(216,255,62,.4); font-weight:700; font-size:12px; letter-spacing:.1em; text-transform:uppercase; }
       .epk-sound-grid { display:grid; grid-template-columns:1.25fr .75fr; gap:18px; margin-top:28px; }
       .epk-featured-track { display:flex; gap:22px; padding:24px; border:1px solid rgba(216,255,62,.25); border-radius:24px; background:linear-gradient(135deg,rgba(216,255,62,.08),transparent),#10141b; align-items:center; }
@@ -645,7 +647,7 @@ import MetaPixel from "../components/MetaPixel.astro";
           <p class="epk-section-intro">Itchy Lemon is a Portuguese DJ and electronic music producer with a current focus on melodic, deep and groove-driven electronic music. The project combines recent club and radio activity with an artistic path that includes selected appearances in London and Portugal.</p>
           <div class="epk-credentials">
             <article><span class="epk-number">01 / Porto · 2026</span><h3>Calico</h3><p>Resident DJ · since August 2026</p></article>
-            <article><span class="epk-number">02 / Radio · 2026</span><h3>Ibiza Stardust Radio</h3><p>Resident DJ · since October 2026</p></article>
+            <article><span class="epk-number">02 / Radio · 2026</span><h3>Ibiza Stardust Radio</h3><p>Resident DJ · since October 2026</p><a class="epk-credential-link" href="https://soundcloud.com/ibizastardustradio/itchy-lemon-fresh-beats-42" target="_blank" rel="noopener noreferrer" aria-label="Listen to Fresh Beats 42 on Ibiza Stardust Radio SoundCloud">Listen to Fresh Beats #42 <span aria-hidden="true">↗</span></a></article>
             <article><span class="epk-number">03 / Radio · 2026</span><h3>Pinnacle Nexus Radio</h3><p>World Groove · tracks in rotation</p></article>
             <article><span class="epk-number">04 / Porto · 2015</span><h3>Orange Room</h3><p>DJ appearance · December 2015</p></article>
             <article><span class="epk-number">05 / London · 2015</span><h3>The Qube Project</h3><p>DJ appearance · February 2015</p></article>
