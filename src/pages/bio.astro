@@ -11,7 +11,7 @@ import MetaPixel from "../components/MetaPixel.astro";
     <meta charset="UTF-8" />
     <meta
       name="description"
-      content="Bio of Itchy Lemon — Portuguese DJ and electronic music producer shaped by melodic tension, deep groove and underground club energy."
+      content="Itchy Lemon is a Portuguese DJ and electronic music producer. Discover London club appearances, current radio residencies, original music and booking information."
     />
     <meta name="author" content="Itchy Lemon" />
     <meta name="theme-color" content="#07090c" />
@@ -174,6 +174,23 @@ import MetaPixel from "../components/MetaPixel.astro";
         border-color: var(--acid);
       }
 
+      .bio-primary-actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:30px; }
+      .primary-action,.secondary-action { display:inline-flex; align-items:center; justify-content:center; gap:18px; padding:14px 20px; border-radius:999px; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.08em; transition:transform .2s,background .2s; }
+      .primary-action { background:var(--acid); color:#050608; border:1px solid var(--acid); }
+      .secondary-action { border:1px solid rgba(216,255,62,.5); color:var(--text); }
+      .primary-action:hover,.secondary-action:hover { transform:translateY(-2px); }
+      .secondary-action:hover { background:rgba(216,255,62,.08); }
+      .milestone-year { display:block; margin-bottom:6px; color:var(--acid); text-transform:uppercase; font-size:11px; letter-spacing:.13em; }
+      .milestone-link { display:block; width:fit-content; margin-top:8px; color:var(--acid); font-size:12px; text-decoration:underline; text-underline-offset:4px; }
+      .milestone-link:hover,.panel-footer-link:hover { color:var(--text); }
+      .panel-footer-link { display:inline-flex; gap:10px; margin-top:25px; font-size:12px; color:var(--acid); font-weight:700; text-decoration:underline; text-underline-offset:5px; }
+      .bio-narrative { min-width:0; }
+      .quick-bio { margin-top:38px; padding:26px; border:1px solid var(--line); background:rgba(16,20,27,.55); border-radius:24px; }
+      .quick-bio h2 { margin:0 0 16px; color:var(--acid); text-transform:uppercase; letter-spacing:.18em; font-size:13px; }
+      .quick-bio p { margin:0; color:var(--text); font-size:16px; line-height:1.7; }
+      .quick-bio .quick-bio-note { margin-top:14px; color:var(--muted); font-size:13px; }
+      .highlight-list li { font-size:14px; }
+      @media(max-width:600px) { .bio-primary-actions { flex-direction:column; } .primary-action,.secondary-action { width:100%; } .quick-bio { padding:20px; } .content-grid { gap:26px; } }
       footer {
         max-width: 1080px;
         margin: 80px auto 0;
@@ -224,74 +241,61 @@ import MetaPixel from "../components/MetaPixel.astro";
         <h1>Bio</h1>
 
         <p class="lead">
-          Itchy Lemon is a Portuguese DJ and electronic music producer with a sound shaped by melodic tension, deep groove and underground club energy.
+          From London club appearances to a new chapter of original music and radio residencies — Itchy Lemon creates electronic journeys built on deep grooves, melodic tension and instinctive energy.
         </p>
 
-        <section class="content-grid">
+        <div class="bio-primary-actions" aria-label="Artist essentials">
+          <a class="primary-action" href="/press-kit/">Explore Press Kit <span aria-hidden="true">↗</span></a>
+          <a class="secondary-action" href="/booking/">Booking enquiries <span aria-hidden="true">↗</span></a>
+        </div>
+
+        <section class="content-grid" aria-label="Artist biography">
           <aside class="panel">
-            <h2>Highlights</h2>
-
+            <h2>Selected milestones</h2>
             <ul class="highlight-list">
-              <li>
-                <strong>Based in Portugal</strong>
-                DJ sets, original productions, guest mixes and selected collaborations.
-              </li>
-
-              <li>
-                <strong>Sound identity</strong>
-                Melodic house, deep electronic grooves, progressive movement and underground energy.
-              </li>
-
-              <li>
-                <strong>Music platforms</strong>
-                Present across Spotify, Beatport, Traxsource, SoundCloud, YouTube and social channels.
-              </li>
-
+              <li><span class="milestone-year">2026 · Porto</span><strong>Calico</strong>Resident DJ since August 2026.</li>
+              <li><span class="milestone-year">2026 · Radio</span><strong>Ibiza Stardust Radio</strong>Resident DJ since October 2026. <a class="milestone-link" href="https://soundcloud.com/ibizastardustradio/itchy-lemon-fresh-beats-42" target="_blank" rel="noopener noreferrer">Listen to Fresh Beats #42 ↗</a></li>
+              <li><span class="milestone-year">2026 · Radio</span><strong>Pinnacle Nexus Radio</strong>Original productions featured in World Groove rotation.</li>
+              <li><span class="milestone-year">2015 · Porto</span><strong>Orange Room</strong>DJ appearance.</li>
+              <li><span class="milestone-year">2015 · London</span><strong>The Qube Project</strong>DJ appearance.</li>
+              <li><span class="milestone-year">2014 · London</span><strong>Ministry of Sound</strong>DJ appearance · 26 December. <a class="milestone-link" href="https://www.fatsoma.com/e/tum8nley/la-bomba" target="_blank" rel="noopener noreferrer">Event listing ↗</a></li>
             </ul>
+            <a class="panel-footer-link" href="/press-kit/#highlights">Credentials &amp; evidence <span aria-hidden="true">↗</span></a>
           </aside>
 
-          <section class="text-block">
-            <h2>Short Bio</h2>
+          <div class="bio-narrative">
+            <section class="text-block">
+              <h2>The artist</h2>
+              <p>
+                <strong>Itchy Lemon</strong> is a Portuguese DJ and electronic music producer whose artistic journey connects club culture, original music and a distinct sense of atmosphere. Rooted in groove and driven by melodic tension, his sets move naturally between depth, movement and emotional intensity.
+              </p>
+              <p>
+                His international path includes DJ appearances at <strong>Ministry of Sound</strong> and <strong>The Qube Project</strong> in London, alongside performances in Portugal, including <strong>Orange Room</strong> in Porto.
+              </p>
+              <p>
+                In 2026, Itchy Lemon entered a new creative chapter: a DJ residency at <strong>Calico Porto</strong>, a monthly radio residency with <strong>Ibiza Stardust Radio</strong> and original productions receiving rotation on <strong>Pinnacle Nexus Radio</strong>.
+              </p>
+              <p>
+                As a producer, he develops original tracks and remixes that balance rhythmic drive with carefully built atmosphere. Behind the decks and in the studio, the focus remains the same: <strong>music that creates connection without losing its edge.</strong>
+              </p>
+              <div class="quote">Deep grooves. Melodic tension. A sound that stays with you.</div>
+            </section>
 
-            <p>
-              <strong>Itchy Lemon</strong> is the artistic project of a Portuguese DJ and producer with a long-standing connection to electronic music, club culture and independent music production.
-            </p>
-
-            <p>
-              Rooted in melodic house, deep grooves and progressive electronic textures, his sound moves between introspection and dancefloor energy — music built with atmosphere, rhythm and emotional progression at its core.
-            </p>
-
-            <p>
-              Over the years, the project has developed through DJ sets, original productions, remixes and releases across digital music platforms, with artist presence on Beatport, Traxsource, Spotify, SoundCloud and YouTube.
-            </p>
-
-            <div class="quote">
-              Melodic, deep and underground — electronic music with emotion, groove and intent.
-            </div>
+            <section class="quick-bio" aria-labelledby="quick-bio-title">
+              <h2 id="quick-bio-title">Short bio</h2>
+              <p>Itchy Lemon is a Portuguese DJ and electronic music producer with a path spanning London club appearances at Ministry of Sound and The Qube Project, a residency at Calico Porto and a radio residency with Ibiza Stardust Radio. His sound blends deep grooves, melodic tension and an instinctive approach to the dancefloor.</p>
+              <p class="quick-bio-note">For promoters, media and collaborators: discover the full artist press kit, official releases and booking information below.</p>
+            </section>
 
             <div class="bio-links" aria-label="Artist links">
-              <a class="bio-link" href="/music">Music</a>
-              <a class="bio-link" href="/discography">Discography</a>
-              <a class="bio-link" href="/press-kit">Press Kit</a>
-              <a class="bio-link" href="/booking">Booking</a>
-              <a
-                class="bio-link"
-                href="https://open.spotify.com/artist/5IfFyzIiz1iBO7RZUJyFen"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Spotify
-              </a>
-              <a
-                class="bio-link"
-                href="https://www.instagram.com/itchy_lemon/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Instagram
-              </a>
+              <a class="bio-link" href="/press-kit/">Press Kit</a>
+              <a class="bio-link" href="/sets/">DJ Sets</a>
+              <a class="bio-link" href="/discography/">Discography</a>
+              <a class="bio-link" href="/booking/">Booking</a>
+              <a class="bio-link" href="https://open.spotify.com/artist/5IfFyzIiz1iBO7RZUJyFen" target="_blank" rel="noopener noreferrer">Spotify ↗</a>
+              <a class="bio-link" href="https://www.instagram.com/itchy_lemon/" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
             </div>
-          </section>
+          </div>
         </section>
       </main>
 
