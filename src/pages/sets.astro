@@ -10,7 +10,7 @@ const radioShows = [
     number: "#42",
     year: "2026",
     title: "Fresh Beats Radio Show #42",
-    meta: "Broadcast on Ibiza Stardust Radio · 4 November 2026",
+    meta: "2026 · New episode",
     type: "Radio Show",
     url: "https://www.mixcloud.com/ITCHY_LEMON_DjProducer/itchy-lemon-fresh-beats-42/",
   },
@@ -824,6 +824,7 @@ const enhancedRadioShows = radioShows.map((set) => ({
               data-set-card
               data-set-index={index}
               data-set-key={set.key}
+              data-official-soundcloud={index === 0 ? "https://soundcloud.com/ibizastardustradio/itchy-lemon-fresh-beats-42" : undefined}
             >
               <div class="set-episode">{set.number}</div>
 
@@ -965,6 +966,11 @@ const enhancedRadioShows = radioShows.map((set) => ({
       setCards.forEach((card) => {
         card.addEventListener("click", () => {
           const index = Number(card.dataset.setIndex || "0");
+          const officialSoundcloud = card.dataset.officialSoundcloud;
+          if (officialSoundcloud) {
+            window.open(officialSoundcloud, "_blank", "noopener,noreferrer");
+            return;
+          }
 
           updateActiveCard(index);
 
