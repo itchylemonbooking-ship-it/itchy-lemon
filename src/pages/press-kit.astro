@@ -1,6 +1,7 @@
 ---
 import SiteHeader from "../components/SiteHeader.astro";
 import { latestRelease, previousReleases } from "../data/originalReleases";
+import { radioSupport } from "../data/radioSupport";
 import GlobalMixcloudPlayer from "../components/GlobalMixcloudPlayer.astro";
 import HubSpotTracking from "../components/HubSpotTracking.astro";
 import MetaPixel from "../components/MetaPixel.astro";
@@ -545,6 +546,30 @@ import MetaPixel from "../components/MetaPixel.astro";
       .photo-mark strong { color:var(--text); font-size:clamp(20px,2.2vw,25px); font-weight:800; letter-spacing:.12em; }
       .photo-mark > span:nth-child(2) { color:#c6c9c8; font-size:13px; font-weight:600; letter-spacing:.11em; white-space:nowrap; }
       .photo-mark > span:nth-child(3) { color:var(--acid); font-size:9px; font-weight:700; letter-spacing:.12em; display:flex; width:100%; justify-content:space-between; white-space:nowrap; }
+      /* Radio support: intentionally understated; data-driven for future stations. */
+      .radio-support-list { display:grid; gap:18px; margin-top:26px; }
+      .radio-support-card { display:grid; grid-template-columns:minmax(0,1fr) minmax(260px,.95fr); gap:32px; padding:clamp(22px,3vw,36px); border:1px solid rgba(216,255,62,.22); border-radius:24px; background:linear-gradient(120deg,rgba(216,255,62,.055),transparent 52%),rgba(16,20,27,.74); }
+      .radio-support-card h3 { margin:10px 0 5px; font-size:clamp(25px,3vw,35px); letter-spacing:-.045em; }
+      .radio-support-programme { color:var(--acid); font-size:12px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; margin:0 0 18px; }
+      .radio-support-summary { color:var(--muted); font-size:15px; line-height:1.65; max-width:580px; margin:0 0 23px; }
+      .radio-track-tags { display:flex; flex-wrap:wrap; gap:8px; list-style:none; padding:0; margin:0; }
+      .radio-track-tags li { padding:8px 12px; border-radius:999px; border:1px solid var(--line); color:var(--text); font-size:12px; }
+      .radio-evidence { display:grid; gap:12px; }
+      .radio-evidence details { border:1px solid var(--line); border-radius:14px; background:rgba(7,9,12,.5); overflow:hidden; }
+      .radio-evidence summary { cursor:pointer; list-style:none; padding:16px; display:flex; justify-content:space-between; align-items:center; gap:12px; }
+      .radio-evidence summary::-webkit-details-marker { display:none; }
+      .radio-evidence summary strong { color:var(--text); font-size:14px; }
+      .radio-evidence summary span { color:var(--acid); font-size:11px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; }
+      .radio-evidence details[open] summary { border-bottom:1px solid var(--line); }
+      .radio-evidence-body { padding:15px 16px 17px; }
+      .radio-evidence-body ul { margin:0 0 14px; padding:0; list-style:none; display:grid; gap:8px; }
+      .radio-evidence-body li { display:flex; gap:14px; justify-content:space-between; color:var(--muted); font-size:13px; }
+      .radio-evidence-body time { flex-shrink:0; color:var(--text); font-variant-numeric:tabular-nums; }
+      .radio-evidence-body a { display:block; border-radius:10px; overflow:hidden; border:1px solid var(--line); }
+      .radio-evidence-body img { display:block; width:100%; height:auto; }
+      .radio-proof-note { color:var(--muted); font-size:11px; line-height:1.5; margin:2px 0 0; }
+      .radio-proof-link { color:var(--acid); text-decoration:underline; text-underline-offset:4px; }
+      @media(max-width:760px) { .radio-support-card { grid-template-columns:1fr; gap:22px; } }
       .epk-section { margin-top:100px; scroll-margin-top:28px; }
       .epk-section-head .eyebrow { margin-bottom:12px; }
       .epk-section-head h2,.epk-contact h2,.epk-download-section h2 { margin:0; color:var(--text); font-size:clamp(36px,5vw,62px); line-height:1; letter-spacing:-.055em; }
@@ -627,6 +652,51 @@ import MetaPixel from "../components/MetaPixel.astro";
             <article><span class="epk-number">06 / London · 2014</span><h3>Ministry of Sound</h3><p>Fresh Beats #28 · December 2014</p></article>
           </div>
           <a class="epk-text-link" href="/bio">Explore the full biography <span aria-hidden="true">↗</span></a>
+        </section>
+
+        <section id="radio-support" class="epk-section" aria-labelledby="radio-support-title">
+          <div class="epk-section-head">
+            <p class="eyebrow">Documented airplay</p>
+            <h2 id="radio-support-title">Radio support.</h2>
+          </div>
+          <div class="radio-support-list">
+            {radioSupport.map((radio) => (
+              <article class="radio-support-card" aria-labelledby={radio.slug + "-title"}>
+                <div>
+                  <span class="epk-number">Radio support / {radio.year}</span>
+                  <h3 id={radio.slug + "-title"}>{radio.station}</h3>
+                  <p class="radio-support-programme">{radio.programme}</p>
+                  <p class="radio-support-summary">{radio.summary}</p>
+                  <ul class="radio-track-tags" aria-label="Original tracks documented">
+                    {radio.originals.map((track) => <li>{track}</li>)}
+                  </ul>
+                </div>
+                <div class="radio-evidence">
+                  <p class="epk-number">TuneYou · Dated play history</p>
+                  {radio.playHistory.map((proof) => (
+                    <details>
+                      <summary>
+                        <strong>{proof.date}</strong>
+                        <span>View evidence ↗</span>
+                      </summary>
+                      <div class="radio-evidence-body">
+                        <ul>
+                          {proof.tracks.map((track) => (
+                            <li><span>{track.title}</span><time>{track.time}</time></li>
+                          ))}
+                        </ul>
+                        <a href={proof.image} target="_blank" rel="noopener noreferrer" aria-label={"Open complete original TuneYou screenshot for " + proof.date + " in a new tab"}>
+                          <img src={proof.image} alt={proof.alt} loading="lazy" decoding="async" width="923" height="582" />
+                        </a>
+                        <p class="radio-proof-note">Times as displayed by TuneYou; time zone not specified. Open the screenshot for the original, unedited record.</p>
+                      </div>
+                    </details>
+                  ))}
+                  <p class="radio-proof-note">Archived screenshots document dated directory entries; no audience or reach figures are claimed. <a class="radio-proof-link" href={radio.externalHistory} target="_blank" rel="noopener noreferrer">TuneYou station page ↗</a></p>
+                </div>
+              </article>
+            ))}
+          </div>
         </section>
 
         <section id="listen" class="epk-section" aria-labelledby="listen-title">
