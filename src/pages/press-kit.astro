@@ -541,10 +541,10 @@ import MetaPixel from "../components/MetaPixel.astro";
       .epk-hero-photo { position:relative; overflow:hidden; min-height:450px; border:1px solid rgba(216,255,62,.28); border-radius:24px; background:#10141b; }
       .epk-hero-photo img { display:block; width:100%; height:100%; position:absolute; inset:0; object-fit:cover; object-position: 50% 45%; transform:scale(1.38); transform-origin:50% 45%; }
       .epk-hero-photo::after { content:""; position:absolute; inset:45% 0 0; pointer-events:none; background:linear-gradient(transparent,rgba(0,0,0,.72)); }
-      .photo-mark { position:absolute; z-index:1; bottom:24px; left:24px; right:16px; display:flex; flex-direction:column; align-items:flex-start; gap:6px; line-height:1.3; text-transform:uppercase; text-shadow:0 1px 12px rgba(0,0,0,.75); }
+      .photo-mark { position:absolute; z-index:1; bottom:24px; left:24px; right:auto; width:max-content; max-width:calc(100% - 40px); display:flex; flex-direction:column; align-items:stretch; gap:6px; line-height:1.3; text-transform:uppercase; text-shadow:0 1px 12px rgba(0,0,0,.75); }
       .photo-mark strong { color:var(--text); font-size:clamp(20px,2.2vw,25px); font-weight:800; letter-spacing:.12em; }
-      .photo-mark span:nth-child(2) { color:#c6c9c8; font-size:13px; font-weight:600; letter-spacing:.11em; }
-      .photo-mark span:nth-child(3) { color:var(--acid); font-size:9px; font-weight:700; letter-spacing:.27em; }
+      .photo-mark > span:nth-child(2) { color:#c6c9c8; font-size:13px; font-weight:600; letter-spacing:.11em; white-space:nowrap; }
+      .photo-mark > span:nth-child(3) { color:var(--acid); font-size:9px; font-weight:700; letter-spacing:.12em; display:flex; width:100%; justify-content:space-between; white-space:nowrap; }
       .epk-section { margin-top:100px; scroll-margin-top:28px; }
       .epk-section-head .eyebrow { margin-bottom:12px; }
       .epk-section-head h2,.epk-contact h2,.epk-download-section h2 { margin:0; color:var(--text); font-size:clamp(36px,5vw,62px); line-height:1; letter-spacing:-.055em; }
@@ -611,7 +611,7 @@ import MetaPixel from "../components/MetaPixel.astro";
           </div>
           <div class="epk-hero-photo">
             <img src="/media/itchy-lemon-epk-portrait.png" alt="Itchy Lemon — artist portrait" loading="eager" decoding="async" />
-            <span class="photo-mark"><strong>ITCHY LEMON</strong><span>Electronic Music Artist</span><span>Melodic · Deep · Groovy</span></span>
+            <span class="photo-mark"><strong>ITCHY LEMON</strong><span>Electronic Music Artist</span><span><span>Melodic</span><span>·</span><span>Deep</span><span>·</span><span>Groovy</span></span></span>
           </div>
         </section>
 
