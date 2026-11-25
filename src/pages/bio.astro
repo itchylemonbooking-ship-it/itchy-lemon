@@ -191,6 +191,22 @@ import MetaPixel from "../components/MetaPixel.astro";
       .quick-bio .quick-bio-note { margin-top:14px; color:var(--muted); font-size:13px; }
       .highlight-list li { font-size:14px; }
       @media(max-width:600px) { .bio-primary-actions { flex-direction:column; } .primary-action,.secondary-action { width:100%; } .quick-bio { padding:20px; } .content-grid { gap:26px; } }
+      .venues-section { margin-top:78px; padding-top:44px; border-top:1px solid var(--line); }
+      .venues-heading { display:grid; grid-template-columns:1fr 1fr; align-items:end; gap:36px; }
+      .venues-heading .eyebrow { margin:0 0 12px; }
+      .venues-heading h2 { margin:0; font-size:clamp(32px,5vw,60px); letter-spacing:-.055em; line-height:1.02; }
+      .venues-heading > p { margin:0; color:var(--muted); font-size:15px; line-height:1.6; }
+      .venues-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:20px; margin-top:30px; }
+      .venues-column { padding:24px; min-width:0; border:1px solid var(--line); border-radius:22px; background:rgba(16,20,27,.55); }
+      .venues-column h3 { margin:0 0 20px; font-size:12px; color:var(--acid); text-transform:uppercase; letter-spacing:.15em; }
+      .venues-column ul { margin:0; padding:0; list-style:none; }
+      .venues-column li { padding:11px 0; border-top:1px solid var(--line); }
+      .venues-column li strong { display:block; font-size:14px; font-weight:700; color:var(--text); line-height:1.4; }
+      .venues-column li span { display:block; margin-top:4px; font-size:12px; line-height:1.5; color:var(--muted); }
+      .venues-action { display:inline-flex; margin-top:24px; padding-bottom:4px; border-bottom:1px solid rgba(216,255,62,.5); color:var(--acid); font-size:12px; font-weight:700; line-height:1.5; }
+      .venues-action:hover { color:var(--text); border-bottom-color:var(--acid); }
+      @media(max-width:860px) { .venues-heading { grid-template-columns:1fr; gap:16px; } .venues-grid { grid-template-columns:1fr 1fr; } }
+      @media(max-width:600px) { .venues-section { margin-top:55px; } .venues-grid { grid-template-columns:1fr; gap:14px; } .venues-column { padding:20px; } }
       footer {
         max-width: 1080px;
         margin: 80px auto 0;
@@ -256,7 +272,7 @@ import MetaPixel from "../components/MetaPixel.astro";
               <li><span class="milestone-year">2026 · Porto</span><strong>Calico</strong>Resident DJ since August 2026.</li>
               <li><span class="milestone-year">2026 · Radio</span><strong>Ibiza Stardust Radio</strong>Resident DJ since October 2026. <a class="milestone-link" href="https://soundcloud.com/ibizastardustradio/itchy-lemon-fresh-beats-42" target="_blank" rel="noopener noreferrer">Listen to Fresh Beats #42 ↗</a></li>
               <li><span class="milestone-year">2026 · Radio</span><strong>Pinnacle Nexus Radio</strong>Original productions featured in World Groove rotation.</li>
-              <li><span class="milestone-year">2015 · Porto</span><strong>Orange Room</strong>DJ appearance.</li>
+              <li><span class="milestone-year">2015 · Porto</span><strong>Orange Room</strong>Recorded DJ session in an intimate, performance-led format.</li>
               <li><span class="milestone-year">2015 · London</span><strong>The Qube Project</strong>DJ appearance.</li>
               <li><span class="milestone-year">2014 · London</span><strong>Ministry of Sound</strong>DJ appearance · 26 December. <a class="milestone-link" href="https://www.fatsoma.com/e/tum8nley/la-bomba" target="_blank" rel="noopener noreferrer">Event listing ↗</a></li>
             </ul>
@@ -270,7 +286,7 @@ import MetaPixel from "../components/MetaPixel.astro";
                 <strong>Itchy Lemon</strong> is a Portuguese DJ and electronic music producer whose artistic journey connects club culture, original music and a distinct sense of atmosphere. Rooted in groove and driven by melodic tension, his sets move naturally between depth, movement and emotional intensity.
               </p>
               <p>
-                His international path includes DJ appearances at <strong>Ministry of Sound</strong> and <strong>The Qube Project</strong> in London, alongside performances in Portugal, including <strong>Orange Room</strong> in Porto.
+                His international DJ journey has taken him to <strong>Ministry of Sound</strong> and <strong>The Qube Project</strong> in London, <strong>Players</strong> in Amsterdam and <strong>Marx</strong> in Luxembourg, alongside appearances across the UK and Portugal. His story also includes an interview and live radio performance on <strong>The Beat London FM</strong>.
               </p>
               <p>
                 In 2026, Itchy Lemon entered a new creative chapter: a DJ residency at <strong>Calico Porto</strong>, a monthly radio residency with <strong>Ibiza Stardust Radio</strong> and original productions receiving rotation on <strong>Pinnacle Nexus Radio</strong>.
@@ -283,7 +299,7 @@ import MetaPixel from "../components/MetaPixel.astro";
 
             <section class="quick-bio" aria-labelledby="quick-bio-title">
               <h2 id="quick-bio-title">Short bio</h2>
-              <p>Itchy Lemon is a Portuguese DJ and electronic music producer with a path spanning London club appearances at Ministry of Sound and The Qube Project, a residency at Calico Porto and a radio residency with Ibiza Stardust Radio. His sound blends deep grooves, melodic tension and an instinctive approach to the dancefloor.</p>
+              <p>Itchy Lemon is a Portuguese DJ and electronic music producer whose international path includes Ministry of Sound and The Qube Project in London, Players in Amsterdam and Marx in Luxembourg. With appearances at major Portuguese venues, a residency at Calico Porto and a radio residency with Ibiza Stardust Radio, his sound blends deep grooves, melodic tension and an instinctive approach to the dancefloor.</p>
               <p class="quick-bio-note">For promoters, media and collaborators: discover the full artist press kit, official releases and booking information below.</p>
             </section>
 
@@ -294,6 +310,49 @@ import MetaPixel from "../components/MetaPixel.astro";
               <a class="bio-link" href="/booking/">Booking</a>
               <a class="bio-link" href="https://open.spotify.com/artist/5IfFyzIiz1iBO7RZUJyFen" target="_blank" rel="noopener noreferrer">Spotify ↗</a>
               <a class="bio-link" href="https://www.instagram.com/itchy_lemon/" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+            </div>
+          </div>
+        </section>
+
+        <section class="venues-section" aria-labelledby="venues-title">
+          <div class="venues-heading">
+            <div>
+              <p class="eyebrow">Selected appearances</p>
+              <h2 id="venues-title">Beyond the studio.</h2>
+            </div>
+            <p>Club stages, cultural venues and radio sessions across Europe. A selection from the Itchy Lemon journey.</p>
+          </div>
+          <div class="venues-grid">
+            <div class="venues-column">
+              <h3>International</h3>
+              <ul>
+                <li><strong>Ministry of Sound</strong><span>London, UK</span></li>
+                <li><strong>The Qube Project</strong><span>London, UK</span></li>
+                <li><strong>Players</strong><span>Amsterdam, Netherlands</span></li>
+                <li><strong>Marx</strong><span>Luxembourg</span></li>
+                <li><strong>Thirty3Hertz</strong><span>United Kingdom</span></li>
+              </ul>
+            </div>
+            <div class="venues-column">
+              <h3>Portugal</h3>
+              <ul>
+                <li><strong>Coliseu do Porto</strong><span>Porto</span></li>
+                <li><strong>Hard Club</strong><span>Portugal</span></li>
+                <li><strong>Rivoli</strong><span>Portugal</span></li>
+                <li><strong>Kasa Da Praia</strong><span>Portugal</span></li>
+                <li><strong>Twins</strong><span>Portugal</span></li>
+                <li><strong>Manta Beach</strong><span>Portugal</span></li>
+                <li><strong>Zoom Club</strong><span>Portugal</span></li>
+                <li><strong>Radio</strong><span>Portugal</span></li>
+              </ul>
+            </div>
+            <div class="venues-column">
+              <h3>Sessions &amp; radio</h3>
+              <ul>
+                <li><strong>The Beat London FM</strong><span>London, UK · Interview + live radio performance</span></li>
+                <li><strong>Orange Room</strong><span>Porto · Intimate recorded DJ session</span></li>
+              </ul>
+              <a class="venues-action" href="/press-kit/">Explore the artist press kit <span aria-hidden="true">↗</span></a>
             </div>
           </div>
         </section>
