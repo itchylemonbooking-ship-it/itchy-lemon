@@ -824,7 +824,6 @@ const enhancedRadioShows = radioShows.map((set) => ({
               data-set-card
               data-set-index={index}
               data-set-key={set.key}
-              data-official-soundcloud={index === 0 ? "https://soundcloud.com/ibizastardustradio/itchy-lemon-fresh-beats-42" : undefined}
             >
               <div class="set-episode">{set.number}</div>
 
@@ -966,12 +965,6 @@ const enhancedRadioShows = radioShows.map((set) => ({
       setCards.forEach((card) => {
         card.addEventListener("click", () => {
           const index = Number(card.dataset.setIndex || "0");
-          const officialSoundcloud = card.dataset.officialSoundcloud;
-          if (officialSoundcloud) {
-            window.open(officialSoundcloud, "_blank", "noopener,noreferrer");
-            return;
-          }
-
           updateActiveCard(index);
 
           document.dispatchEvent(
