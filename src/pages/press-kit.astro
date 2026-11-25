@@ -1,5 +1,6 @@
 ---
 import SiteHeader from "../components/SiteHeader.astro";
+import { latestRelease, previousReleases } from "../data/originalReleases";
 import GlobalMixcloudPlayer from "../components/GlobalMixcloudPlayer.astro";
 import HubSpotTracking from "../components/HubSpotTracking.astro";
 import MetaPixel from "../components/MetaPixel.astro";
@@ -519,6 +520,68 @@ import MetaPixel from "../components/MetaPixel.astro";
           flex-direction: column;
         }
       }
+      /* Online EPK preview — scoped editorial layouts */
+      .epk-assets-access { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; margin-top:28px; }
+      .epk-assets-access article { border:1px solid var(--line); border-radius:22px; padding:28px; background:rgba(16,20,27,.72); }
+      .epk-assets-access h3 { font-size:clamp(24px,3vw,32px); line-height:1.1; margin:20px 0 10px; letter-spacing:-.04em; }
+      .epk-assets-access p { font-size:15px; color:var(--muted); line-height:1.65; }
+      @media(max-width:700px) { .epk-assets-access { grid-template-columns:1fr; } }
+      html { scroll-behavior: smooth; }
+      .epk-hero { display: grid; grid-template-columns: minmax(0,1.08fr) minmax(0,.92fr); gap: clamp(24px,4vw,60px); min-height: 540px; align-items: stretch; }
+      .epk-hero-copy { display:flex; flex-direction:column; justify-content:center; padding: 24px 0; }
+      .epk-hero h1 { font-size: clamp(68px,9vw,124px); letter-spacing:-.075em; line-height:.84; }
+      .acid-dot { color:var(--acid); }
+      .epk-kicker { color:var(--acid); text-transform:uppercase; font-weight:700; letter-spacing:.2em; font-size:13px; margin:28px 0 0; }
+      .epk-hero-lead { color:var(--text); font-size:clamp(24px,3vw,37px); line-height:1.18; letter-spacing:-.03em; margin:22px 0 0; max-width:600px; }
+      .epk-hero-detail { color:var(--muted); font-size:15px; line-height:1.65; margin:18px 0 0; max-width:500px; }
+      .epk-actions { display:flex; gap:12px; flex-wrap:wrap; margin-top:28px; }
+      .epk-quick-links { display:flex; flex-wrap:wrap; gap:12px 20px; padding-top:24px; margin-top:34px; border-top:1px solid var(--line); }
+      .epk-quick-links a { font-size:12px; color:var(--muted); text-transform:uppercase; letter-spacing:.07em; }
+      .epk-quick-links a:hover { color:var(--acid); }
+      .epk-hero-photo { position:relative; overflow:hidden; min-height:450px; border:1px solid rgba(216,255,62,.28); border-radius:24px; background:#10141b; }
+      .epk-hero-photo img { display:block; width:100%; height:100%; position:absolute; inset:0; object-fit:cover; }
+      .epk-hero-photo::after { content:""; position:absolute; inset:45% 0 0; pointer-events:none; background:linear-gradient(transparent,rgba(0,0,0,.72)); }
+      .photo-mark { position:absolute; z-index:1; bottom:24px; left:24px; font-size:11px; letter-spacing:.18em; color:var(--acid); }
+      .epk-section { margin-top:100px; scroll-margin-top:28px; }
+      .epk-section-head .eyebrow { margin-bottom:12px; }
+      .epk-section-head h2,.epk-contact h2,.epk-download-section h2 { margin:0; color:var(--text); font-size:clamp(36px,5vw,62px); line-height:1; letter-spacing:-.055em; }
+      .epk-section-intro { max-width:850px; color:var(--muted); font-size:clamp(18px,2.2vw,24px); line-height:1.5; margin:22px 0 32px; }
+      .epk-credentials { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; margin:28px 0 18px; }
+      .epk-credentials article { border:1px solid var(--line); border-radius:20px; padding:24px; background:rgba(16,20,27,.72); }
+      .epk-number { display:block; font-size:11px; color:var(--acid); letter-spacing:.12em; text-transform:uppercase; font-weight:700; }
+      .epk-credentials h3 { margin:24px 0 8px; font-size:clamp(20px,2.5vw,28px); line-height:1.05; letter-spacing:-.035em; }
+      .epk-credentials p { color:var(--muted); margin:0; font-size:14px; }
+      .epk-text-link { display:inline-flex; gap:10px; margin-top:18px; padding-bottom:7px; color:var(--acid); border-bottom:1px solid rgba(216,255,62,.4); font-weight:700; font-size:12px; letter-spacing:.1em; text-transform:uppercase; }
+      .epk-sound-grid { display:grid; grid-template-columns:1.25fr .75fr; gap:18px; margin-top:28px; }
+      .epk-featured-track { display:flex; gap:22px; padding:24px; border:1px solid rgba(216,255,62,.25); border-radius:24px; background:linear-gradient(135deg,rgba(216,255,62,.08),transparent),#10141b; align-items:center; }
+      .epk-featured-track > img { width:42%; flex-shrink:0; aspect-ratio:1; object-fit:cover; border-radius:14px; }
+      .epk-featured-track h3 { font-size:clamp(26px,3vw,38px); margin:10px 0; line-height:1; letter-spacing:-.04em; }
+      .epk-featured-track p { color:var(--muted); font-size:14px; line-height:1.6; }
+      .epk-featured-track .button { margin-top:12px; }
+      .epk-track-list { padding:24px; border:1px solid var(--line); border-radius:24px; background:rgba(16,20,27,.72); }
+      .epk-track { display:flex; gap:12px; align-items:center; padding:14px 0; border-bottom:1px solid var(--line); }
+      .epk-track img { flex:0 0 56px; width:56px; height:56px; object-fit:cover; border-radius:8px; }
+      .epk-track span:nth-child(2) { flex:1; min-width:0; }
+      .epk-track strong,.epk-track small { display:block; }
+      .epk-track strong { font-size:17px; } .epk-track small { color:var(--muted); margin-top:4px; }
+      .epk-track > span:last-child { color:var(--acid); }
+      .epk-set-panel { display:flex; align-items:center; justify-content:space-between; gap:22px; margin-top:18px; padding:28px; border-radius:24px; border:1px solid var(--line); background:rgba(16,20,27,.72); }
+      .epk-set-panel h3 { font-size:30px; letter-spacing:-.04em; margin:12px 0; }
+      .epk-set-panel p { max-width:670px; margin:0; color:var(--muted); line-height:1.6; }
+      .epk-photos { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; margin-top:28px; }
+      .epk-photos a { display:flex; flex-direction:column; border:1px solid var(--line); background:#10141b; overflow:hidden; border-radius:20px; }
+      .epk-photos img { display:block; width:100%; height:230px; object-fit:cover; transition:transform .25s ease; }
+      .epk-photos a:hover img { transform:scale(1.025); }
+      .epk-photos span { color:var(--acid); font-size:11px; text-transform:uppercase; letter-spacing:.1em; font-weight:700; padding:16px; }
+      .epk-small-note { color:var(--muted); font-size:13px; line-height:1.6; margin:16px 0; }
+      .epk-small-note a { text-decoration:underline; }
+      .epk-download-section,.epk-contact { display:flex; justify-content:space-between; align-items:center; gap:32px; padding:clamp(28px,4vw,46px); margin-top:90px; border:1px solid rgba(216,255,62,.25); border-radius:28px; background:linear-gradient(115deg,rgba(216,255,62,.12),transparent 55%),rgba(16,20,27,.85); scroll-margin-top:30px; }
+      .epk-download-section p:not(.eyebrow),.epk-contact p:not(.eyebrow) { color:var(--muted); line-height:1.6; max-width:670px; }
+      .epk-contact { margin-top:28px; border-color:var(--line); background:#10141b; }
+      .epk-contact a[href^="mailto:"] { color:var(--acid); font-size:16px; overflow-wrap:anywhere; }
+      .epk-contact .epk-actions { margin-top:0; }
+      @media(max-width:900px) { .epk-hero { grid-template-columns:1fr; } .epk-hero-photo { min-height:460px; } .epk-sound-grid { grid-template-columns:1fr; } .epk-download-section,.epk-contact,.epk-set-panel { flex-direction:column; align-items:stretch; } }
+      @media(max-width:600px) { .epk-section { margin-top:64px; } .epk-hero-photo { min-height:350px; } .epk-credentials,.epk-photos { grid-template-columns:1fr; } .epk-photos img { height:260px; } .epk-featured-track { flex-direction:column; align-items:stretch; } .epk-featured-track > img { width:100%; max-height:310px; } .epk-quick-links { gap:12px 16px; } .epk-hero h1 { font-size:clamp(58px,15vw,90px); } }
     </style>
   </head>
 
@@ -527,229 +590,89 @@ import MetaPixel from "../components/MetaPixel.astro";
       <SiteHeader activePage="press-kit" />
 
       <main>
-        <p class="eyebrow">Electronic Press Kit</p>
-
-        <h1>Press Kit</h1>
-
-        <p class="lead">
-          Essential artist information, music links, DJ sets and booking details for promoters, curators, radio shows and selected collaborators.
-        </p>
-
-        <section class="download-epk" aria-label="Download official EPK">
-          <h2>Download Official EPK</h2>
-
-          <div class="download-title">
-            Get the<br />EPK
-          </div>
-
-          <p>
-            Download the official <strong>Itchy Lemon EPK</strong> with artist bio, project highlights, selected gigs, labels, official links and booking contact.
-          </p>
-
-          <p class="note">
-            Complete the form to access the EPK. Your details will be used for press, booking and collaboration follow-up, as explained in our <a href="/privacy-policy">Privacy Policy</a>.
-          </p>
-
-          <div class="download-actions">
-            <button class="button primary" type="button" data-open-epk-modal>
-              Download EPK
-            </button>
-          </div>
-        </section>
-
-        <section class="press-cta" aria-label="Press kit call to action">
-          <p>
-            For bookings and press enquiries, explore the DJ sets or get in touch.
-          </p>
-
-          <div class="cta-actions">
-            <a class="button primary" href="/booking">Request Booking</a>
-            <a class="button" href="/sets">Listen to Sets</a>
-          </div>
-        </section>
-
-        <section class="kit-grid">
-          <article class="panel wide">
-            <h2>Short Artist Bio</h2>
-
-            <p>
-              <strong>Itchy Lemon</strong> is a Portuguese DJ and electronic music producer with a sound shaped by melodic tension, deep groove and underground club energy.
-            </p>
-
-            <p>
-              Rooted in melodic house, deep grooves and progressive electronic textures, his music moves between introspection and dancefloor energy — built with atmosphere, rhythm and emotional progression at its core.
-            </p>
-
-            <div class="tag-list">
-              <span class="tag">Melodic House</span>
-              <span class="tag">Deep House</span>
-              <span class="tag">Progressive</span>
-              <span class="tag">Underground Electronic</span>
-              <span class="tag">DJ Sets</span>
-              <span class="tag">Guest Mixes</span>
-              <span class="tag">Original Productions</span>
-              <span class="tag">Portugal</span>
+        <section class="epk-hero" aria-labelledby="epk-title">
+          <div class="epk-hero-copy">
+            <p class="eyebrow">Official electronic press kit · Portugal</p>
+            <h1 id="epk-title">Itchy<br />Lemon<span class="acid-dot">.</span></h1>
+            <p class="epk-kicker">DJ &amp; Producer</p>
+            <p class="epk-hero-lead">Deep grooves, melodic tension and an instinct for the dancefloor.</p>
+            <p class="epk-hero-detail">A concise introduction for promoters, venues, festivals, radio and music media. Everything essential, in one place.</p>
+            <div class="epk-actions">
+              <a class="button primary" href="#listen">Listen to the sound</a>
+              <a class="button" href="mailto:itchylemon.booking@gmail.com?subject=Itchy%20Lemon%20-%20Booking%20Enquiry">Booking enquiry</a>
             </div>
-          </article>
+            <div class="epk-quick-links" aria-label="Jump to EPK sections">
+              <a href="#highlights">Highlights</a><a href="#listen">Music &amp; sets</a><a href="#assets">Press photos</a><a href="#full-epk">Download PDF</a>
+            </div>
+          </div>
+          <div class="epk-hero-photo">
+            <img src={latestRelease.cover} alt={latestRelease.title + " official cover artwork — Itchy Lemon"} loading="eager" decoding="async" />
+            <span class="photo-mark">FEATURED RELEASE / {latestRelease.title.toUpperCase()}</span>
+          </div>
+        </section>
 
-          <article class="panel">
-            <h2>Artist Facts</h2>
+        <section id="highlights" class="epk-section" aria-labelledby="highlights-title">
+          <div class="epk-section-head"><p class="eyebrow">Selected credentials</p><h2 id="highlights-title">Behind the sound.</h2></div>
+          <p class="epk-section-intro">Itchy Lemon is a Portuguese DJ and electronic music producer working at the intersection of melodic, deep and groove-driven electronic music. His sets balance atmosphere, progression and club energy.</p>
+          <div class="epk-credentials">
+            <article><span class="epk-number">01 / London</span><h3>Ministry of Sound</h3><p>Fresh Beats · 2014</p></article>
+            <article><span class="epk-number">02 / London</span><h3>The Qube Project</h3><p>DJ appearance · 2015</p></article>
+            <article><span class="epk-number">03 / Porto</span><h3>Calico</h3><p>Resident DJ · since 2026</p></article>
+          </div>
+          <a class="epk-text-link" href="/bio">Explore the full biography <span aria-hidden="true">↗</span></a>
+        </section>
 
-            <ul class="facts">
-              <li>
-                <strong>Artist name</strong>
-                Itchy Lemon
-              </li>
+        <section id="listen" class="epk-section" aria-labelledby="listen-title">
+          <div class="epk-section-head"><p class="eyebrow">Listen first</p><h2 id="listen-title">The sound.</h2></div>
+          <div class="epk-sound-grid">
+            <article class="epk-featured-track">
+              <img src={latestRelease.cover} alt={latestRelease.title + " cover art"} width="480" height="480" loading="lazy" decoding="async" />
+              <div><span class="epk-number">Featured release / {latestRelease.year}</span><h3>{latestRelease.title}</h3><p>{latestRelease.description}</p><a class="button primary" href={latestRelease.spotify} target="_blank" rel="noopener noreferrer">Listen on Spotify ↗</a></div>
+            </article>
+            <div class="epk-track-list">
+              <p class="epk-number">Selected originals</p>
+              {previousReleases.slice(0, 3).map((release) => (
+                <a href={release.spotify} target="_blank" rel="noopener noreferrer" class="epk-track">
+                  <img src={release.cover} alt="" width="64" height="64" loading="lazy" decoding="async" />
+                  <span><strong>{release.title}</strong><small>Itchy Lemon · {release.year}</small></span>
+                  <span aria-hidden="true">↗</span>
+                </a>
+              ))}
+              <a class="epk-text-link" href="/music">Explore more music <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+          <div class="epk-set-panel">
+            <div><span class="epk-number">DJ experience</span><h3>Hear the journey.</h3><p>Selected sets, guest mixes and performances — the quickest way to explore the direction and energy of an Itchy Lemon DJ set.</p></div>
+            <a class="button" href="/sets">Listen to DJ sets ↗</a>
+          </div>
+        </section>
 
-              <li>
-                <strong>Base</strong>
-                Portugal
-              </li>
+        <section id="assets" class="epk-section" aria-labelledby="assets-title">
+          <div class="epk-section-head"><p class="eyebrow">Ready for promotion</p><h2 id="assets-title">Press assets.</h2></div>
+          <div class="epk-assets-access">
+            <article>
+              <span class="epk-number">Visual archive</span>
+              <h3>Explore the media gallery.</h3>
+              <p>Browse historical photos, flyers and artwork from the Itchy Lemon project. The archive is for reference; please request current approved promotional imagery before publication.</p>
+              <a class="epk-text-link" href="/media">View media gallery <span aria-hidden="true">↗</span></a>
+            </article>
+            <article>
+              <span class="epk-number">For promoters &amp; media</span>
+              <h3>Need current press photos?</h3>
+              <p>Request up-to-date, approved artist photographs and promotional assets for event listings, articles and press coverage.</p>
+              <a class="epk-text-link" href="mailto:itchylemon.booking@gmail.com?subject=Itchy%20Lemon%20-%20Press%20Assets">Request press assets <span aria-hidden="true">↗</span></a>
+            </article>
+          </div>
+        </section>
 
-              <li>
-                <strong>Format</strong>
-                DJ sets, guest mixes, original productions and selected collaborations
-              </li>
+        <section id="full-epk" class="epk-download-section" aria-labelledby="download-title">
+          <div><p class="eyebrow">Extended press materials</p><h2 id="download-title">Need the full EPK?</h2><p>The downloadable PDF includes extended biography, project history, selected appearances and official contact details.</p><p class="epk-small-note">The PDF request uses the existing HubSpot form. See the <a href="/privacy-policy">Privacy Policy</a> for how contact details are used.</p></div>
+          <button class="button primary" type="button" data-open-epk-modal>Download official PDF</button>
+        </section>
 
-              <li>
-                <strong>Sound</strong>
-                Melodic, deep, progressive and underground electronic music
-              </li>
-
-              <li>
-                <strong>Booking email</strong>
-                itchylemon.booking@gmail.com
-              </li>
-            </ul>
-          </article>
-
-          <article class="panel">
-            <h2>Core Links</h2>
-
-            <a class="link-row" href="/music">
-              <strong>Music</strong>
-              <span>Open</span>
-            </a>
-
-            <a class="link-row" href="/sets">
-              <strong>DJ Sets</strong>
-              <span>Listen</span>
-            </a>
-
-            <a class="link-row" href="/bio">
-              <strong>Full Bio</strong>
-              <span>Open</span>
-            </a>
-
-            <a class="link-row" href="/discography">
-              <strong>Discography</strong>
-              <span>Open</span>
-            </a>
-
-            <a class="link-row" href="/media">
-              <strong>Media</strong>
-              <span>View</span>
-            </a>
-
-            <a class="link-row" href="/booking">
-              <strong>Booking</strong>
-              <span>Contact</span>
-            </a>
-          </article>
-
-          <article class="panel">
-            <h2>Music Platforms</h2>
-
-            <a class="link-row" href="https://open.spotify.com/artist/5IfFyzIiz1iBO7RZUJyFen" target="_blank" rel="noreferrer">
-              <strong>Spotify</strong>
-              <span>Listen</span>
-            </a>
-
-            <a class="link-row" href="https://www.mixcloud.com/ITCHY_LEMON_DjProducer/" target="_blank" rel="noreferrer">
-              <strong>Mixcloud</strong>
-              <span>Sets</span>
-            </a>
-
-            <a class="link-row" href="https://www.beatport.com/artist/itchy-lemon/339277" target="_blank" rel="noreferrer">
-              <strong>Beatport</strong>
-              <span>Artist page</span>
-            </a>
-
-            <a class="link-row" href="https://www.traxsource.com/artist/131494/itchy-lemon" target="_blank" rel="noreferrer">
-              <strong>Traxsource</strong>
-              <span>Artist page</span>
-            </a>
-
-            <a class="link-row" href="https://soundcloud.com/itchy-lemon" target="_blank" rel="noreferrer">
-              <strong>SoundCloud</strong>
-              <span>Listen</span>
-            </a>
-          </article>
-
-          <article class="panel">
-            <h2>Social & Video</h2>
-
-            <a class="link-row" href="https://www.youtube.com/@ItchyLemonTV" target="_blank" rel="noreferrer">
-              <strong>YouTube</strong>
-              <span>Watch</span>
-            </a>
-
-            <a class="link-row" href="https://www.instagram.com/itchy_lemon/" target="_blank" rel="noreferrer">
-              <strong>Instagram</strong>
-              <span>Follow</span>
-            </a>
-
-            <a class="link-row" href="https://www.facebook.com/ItchyLemondjproducer" target="_blank" rel="noreferrer">
-              <strong>Facebook</strong>
-              <span>Follow</span>
-            </a>
-
-            <a class="link-row" href="https://www.linkedin.com/in/itchy-lemon" target="_blank" rel="noreferrer">
-              <strong>LinkedIn</strong>
-              <span>Connect</span>
-            </a>
-
-            <a class="link-row" href="https://x.com/ItchyLemon" target="_blank" rel="noreferrer">
-              <strong>X</strong>
-              <span>Follow</span>
-            </a>
-          </article>
-
-          <article class="panel">
-            <h2>Press Assets</h2>
-
-            <p>
-              Browse the available artist photos and promotional visuals. For specific press materials, contact Itchy Lemon directly.
-            </p>
-
-            <a class="link-row" href="/media">
-              <strong>Media Gallery</strong>
-              <span>View</span>
-            </a>
-
-            <a class="link-row" href="mailto:itchylemon.booking@gmail.com">
-              <strong>Request Press Assets</strong>
-              <span>Email</span>
-            </a>
-          </article>
-
-          <article class="panel wide">
-            <h2>Booking Contact</h2>
-
-            <p>
-              For bookings, guest mixes, press requests or selected collaborations, use the booking page or contact directly by email.
-            </p>
-
-            <a class="link-row" href="/booking">
-              <strong>Request Booking</strong>
-              <span>Form</span>
-            </a>
-
-            <a class="link-row" href="mailto:itchylemon.booking@gmail.com">
-              <strong>itchylemon.booking@gmail.com</strong>
-              <span>Email</span>
-            </a>
-          </article>
+        <section class="epk-contact" aria-labelledby="contact-title">
+          <div><p class="eyebrow">Let's connect</p><h2 id="contact-title">Booking &amp; press.</h2><p>Clubs, festivals, guest mixes, radio and selected collaborations.</p><a href="mailto:itchylemon.booking@gmail.com">itchylemon.booking@gmail.com</a></div>
+          <div class="epk-actions"><a class="button primary" href="/booking">Booking form</a><a class="button" href="https://www.instagram.com/itchy_lemon/" target="_blank" rel="noopener noreferrer">Instagram ↗</a></div>
         </section>
       </main>
 
