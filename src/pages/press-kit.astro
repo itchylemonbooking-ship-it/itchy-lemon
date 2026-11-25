@@ -521,6 +521,11 @@ import MetaPixel from "../components/MetaPixel.astro";
         }
       }
       /* Online EPK preview — scoped editorial layouts */
+      .epk-assets-access { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; margin-top:28px; }
+      .epk-assets-access article { border:1px solid var(--line); border-radius:22px; padding:28px; background:rgba(16,20,27,.72); }
+      .epk-assets-access h3 { font-size:clamp(24px,3vw,32px); line-height:1.1; margin:20px 0 10px; letter-spacing:-.04em; }
+      .epk-assets-access p { font-size:15px; color:var(--muted); line-height:1.65; }
+      @media(max-width:700px) { .epk-assets-access { grid-template-columns:1fr; } }
       html { scroll-behavior: smooth; }
       .epk-hero { display: grid; grid-template-columns: minmax(0,1.08fr) minmax(0,.92fr); gap: clamp(24px,4vw,60px); min-height: 540px; align-items: stretch; }
       .epk-hero-copy { display:flex; flex-direction:column; justify-content:center; padding: 24px 0; }
@@ -601,8 +606,8 @@ import MetaPixel from "../components/MetaPixel.astro";
             </div>
           </div>
           <div class="epk-hero-photo">
-            <img src="/media/photo-01.jpg" alt="Itchy Lemon — artist photograph" loading="eager" decoding="async" />
-            <span class="photo-mark">ITCHY LEMON / PRESS KIT</span>
+            <img src={latestRelease.cover} alt={latestRelease.title + " official cover artwork — Itchy Lemon"} loading="eager" decoding="async" />
+            <span class="photo-mark">FEATURED RELEASE / {latestRelease.title.toUpperCase()}</span>
           </div>
         </section>
 
@@ -644,13 +649,20 @@ import MetaPixel from "../components/MetaPixel.astro";
 
         <section id="assets" class="epk-section" aria-labelledby="assets-title">
           <div class="epk-section-head"><p class="eyebrow">Ready for promotion</p><h2 id="assets-title">Press assets.</h2></div>
-          <div class="epk-photos">
-            <a href="/media/photo-01.jpg" target="_blank" rel="noopener noreferrer"><img src="/media/photo-01.jpg" alt="Itchy Lemon artist photograph 1" loading="lazy" decoding="async"/><span>Artist photo 01 ↗</span></a>
-            <a href="/media/photo-02.jpg" target="_blank" rel="noopener noreferrer"><img src="/media/photo-02.jpg" alt="Itchy Lemon artist photograph 2" loading="lazy" decoding="async"/><span>Artist photo 02 ↗</span></a>
-            <a href="/media/photo-05.jpg" target="_blank" rel="noopener noreferrer"><img src="/media/photo-05.jpg" alt="Itchy Lemon artist photograph 3" loading="lazy" decoding="async"/><span>Artist photo 03 ↗</span></a>
+          <div class="epk-assets-access">
+            <article>
+              <span class="epk-number">Visual archive</span>
+              <h3>Explore the media gallery.</h3>
+              <p>Browse historical photos, flyers and artwork from the Itchy Lemon project. The archive is for reference; please request current approved promotional imagery before publication.</p>
+              <a class="epk-text-link" href="/media">View media gallery <span aria-hidden="true">↗</span></a>
+            </article>
+            <article>
+              <span class="epk-number">For promoters &amp; media</span>
+              <h3>Need current press photos?</h3>
+              <p>Request up-to-date, approved artist photographs and promotional assets for event listings, articles and press coverage.</p>
+              <a class="epk-text-link" href="mailto:itchylemon.booking@gmail.com?subject=Itchy%20Lemon%20-%20Press%20Assets">Request press assets <span aria-hidden="true">↗</span></a>
+            </article>
           </div>
-          <p class="epk-small-note">Preview images from the existing media archive. For high-resolution files and usage details, contact the artist.</p>
-          <a class="epk-text-link" href="/media">View media gallery <span aria-hidden="true">↗</span></a>
         </section>
 
         <section id="full-epk" class="epk-download-section" aria-labelledby="download-title">
