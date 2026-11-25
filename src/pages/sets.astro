@@ -236,6 +236,60 @@ const enhancedRadioShows = radioShows.map((set) => ({
         margin-bottom: 10px;
       }
 
+      .stardust-spotlight {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 24px;
+        padding: 24px 28px;
+        margin-top: 32px;
+        border: 1px solid rgba(216,255,62,.26);
+        border-radius: 22px;
+        background: linear-gradient(120deg, rgba(216,255,62,.09), transparent 65%), rgba(16,20,27,.75);
+      }
+      .stardust-spotlight .spotlight-kicker {
+        color: var(--acid);
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: .16em;
+        text-transform: uppercase;
+        margin: 0 0 12px;
+      }
+      .stardust-spotlight h2 {
+        font-size: clamp(23px,3vw,32px);
+        letter-spacing: -.04em;
+        line-height: 1.05;
+        margin: 0 0 8px;
+      }
+      .stardust-spotlight .spotlight-detail {
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.55;
+        margin: 0;
+      }
+      .stardust-spotlight a {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 44px;
+        padding: 10px 17px;
+        border-radius: 999px;
+        background: var(--acid);
+        color: #050608;
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: .06em;
+        text-decoration: none;
+        white-space: nowrap;
+      }
+      .stardust-spotlight a:hover { background: #e5ff78; }
+      @media(max-width:600px) {
+        .stardust-spotlight { padding: 20px; }
+        .stardust-spotlight a { width:100%; white-space:normal; text-align:center; }
+      }
+
       .section-title {
         margin: 72px 0 22px;
         color: var(--acid);
@@ -750,6 +804,15 @@ const enhancedRadioShows = radioShows.map((set) => ({
             </p>
           </aside>
         </div>
+
+        <section class="stardust-spotlight" aria-label="Featured radio broadcast">
+          <div>
+            <p class="spotlight-kicker">Ibiza Stardust Radio · Resident DJ</p>
+            <h2>Fresh Beats #42</h2>
+            <p class="spotlight-detail">Broadcast 4 November 2026 · Listen on the radio station's official SoundCloud.</p>
+          </div>
+          <a href="https://soundcloud.com/ibizastardustradio/itchy-lemon-fresh-beats-42" target="_blank" rel="noopener noreferrer">Listen on SoundCloud ↗</a>
+        </section>
 
         <h2 class="section-title">Fresh Beats Radio Show</h2>
 
