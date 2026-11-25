@@ -618,6 +618,10 @@ import MetaPixel from "../components/MetaPixel.astro";
       .epk-download-section p:not(.eyebrow),.epk-contact p:not(.eyebrow) { color:var(--muted); line-height:1.6; max-width:670px; }
       .epk-contact { margin-top:28px; border-color:var(--line); background:#10141b; }
       .epk-contact a[href^="mailto:"] { color:var(--acid); font-size:16px; overflow-wrap:anywhere; }
+      .epk-contact-emails { display:grid; gap:12px; margin-top:22px; }
+      .epk-contact .epk-contact-emails p { display:flex; align-items:baseline; flex-wrap:wrap; gap:8px 16px; margin:0; }
+      .epk-contact-emails span { min-width:148px; font-size:12px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:.07em; }
+      .epk-contact-emails a[href^="mailto:"] { font-size:15px; }
       .epk-contact .epk-actions { margin-top:0; }
       @media(max-width:900px) { .epk-hero { grid-template-columns:1fr; } .epk-hero-photo { min-height:460px; } .epk-sound-grid { grid-template-columns:1fr; } .epk-download-section,.epk-contact,.epk-set-panel { flex-direction:column; align-items:stretch; } }
       @media(max-width:600px) { .epk-section { margin-top:64px; } .epk-hero-photo { min-height:350px; } .epk-credentials,.epk-photos { grid-template-columns:1fr; } .epk-photos img { height:260px; } .epk-featured-track { flex-direction:column; align-items:stretch; } .epk-featured-art { width:100%; max-height:310px; } .epk-quick-links { gap:12px 16px; } .epk-hero h1 { font-size:clamp(58px,15vw,90px); } }
@@ -638,7 +642,7 @@ import MetaPixel from "../components/MetaPixel.astro";
             <p class="epk-hero-detail">A concise introduction for promoters, venues, festivals, radio and music media. Everything essential, in one place.</p>
             <div class="epk-actions">
               <a class="button primary" href="#listen">Listen to the sound</a>
-              <a class="button" href="mailto:itchylemon.booking@gmail.com?subject=Itchy%20Lemon%20-%20Booking%20Enquiry">Booking enquiry</a>
+              <a class="button" href="mailto:booking@itchylemon.com?subject=Itchy%20Lemon%20-%20Booking%20Enquiry">Booking enquiry</a>
             </div>
             <div class="epk-quick-links" aria-label="Jump to EPK sections">
               <a href="#highlights">Highlights</a><a href="#listen">Music &amp; sets</a><a href="#assets">Press photos</a><a href="#full-epk">Download PDF</a>
@@ -762,6 +766,22 @@ import MetaPixel from "../components/MetaPixel.astro";
           </div>
         </section>
 
+        <section id="full-epk" class="epk-download-section" aria-labelledby="download-title">
+          <div><p class="eyebrow">Extended press materials</p><h2 id="download-title">Need the full EPK?</h2><p>The downloadable PDF includes extended biography, project history, selected appearances and official contact details.</p><p class="epk-small-note">The PDF request uses the existing HubSpot form. See the <a href="/privacy-policy">Privacy Policy</a> for how contact details are used.</p></div>
+          <button class="button primary" type="button" data-open-epk-modal>Download official PDF</button>
+        </section>
+
+        <section class="epk-contact" aria-labelledby="contact-title">
+          <div><p class="eyebrow">Let's connect</p><h2 id="contact-title">Booking &amp; enquiries.</h2><p>Clubs, festivals, guest mixes, radio and selected collaborations.</p>
+            <div class="epk-contact-emails">
+              <p><span>Booking</span><a href="mailto:booking@itchylemon.com">booking@itchylemon.com</a></p>
+              <p><span>Music &amp; collaborations</span><a href="mailto:music@itchylemon.com">music@itchylemon.com</a></p>
+              <p><span>General &amp; press</span><a href="mailto:contact@itchylemon.com">contact@itchylemon.com</a></p>
+            </div>
+          </div>
+          <div class="epk-actions"><a class="button primary" href="/booking">Booking form</a><a class="button" href="https://www.instagram.com/itchy_lemon/" target="_blank" rel="noopener noreferrer">Instagram ↗</a></div>
+        </section>
+
         <section id="assets" class="epk-section" aria-labelledby="assets-title">
           <div class="epk-section-head"><p class="eyebrow">Ready for promotion</p><h2 id="assets-title">Press assets.</h2></div>
           <div class="epk-assets-access">
@@ -775,19 +795,9 @@ import MetaPixel from "../components/MetaPixel.astro";
               <span class="epk-number">For promoters &amp; media</span>
               <h3>Need current press photos?</h3>
               <p>Request up-to-date, approved artist photographs and promotional assets for event listings, articles and press coverage.</p>
-              <a class="epk-text-link" href="mailto:itchylemon.booking@gmail.com?subject=Itchy%20Lemon%20-%20Press%20Assets">Request press assets <span aria-hidden="true">↗</span></a>
+              <a class="epk-text-link" href="mailto:contact@itchylemon.com?subject=Itchy%20Lemon%20-%20Press%20Assets">Request press assets <span aria-hidden="true">↗</span></a>
             </article>
           </div>
-        </section>
-
-        <section id="full-epk" class="epk-download-section" aria-labelledby="download-title">
-          <div><p class="eyebrow">Extended press materials</p><h2 id="download-title">Need the full EPK?</h2><p>The downloadable PDF includes extended biography, project history, selected appearances and official contact details.</p><p class="epk-small-note">The PDF request uses the existing HubSpot form. See the <a href="/privacy-policy">Privacy Policy</a> for how contact details are used.</p></div>
-          <button class="button primary" type="button" data-open-epk-modal>Download official PDF</button>
-        </section>
-
-        <section class="epk-contact" aria-labelledby="contact-title">
-          <div><p class="eyebrow">Let's connect</p><h2 id="contact-title">Booking &amp; press.</h2><p>Clubs, festivals, guest mixes, radio and selected collaborations.</p><a href="mailto:itchylemon.booking@gmail.com">itchylemon.booking@gmail.com</a></div>
-          <div class="epk-actions"><a class="button primary" href="/booking">Booking form</a><a class="button" href="https://www.instagram.com/itchy_lemon/" target="_blank" rel="noopener noreferrer">Instagram ↗</a></div>
         </section>
       </main>
 
