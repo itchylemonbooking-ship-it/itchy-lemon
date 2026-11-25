@@ -579,6 +579,14 @@ import MetaPixel from "../components/MetaPixel.astro";
       .epk-number { display:block; font-size:11px; color:var(--acid); letter-spacing:.12em; text-transform:uppercase; font-weight:700; }
       .epk-credentials h3 { margin:24px 0 8px; font-size:clamp(20px,2.5vw,28px); line-height:1.05; letter-spacing:-.035em; }
       .epk-credentials p { color:var(--muted); margin:0; font-size:14px; }
+      .epk-credential-proof { margin-top:16px; padding-top:12px; border-top:1px solid var(--line); }
+      .epk-credential-proof summary { display:flex; align-items:center; justify-content:space-between; gap:12px; cursor:pointer; list-style:none; font-size:12px; font-weight:700; color:var(--acid); }
+      .epk-credential-proof summary::-webkit-details-marker { display:none; }
+      .epk-credential-proof[open] summary span { transform:rotate(45deg); }
+      .epk-credential-proof div { padding-top:14px; }
+      .epk-credential-proof a { color:var(--text); font-size:12px; line-height:1.5; text-decoration:underline; text-decoration-color:rgba(216,255,62,.5); text-underline-offset:4px; }
+      .epk-credential-proof p { color:var(--muted); font-size:11px; line-height:1.5; margin:10px 0 0; }
+
       .epk-credential-link { display:inline-flex; align-items:center; gap:8px; margin-top:14px; padding-bottom:4px; border-bottom:1px solid rgba(216,255,62,.38); color:var(--acid); font-size:12px; font-weight:700; line-height:1.4; text-decoration:none; }
       .epk-credential-link:hover,.epk-credential-link:focus-visible { border-bottom-color:var(--acid); color:var(--text); }
       .epk-text-link { display:inline-flex; gap:10px; margin-top:18px; padding-bottom:7px; color:var(--acid); border-bottom:1px solid rgba(216,255,62,.4); font-weight:700; font-size:12px; letter-spacing:.1em; text-transform:uppercase; }
@@ -651,7 +659,7 @@ import MetaPixel from "../components/MetaPixel.astro";
             <article><span class="epk-number">03 / Radio · 2026</span><h3>Pinnacle Nexus Radio</h3><p>World Groove · tracks in rotation</p></article>
             <article><span class="epk-number">04 / Porto · 2015</span><h3>Orange Room</h3><p>DJ appearance · December 2015</p></article>
             <article><span class="epk-number">05 / London · 2015</span><h3>The Qube Project</h3><p>DJ appearance · February 2015</p></article>
-            <article><span class="epk-number">06 / London · 2014</span><h3>Ministry of Sound</h3><p>Fresh Beats #28 · December 2014</p></article>
+            <article><span class="epk-number">06 / London · 2014</span><h3>Ministry of Sound</h3><p>DJ appearance · 26 December 2014</p><details class="epk-credential-proof"><summary>View event evidence <span aria-hidden="true">+</span></summary><div><a href="https://www.fatsoma.com/e/tum8nley/la-bomba" target="_blank" rel="noopener noreferrer">Original event listing · 26 December 2014 ↗</a></div></details></article>
           </div>
           <a class="epk-text-link" href="/bio">Explore the full biography <span aria-hidden="true">↗</span></a>
         </section>
