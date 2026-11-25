@@ -539,7 +539,7 @@ import MetaPixel from "../components/MetaPixel.astro";
       .epk-quick-links a { font-size:12px; color:var(--muted); text-transform:uppercase; letter-spacing:.07em; }
       .epk-quick-links a:hover { color:var(--acid); }
       .epk-hero-photo { position:relative; overflow:hidden; min-height:450px; border:1px solid rgba(216,255,62,.28); border-radius:24px; background:#10141b; }
-      .epk-hero-photo img { display:block; width:100%; height:100%; position:absolute; inset:0; object-fit:cover; }
+      .epk-hero-photo img { display:block; width:100%; height:100%; position:absolute; inset:0; object-fit:cover; object-position: 57% center; }
       .epk-hero-photo::after { content:""; position:absolute; inset:45% 0 0; pointer-events:none; background:linear-gradient(transparent,rgba(0,0,0,.72)); }
       .photo-mark { position:absolute; z-index:1; bottom:24px; left:24px; font-size:11px; letter-spacing:.18em; color:var(--acid); }
       .epk-section { margin-top:100px; scroll-margin-top:28px; }
@@ -606,18 +606,21 @@ import MetaPixel from "../components/MetaPixel.astro";
             </div>
           </div>
           <div class="epk-hero-photo">
-            <img src={latestRelease.cover} alt={latestRelease.title + " official cover artwork — Itchy Lemon"} loading="eager" decoding="async" />
-            <span class="photo-mark">FEATURED RELEASE / {latestRelease.title.toUpperCase()}</span>
+            <img src="/media/itchy-lemon-epk-portrait.png" alt="Itchy Lemon — artist portrait" loading="eager" decoding="async" />
+            <span class="photo-mark">ITCHY LEMON / ARTIST PORTRAIT</span>
           </div>
         </section>
 
         <section id="highlights" class="epk-section" aria-labelledby="highlights-title">
           <div class="epk-section-head"><p class="eyebrow">Selected credentials</p><h2 id="highlights-title">Behind the sound.</h2></div>
-          <p class="epk-section-intro">Itchy Lemon is a Portuguese DJ and electronic music producer working at the intersection of melodic, deep and groove-driven electronic music. His sets balance atmosphere, progression and club energy.</p>
+          <p class="epk-section-intro">Itchy Lemon is a Portuguese DJ and electronic music producer with a current focus on melodic, deep and groove-driven electronic music. The project combines recent club and radio activity with an artistic path that includes selected appearances in London and Portugal.</p>
           <div class="epk-credentials">
-            <article><span class="epk-number">01 / London</span><h3>Ministry of Sound</h3><p>Fresh Beats · 2014</p></article>
-            <article><span class="epk-number">02 / London</span><h3>The Qube Project</h3><p>DJ appearance · 2015</p></article>
-            <article><span class="epk-number">03 / Porto</span><h3>Calico</h3><p>Resident DJ · since 2026</p></article>
+            <article><span class="epk-number">01 / Porto · 2026</span><h3>Calico</h3><p>Resident DJ · since August 2026</p></article>
+            <article><span class="epk-number">02 / Radio · 2026</span><h3>Ibiza Stardust Radio</h3><p>Resident DJ · since October 2026</p></article>
+            <article><span class="epk-number">03 / Radio · 2026</span><h3>Pinnacle Nexus Radio</h3><p>World Groove · tracks in rotation</p></article>
+            <article><span class="epk-number">04 / Porto · 2015</span><h3>Orange Room</h3><p>DJ appearance · December 2015</p></article>
+            <article><span class="epk-number">05 / London · 2015</span><h3>The Qube Project</h3><p>DJ appearance · February 2015</p></article>
+            <article><span class="epk-number">06 / London · 2014</span><h3>Ministry of Sound</h3><p>Fresh Beats #28 · December 2014</p></article>
           </div>
           <a class="epk-text-link" href="/bio">Explore the full biography <span aria-hidden="true">↗</span></a>
         </section>
