@@ -255,6 +255,8 @@ import MetaPixel from "../components/MetaPixel.astro";
           opacity 0.25s ease;
       }
 
+      .flyer-track .gallery-item img { object-fit: contain; background: #07090c; }
+      .gallery-item:focus-visible, .carousel-button:focus-visible { outline: 2px solid var(--acid); outline-offset: 3px; }
       .gallery-item:hover img {
         transform: scale(1.04);
         opacity: 0.88;
@@ -518,6 +520,7 @@ import MetaPixel from "../components/MetaPixel.astro";
           </button>
         </section>
 
+        <nav class="cta-actions" aria-label="Media sections" style="justify-content:flex-start;margin-top:32px"><a class="button" href="#photos">Photos</a><a class="button" href="#flyers">Flyers</a><a class="button" href="#press-assets">Press Assets</a></nav>
         <h2 class="section-title">Archive Sections</h2>
 
         <section class="media-grid">
@@ -554,7 +557,7 @@ import MetaPixel from "../components/MetaPixel.astro";
 
         <section class="carousel" data-carousel>
           <div class="carousel-header">
-            <h2 class="section-title">Photos</h2>
+            <h2 class="section-title" id="photos">Photos</h2>
             <div class="carousel-controls">
               <button class="carousel-button" type="button" data-prev aria-label="Previous photos">‹</button>
               <button class="carousel-button" type="button" data-next aria-label="Next photos">›</button>
@@ -585,14 +588,14 @@ import MetaPixel from "../components/MetaPixel.astro";
 
         <section class="carousel" data-carousel>
           <div class="carousel-header">
-            <h2 class="section-title">Flyers</h2>
+            <h2 class="section-title" id="flyers">Flyers</h2>
             <div class="carousel-controls">
               <button class="carousel-button" type="button" data-prev aria-label="Previous flyers">‹</button>
               <button class="carousel-button" type="button" data-next aria-label="Next flyers">›</button>
             </div>
           </div>
 
-          <div class="carousel-track" data-track aria-label="Itchy Lemon flyers">
+          <div class="carousel-track flyer-track" data-track aria-label="Itchy Lemon flyers">
             <button class="gallery-item" type="button" data-full="/media/flyer-01.png" data-title="Flyer 01">
               <img src="/media/flyer-01.png" alt="Itchy Lemon flyer 01" loading="lazy" />
             </button>
@@ -634,7 +637,7 @@ import MetaPixel from "../components/MetaPixel.astro";
 
         <section class="carousel" data-carousel>
           <div class="carousel-header">
-            <h2 class="section-title">Press Assets</h2>
+            <h2 class="section-title" id="press-assets">Press Assets</h2>
             <div class="carousel-controls">
               <button class="carousel-button" type="button" data-prev aria-label="Previous press assets">‹</button>
               <button class="carousel-button" type="button" data-next aria-label="Next press assets">›</button>
@@ -735,13 +738,16 @@ import MetaPixel from "../components/MetaPixel.astro";
       const modalClose = document.querySelector("[data-modal-close]");
       const galleryItems = document.querySelectorAll("[data-full]");
 
+      let previousFocus;
       const openModal = (src, title) => {
+        previousFocus = document.activeElement;
         modalImage.src = src;
         modalImage.alt = title;
         modalCaption.textContent = title;
         modal.classList.add("is-open");
         modal.setAttribute("aria-hidden", "false");
         document.body.style.overflow = "hidden";
+        modalClose?.focus();
       };
 
       const closeModal = () => {
@@ -751,6 +757,7 @@ import MetaPixel from "../components/MetaPixel.astro";
         modalImage.alt = "";
         modalCaption.textContent = "";
         document.body.style.overflow = "";
+        previousFocus?.focus();
       };
 
       galleryItems.forEach((item) => {
