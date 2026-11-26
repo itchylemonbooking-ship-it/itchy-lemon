@@ -849,9 +849,119 @@
           "height": 900
         },
         {
+          "slug": "itchy-lemon-spotify-artist-banner",
+          "title": "Itchy Lemon · Spotify artist banner",
+          "alt": "Panoramic portrait of Itchy Lemon with orange light streaks and a dark blue background",
+          "year": null,
+          "width": 1440,
+          "height": 617
+        },
+        {
+          "slug": "itchy-lemon-legacy-crowd-banner",
+          "title": "Itchy Lemon · Legacy crowd banner",
+          "alt": "Historic Itchy Lemon headphone logo against a black-and-white crowd collage",
+          "year": null,
+          "width": 1440,
+          "height": 548
+        },
+        {
+          "slug": "itchy-lemon-thank-you-2018",
+          "title": "Itchy Lemon · Thank you (2018)",
+          "alt": "Thank-you graphic showing Itchy Lemon raising a hand behind the decks",
+          "year": "2018-11-08",
+          "width": 960,
+          "height": 528
+        },
+        {
+          "slug": "itchy-lemon-five-year-anniversary",
+          "title": "Itchy Lemon · Five-year anniversary",
+          "alt": "Five-year anniversary graphic summarising the artist’s club appearances and labels",
+          "year": "2017-09-15",
+          "width": 960,
+          "height": 503
+        },
+        {
+          "slug": "dj-life-simulator-four-artists",
+          "title": "DJ Life Simulator · Four artists",
+          "alt": "Portuguese promotional graphic showing four artists including Itchy Lemon",
+          "year": null,
+          "width": 1080,
+          "height": 1350
+        },
+        {
+          "slug": "phunky-players-artist-promo-2019",
+          "title": "Phunky · Itchy Lemon artist poster",
+          "alt": "Itchy Lemon artist poster for Phunky at Players, Amsterdam",
+          "year": "2019-10-19",
+          "width": 959,
+          "height": 960
+        }
+      ]
+    },
+    {
+      "id": "editorial",
+      "title": "Editorial",
+      "items": [
+        {
           "slug": "what-the-dancefloor-taught-me",
           "title": "What the Dancefloor Taught Me · Cover",
           "alt": "Editorial cover with a DJ at the decks and the series title",
+          "year": null,
+          "width": 1122,
+          "height": 1402
+        },
+        {
+          "slug": "dancefloor-feel-music",
+          "title": "People feel music before they understand it",
+          "alt": "A dancer under red light. Text: People feel music before they understand it",
+          "year": null,
+          "width": 1122,
+          "height": 1402
+        },
+        {
+          "slug": "dancefloor-energy-and-bpm",
+          "title": "Energy matters more than BPM",
+          "alt": "Blue lights above a packed dancefloor. Text: Energy matters more than BPM",
+          "year": null,
+          "width": 1122,
+          "height": 1402
+        },
+        {
+          "slug": "dancefloor-the-next-track",
+          "title": "The next track matters more than the perfect mix",
+          "alt": "Decks in a red-lit booth. Text: The next track matters more than the perfect mix",
+          "year": null,
+          "width": 1122,
+          "height": 1402
+        },
+        {
+          "slug": "dancefloor-different-dancefloor-expectations",
+          "title": "Not everyone on the floor wants the same thing",
+          "alt": "A group of clubgoers under green light. Text: Not everyone on the floor wants the same thing",
+          "year": null,
+          "width": 1122,
+          "height": 1402
+        },
+        {
+          "slug": "dancefloor-tension-and-release",
+          "title": "Tension is as important as release",
+          "alt": "A spotlight above a silhouetted crowd. Text: Tension is as important as release",
+          "year": null,
+          "width": 1122,
+          "height": 1402
+        },
+        {
+          "slug": "dancefloor-doing-nothing",
+          "title": "Sometimes the best move is doing nothing",
+          "alt": "A DJ beside the decks under blue lighting. Text: Sometimes the best move is doing nothing",
+          "year": null,
+          "width": 1122,
+          "height": 1402
+        },
+        {
+          "slug": "dancefloor-read-the-room",
+          "title": "Read the room. Don’t follow the room.",
+          "alt": "A view across a club crowd from the booth. Text: Read the room. Don’t follow the room.",
           "year": null,
           "width": 1122,
           "height": 1402
