@@ -754,7 +754,7 @@
         },
         {
           "slug": "ade-artist-announcement-2017",
-          "title": "Amsterdam Dance Event · Artist announcement (2017)",
+          "title": "Amsterdam Dance Event · Artist announcement",
           "alt": "Artist announcement graphic for Amsterdam Dance Event",
           "year": "2017",
           "width": 1440,
@@ -762,7 +762,7 @@
         },
         {
           "slug": "ade-artist-announcement-2016",
-          "title": "Amsterdam Dance Event · Artist announcement (2016)",
+          "title": "Amsterdam Dance Event · Artist announcement",
           "alt": "Artist announcement graphic for Amsterdam Dance Event",
           "year": "2016",
           "width": 1440,
@@ -786,7 +786,7 @@
         },
         {
           "slug": "itchy-lemon-thank-you-2018",
-          "title": "Itchy Lemon · Thank you (2018)",
+          "title": "Itchy Lemon · Thank you",
           "alt": "Thank-you graphic showing Itchy Lemon raising a hand behind the decks",
           "year": "2018-11-08",
           "width": 960,
@@ -950,7 +950,7 @@
       "slug": "ministry-of-sound-fresh-beats-28-retrospective",
       "title": "Ministry of Sound · Fresh Beats #28",
       "year": "2014-12-26",
-      "description": "Retrospective reel about the Boxing Day appearance in London on 26 December 2014.",
+      "description": "Retrospective reel about the Boxing Day appearance in London.",
       "width": 480,
       "height": 854
     },

@@ -7,12 +7,6 @@ import archive from "../data/mediaArchive.json";
 
 const { hero, galleries, videos } = archive;
 const assetRoot = "/media/archive/";
-const dateLabel = (date: string | null) => {
-  if (!date || date.length === 4) return date;
-  return new Intl.DateTimeFormat("en-GB", {
-    day: "numeric", month: "short", year: "numeric", timeZone: "UTC",
-  }).format(new Date(date));
-};
 ---
 
 <!doctype html>
@@ -396,7 +390,7 @@ const dateLabel = (date: string | null) => {
         line-height: 1.45;
       }
 
-      figcaption time, figcaption p {
+      figcaption p {
         display: block;
         margin: 4px 0 0;
         color: var(--muted);
@@ -565,7 +559,7 @@ const dateLabel = (date: string | null) => {
             </div>
           </div>
           <div class="carousel-track video-track" data-track id="videos-track">
-            {videos.map(({ slug, title, year, description, width, height }) => (
+            {videos.map(({ slug, title, description, width, height }) => (
               <figure>
                 <video
                   controls
@@ -582,9 +576,8 @@ const dateLabel = (date: string | null) => {
                 </video>
                 <figcaption>
                   <span id={`${slug}-title`}>{title}</span>
-                  {year && <time datetime={year}>{dateLabel(year)}</time>}
                   <label class="media-review-check" lang="pt-PT" hidden>
-                      <input type="checkbox" data-review-item value={slug} data-review-title={[title, dateLabel(year)].filter(Boolean).join(" · ")} aria-label={`Marcar para retirar: ${title}`} />
+                      <input type="checkbox" data-review-item value={slug} data-review-title={title} aria-label={`Marcar para retirar: ${title}`} />
                       Marcar para retirar
                     </label>
                   <p id={`${slug}-description`}>{description}</p>
@@ -611,22 +604,21 @@ const dateLabel = (date: string | null) => {
             )}
 
             <div class:list={["carousel-track", { "flyer-track": id === "flyers" }]} data-track id={`${id}-track`}>
-              {items.map(({ slug, title, alt, year, width, height }) => (
+              {items.map(({ slug, title, alt, width, height }) => (
                 <figure>
                   <button
                     class="gallery-item"
                     type="button"
                     data-full={`${assetRoot}${slug}.webp`}
-                    data-title={[title, id === "flyers" ? null : dateLabel(year)].filter(Boolean).join(" · ")}
+                    data-title={title}
                     aria-label={`Enlarge ${title}`}
                   >
                     <img src={`${assetRoot}${slug}-thumb.webp`} alt={alt} width={width} height={height} loading="lazy" decoding="async" />
                   </button>
                   <figcaption>
                     {title}
-                    {id !== "flyers" && year && <time datetime={year}>{dateLabel(year)}</time>}
                     <label class="media-review-check" lang="pt-PT" hidden>
-                      <input type="checkbox" data-review-item value={slug} data-review-title={[title, id === "flyers" ? null : dateLabel(year)].filter(Boolean).join(" · ")} aria-label={`Marcar para retirar: ${title}`} />
+                      <input type="checkbox" data-review-item value={slug} data-review-title={title} aria-label={`Marcar para retirar: ${title}`} />
                       Marcar para retirar
                     </label>
                   </figcaption>
