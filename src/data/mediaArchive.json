@@ -1,0 +1,1030 @@
+{
+  "hero": {
+    "slug": "dancelevel-hero",
+    "title": "Dancelevel",
+    "alt": "DJ booth on the Dancelevel stage under pink and purple lights",
+    "year": null,
+    "width": 960,
+    "height": 452
+  },
+  "galleries": [
+    {
+      "id": "photos",
+      "title": "Photos",
+      "items": [
+        {
+          "slug": "dancelevel-stage",
+          "title": "Dancelevel",
+          "alt": "DJ booth on the Dancelevel stage under pink and purple lights",
+          "year": null,
+          "width": 960,
+          "height": 452
+        },
+        {
+          "slug": "alc-dance-stage",
+          "title": "ALC Dance · Stage",
+          "alt": "Wide view of the ALC Dance stage under blue spotlights",
+          "year": null,
+          "width": 960,
+          "height": 640
+        },
+        {
+          "slug": "alc-dance-booth",
+          "title": "ALC Dance · DJ booth",
+          "alt": "Itchy Lemon wearing sunglasses and headphones beside the ALC Dance booth",
+          "year": null,
+          "width": 1600,
+          "height": 1068
+        },
+        {
+          "slug": "outdoor-dj-booth",
+          "title": "Outdoor DJ booth",
+          "alt": "Itchy Lemon mixing at a white outdoor DJ booth",
+          "year": null,
+          "width": 1000,
+          "height": 1200
+        },
+        {
+          "slug": "monochrome-dj-booth",
+          "title": "DJ booth · Monochrome",
+          "alt": "Black-and-white photograph of Itchy Lemon reaching across the mixer",
+          "year": null,
+          "width": 960,
+          "height": 639
+        },
+        {
+          "slug": "indoor-dj-booth",
+          "title": "DJ booth · Live archive",
+          "alt": "Itchy Lemon raising one hand behind the mixer and laptop",
+          "year": null,
+          "width": 960,
+          "height": 643
+        },
+        {
+          "slug": "club-dj-headphones",
+          "title": "Club DJ booth · Headphones",
+          "alt": "Portrait of Itchy Lemon wearing headphones next to the mixer",
+          "year": null,
+          "width": 671,
+          "height": 1440
+        }
+      ]
+    },
+    {
+      "id": "flyers",
+      "title": "Flyers",
+      "items": [
+        {
+          "slug": "players-phunky-2019",
+          "title": "Phunky · Players, Amsterdam",
+          "alt": "Event flyer for Phunky · Players, Amsterdam",
+          "year": "2019-10-19",
+          "width": 1139,
+          "height": 1600
+        },
+        {
+          "slug": "2017-10-20-ade-players-amsterdam-phunkyjango",
+          "title": "Phunky Jango Closing Festival · Players, Amsterdam",
+          "alt": "Event flyer for Phunky Jango Closing Festival · Players, Amsterdam",
+          "year": "2017-10-20",
+          "width": 1440,
+          "height": 533
+        },
+        {
+          "slug": "ade-amsterdam-players-phunky-10-22",
+          "title": "Phunky · Players, Amsterdam",
+          "alt": "Event flyer for Phunky · Players, Amsterdam (22 Oct)",
+          "year": null,
+          "width": 960,
+          "height": 365
+        },
+        {
+          "slug": "ade-players-amsterdam-jangoasia-10-18",
+          "title": "Jango Music Festival with Jango Asia · Players, Amsterdam",
+          "alt": "Event flyer for Jango Music Festival with Jango Asia · Players, Amsterdam",
+          "year": null,
+          "width": 960,
+          "height": 960
+        },
+        {
+          "slug": "ade-players-amsterdam-jangomusicfestival-10-17-to-19",
+          "title": "Jango Music Festival Programme · Players, Amsterdam",
+          "alt": "Event flyer for Jango Music Festival Programme · Players, Amsterdam",
+          "year": null,
+          "width": 960,
+          "height": 369
+        },
+        {
+          "slug": "playerskgp-amsterdam-mixandmeet-10-19",
+          "title": "Mix & Meet · Players, Amsterdam",
+          "alt": "Event flyer for Mix & Meet · Players, Amsterdam",
+          "year": null,
+          "width": 960,
+          "height": 503
+        },
+        {
+          "slug": "ade-cafe-cha-cha-2019",
+          "title": "House Connection · Café Cha Cha, Amsterdam",
+          "alt": "Event flyer for House Connection · Café Cha Cha, Amsterdam",
+          "year": "2019-10-18",
+          "width": 960,
+          "height": 501
+        },
+        {
+          "slug": "kashmir-lounge-2018",
+          "title": "Housestation Radio Reunion · Kashmir Lounge, Amsterdam",
+          "alt": "Event flyer for Housestation Radio Reunion · Kashmir Lounge, Amsterdam",
+          "year": "2018-10-18",
+          "width": 960,
+          "height": 678
+        },
+        {
+          "slug": "2017-10-18-ade-kashmirlounge-amsterdam-housestationreunion",
+          "title": "Housestation Radio Reunion · Kashmir Lounge, Amsterdam",
+          "alt": "Event flyer for Housestation Radio Reunion · Kashmir Lounge, Amsterdam",
+          "year": "2017-10-18",
+          "width": 960,
+          "height": 678
+        },
+        {
+          "slug": "thirty3hz-2016",
+          "title": "Natural Essence Takeover · Thirty3Hz, Guildford",
+          "alt": "Event flyer for Natural Essence Takeover · Thirty3Hz, Guildford",
+          "year": "2016-05-27",
+          "width": 960,
+          "height": 354
+        },
+        {
+          "slug": "the-qube-project-2015",
+          "title": "What Is Love? · The Qube Project, London",
+          "alt": "Event flyer for What Is Love? · The Qube Project, London",
+          "year": "2015-02-07",
+          "width": 960,
+          "height": 355
+        },
+        {
+          "slug": "ministry-of-sound-2014",
+          "title": "La Bomba · Ministry of Sound, London",
+          "alt": "Event flyer for La Bomba · Ministry of Sound, London",
+          "year": "2014-12-26",
+          "width": 1500,
+          "height": 500
+        },
+        {
+          "slug": "phunky-players-artist-promo-2019",
+          "title": "Phunky · Itchy Lemon artist poster",
+          "alt": "Itchy Lemon artist poster for Phunky at Players, Amsterdam",
+          "year": "2019-10-19",
+          "width": 959,
+          "height": 960
+        },
+        {
+          "slug": "itechstyle-summit-2019",
+          "title": "iTechStyle Summit · Porto Cruise Terminal",
+          "alt": "Event flyer for iTechStyle Summit · Porto Cruise Terminal",
+          "year": "2019-04-03",
+          "width": 960,
+          "height": 503
+        },
+        {
+          "slug": "2018-02-12-espacocedofeita-porto-carnavalelectronico",
+          "title": "Carnaval Electrónico · Espaço Cedofeita, Porto",
+          "alt": "Event flyer for Carnaval Electrónico · Espaço Cedofeita, Porto",
+          "year": "2018-02-12",
+          "width": 720,
+          "height": 376
+        },
+        {
+          "slug": "2017-12-30-radioam-porto-lastone",
+          "title": "Last One · Rádio AM, Porto",
+          "alt": "Event flyer for Last One · Rádio AM, Porto",
+          "year": "2017-12-30",
+          "width": 960,
+          "height": 528
+        },
+        {
+          "slug": "radioam-porto-09-29",
+          "title": "Rádio AM · Porto",
+          "alt": "Event flyer for Rádio AM · Porto (29 Sep)",
+          "year": null,
+          "width": 960,
+          "height": 528
+        },
+        {
+          "slug": "radioam-porto-10-04",
+          "title": "Rádio AM · Porto",
+          "alt": "Event flyer for Rádio AM · Porto (4 Oct)",
+          "year": null,
+          "width": 720,
+          "height": 396
+        },
+        {
+          "slug": "hard-club-2017",
+          "title": "Release Yourself One · Hard Club, Porto",
+          "alt": "Event flyer for Release Yourself One · Hard Club, Porto",
+          "year": "2017-12-09",
+          "width": 480,
+          "height": 672
+        },
+        {
+          "slug": "2017-ardmar-gaia-goes2dabeach-weeklysaturdays",
+          "title": "Goes 2 Da Beach · Ar d’Mar, Gaia",
+          "alt": "Event flyer for Goes 2 Da Beach · Ar d’Mar, Gaia",
+          "year": "2017",
+          "width": 960,
+          "height": 528
+        },
+        {
+          "slug": "2015-ardmar-gaia-middleweeksunsets",
+          "title": "Middle Week Sunsets · Ar d’Mar, Gaia",
+          "alt": "Event flyer for Middle Week Sunsets · Ar d’Mar, Gaia",
+          "year": "2015",
+          "width": 960,
+          "height": 354
+        },
+        {
+          "slug": "2015-ardmar-gaia-summersunsets-residence",
+          "title": "Summer Sunsets Residency · Ar d’Mar, Gaia",
+          "alt": "Event flyer for Summer Sunsets Residency · Ar d’Mar, Gaia",
+          "year": "2015",
+          "width": 960,
+          "height": 354
+        },
+        {
+          "slug": "2016-08-06-esplanadadoalex-valadares-gaia-beachparty",
+          "title": "Beach Party · Esplanada do Alex, Valadares",
+          "alt": "Event flyer for Beach Party · Esplanada do Alex, Valadares",
+          "year": "2016-08-06",
+          "width": 1440,
+          "height": 532
+        },
+        {
+          "slug": "2016-07-30-madalenafest-gaia",
+          "title": "Madalena Fest · Gaia",
+          "alt": "Event flyer for Madalena Fest · Gaia",
+          "year": "2016-07-30",
+          "width": 791,
+          "height": 563
+        },
+        {
+          "slug": "2016-07-30-zoom-porto-beachparty-afterparty",
+          "title": "Beach Party Afterparty · ZOOM Porto",
+          "alt": "Event flyer for Beach Party Afterparty · ZOOM Porto",
+          "year": "2016-07-30",
+          "width": 960,
+          "height": 354
+        },
+        {
+          "slug": "zoom-porto-7thanniversary-casinoroyale-06-11",
+          "title": "Casino Royale · ZOOM Porto Anniversary",
+          "alt": "Event flyer for Casino Royale · ZOOM Porto Anniversary",
+          "year": null,
+          "width": 960,
+          "height": 348
+        },
+        {
+          "slug": "zoom-porto-lickhit-04-22",
+          "title": "Lick Hit · ZOOM Porto",
+          "alt": "Event flyer for Lick Hit · ZOOM Porto (22 Apr)",
+          "year": null,
+          "width": 960,
+          "height": 355
+        },
+        {
+          "slug": "zoom-porto-pushpop-weekly-fridays",
+          "title": "Push Pop Fridays · ZOOM Porto",
+          "alt": "Event flyer for Push Pop Fridays · ZOOM Porto",
+          "year": null,
+          "width": 851,
+          "height": 315
+        },
+        {
+          "slug": "2016-07-29-armazemdocha-beachparty-preparty",
+          "title": "Beach Party Pre-Party · Armazém do Chá",
+          "alt": "Event flyer for Beach Party Pre-Party · Armazém do Chá",
+          "year": "2016-07-29",
+          "width": 960,
+          "height": 355
+        },
+        {
+          "slug": "2016-07-09-belacruz-porto-summersaturdays",
+          "title": "Summer Saturdays · Bela Cruz, Porto",
+          "alt": "Event flyer for Summer Saturdays · Bela Cruz, Porto",
+          "year": "2016-07-09",
+          "width": 960,
+          "height": 363
+        },
+        {
+          "slug": "2015-11-14-twinsclub-porto-filhosdotwins",
+          "title": "Filhos do Twins · Twins Club, Porto",
+          "alt": "Event flyer for Filhos do Twins · Twins Club, Porto",
+          "year": "2015-11-14",
+          "width": 960,
+          "height": 355
+        },
+        {
+          "slug": "twinsclub-porto-saturdayresidence",
+          "title": "Saturday Residency · Twins Club, Porto",
+          "alt": "Event flyer for Saturday Residency · Twins Club, Porto",
+          "year": null,
+          "width": 960,
+          "height": 355
+        },
+        {
+          "slug": "twinsclub-porto-filhosdotwins-11-21",
+          "title": "Filhos do Twins · Twins Club, Porto",
+          "alt": "Event flyer for Filhos do Twins · Twins Club, Porto (21 Nov)",
+          "year": null,
+          "width": 960,
+          "height": 540
+        },
+        {
+          "slug": "zoom-club-tropicana-2015",
+          "title": "Club Tropicana · ZOOM Porto",
+          "alt": "Event flyer for Club Tropicana · ZOOM Porto",
+          "year": "2015-09-18",
+          "width": 960,
+          "height": 356
+        },
+        {
+          "slug": "2015-09-04-kasadapraia-porto-oldnewhousemusic",
+          "title": "Old & New House Music · Kasa da Praia, Porto",
+          "alt": "Event flyer for Old & New House Music · Kasa da Praia, Porto",
+          "year": "2015-09-04",
+          "width": 1440,
+          "height": 534
+        },
+        {
+          "slug": "kasa-da-praia-2015",
+          "title": "Beach Party Afterparty · Kasa da Praia, Porto",
+          "alt": "Event flyer for Beach Party Afterparty · Kasa da Praia, Porto",
+          "year": "2015-08-01",
+          "width": 679,
+          "height": 960
+        },
+        {
+          "slug": "2015-08-25-mercadobomsucesso-porto-moonrise",
+          "title": "Moonrise · Mercado Bom Sucesso, Porto",
+          "alt": "Event flyer for Moonrise · Mercado Bom Sucesso, Porto",
+          "year": "2015-08-25",
+          "width": 1277,
+          "height": 473
+        },
+        {
+          "slug": "imagine-festival-2015",
+          "title": "Imagine Festival · Arouca",
+          "alt": "Event flyer for Imagine Festival · Arouca",
+          "year": "2015",
+          "width": 720,
+          "height": 281
+        },
+        {
+          "slug": "nye-porto-2015",
+          "title": "NYE Porto · Praça D. João I",
+          "alt": "Event flyer for NYE Porto · Praça D. João I",
+          "year": "2015",
+          "width": 960,
+          "height": 355
+        },
+        {
+          "slug": "algarve-summer-tour-2015",
+          "title": "Itchy Lemon Records · Algarve Summer Tour",
+          "alt": "Event flyer for Itchy Lemon Records · Algarve Summer Tour",
+          "year": "2015",
+          "width": 1277,
+          "height": 473
+        },
+        {
+          "slug": "porto-rio-river-sounds",
+          "title": "River Sounds · Porto Rio",
+          "alt": "Event flyer for River Sounds · Porto Rio",
+          "year": null,
+          "width": 960,
+          "height": 503
+        },
+        {
+          "slug": "orange-room-studio",
+          "title": "Orange Room Studio · Porto",
+          "alt": "Event flyer for Orange Room Studio · Porto",
+          "year": null,
+          "width": 960,
+          "height": 358
+        },
+        {
+          "slug": "mau-mau-full-moon",
+          "title": "Full Moon · Mau Mau, Porto",
+          "alt": "Event flyer for Full Moon · Mau Mau, Porto",
+          "year": null,
+          "width": 960,
+          "height": 365
+        },
+        {
+          "slug": "baixa-porto-journeyintotheroots-10-17",
+          "title": "A Journey into the Roots · Baixa, Porto",
+          "alt": "Event flyer for A Journey into the Roots · Baixa, Porto",
+          "year": null,
+          "width": 1277,
+          "height": 473
+        },
+        {
+          "slug": "centoonze-deepsoulfulsession-09-11-to-12-portrait",
+          "title": "Deep Soulful Session · Cento Onze",
+          "alt": "Event flyer for Deep Soulful Session · Cento Onze",
+          "year": null,
+          "width": 728,
+          "height": 960
+        },
+        {
+          "slug": "cristalbar-matosinhos-ibizadanceparty-day13",
+          "title": "Ibiza Dance Party · Cristal Bar, Matosinhos",
+          "alt": "Event flyer for Ibiza Dance Party · Cristal Bar, Matosinhos",
+          "year": null,
+          "width": 960,
+          "height": 528
+        },
+        {
+          "slug": "dekaras-canidelo-purewhite-08-09",
+          "title": "Pure White · Dekaras, Canidelo",
+          "alt": "Event flyer for Pure White · Dekaras, Canidelo",
+          "year": null,
+          "width": 960,
+          "height": 458
+        },
+        {
+          "slug": "divasbar-matosinhos-annualbeachparty-09-09",
+          "title": "Annual Beach Party · Divas Bar, Matosinhos",
+          "alt": "Event flyer for Annual Beach Party · Divas Bar, Matosinhos",
+          "year": null,
+          "width": 1440,
+          "height": 549
+        },
+        {
+          "slug": "douroterraza-gaia-riversunsets-day06",
+          "title": "River Sunsets · Douro Terraza, Gaia",
+          "alt": "Event flyer for River Sunsets · Douro Terraza, Gaia",
+          "year": null,
+          "width": 960,
+          "height": 503
+        },
+        {
+          "slug": "fozkiss-05-20",
+          "title": "Fozkiss",
+          "alt": "Event flyer for Fozkiss · 20 May",
+          "year": null,
+          "width": 960,
+          "height": 358
+        },
+        {
+          "slug": "gardenbar-porto-electronicvibes-03-23",
+          "title": "Electronic Vibes · Garden Bar, Porto",
+          "alt": "Event flyer for Electronic Vibes · Garden Bar, Porto",
+          "year": null,
+          "width": 960,
+          "height": 528
+        },
+        {
+          "slug": "ginkgobiloba-saturdayresidence",
+          "title": "Saturday Residency · Ginkgo Biloba",
+          "alt": "Event flyer for Saturday Residency · Ginkgo Biloba",
+          "year": null,
+          "width": 960,
+          "height": 365
+        },
+        {
+          "slug": "ginkgobiloba-urbanculture-fridayresidence",
+          "title": "Urban Culture · Ginkgo Biloba",
+          "alt": "Event flyer for Urban Culture · Ginkgo Biloba",
+          "year": null,
+          "width": 960,
+          "height": 355
+        },
+        {
+          "slug": "fresh-beats-ginkgo-biloba",
+          "title": "Fresh Beats · Ginkgo Biloba",
+          "alt": "Fresh Beats and HouseStationRadio artwork with a monochrome DJ booth photograph",
+          "year": null,
+          "width": 960,
+          "height": 355
+        },
+        {
+          "slug": "griffons-porto-dancelevel-deepbass-03-04",
+          "title": "Dancelevel with Deepbass · Griffons, Porto",
+          "alt": "Event flyer for Dancelevel with Deepbass · Griffons, Porto",
+          "year": null,
+          "width": 1277,
+          "height": 473
+        },
+        {
+          "slug": "griffons-porto-dancelevel-ineedmusic-03-11",
+          "title": "Dancelevel with I Need Music · Griffons, Porto",
+          "alt": "Event flyer for Dancelevel with I Need Music · Griffons, Porto",
+          "year": null,
+          "width": 1277,
+          "height": 473
+        },
+        {
+          "slug": "griffons-porto-dancelevel-maqm-04-01",
+          "title": "Dancelevel with MAQM · Griffons, Porto",
+          "alt": "Event flyer for Dancelevel with MAQM · Griffons, Porto",
+          "year": null,
+          "width": 1277,
+          "height": 473
+        },
+        {
+          "slug": "griffons-porto-dancelevel-menaware-02-18",
+          "title": "Dancelevel with Men Aware · Griffons, Porto",
+          "alt": "Event flyer for Dancelevel with Men Aware · Griffons, Porto",
+          "year": null,
+          "width": 1277,
+          "height": 473
+        },
+        {
+          "slug": "griffons-porto-dancelevel-tecamsound-04-08",
+          "title": "Dancelevel with Tecamsound · Griffons, Porto",
+          "alt": "Event flyer for Dancelevel with Tecamsound · Griffons, Porto",
+          "year": null,
+          "width": 1277,
+          "height": 473
+        },
+        {
+          "slug": "griffons-porto-dancelevel-washedvinyl-03-18",
+          "title": "Dancelevel with Washed Vinyl · Griffons, Porto",
+          "alt": "Event flyer for Dancelevel with Washed Vinyl · Griffons, Porto",
+          "year": null,
+          "width": 1277,
+          "height": 473
+        },
+        {
+          "slug": "griffons-porto-itchylemonrecords-anniversary-02-25",
+          "title": "Itchy Lemon Records Anniversary · Griffons, Porto",
+          "alt": "Event flyer for Itchy Lemon Records Anniversary · Griffons, Porto",
+          "year": null,
+          "width": 1277,
+          "height": 473
+        },
+        {
+          "slug": "insomnia-canidelo-sun7level-day01",
+          "title": "Sun7 Level · Insomnia, Canidelo",
+          "alt": "Event flyer for Sun7 Level · Insomnia, Canidelo",
+          "year": null,
+          "width": 960,
+          "height": 528
+        },
+        {
+          "slug": "loft-porto-06-30",
+          "title": "Loft · Porto",
+          "alt": "Event flyer for Loft · Porto (30 Jun)",
+          "year": null,
+          "width": 960,
+          "height": 503
+        },
+        {
+          "slug": "loft-porto-10-04",
+          "title": "Loft · Porto",
+          "alt": "Event flyer for Loft · Porto (4 Oct)",
+          "year": null,
+          "width": 960,
+          "height": 503
+        },
+        {
+          "slug": "loft-porto-11-10",
+          "title": "Loft · Porto",
+          "alt": "Event flyer for Loft · Porto (10 Nov)",
+          "year": null,
+          "width": 960,
+          "height": 503
+        },
+        {
+          "slug": "loft-porto-halloween-10-31",
+          "title": "Halloween · Loft, Porto",
+          "alt": "Event flyer for Halloween · Loft, Porto",
+          "year": null,
+          "width": 960,
+          "height": 503
+        },
+        {
+          "slug": "maumau-porto-residentdj-09-23-to-24",
+          "title": "Resident DJ · Mau Mau, Porto",
+          "alt": "Event flyer for Resident DJ · Mau Mau, Porto",
+          "year": null,
+          "width": 1440,
+          "height": 548
+        },
+        {
+          "slug": "maumau-porto-sunsetmoonrise-08-20",
+          "title": "Sunset Moonrise · Mau Mau, Porto",
+          "alt": "Event flyer for Sunset Moonrise · Mau Mau, Porto (20 Aug)",
+          "year": null,
+          "width": 960,
+          "height": 355
+        },
+        {
+          "slug": "maumau-sunsetmoonrise-08-13-to-14",
+          "title": "Sunset Moonrise · Mau Mau",
+          "alt": "Event flyer for Sunset Moonrise · Mau Mau (13–14 Aug)",
+          "year": null,
+          "width": 1440,
+          "height": 532
+        },
+        {
+          "slug": "nix-povoadevarzim-doubletrouble-04-07",
+          "title": "Double Trouble · NIX, Póvoa de Varzim",
+          "alt": "Event flyer for Double Trouble · NIX, Póvoa de Varzim",
+          "year": null,
+          "width": 750,
+          "height": 563
+        },
+        {
+          "slug": "novorumo-annualdaylightshowcase-08-12",
+          "title": "Annual Daylight Showcase · Novo Rumo",
+          "alt": "Event flyer for Annual Daylight Showcase · Novo Rumo",
+          "year": null,
+          "width": 1440,
+          "height": 549
+        },
+        {
+          "slug": "radiobar-porto-ondeestaoosteusouvidos-day04",
+          "title": "Onde Estão os Teus Ouvidos? · Radio Bar, Porto",
+          "alt": "Event flyer for Onde Estão os Teus Ouvidos? · Radio Bar, Porto",
+          "year": null,
+          "width": 960,
+          "height": 528
+        },
+        {
+          "slug": "rivierafashion-valbom-zoomsunset-07-31",
+          "title": "ZOOM Sunset · Riviera Fashion, Valbom",
+          "alt": "Event flyer for ZOOM Sunset · Riviera Fashion, Valbom",
+          "year": null,
+          "width": 676,
+          "height": 960
+        },
+        {
+          "slug": "tiles-porto-oldnewhousemusic-10-10",
+          "title": "Old & New House Music · Tiles, Porto",
+          "alt": "Event flyer for Old & New House Music · Tiles, Porto",
+          "year": null,
+          "width": 1277,
+          "height": 473
+        },
+        {
+          "slug": "villa-backtohouse-day15",
+          "title": "Back to House · Villa",
+          "alt": "Event flyer for Back to House · Villa",
+          "year": null,
+          "width": 960,
+          "height": 600
+        },
+        {
+          "slug": "fresh-beats-i-need-music",
+          "title": "Fresh Beats · I Need Music",
+          "alt": "Fresh Beats radio show graphic with Itchy Lemon at the decks and the I Need Music logo",
+          "year": null,
+          "width": 960,
+          "height": 355
+        }
+      ]
+    },
+    {
+      "id": "press",
+      "title": "Press",
+      "items": [
+        {
+          "slug": "pinnacle-nexus-radio-airplay",
+          "title": "Pinnacle Nexus Radio · TuneYou listing",
+          "alt": "Capture of the public Pinnacle Nexus Radio playlist on TuneYou",
+          "year": "2026-11-24",
+          "width": 923,
+          "height": 582
+        },
+        {
+          "slug": "ibiza-stardust-radio-fresh-beats-42",
+          "title": "Ibiza Stardust Radio · DJ Residency",
+          "alt": "Ibiza Stardust Radio broadcast artwork featuring the Itchy Lemon portrait",
+          "year": "2026",
+          "width": 629,
+          "height": 777
+        },
+        {
+          "slug": "blasted-official-cover",
+          "title": "Blasted · Official cover",
+          "alt": "Blasted cover with a dark circular design and bold lettering",
+          "year": "2026-09-25",
+          "width": 1440,
+          "height": 1440
+        },
+        {
+          "slug": "amsterdam-official-cover",
+          "title": "Amsterdam · Official cover",
+          "alt": "Amsterdam cover with green linework on a black background",
+          "year": "2026-09-11",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "slug": "dj-life-simulator-blasted",
+          "title": "Blasted · DJ Life Simulator",
+          "alt": "DJ Life Simulator promotional poster featuring Itchy Lemon",
+          "year": "2026",
+          "width": 810,
+          "height": 1440
+        },
+        {
+          "slug": "wide-open-official-cover",
+          "title": "Wide Open · Official cover",
+          "alt": "Wide Open cover with red lettering and black-and-white imagery",
+          "year": "2026",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "slug": "in-my-veins-official-cover",
+          "title": "In My Veins · Official cover",
+          "alt": "In My Veins cover with a blue-grey portrait and smoke-like details",
+          "year": "2026",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "slug": "dj-life-simulator-four-artists",
+          "title": "DJ Life Simulator · Four artists",
+          "alt": "Portuguese promotional graphic showing four artists including Itchy Lemon",
+          "year": "2026",
+          "width": 1080,
+          "height": 1350
+        },
+        {
+          "slug": "ade-artist-announcement-2017",
+          "title": "Amsterdam Dance Event · Artist announcement",
+          "alt": "Artist announcement graphic for Amsterdam Dance Event",
+          "year": "2017",
+          "width": 1440,
+          "height": 548
+        },
+        {
+          "slug": "ade-artist-announcement-2016",
+          "title": "Amsterdam Dance Event · Artist announcement",
+          "alt": "Artist announcement graphic for Amsterdam Dance Event",
+          "year": "2016",
+          "width": 1440,
+          "height": 548
+        },
+        {
+          "slug": "ade-artist-profile",
+          "title": "Amsterdam Dance Event · Artist listing",
+          "alt": "Amsterdam Dance Event artist profile for Itchy Lemon",
+          "year": null,
+          "width": 960,
+          "height": 503
+        },
+        {
+          "slug": "the-beat-london-mr-silk",
+          "title": "Drums at Twelve · The Beat London",
+          "alt": "The Beat London banner announcing an interview and guest mix with Itchy Lemon on Mr Silk’s show",
+          "year": null,
+          "width": 850,
+          "height": 350
+        },
+        {
+          "slug": "itchy-lemon-thank-you-2018",
+          "title": "Itchy Lemon · Thank you",
+          "alt": "Thank-you graphic showing Itchy Lemon raising a hand behind the decks",
+          "year": "2018-11-08",
+          "width": 960,
+          "height": 528
+        },
+        {
+          "slug": "visual-archive",
+          "title": "Itchy Lemon · Six-year anniversary",
+          "alt": "Itchy Lemon archive poster with a blue-lit DJ photograph and a list of venues",
+          "year": "2018-09-15",
+          "width": 960,
+          "height": 503
+        },
+        {
+          "slug": "itchy-lemon-five-year-anniversary",
+          "title": "Itchy Lemon · Five-year anniversary",
+          "alt": "Five-year anniversary graphic summarising the artist’s club appearances and labels",
+          "year": "2017-09-15",
+          "width": 960,
+          "height": 503
+        },
+        {
+          "slug": "dj-da-semana",
+          "title": "DJ da Semana · Issue 279",
+          "alt": "DJ da Semana feature with a black-and-white photo of Itchy Lemon",
+          "year": null,
+          "width": 960,
+          "height": 354
+        },
+        {
+          "slug": "fresh-beats-radio-archive",
+          "title": "Fresh Beats · Radio archive",
+          "alt": "Radio archive page showing Itchy Lemon and Fresh Beats artwork",
+          "year": null,
+          "width": 960,
+          "height": 375
+        },
+        {
+          "slug": "live-dj-booth-promo",
+          "title": "Live archive · DJ booth artwork",
+          "alt": "Promotional graphic showing a DJ booth and a dancefloor under blue and green lights",
+          "year": null,
+          "width": 1440,
+          "height": 1008
+        },
+        {
+          "slug": "dj-live-tv-promo",
+          "title": "DJ Live TV · Promotional artwork",
+          "alt": "Promotional artwork from the DJ Live TV archive",
+          "year": null,
+          "width": 960,
+          "height": 375
+        },
+        {
+          "slug": "live-sessions-booking-promo",
+          "title": "Live Sessions · Booking artwork",
+          "alt": "Archive booking graphic with an image of Itchy Lemon behind the decks",
+          "year": null,
+          "width": 960,
+          "height": 528
+        },
+        {
+          "slug": "brainstorm-digital-waves-artwork",
+          "title": "Brainstorm · Digital Waves",
+          "alt": "Promotional artwork for Brainstorm on Digital Waves",
+          "year": null,
+          "width": 1440,
+          "height": 557
+        },
+        {
+          "slug": "chillout-over-you-volume-01-artwork",
+          "title": "Chillout Over You · Vol. 01",
+          "alt": "Promotional artwork for Chillout Over You with a landscape at sunset",
+          "year": null,
+          "width": 1277,
+          "height": 473
+        },
+        {
+          "slug": "itchy-lemon-legacy-crowd-banner",
+          "title": "Itchy Lemon · Legacy crowd banner",
+          "alt": "Historic Itchy Lemon headphone logo against a black-and-white crowd collage",
+          "year": null,
+          "width": 1440,
+          "height": 548
+        }
+      ]
+    },
+    {
+      "id": "editorial",
+      "title": "Editorial",
+      "items": [
+        {
+          "slug": "what-the-dancefloor-taught-me",
+          "title": "What the Dancefloor Taught Me · Cover",
+          "alt": "Editorial cover with a DJ at the decks and the series title",
+          "year": null,
+          "width": 1122,
+          "height": 1402
+        },
+        {
+          "slug": "dancefloor-feel-music",
+          "title": "People feel music before they understand it",
+          "alt": "A dancer under red light. Text: People feel music before they understand it",
+          "year": null,
+          "width": 1122,
+          "height": 1402
+        },
+        {
+          "slug": "dancefloor-energy-and-bpm",
+          "title": "Energy matters more than BPM",
+          "alt": "Blue lights above a packed dancefloor. Text: Energy matters more than BPM",
+          "year": null,
+          "width": 1122,
+          "height": 1402
+        },
+        {
+          "slug": "dancefloor-the-next-track",
+          "title": "The next track matters more than the perfect mix",
+          "alt": "Decks in a red-lit booth. Text: The next track matters more than the perfect mix",
+          "year": null,
+          "width": 1122,
+          "height": 1402
+        },
+        {
+          "slug": "dancefloor-different-dancefloor-expectations",
+          "title": "Not everyone on the floor wants the same thing",
+          "alt": "A group of clubgoers under green light. Text: Not everyone on the floor wants the same thing",
+          "year": null,
+          "width": 1122,
+          "height": 1402
+        },
+        {
+          "slug": "dancefloor-tension-and-release",
+          "title": "Tension is as important as release",
+          "alt": "A spotlight above a silhouetted crowd. Text: Tension is as important as release",
+          "year": null,
+          "width": 1122,
+          "height": 1402
+        },
+        {
+          "slug": "dancefloor-doing-nothing",
+          "title": "Sometimes the best move is doing nothing",
+          "alt": "A DJ beside the decks under blue lighting. Text: Sometimes the best move is doing nothing",
+          "year": null,
+          "width": 1122,
+          "height": 1402
+        },
+        {
+          "slug": "dancefloor-read-the-room",
+          "title": "Read the room. Don’t follow the room.",
+          "alt": "A view across a club crowd from the booth. Text: Read the room. Don’t follow the room.",
+          "year": null,
+          "width": 1122,
+          "height": 1402
+        },
+        {
+          "slug": "when-the-groove-works",
+          "title": "What the Dancefloor Taught Me · When the groove works",
+          "alt": "Editorial image of a dancefloor crowd with the text When the groove works, you know",
+          "year": null,
+          "width": 1122,
+          "height": 1402
+        }
+      ]
+    }
+  ],
+  "videos": [
+    {
+      "slug": "ministry-of-sound-fresh-beats-28-retrospective",
+      "title": "Ministry of Sound · Fresh Beats #28",
+      "year": "2014-12-26",
+      "description": "Retrospective reel about the Boxing Day appearance in London.",
+      "width": 480,
+      "height": 854
+    },
+    {
+      "slug": "calico-porto-violin",
+      "title": "Calico Porto · Violin",
+      "year": "2026",
+      "description": "Vertical venue reel featuring a violin performance.",
+      "width": 480,
+      "height": 854
+    },
+    {
+      "slug": "new-chapter-artist-reel",
+      "title": "New Chapter",
+      "year": null,
+      "description": "Short artist film with footage from the Itchy Lemon archive.",
+      "width": 480,
+      "height": 854
+    },
+    {
+      "slug": "amsterdam-release-reel",
+      "title": "Amsterdam",
+      "year": "2026-09-11",
+      "description": "Vertical promotional reel for the single Amsterdam.",
+      "width": 480,
+      "height": 854
+    },
+    {
+      "slug": "blasted-release-teaser",
+      "title": "Blasted",
+      "year": "2026-09-25",
+      "description": "Vertical teaser for the single Blasted.",
+      "width": 480,
+      "height": 854
+    },
+    {
+      "slug": "wide-open-release-reel",
+      "title": "Wide Open",
+      "year": null,
+      "description": "Vertical promotional reel for Wide Open.",
+      "width": 480,
+      "height": 854
+    },
+    {
+      "slug": "calico-porto-dancers",
+      "title": "Calico Porto · Dancers",
+      "year": "2026",
+      "description": "Vertical venue reel featuring dancers.",
+      "width": 480,
+      "height": 854
+    },
+    {
+      "slug": "the-cult-of-sanctuary-reel",
+      "title": "The Cult of Sanctuary",
+      "year": null,
+      "description": "Promotional reel for The Cult of Sanctuary.",
+      "width": 480,
+      "height": 854
+    },
+    {
+      "slug": "zoom-porto-live-2015",
+      "title": "ZOOM Porto · Live",
+      "year": "2015",
+      "description": "Archive footage of the DJ booth and dancefloor at ZOOM Porto.",
+      "width": 480,
+      "height": 854
+    }
+  ]
+}
