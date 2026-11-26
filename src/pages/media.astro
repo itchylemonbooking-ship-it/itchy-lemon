@@ -351,7 +351,7 @@ const dateLabel = (date: string | null) => {
 
       .video-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(min(235px, 100%), 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
         gap: 26px 18px;
       }
 
@@ -360,6 +360,7 @@ const dateLabel = (date: string | null) => {
       .video-grid video {
         display: block;
         width: 100%;
+        height: auto;
         aspect-ratio: 4 / 5;
         object-fit: contain;
         background: var(--bg);
@@ -404,7 +405,8 @@ const dateLabel = (date: string | null) => {
         margin-top: 12px;
       }
 
-      .modal-caption { flex: 1 1 12rem; margin: 0; }
+      .modal-caption { flex: 1 1 10rem; margin: 0; }
+      .modal-controls { display: flex; gap: 8px; margin-left: auto; }
       .carousel-button:disabled { opacity: 0.4; cursor: default; }
       .hero-trigger:focus-visible { outline: 2px solid var(--acid); outline-offset: -4px; }
 
@@ -595,9 +597,11 @@ const dateLabel = (date: string | null) => {
       <img class="modal-image" data-modal-image alt="" />
       <div class="modal-toolbar">
         <p class="modal-caption" data-modal-caption aria-live="polite"></p>
-        <button class="carousel-button" type="button" data-modal-prev aria-label="Previous image">‹</button>
-        <button class="carousel-button" type="button" data-modal-next aria-label="Next image">›</button>
-        <button class="carousel-button" type="button" data-modal-close aria-label="Close preview" autofocus>×</button>
+        <div class="modal-controls">
+          <button class="carousel-button" type="button" data-modal-prev aria-label="Previous image">‹</button>
+          <button class="carousel-button" type="button" data-modal-next aria-label="Next image">›</button>
+          <button class="carousel-button" type="button" data-modal-close aria-label="Close preview" autofocus>×</button>
+        </div>
       </div>
     </dialog>
 
