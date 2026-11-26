@@ -1,7 +1,7 @@
 <script is:inline>
   (() => {
     const pixelId = "2110078442878718";
-    const consentKey = "itchyLemonMetaConsent";
+    const consentKey = "itchyLemonTrackingConsentV2";
 
     let metaPixelLoaded = false;
 
@@ -19,6 +19,8 @@
       } catch {
         // Consent applies only to the current page if storage is unavailable.
       }
+
+      window.dispatchEvent(new CustomEvent("itchylemon:tracking-consent", { detail: value }));
     };
 
     const createFbq = () => {
@@ -171,8 +173,8 @@
       <strong>Privacy preferences</strong>
 
       <p>
-        We use the Meta Pixel to measure website visits and advertising
-        performance. You can accept or reject this tracking.
+        We use HubSpot analytics and the Meta Pixel to measure website visits
+        and advertising performance. You can accept or reject this tracking.
         <a href="/privacy-policy">Privacy Policy</a>
       </p>
     </div>
