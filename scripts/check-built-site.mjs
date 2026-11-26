@@ -113,7 +113,7 @@ for (const config of [
     "Missing exact form ID validation: " + config.route
   );
   assert.ok(
-    source.includes('localStorage.getItem("itchyLemonMetaConsent") === "granted"'),
+    source.includes('localStorage.getItem("itchyLemonTrackingConsentV2") === "granted"'),
     "Missing Meta consent check: " + config.route
   );
 }
