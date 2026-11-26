@@ -355,6 +355,42 @@ const dateLabel = (date: string | null) => {
         color: var(--acid);
       }
 
+      .media-review {
+        margin-top: 24px;
+        padding: 16px;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+      }
+
+      .media-review button { background: var(--bg-soft); cursor: pointer; }
+      .media-review button:disabled { opacity: 0.55; cursor: default; }
+      .media-review p { margin: 8px 0; }
+
+      .media-review textarea {
+        display: block;
+        width: 100%;
+        min-height: 8rem;
+        padding: 10px;
+        background: var(--bg);
+        color: var(--text);
+      }
+
+      .media-review textarea[hidden] { display: none; }
+
+      .media-review-check {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        min-height: 44px;
+        margin-top: 4px;
+        font-size: 0.875rem;
+        cursor: pointer;
+      }
+
+      .media-review-check[hidden] { display: none; }
+      .media-review-check input { width: 18px; height: 18px; margin: 0; accent-color: var(--acid); }
+      .media-review-check:has(input:checked) { color: var(--acid); }
+
       figcaption {
         padding: 12px 2px 0;
         line-height: 1.45;
@@ -500,6 +536,14 @@ const dateLabel = (date: string | null) => {
           {galleries.map(({ id, title }) => <a class="button" href={`#${id}`}>{title}</a>)}
         </nav>
 
+        <section id="media-review" class="media-review" lang="pt-PT" aria-label="Triagem do preview" hidden>
+          <p>Marca as peças que queres retirar. A seleção fica neste navegador.</p>
+          <p data-review-count role="status">0 peças marcadas</p>
+          <button class="button" type="button" data-review-copy disabled>Copiar lista</button>
+          <p data-review-message role="status"></p>
+          <textarea data-review-list rows="6" aria-label="Lista de peças a retirar" readonly hidden></textarea>
+        </section>
+
         <section class="hero-image" aria-label="Featured media archive banner">
           <button
             class="hero-trigger"
@@ -541,6 +585,10 @@ const dateLabel = (date: string | null) => {
                 <figcaption>
                   <span id={`${slug}-title`}>{title}</span>
                   {year && <time datetime={year}>{dateLabel(year)}</time>}
+                  <label class="media-review-check" lang="pt-PT" hidden>
+                      <input type="checkbox" data-review-item value={slug} data-review-title={[title, dateLabel(year)].filter(Boolean).join(" · ")} aria-label={`Marcar para retirar: ${title}`} />
+                      Marcar para retirar
+                    </label>
                   <p id={`${slug}-description`}>{description}</p>
                 </figcaption>
               </figure>
@@ -579,6 +627,10 @@ const dateLabel = (date: string | null) => {
                   <figcaption>
                     {title}
                     {year && <time datetime={year}>{dateLabel(year)}</time>}
+                    <label class="media-review-check" lang="pt-PT" hidden>
+                      <input type="checkbox" data-review-item value={slug} data-review-title={[title, dateLabel(year)].filter(Boolean).join(" · ")} aria-label={`Marcar para retirar: ${title}`} />
+                      Marcar para retirar
+                    </label>
                   </figcaption>
                 </figure>
               ))}
@@ -719,6 +771,67 @@ const dateLabel = (date: string | null) => {
         if (event.key === "ArrowLeft") step(-1);
         if (event.key === "ArrowRight") step(1);
       });
+
+      function enableMediaReview() {
+        // Cloudflare previews use a branch alias or a deployment hash.
+        const isPreview = /^(media-final-preview|[a-f0-9]{8})\.itchy-lemon\.pages\.dev$/.test(window.location.hostname);
+        if (!isPreview) return;
+
+        const panel = document.querySelector<HTMLElement>("#media-review")!;
+        const count = panel.querySelector<HTMLElement>("[data-review-count]")!;
+        const copy = panel.querySelector<HTMLButtonElement>("[data-review-copy]")!;
+        const message = panel.querySelector<HTMLElement>("[data-review-message]")!;
+        const list = panel.querySelector<HTMLTextAreaElement>("[data-review-list]")!;
+        const items = [...document.querySelectorAll<HTMLInputElement>("[data-review-item]")];
+        const key = "itchy-lemon:media-review";
+        let selected: string[] = [];
+
+        try {
+          const saved = JSON.parse(localStorage.getItem(key) ?? "[]");
+          if (Array.isArray(saved)) selected = saved;
+        } catch {
+          message.textContent = "A seleção pode não ficar guardada ao fechar a página.";
+        }
+
+        function updateSelection() {
+          const marked = items.filter((item) => item.checked);
+          count.textContent = marked.length === 1 ? "1 peça marcada" : `${marked.length} peças marcadas`;
+          copy.disabled = marked.length === 0;
+          list.value = marked.map((item) => `- ${item.dataset.reviewTitle} [${item.value}]`).join("\n");
+          if (!marked.length) list.hidden = true;
+          return marked.map((item) => item.value);
+        }
+
+        for (const item of items) {
+          item.checked = selected.includes(item.value);
+          item.closest("label")!.hidden = false;
+          item.addEventListener("change", () => {
+            message.textContent = "";
+            try {
+              localStorage.setItem(key, JSON.stringify(updateSelection()));
+            } catch {
+              message.textContent = "A seleção pode não ficar guardada ao fechar a página.";
+            }
+          });
+        }
+
+        copy.addEventListener("click", async () => {
+          try {
+            await navigator.clipboard.writeText(list.value);
+            message.textContent = "Lista copiada. Podes colá-la no chat.";
+          } catch {
+            list.hidden = false;
+            list.focus();
+            list.select();
+            message.textContent = "Copia o texto selecionado e cola-o no chat.";
+          }
+        });
+
+        updateSelection();
+        panel.hidden = false;
+      }
+
+      enableMediaReview();
 
       const videos = document.querySelectorAll<HTMLVideoElement>(".video-grid video");
       videos.forEach((video) => {
