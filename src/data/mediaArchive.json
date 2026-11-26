@@ -751,6 +751,46 @@
           "year": "2017",
           "width": 1440,
           "height": 548
+        },
+        {
+          "slug": "ibiza-stardust-radio-fresh-beats-42",
+          "title": "Fresh Beats #42 · Ibiza Stardust Radio",
+          "alt": "Broadcast artwork with the Itchy Lemon portrait and Ibiza Stardust Radio logo",
+          "year": "2026-11-04",
+          "width": 629,
+          "height": 777
+        },
+        {
+          "slug": "dj-life-simulator-blasted",
+          "title": "Blasted · DJ Life Simulator",
+          "alt": "DJ Life Simulator promotional poster featuring Itchy Lemon",
+          "year": "2026",
+          "width": 810,
+          "height": 1440
+        },
+        {
+          "slug": "the-beat-london-mr-silk",
+          "title": "Drums at Twelve · The Beat London",
+          "alt": "The Beat London banner announcing an interview and guest mix with Itchy Lemon on Mr Silk’s show",
+          "year": null,
+          "width": 850,
+          "height": 350
+        },
+        {
+          "slug": "fresh-beats-ginkgo-biloba",
+          "title": "Fresh Beats · Ginkgo Biloba",
+          "alt": "Fresh Beats and HouseStationRadio artwork with a monochrome DJ booth photograph",
+          "year": null,
+          "width": 960,
+          "height": 355
+        },
+        {
+          "slug": "fresh-beats-i-need-music",
+          "title": "Fresh Beats · I Need Music",
+          "alt": "Fresh Beats radio show graphic with Itchy Lemon at the decks and the I Need Music logo",
+          "year": null,
+          "width": 960,
+          "height": 355
         }
       ]
     }
@@ -795,6 +835,14 @@
       "description": "Full archive recording from Kasa da Praia (3 min 48 sec).",
       "width": 426,
       "height": 240
+    },
+    {
+      "slug": "ministry-of-sound-fresh-beats-28-retrospective",
+      "title": "Ministry of Sound · Fresh Beats #28",
+      "year": "2014-12-26",
+      "description": "Retrospective reel about the Boxing Day appearance in London on 26 December 2014.",
+      "width": 480,
+      "height": 854
     }
   ]
 }
