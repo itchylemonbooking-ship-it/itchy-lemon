@@ -203,6 +203,24 @@ const dateLabel = (date: string | null) => {
         scrollbar-color: rgba(216, 255, 62, 0.6) rgba(255, 255, 255, 0.08);
       }
 
+      .carousel-track.is-expanded {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
+      }
+
+      @media (max-width: 600px) {
+        .carousel-track.is-expanded {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 18px 12px;
+        }
+      }
+
+      .gallery-toggle {
+        margin-bottom: 16px;
+        background: var(--bg-soft);
+        cursor: pointer;
+      }
+
       .carousel-track figure {
         flex: 0 0 min(320px, 82vw);
         min-width: 0;
@@ -540,6 +558,12 @@ const dateLabel = (date: string | null) => {
               </div>
             </div>
 
+            {id === "flyers" && (
+              <button class="button gallery-toggle" type="button" data-expand aria-expanded="false" aria-controls={`${id}-track`}>
+                Show all {items.length} flyers
+              </button>
+            )}
+
             <div class:list={["carousel-track", { "flyer-track": id === "flyers" }]} data-track id={`${id}-track`}>
               {items.map(({ slug, title, alt, year, width, height }) => (
                 <figure>
@@ -633,6 +657,13 @@ const dateLabel = (date: string | null) => {
         next.addEventListener("click", () => scroll(1));
         track.addEventListener("scroll", updateControls, { passive: true });
         new ResizeObserver(updateControls).observe(track);
+        const expand = carousel.querySelector<HTMLButtonElement>("[data-expand]");
+        expand?.addEventListener("click", () => {
+          const expanded = track.classList.toggle("is-expanded");
+          expand.setAttribute("aria-expanded", String(expanded));
+          expand.textContent = expanded ? "Return to carousel" : `Show all ${track.children.length} flyers`;
+          updateControls();
+        });
         updateControls();
       });
 
