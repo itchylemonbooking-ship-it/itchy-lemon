@@ -124,6 +124,8 @@ const assetRoot = "/media/archive/";
       }
 
       .hero-image img {
+        aspect-ratio: 960 / 503;
+        object-fit: cover;
         display: block;
         width: 100%;
         height: auto;
@@ -530,13 +532,13 @@ const assetRoot = "/media/archive/";
           <textarea data-review-list rows="6" aria-label="Lista de peças a retirar" readonly hidden></textarea>
         </section>
 
-        <section class="hero-image" aria-label="Featured media archive banner">
+        <section class="hero-image" aria-label="Featured artist photograph">
           <button
             class="hero-trigger"
             type="button"
             data-full={`${assetRoot}${hero.slug}.webp`}
             data-title={hero.title}
-            aria-label="Enlarge Itchy Lemon visual archive banner"
+            aria-label={`Enlarge ${hero.title}`}
           >
             <img
               src={`${assetRoot}${hero.slug}.webp`}

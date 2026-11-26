@@ -1,11 +1,11 @@
 {
   "hero": {
-    "slug": "visual-archive",
-    "title": "Itchy Lemon Visual Archive",
-    "alt": "Itchy Lemon archive poster with a blue-lit DJ photograph and a list of venues",
+    "slug": "dancelevel-stage",
+    "title": "Dancelevel",
+    "alt": "DJ booth on the Dancelevel stage under pink and purple lights",
     "year": null,
     "width": 960,
-    "height": 503
+    "height": 452
   },
   "galleries": [
     {
@@ -793,6 +793,14 @@
           "height": 528
         },
         {
+          "slug": "visual-archive",
+          "title": "Itchy Lemon · Six-year anniversary",
+          "alt": "Itchy Lemon archive poster with a blue-lit DJ photograph and a list of venues",
+          "year": "2018-09-15",
+          "width": 960,
+          "height": 503
+        },
+        {
           "slug": "itchy-lemon-five-year-anniversary",
           "title": "Itchy Lemon · Five-year anniversary",
           "alt": "Five-year anniversary graphic summarising the artist’s club appearances and labels",
@@ -1017,22 +1025,6 @@
       "description": "Archive footage of the DJ booth and dancefloor at ZOOM Porto.",
       "width": 480,
       "height": 854
-    },
-    {
-      "slug": "nye-porto-live-2015",
-      "title": "NYE Porto · Tenda Electrónica",
-      "year": "2015",
-      "description": "Archive footage of the New Year’s Eve crowd under blue lights.",
-      "width": 640,
-      "height": 480
-    },
-    {
-      "slug": "kasa-da-praia-live-2015",
-      "title": "Kasa da Praia · Live",
-      "year": "2015-08-01",
-      "description": "Full archive recording from Kasa da Praia (3 min 48 sec).",
-      "width": 426,
-      "height": 240
     }
   ]
 }
