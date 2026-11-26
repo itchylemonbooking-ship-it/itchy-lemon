@@ -81,6 +81,13 @@
       if (typeof window.fbq === "function") {
         window.fbq("consent", "revoke");
       }
+      for (const name of ["_fbp", "_fbc"]) {
+        const expired = name + "=; Max-Age=0; Path=/";
+        document.cookie = expired;
+        if (location.hostname === "itchylemon.com" || location.hostname.endsWith(".itchylemon.com")) {
+          document.cookie = expired + "; Domain=itchylemon.com";
+        }
+      }
     };
 
     /*
@@ -89,6 +96,8 @@
      */
     if (getStoredConsent() === "granted") {
       loadMetaPixel();
+    } else {
+      revokeMetaPixel();
     }
 
     document.addEventListener("DOMContentLoaded", () => {
