@@ -1057,6 +1057,14 @@
       "description": "Vertical promotional reel for Wide Open.",
       "width": 480,
       "height": 854
+    },
+    {
+      "slug": "the-cult-of-sanctuary-reel",
+      "title": "The Cult of Sanctuary · Reel",
+      "year": null,
+      "description": "Promotional reel for The Cult of Sanctuary.",
+      "width": 480,
+      "height": 854
     }
   ]
 }
