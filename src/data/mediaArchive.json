@@ -1,11 +1,11 @@
 {
   "hero": {
-    "slug": "dancelevel-stage",
+    "slug": "dancelevel-hero",
     "title": "Dancelevel",
     "alt": "DJ booth on the Dancelevel stage under pink and purple lights",
     "year": null,
-    "width": 960,
-    "height": 452
+    "width": 620,
+    "height": 325
   },
   "galleries": [
     {
@@ -971,14 +971,6 @@
       "height": 854
     },
     {
-      "slug": "calico-porto-dancers",
-      "title": "Calico Porto · Dancers",
-      "year": "2026",
-      "description": "Vertical venue reel featuring dancers.",
-      "width": 480,
-      "height": 854
-    },
-    {
       "slug": "new-chapter-artist-reel",
       "title": "New Chapter · Artist reel",
       "year": null,
@@ -1007,6 +999,14 @@
       "title": "Wide Open · Release reel",
       "year": null,
       "description": "Vertical promotional reel for Wide Open.",
+      "width": 480,
+      "height": 854
+    },
+    {
+      "slug": "calico-porto-dancers",
+      "title": "Calico Porto · Dancers",
+      "year": "2026",
+      "description": "Vertical venue reel featuring dancers.",
       "width": 480,
       "height": 854
     },
