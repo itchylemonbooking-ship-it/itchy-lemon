@@ -403,15 +403,7 @@ const dateLabel = (date: string | null) => {
         font-size: 0.875rem;
       }
 
-      .video-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
-        gap: 26px 18px;
-      }
-
-      .video-grid figure { margin: 0; min-width: 0; }
-
-      .video-grid video {
+      .video-track video {
         display: block;
         width: 100%;
         height: auto;
@@ -564,9 +556,15 @@ const dateLabel = (date: string | null) => {
           </button>
         </section>
 
-        <section aria-labelledby="videos">
-          <h2 class="section-title" id="videos">Videos</h2>
-          <div class="video-grid">
+        <section class="carousel" data-carousel aria-labelledby="videos">
+          <div class="carousel-header">
+            <h2 class="section-title" id="videos">Videos</h2>
+            <div class="carousel-controls">
+              <button class="carousel-button" type="button" data-prev aria-controls="videos-track" aria-label="Previous videos" disabled>‹</button>
+              <button class="carousel-button" type="button" data-next aria-controls="videos-track" aria-label="Next videos" disabled>›</button>
+            </div>
+          </div>
+          <div class="carousel-track video-track" data-track id="videos-track">
             {videos.map(({ slug, title, year, description, width, height }) => (
               <figure>
                 <video
@@ -663,7 +661,7 @@ const dateLabel = (date: string | null) => {
       <footer>
         <span>© 2026 Itchy Lemon. All rights reserved.</span>
         <span>
-          Videos · Photos · Flyers · Press assets ·
+          Videos · Photos · Flyers · Press ·
           <a href="/privacy-policy">Privacy Policy</a>
         </span>
       </footer>
@@ -833,7 +831,7 @@ const dateLabel = (date: string | null) => {
 
       enableMediaReview();
 
-      const videos = document.querySelectorAll<HTMLVideoElement>(".video-grid video");
+      const videos = document.querySelectorAll<HTMLVideoElement>(".video-track video");
       videos.forEach((video) => {
         video.addEventListener("play", () => {
           videos.forEach((other) => {

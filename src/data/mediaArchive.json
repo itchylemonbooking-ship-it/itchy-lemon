@@ -147,6 +147,14 @@
           "height": 369
         },
         {
+          "slug": "phunky-players-artist-promo-2019",
+          "title": "Phunky · Itchy Lemon artist poster",
+          "alt": "Itchy Lemon artist poster for Phunky at Players, Amsterdam",
+          "year": "2019-10-19",
+          "width": 959,
+          "height": 960
+        },
+        {
           "slug": "playerskgp-amsterdam-mixandmeet-10-19",
           "title": "Mix & Meet · Players, Amsterdam",
           "alt": "Event flyer for Mix & Meet · Players, Amsterdam",
@@ -491,6 +499,14 @@
           "height": 355
         },
         {
+          "slug": "fresh-beats-ginkgo-biloba",
+          "title": "Fresh Beats · Ginkgo Biloba",
+          "alt": "Fresh Beats and HouseStationRadio artwork with a monochrome DJ booth photograph",
+          "year": null,
+          "width": 960,
+          "height": 355
+        },
+        {
           "slug": "griffons-porto-dancelevel-deepbass-03-04",
           "title": "Dancelevel with Deepbass · Griffons, Porto",
           "alt": "Event flyer for Dancelevel with Deepbass · Griffons, Porto",
@@ -657,36 +673,28 @@
           "year": null,
           "width": 960,
           "height": 600
+        },
+        {
+          "slug": "fresh-beats-i-need-music",
+          "title": "Fresh Beats · I Need Music",
+          "alt": "Fresh Beats radio show graphic with Itchy Lemon at the decks and the I Need Music logo",
+          "year": null,
+          "width": 960,
+          "height": 355
         }
       ]
     },
     {
-      "id": "press-assets",
-      "title": "Press Assets",
+      "id": "press",
+      "title": "Press",
       "items": [
         {
-          "slug": "ade-artist-profile",
-          "title": "Amsterdam Dance Event · Artist listing",
-          "alt": "Amsterdam Dance Event artist profile for Itchy Lemon",
-          "year": null,
-          "width": 960,
-          "height": 503
-        },
-        {
-          "slug": "ade-artist-announcement-2016",
-          "title": "Amsterdam Dance Event · Artist announcement (2016)",
-          "alt": "Artist announcement graphic for Amsterdam Dance Event",
-          "year": "2016",
-          "width": 1440,
-          "height": 548
-        },
-        {
-          "slug": "ade-artist-announcement-2017",
-          "title": "Amsterdam Dance Event · Artist announcement (2017)",
-          "alt": "Artist announcement graphic for Amsterdam Dance Event",
-          "year": "2017",
-          "width": 1440,
-          "height": 548
+          "slug": "pinnacle-nexus-radio-airplay",
+          "title": "Pinnacle Nexus Radio · TuneYou listing",
+          "alt": "Capture of the public Pinnacle Nexus Radio playlist on TuneYou",
+          "year": "2026-11-24",
+          "width": 923,
+          "height": 582
         },
         {
           "slug": "ibiza-stardust-radio-fresh-beats-42",
@@ -697,6 +705,30 @@
           "height": 777
         },
         {
+          "slug": "ade-artist-announcement-2017",
+          "title": "Amsterdam Dance Event · Artist announcement (2017)",
+          "alt": "Artist announcement graphic for Amsterdam Dance Event",
+          "year": "2017",
+          "width": 1440,
+          "height": 548
+        },
+        {
+          "slug": "ade-artist-announcement-2016",
+          "title": "Amsterdam Dance Event · Artist announcement (2016)",
+          "alt": "Artist announcement graphic for Amsterdam Dance Event",
+          "year": "2016",
+          "width": 1440,
+          "height": 548
+        },
+        {
+          "slug": "ade-artist-profile",
+          "title": "Amsterdam Dance Event · Artist listing",
+          "alt": "Amsterdam Dance Event artist profile for Itchy Lemon",
+          "year": null,
+          "width": 960,
+          "height": 503
+        },
+        {
           "slug": "the-beat-london-mr-silk",
           "title": "Drums at Twelve · The Beat London",
           "alt": "The Beat London banner announcing an interview and guest mix with Itchy Lemon on Mr Silk’s show",
@@ -705,20 +737,44 @@
           "height": 350
         },
         {
-          "slug": "phunky-players-artist-promo-2019",
-          "title": "Phunky · Itchy Lemon artist poster",
-          "alt": "Itchy Lemon artist poster for Phunky at Players, Amsterdam",
-          "year": "2019-10-19",
-          "width": 959,
-          "height": 960
+          "slug": "blasted-official-cover",
+          "title": "Blasted · Official cover",
+          "alt": "Blasted cover with a dark circular design and bold lettering",
+          "year": "2026-09-25",
+          "width": 1440,
+          "height": 1440
         },
         {
-          "slug": "itchy-lemon-press-portrait",
-          "title": "Itchy Lemon · Official press portrait",
-          "alt": "Itchy Lemon standing against an orange and blue lit backdrop",
+          "slug": "amsterdam-official-cover",
+          "title": "Amsterdam · Official cover",
+          "alt": "Amsterdam cover with green linework on a black background",
+          "year": "2026-09-11",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "slug": "dj-life-simulator-blasted",
+          "title": "Blasted · DJ Life Simulator",
+          "alt": "DJ Life Simulator promotional poster featuring Itchy Lemon",
           "year": "2026",
-          "width": 1122,
-          "height": 1402
+          "width": 810,
+          "height": 1440
+        },
+        {
+          "slug": "itchy-lemon-thank-you-2018",
+          "title": "Itchy Lemon · Thank you (2018)",
+          "alt": "Thank-you graphic showing Itchy Lemon raising a hand behind the decks",
+          "year": "2018-11-08",
+          "width": 960,
+          "height": 528
+        },
+        {
+          "slug": "itchy-lemon-five-year-anniversary",
+          "title": "Itchy Lemon · Five-year anniversary",
+          "alt": "Five-year anniversary graphic summarising the artist’s club appearances and labels",
+          "year": "2017-09-15",
+          "width": 960,
+          "height": 503
         },
         {
           "slug": "dj-da-semana",
@@ -761,30 +817,6 @@
           "height": 528
         },
         {
-          "slug": "dj-life-simulator-blasted",
-          "title": "Blasted · DJ Life Simulator",
-          "alt": "DJ Life Simulator promotional poster featuring Itchy Lemon",
-          "year": "2026",
-          "width": 810,
-          "height": 1440
-        },
-        {
-          "slug": "fresh-beats-ginkgo-biloba",
-          "title": "Fresh Beats · Ginkgo Biloba",
-          "alt": "Fresh Beats and HouseStationRadio artwork with a monochrome DJ booth photograph",
-          "year": null,
-          "width": 960,
-          "height": 355
-        },
-        {
-          "slug": "fresh-beats-i-need-music",
-          "title": "Fresh Beats · I Need Music",
-          "alt": "Fresh Beats radio show graphic with Itchy Lemon at the decks and the I Need Music logo",
-          "year": null,
-          "width": 960,
-          "height": 355
-        },
-        {
           "slug": "brainstorm-digital-waves-artwork",
           "title": "Brainstorm · Digital Waves",
           "alt": "Promotional artwork for Brainstorm on Digital Waves",
@@ -799,30 +831,6 @@
           "year": null,
           "width": 1277,
           "height": 473
-        },
-        {
-          "slug": "pinnacle-nexus-radio-airplay",
-          "title": "Pinnacle Nexus Radio · TuneYou listing",
-          "alt": "Capture of the public Pinnacle Nexus Radio playlist on TuneYou",
-          "year": "2026-11-24",
-          "width": 923,
-          "height": 582
-        },
-        {
-          "slug": "amsterdam-official-cover",
-          "title": "Amsterdam · Official cover",
-          "alt": "Amsterdam cover with green linework on a black background",
-          "year": "2026-09-11",
-          "width": 1254,
-          "height": 1254
-        },
-        {
-          "slug": "blasted-official-cover",
-          "title": "Blasted · Official cover",
-          "alt": "Blasted cover with a dark circular design and bold lettering",
-          "year": "2026-09-25",
-          "width": 1440,
-          "height": 1440
         },
         {
           "slug": "wide-open-official-cover",
@@ -841,36 +849,12 @@
           "height": 900
         },
         {
-          "slug": "itchy-lemon-spotify-artist-banner",
-          "title": "Itchy Lemon · Spotify artist banner",
-          "alt": "Panoramic portrait of Itchy Lemon with orange light streaks and a dark blue background",
-          "year": null,
-          "width": 1440,
-          "height": 617
-        },
-        {
           "slug": "itchy-lemon-legacy-crowd-banner",
           "title": "Itchy Lemon · Legacy crowd banner",
           "alt": "Historic Itchy Lemon headphone logo against a black-and-white crowd collage",
           "year": null,
           "width": 1440,
           "height": 548
-        },
-        {
-          "slug": "itchy-lemon-thank-you-2018",
-          "title": "Itchy Lemon · Thank you (2018)",
-          "alt": "Thank-you graphic showing Itchy Lemon raising a hand behind the decks",
-          "year": "2018-11-08",
-          "width": 960,
-          "height": 528
-        },
-        {
-          "slug": "itchy-lemon-five-year-anniversary",
-          "title": "Itchy Lemon · Five-year anniversary",
-          "alt": "Five-year anniversary graphic summarising the artist’s club appearances and labels",
-          "year": "2017-09-15",
-          "width": 960,
-          "height": 503
         },
         {
           "slug": "dj-life-simulator-four-artists",
