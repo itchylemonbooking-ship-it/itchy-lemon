@@ -75,38 +75,6 @@
       "title": "Flyers",
       "items": [
         {
-          "slug": "ministry-of-sound-2014",
-          "title": "La Bomba · Ministry of Sound, London",
-          "alt": "Event flyer for La Bomba · Ministry of Sound, London",
-          "year": "2014-12-26",
-          "width": 1500,
-          "height": 500
-        },
-        {
-          "slug": "the-qube-project-2015",
-          "title": "What Is Love? · The Qube Project, London",
-          "alt": "Event flyer for What Is Love? · The Qube Project, London",
-          "year": "2015-02-07",
-          "width": 960,
-          "height": 355
-        },
-        {
-          "slug": "thirty3hz-2016",
-          "title": "Natural Essence Takeover · Thirty3Hz, Guildford",
-          "alt": "Event flyer for Natural Essence Takeover · Thirty3Hz, Guildford",
-          "year": "2016-05-27",
-          "width": 960,
-          "height": 354
-        },
-        {
-          "slug": "ade-cafe-cha-cha-2019",
-          "title": "House Connection · Café Cha Cha, Amsterdam",
-          "alt": "Event flyer for House Connection · Café Cha Cha, Amsterdam",
-          "year": "2019-10-18",
-          "width": 960,
-          "height": 501
-        },
-        {
           "slug": "players-phunky-2019",
           "title": "Phunky · Players, Amsterdam",
           "alt": "Event flyer for Phunky · Players, Amsterdam",
@@ -124,7 +92,7 @@
         },
         {
           "slug": "ade-amsterdam-players-phunky-10-22",
-          "title": "Phunky · Players, Amsterdam (22 Oct)",
+          "title": "Phunky · Players, Amsterdam",
           "alt": "Event flyer for Phunky · Players, Amsterdam (22 Oct)",
           "year": null,
           "width": 960,
@@ -147,20 +115,20 @@
           "height": 369
         },
         {
-          "slug": "phunky-players-artist-promo-2019",
-          "title": "Phunky · Itchy Lemon artist poster",
-          "alt": "Itchy Lemon artist poster for Phunky at Players, Amsterdam",
-          "year": "2019-10-19",
-          "width": 959,
-          "height": 960
-        },
-        {
           "slug": "playerskgp-amsterdam-mixandmeet-10-19",
           "title": "Mix & Meet · Players, Amsterdam",
           "alt": "Event flyer for Mix & Meet · Players, Amsterdam",
           "year": null,
           "width": 960,
           "height": 503
+        },
+        {
+          "slug": "ade-cafe-cha-cha-2019",
+          "title": "House Connection · Café Cha Cha, Amsterdam",
+          "alt": "Event flyer for House Connection · Café Cha Cha, Amsterdam",
+          "year": "2019-10-18",
+          "width": 960,
+          "height": 501
         },
         {
           "slug": "kashmir-lounge-2018",
@@ -179,6 +147,38 @@
           "height": 678
         },
         {
+          "slug": "thirty3hz-2016",
+          "title": "Natural Essence Takeover · Thirty3Hz, Guildford",
+          "alt": "Event flyer for Natural Essence Takeover · Thirty3Hz, Guildford",
+          "year": "2016-05-27",
+          "width": 960,
+          "height": 354
+        },
+        {
+          "slug": "the-qube-project-2015",
+          "title": "What Is Love? · The Qube Project, London",
+          "alt": "Event flyer for What Is Love? · The Qube Project, London",
+          "year": "2015-02-07",
+          "width": 960,
+          "height": 355
+        },
+        {
+          "slug": "ministry-of-sound-2014",
+          "title": "La Bomba · Ministry of Sound, London",
+          "alt": "Event flyer for La Bomba · Ministry of Sound, London",
+          "year": "2014-12-26",
+          "width": 1500,
+          "height": 500
+        },
+        {
+          "slug": "phunky-players-artist-promo-2019",
+          "title": "Phunky · Itchy Lemon artist poster",
+          "alt": "Itchy Lemon artist poster for Phunky at Players, Amsterdam",
+          "year": "2019-10-19",
+          "width": 959,
+          "height": 960
+        },
+        {
           "slug": "itechstyle-summit-2019",
           "title": "iTechStyle Summit · Porto Cruise Terminal",
           "alt": "Event flyer for iTechStyle Summit · Porto Cruise Terminal",
@@ -187,116 +187,12 @@
           "height": 503
         },
         {
-          "slug": "kasa-da-praia-2015",
-          "title": "Beach Party Afterparty · Kasa da Praia, Porto",
-          "alt": "Event flyer for Beach Party Afterparty · Kasa da Praia, Porto",
-          "year": "2015-08-01",
-          "width": 679,
-          "height": 960
-        },
-        {
-          "slug": "2015-09-04-kasadapraia-porto-oldnewhousemusic",
-          "title": "Old & New House Music · Kasa da Praia, Porto",
-          "alt": "Event flyer for Old & New House Music · Kasa da Praia, Porto",
-          "year": "2015-09-04",
-          "width": 1440,
-          "height": 534
-        },
-        {
-          "slug": "imagine-festival-2015",
-          "title": "Imagine Festival · Arouca",
-          "alt": "Event flyer for Imagine Festival · Arouca",
-          "year": "2015",
+          "slug": "2018-02-12-espacocedofeita-porto-carnavalelectronico",
+          "title": "Carnaval Electrónico · Espaço Cedofeita, Porto",
+          "alt": "Event flyer for Carnaval Electrónico · Espaço Cedofeita, Porto",
+          "year": "2018-02-12",
           "width": 720,
-          "height": 281
-        },
-        {
-          "slug": "nye-porto-2015",
-          "title": "NYE Porto · Praça D. João I",
-          "alt": "Event flyer for NYE Porto · Praça D. João I",
-          "year": "2015",
-          "width": 960,
-          "height": 355
-        },
-        {
-          "slug": "hard-club-2017",
-          "title": "Release Yourself One · Hard Club, Porto",
-          "alt": "Event flyer for Release Yourself One · Hard Club, Porto",
-          "year": "2017-12-09",
-          "width": 480,
-          "height": 672
-        },
-        {
-          "slug": "zoom-club-tropicana-2015",
-          "title": "Club Tropicana · ZOOM Porto",
-          "alt": "Event flyer for Club Tropicana · ZOOM Porto",
-          "year": "2015-09-18",
-          "width": 960,
-          "height": 356
-        },
-        {
-          "slug": "porto-rio-river-sounds",
-          "title": "River Sounds · Porto Rio",
-          "alt": "Event flyer for River Sounds · Porto Rio",
-          "year": null,
-          "width": 960,
-          "height": 503
-        },
-        {
-          "slug": "orange-room-studio",
-          "title": "Orange Room Studio · Porto",
-          "alt": "Event flyer for Orange Room Studio · Porto",
-          "year": null,
-          "width": 960,
-          "height": 358
-        },
-        {
-          "slug": "mau-mau-full-moon",
-          "title": "Full Moon · Mau Mau, Porto",
-          "alt": "Event flyer for Full Moon · Mau Mau, Porto",
-          "year": null,
-          "width": 960,
-          "height": 365
-        },
-        {
-          "slug": "algarve-summer-tour-2015",
-          "title": "Itchy Lemon Records · Algarve Summer Tour",
-          "alt": "Event flyer for Itchy Lemon Records · Algarve Summer Tour",
-          "year": "2015",
-          "width": 1277,
-          "height": 473
-        },
-        {
-          "slug": "2015-08-25-mercadobomsucesso-porto-moonrise",
-          "title": "Moonrise · Mercado Bom Sucesso, Porto",
-          "alt": "Event flyer for Moonrise · Mercado Bom Sucesso, Porto",
-          "year": "2015-08-25",
-          "width": 1277,
-          "height": 473
-        },
-        {
-          "slug": "twinsclub-porto-saturdayresidence",
-          "title": "Saturday Residency · Twins Club, Porto",
-          "alt": "Event flyer for Saturday Residency · Twins Club, Porto",
-          "year": null,
-          "width": 960,
-          "height": 355
-        },
-        {
-          "slug": "2015-11-14-twinsclub-porto-filhosdotwins",
-          "title": "Filhos do Twins · Twins Club, Porto",
-          "alt": "Event flyer for Filhos do Twins · Twins Club, Porto",
-          "year": "2015-11-14",
-          "width": 960,
-          "height": 355
-        },
-        {
-          "slug": "twinsclub-porto-filhosdotwins-11-21",
-          "title": "Filhos do Twins · Twins Club, Porto (21 Nov)",
-          "alt": "Event flyer for Filhos do Twins · Twins Club, Porto (21 Nov)",
-          "year": null,
-          "width": 960,
-          "height": 540
+          "height": 376
         },
         {
           "slug": "2017-12-30-radioam-porto-lastone",
@@ -308,7 +204,7 @@
         },
         {
           "slug": "radioam-porto-09-29",
-          "title": "Rádio AM · Porto (29 Sep)",
+          "title": "Rádio AM · Porto",
           "alt": "Event flyer for Rádio AM · Porto (29 Sep)",
           "year": null,
           "width": 960,
@@ -316,11 +212,27 @@
         },
         {
           "slug": "radioam-porto-10-04",
-          "title": "Rádio AM · Porto (4 Oct)",
+          "title": "Rádio AM · Porto",
           "alt": "Event flyer for Rádio AM · Porto (4 Oct)",
           "year": null,
           "width": 720,
           "height": 396
+        },
+        {
+          "slug": "hard-club-2017",
+          "title": "Release Yourself One · Hard Club, Porto",
+          "alt": "Event flyer for Release Yourself One · Hard Club, Porto",
+          "year": "2017-12-09",
+          "width": 480,
+          "height": 672
+        },
+        {
+          "slug": "2017-ardmar-gaia-goes2dabeach-weeklysaturdays",
+          "title": "Goes 2 Da Beach · Ar d’Mar, Gaia",
+          "alt": "Event flyer for Goes 2 Da Beach · Ar d’Mar, Gaia",
+          "year": "2017",
+          "width": 960,
+          "height": 528
         },
         {
           "slug": "2015-ardmar-gaia-middleweeksunsets",
@@ -339,28 +251,12 @@
           "height": 354
         },
         {
-          "slug": "2017-ardmar-gaia-goes2dabeach-weeklysaturdays",
-          "title": "Goes 2 Da Beach · Ar d’Mar, Gaia",
-          "alt": "Event flyer for Goes 2 Da Beach · Ar d’Mar, Gaia",
-          "year": "2017",
-          "width": 960,
-          "height": 528
-        },
-        {
-          "slug": "2016-07-09-belacruz-porto-summersaturdays",
-          "title": "Summer Saturdays · Bela Cruz, Porto",
-          "alt": "Event flyer for Summer Saturdays · Bela Cruz, Porto",
-          "year": "2016-07-09",
-          "width": 960,
-          "height": 363
-        },
-        {
-          "slug": "2016-07-29-armazemdocha-beachparty-preparty",
-          "title": "Beach Party Pre-Party · Armazém do Chá",
-          "alt": "Event flyer for Beach Party Pre-Party · Armazém do Chá",
-          "year": "2016-07-29",
-          "width": 960,
-          "height": 355
+          "slug": "2016-08-06-esplanadadoalex-valadares-gaia-beachparty",
+          "title": "Beach Party · Esplanada do Alex, Valadares",
+          "alt": "Event flyer for Beach Party · Esplanada do Alex, Valadares",
+          "year": "2016-08-06",
+          "width": 1440,
+          "height": 532
         },
         {
           "slug": "2016-07-30-madalenafest-gaia",
@@ -388,7 +284,7 @@
         },
         {
           "slug": "zoom-porto-lickhit-04-22",
-          "title": "Lick Hit · ZOOM Porto (22 Apr)",
+          "title": "Lick Hit · ZOOM Porto",
           "alt": "Event flyer for Lick Hit · ZOOM Porto (22 Apr)",
           "year": null,
           "width": 960,
@@ -403,20 +299,124 @@
           "height": 315
         },
         {
-          "slug": "2016-08-06-esplanadadoalex-valadares-gaia-beachparty",
-          "title": "Beach Party · Esplanada do Alex, Valadares",
-          "alt": "Event flyer for Beach Party · Esplanada do Alex, Valadares",
-          "year": "2016-08-06",
-          "width": 1440,
-          "height": 532
+          "slug": "2016-07-29-armazemdocha-beachparty-preparty",
+          "title": "Beach Party Pre-Party · Armazém do Chá",
+          "alt": "Event flyer for Beach Party Pre-Party · Armazém do Chá",
+          "year": "2016-07-29",
+          "width": 960,
+          "height": 355
         },
         {
-          "slug": "2018-02-12-espacocedofeita-porto-carnavalelectronico",
-          "title": "Carnaval Electrónico · Espaço Cedofeita, Porto",
-          "alt": "Event flyer for Carnaval Electrónico · Espaço Cedofeita, Porto",
-          "year": "2018-02-12",
+          "slug": "2016-07-09-belacruz-porto-summersaturdays",
+          "title": "Summer Saturdays · Bela Cruz, Porto",
+          "alt": "Event flyer for Summer Saturdays · Bela Cruz, Porto",
+          "year": "2016-07-09",
+          "width": 960,
+          "height": 363
+        },
+        {
+          "slug": "2015-11-14-twinsclub-porto-filhosdotwins",
+          "title": "Filhos do Twins · Twins Club, Porto",
+          "alt": "Event flyer for Filhos do Twins · Twins Club, Porto",
+          "year": "2015-11-14",
+          "width": 960,
+          "height": 355
+        },
+        {
+          "slug": "twinsclub-porto-saturdayresidence",
+          "title": "Saturday Residency · Twins Club, Porto",
+          "alt": "Event flyer for Saturday Residency · Twins Club, Porto",
+          "year": null,
+          "width": 960,
+          "height": 355
+        },
+        {
+          "slug": "twinsclub-porto-filhosdotwins-11-21",
+          "title": "Filhos do Twins · Twins Club, Porto",
+          "alt": "Event flyer for Filhos do Twins · Twins Club, Porto (21 Nov)",
+          "year": null,
+          "width": 960,
+          "height": 540
+        },
+        {
+          "slug": "zoom-club-tropicana-2015",
+          "title": "Club Tropicana · ZOOM Porto",
+          "alt": "Event flyer for Club Tropicana · ZOOM Porto",
+          "year": "2015-09-18",
+          "width": 960,
+          "height": 356
+        },
+        {
+          "slug": "2015-09-04-kasadapraia-porto-oldnewhousemusic",
+          "title": "Old & New House Music · Kasa da Praia, Porto",
+          "alt": "Event flyer for Old & New House Music · Kasa da Praia, Porto",
+          "year": "2015-09-04",
+          "width": 1440,
+          "height": 534
+        },
+        {
+          "slug": "kasa-da-praia-2015",
+          "title": "Beach Party Afterparty · Kasa da Praia, Porto",
+          "alt": "Event flyer for Beach Party Afterparty · Kasa da Praia, Porto",
+          "year": "2015-08-01",
+          "width": 679,
+          "height": 960
+        },
+        {
+          "slug": "2015-08-25-mercadobomsucesso-porto-moonrise",
+          "title": "Moonrise · Mercado Bom Sucesso, Porto",
+          "alt": "Event flyer for Moonrise · Mercado Bom Sucesso, Porto",
+          "year": "2015-08-25",
+          "width": 1277,
+          "height": 473
+        },
+        {
+          "slug": "imagine-festival-2015",
+          "title": "Imagine Festival · Arouca",
+          "alt": "Event flyer for Imagine Festival · Arouca",
+          "year": "2015",
           "width": 720,
-          "height": 376
+          "height": 281
+        },
+        {
+          "slug": "nye-porto-2015",
+          "title": "NYE Porto · Praça D. João I",
+          "alt": "Event flyer for NYE Porto · Praça D. João I",
+          "year": "2015",
+          "width": 960,
+          "height": 355
+        },
+        {
+          "slug": "algarve-summer-tour-2015",
+          "title": "Itchy Lemon Records · Algarve Summer Tour",
+          "alt": "Event flyer for Itchy Lemon Records · Algarve Summer Tour",
+          "year": "2015",
+          "width": 1277,
+          "height": 473
+        },
+        {
+          "slug": "porto-rio-river-sounds",
+          "title": "River Sounds · Porto Rio",
+          "alt": "Event flyer for River Sounds · Porto Rio",
+          "year": null,
+          "width": 960,
+          "height": 503
+        },
+        {
+          "slug": "orange-room-studio",
+          "title": "Orange Room Studio · Porto",
+          "alt": "Event flyer for Orange Room Studio · Porto",
+          "year": null,
+          "width": 960,
+          "height": 358
+        },
+        {
+          "slug": "mau-mau-full-moon",
+          "title": "Full Moon · Mau Mau, Porto",
+          "alt": "Event flyer for Full Moon · Mau Mau, Porto",
+          "year": null,
+          "width": 960,
+          "height": 365
         },
         {
           "slug": "baixa-porto-journeyintotheroots-10-17",
@@ -468,7 +468,7 @@
         },
         {
           "slug": "fozkiss-05-20",
-          "title": "Fozkiss · 20 May",
+          "title": "Fozkiss",
           "alt": "Event flyer for Fozkiss · 20 May",
           "year": null,
           "width": 960,
@@ -572,7 +572,7 @@
         },
         {
           "slug": "loft-porto-06-30",
-          "title": "Loft · Porto (30 Jun)",
+          "title": "Loft · Porto",
           "alt": "Event flyer for Loft · Porto (30 Jun)",
           "year": null,
           "width": 960,
@@ -580,7 +580,7 @@
         },
         {
           "slug": "loft-porto-10-04",
-          "title": "Loft · Porto (4 Oct)",
+          "title": "Loft · Porto",
           "alt": "Event flyer for Loft · Porto (4 Oct)",
           "year": null,
           "width": 960,
@@ -588,7 +588,7 @@
         },
         {
           "slug": "loft-porto-11-10",
-          "title": "Loft · Porto (10 Nov)",
+          "title": "Loft · Porto",
           "alt": "Event flyer for Loft · Porto (10 Nov)",
           "year": null,
           "width": 960,
@@ -612,7 +612,7 @@
         },
         {
           "slug": "maumau-porto-sunsetmoonrise-08-20",
-          "title": "Sunset Moonrise · Mau Mau, Porto (20 Aug)",
+          "title": "Sunset Moonrise · Mau Mau, Porto",
           "alt": "Event flyer for Sunset Moonrise · Mau Mau, Porto (20 Aug)",
           "year": null,
           "width": 960,
@@ -620,7 +620,7 @@
         },
         {
           "slug": "maumau-sunsetmoonrise-08-13-to-14",
-          "title": "Sunset Moonrise · Mau Mau (13–14 Aug)",
+          "title": "Sunset Moonrise · Mau Mau",
           "alt": "Event flyer for Sunset Moonrise · Mau Mau (13–14 Aug)",
           "year": null,
           "width": 1440,
@@ -698,11 +698,59 @@
         },
         {
           "slug": "ibiza-stardust-radio-fresh-beats-42",
-          "title": "Fresh Beats #42 · Ibiza Stardust Radio",
-          "alt": "Broadcast artwork with the Itchy Lemon portrait and Ibiza Stardust Radio logo",
-          "year": "2026-11-04",
+          "title": "Ibiza Stardust Radio · DJ Residency",
+          "alt": "Ibiza Stardust Radio broadcast artwork featuring the Itchy Lemon portrait",
+          "year": "2026",
           "width": 629,
           "height": 777
+        },
+        {
+          "slug": "blasted-official-cover",
+          "title": "Blasted · Official cover",
+          "alt": "Blasted cover with a dark circular design and bold lettering",
+          "year": "2026-09-25",
+          "width": 1440,
+          "height": 1440
+        },
+        {
+          "slug": "amsterdam-official-cover",
+          "title": "Amsterdam · Official cover",
+          "alt": "Amsterdam cover with green linework on a black background",
+          "year": "2026-09-11",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "slug": "dj-life-simulator-blasted",
+          "title": "Blasted · DJ Life Simulator",
+          "alt": "DJ Life Simulator promotional poster featuring Itchy Lemon",
+          "year": "2026",
+          "width": 810,
+          "height": 1440
+        },
+        {
+          "slug": "wide-open-official-cover",
+          "title": "Wide Open · Official cover",
+          "alt": "Wide Open cover with red lettering and black-and-white imagery",
+          "year": "2026",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "slug": "in-my-veins-official-cover",
+          "title": "In My Veins · Official cover",
+          "alt": "In My Veins cover with a blue-grey portrait and smoke-like details",
+          "year": "2026",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "slug": "dj-life-simulator-four-artists",
+          "title": "DJ Life Simulator · Four artists",
+          "alt": "Portuguese promotional graphic showing four artists including Itchy Lemon",
+          "year": "2026",
+          "width": 1080,
+          "height": 1350
         },
         {
           "slug": "ade-artist-announcement-2017",
@@ -735,30 +783,6 @@
           "year": null,
           "width": 850,
           "height": 350
-        },
-        {
-          "slug": "blasted-official-cover",
-          "title": "Blasted · Official cover",
-          "alt": "Blasted cover with a dark circular design and bold lettering",
-          "year": "2026-09-25",
-          "width": 1440,
-          "height": 1440
-        },
-        {
-          "slug": "amsterdam-official-cover",
-          "title": "Amsterdam · Official cover",
-          "alt": "Amsterdam cover with green linework on a black background",
-          "year": "2026-09-11",
-          "width": 1254,
-          "height": 1254
-        },
-        {
-          "slug": "dj-life-simulator-blasted",
-          "title": "Blasted · DJ Life Simulator",
-          "alt": "DJ Life Simulator promotional poster featuring Itchy Lemon",
-          "year": "2026",
-          "width": 810,
-          "height": 1440
         },
         {
           "slug": "itchy-lemon-thank-you-2018",
@@ -833,36 +857,12 @@
           "height": 473
         },
         {
-          "slug": "wide-open-official-cover",
-          "title": "Wide Open · Official cover",
-          "alt": "Wide Open cover with red lettering and black-and-white imagery",
-          "year": null,
-          "width": 1254,
-          "height": 1254
-        },
-        {
-          "slug": "in-my-veins-official-cover",
-          "title": "In My Veins · Official cover",
-          "alt": "In My Veins cover with a blue-grey portrait and smoke-like details",
-          "year": null,
-          "width": 900,
-          "height": 900
-        },
-        {
           "slug": "itchy-lemon-legacy-crowd-banner",
           "title": "Itchy Lemon · Legacy crowd banner",
           "alt": "Historic Itchy Lemon headphone logo against a black-and-white crowd collage",
           "year": null,
           "width": 1440,
           "height": 548
-        },
-        {
-          "slug": "dj-life-simulator-four-artists",
-          "title": "DJ Life Simulator · Four artists",
-          "alt": "Portuguese promotional graphic showing four artists including Itchy Lemon",
-          "year": null,
-          "width": 1080,
-          "height": 1350
         }
       ]
     },

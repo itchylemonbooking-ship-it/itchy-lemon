@@ -617,16 +617,16 @@ const dateLabel = (date: string | null) => {
                     class="gallery-item"
                     type="button"
                     data-full={`${assetRoot}${slug}.webp`}
-                    data-title={[title, dateLabel(year)].filter(Boolean).join(" · ")}
+                    data-title={[title, id === "flyers" ? null : dateLabel(year)].filter(Boolean).join(" · ")}
                     aria-label={`Enlarge ${title}`}
                   >
                     <img src={`${assetRoot}${slug}-thumb.webp`} alt={alt} width={width} height={height} loading="lazy" decoding="async" />
                   </button>
                   <figcaption>
                     {title}
-                    {year && <time datetime={year}>{dateLabel(year)}</time>}
+                    {id !== "flyers" && year && <time datetime={year}>{dateLabel(year)}</time>}
                     <label class="media-review-check" lang="pt-PT" hidden>
-                      <input type="checkbox" data-review-item value={slug} data-review-title={[title, dateLabel(year)].filter(Boolean).join(" · ")} aria-label={`Marcar para retirar: ${title}`} />
+                      <input type="checkbox" data-review-item value={slug} data-review-title={[title, id === "flyers" ? null : dateLabel(year)].filter(Boolean).join(" · ")} aria-label={`Marcar para retirar: ${title}`} />
                       Marcar para retirar
                     </label>
                   </figcaption>
