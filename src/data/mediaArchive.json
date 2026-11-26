@@ -791,6 +791,30 @@
           "year": null,
           "width": 960,
           "height": 355
+        },
+        {
+          "slug": "brainstorm-digital-waves-artwork",
+          "title": "Brainstorm · Digital Waves",
+          "alt": "Promotional artwork for Brainstorm on Digital Waves",
+          "year": null,
+          "width": 1440,
+          "height": 557
+        },
+        {
+          "slug": "chillout-over-you-volume-01-artwork",
+          "title": "Chillout Over You · Vol. 01",
+          "alt": "Promotional artwork for Chillout Over You with a landscape at sunset",
+          "year": null,
+          "width": 1277,
+          "height": 473
+        },
+        {
+          "slug": "pinnacle-nexus-radio-airplay",
+          "title": "Pinnacle Nexus Radio · TuneYou listing",
+          "alt": "Capture of the public Pinnacle Nexus Radio playlist on TuneYou",
+          "year": "2026-11-24",
+          "width": 923,
+          "height": 582
         }
       ]
     }
@@ -841,6 +865,30 @@
       "title": "Ministry of Sound · Fresh Beats #28",
       "year": "2014-12-26",
       "description": "Retrospective reel about the Boxing Day appearance in London on 26 December 2014.",
+      "width": 480,
+      "height": 854
+    },
+    {
+      "slug": "new-chapter-artist-reel",
+      "title": "New Chapter · Artist reel",
+      "year": null,
+      "description": "Short artist film with footage from the Itchy Lemon archive.",
+      "width": 480,
+      "height": 854
+    },
+    {
+      "slug": "amsterdam-release-reel",
+      "title": "Amsterdam · Release reel",
+      "year": "2026-09-11",
+      "description": "Vertical promotional reel for the single Amsterdam.",
+      "width": 480,
+      "height": 854
+    },
+    {
+      "slug": "blasted-release-teaser",
+      "title": "Blasted · Release teaser",
+      "year": "2026-09-25",
+      "description": "Vertical teaser for the single Blasted.",
       "width": 480,
       "height": 854
     }

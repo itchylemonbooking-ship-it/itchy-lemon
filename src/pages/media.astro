@@ -540,7 +540,7 @@ const dateLabel = (date: string | null) => {
                 </video>
                 <figcaption>
                   <span id={`${slug}-title`}>{title}</span>
-                  <time datetime={year}>{dateLabel(year)}</time>
+                  {year && <time datetime={year}>{dateLabel(year)}</time>}
                   <p id={`${slug}-description`}>{description}</p>
                 </figcaption>
               </figure>
