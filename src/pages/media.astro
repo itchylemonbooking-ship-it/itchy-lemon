@@ -103,6 +103,12 @@ const assetRoot = "/media/archive/";
         color: var(--acid);
       }
 
+      [data-protected-media] {
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        user-select: none;
+      }
+
       .hero-image {
         margin-top: 56px;
         border: 1px solid var(--line);
@@ -494,7 +500,7 @@ const assetRoot = "/media/archive/";
             data-title={hero.title}
             aria-label={`Enlarge ${hero.title}`}
           >
-            <img
+            <img draggable="false" data-protected-media
               src={`${assetRoot}${hero.slug}.webp`}
               srcset={`${assetRoot}${hero.slug}-thumb.webp 420w, ${assetRoot}${hero.slug}.webp ${hero.width}w`}
               sizes="(max-width: 1024px) calc(100vw - 44px), min(1080px, calc(100vw - 64px))"
@@ -518,6 +524,10 @@ const assetRoot = "/media/archive/";
             {videos.map(({ slug, title, description, width, height }) => (
               <figure>
                 <video
+                  data-protected-media
+                  controlslist="nodownload"
+                  disablepictureinpicture
+                  disableremoteplayback
                   controls
                   playsinline
                   preload="none"
@@ -528,7 +538,7 @@ const assetRoot = "/media/archive/";
                   aria-describedby={`${slug}-description`}
                 >
                   <source src={`${assetRoot}${slug}.mp4`} type="video/mp4" />
-                  <a href={`${assetRoot}${slug}.mp4`}>Open video</a>
+                  Your browser does not support embedded video.
                 </video>
                 <figcaption>
                   <span id={`${slug}-title`}>{title}</span>
@@ -565,7 +575,7 @@ const assetRoot = "/media/archive/";
                     data-title={title}
                     aria-label={`Enlarge ${title}`}
                   >
-                    <img src={`${assetRoot}${slug}-thumb.webp`} alt={alt} width={width} height={height} loading="lazy" decoding="async" />
+                    <img draggable="false" data-protected-media src={`${assetRoot}${slug}-thumb.webp`} alt={alt} width={width} height={height} loading="lazy" decoding="async" />
                   </button>
                   <figcaption>
                     {title}
@@ -608,7 +618,7 @@ const assetRoot = "/media/archive/";
     </div>
 
     <dialog class="media-modal" data-modal aria-label="Image preview">
-      <img class="modal-image" data-modal-image alt="" />
+      <img draggable="false" data-protected-media class="modal-image" data-modal-image alt="" />
       <div class="modal-toolbar">
         <p class="modal-caption" data-modal-caption aria-live="polite"></p>
         <div class="modal-controls">
@@ -709,6 +719,14 @@ const assetRoot = "/media/archive/";
         if (event.key === "ArrowLeft") step(-1);
         if (event.key === "ArrowRight") step(1);
       });
+
+      for (const eventName of ["contextmenu", "dragstart", "copy"]) {
+        document.addEventListener(eventName, (event) => {
+          if (event.target instanceof Element && event.target.closest("[data-protected-media]")) {
+            event.preventDefault();
+          }
+        }, { capture: true });
+      }
 
       const videos = document.querySelectorAll<HTMLVideoElement>(".video-track video");
       videos.forEach((video) => {
