@@ -47,7 +47,7 @@ Ruleset ativo: [ITCHY LEMON — Protect main](https://github.com/itchylemonbooki
 
 - Os cabeçalhos HTTP configurados para o conteúdo estático estão em `public/_headers`.
 - Os domínios `pages.dev` não devem competir com `itchylemon.com` na indexação.
-- Eventos de conversão Meta exigem a preferência `itchyLemonMetaConsent = granted`.
+- Eventos de conversão Meta exigem a preferência `itchyLemonTrackingConsentV2 = granted`.
 - Callbacks legados HubSpot devem verificar origem e ID do formulário. O script HubSpot é uma integração externa: não o remover ou bloquear sem validar os formulários e o chat.
 - Uma **CSP restritiva** e o consentimento abrangente de tracking HubSpot precisam de validação funcional/privacidade antes de alterações em produção.
 

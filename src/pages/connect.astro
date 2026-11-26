@@ -240,7 +240,7 @@ const links = [
 
         try {
           metaConsentGranted =
-            localStorage.getItem("itchyLemonMetaConsent") === "granted";
+            localStorage.getItem("itchyLemonTrackingConsentV2") === "granted";
         } catch {
           // A blocked storage API must never trigger optional tracking.
         }

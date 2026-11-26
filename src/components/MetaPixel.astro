@@ -1,7 +1,7 @@
 <script is:inline>
   (() => {
     const pixelId = "2110078442878718";
-    const consentKey = "itchyLemonMetaConsent";
+    const consentKey = "itchyLemonTrackingConsentV2";
 
     let metaPixelLoaded = false;
 
@@ -19,6 +19,8 @@
       } catch {
         // Consent applies only to the current page if storage is unavailable.
       }
+
+      window.dispatchEvent(new CustomEvent("itchylemon:tracking-consent", { detail: value }));
     };
 
     const createFbq = () => {
@@ -79,6 +81,13 @@
       if (typeof window.fbq === "function") {
         window.fbq("consent", "revoke");
       }
+      for (const name of ["_fbp", "_fbc"]) {
+        const expired = name + "=; Max-Age=0; Path=/";
+        document.cookie = expired;
+        if (location.hostname === "itchylemon.com" || location.hostname.endsWith(".itchylemon.com")) {
+          document.cookie = expired + "; Domain=itchylemon.com";
+        }
+      }
     };
 
     /*
@@ -87,6 +96,8 @@
      */
     if (getStoredConsent() === "granted") {
       loadMetaPixel();
+    } else {
+      revokeMetaPixel();
     }
 
     document.addEventListener("DOMContentLoaded", () => {
@@ -171,8 +182,8 @@
       <strong>Privacy preferences</strong>
 
       <p>
-        We use the Meta Pixel to measure website visits and advertising
-        performance. You can accept or reject this tracking.
+        We use HubSpot analytics and the Meta Pixel to measure website visits
+        and advertising performance. You can accept or reject this tracking.
         <a href="/privacy-policy">Privacy Policy</a>
       </p>
     </div>
@@ -211,7 +222,7 @@
     position: fixed;
     left: 50%;
     bottom: 20px;
-    z-index: 2147483640;
+    z-index: 2147483647;
     width: min(calc(100% - 28px), 720px);
     transform: translateX(-50%);
     border: 1px solid rgba(216, 255, 62, 0.24);
@@ -220,6 +231,10 @@
     color: #f4f4f0;
     box-shadow: 0 20px 70px rgba(0, 0, 0, 0.56);
     backdrop-filter: blur(18px);
+  }
+
+  :global(body:has([data-meta-consent]:not([hidden])) #hubspot-messages-iframe-container) {
+    z-index: 2147483646 !important;
   }
 
   .meta-consent[hidden],

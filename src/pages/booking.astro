@@ -678,7 +678,7 @@ import MetaPixel from "../components/MetaPixel.astro";
 
       const hasMetaConsent = () => {
         try {
-          return localStorage.getItem("itchyLemonMetaConsent") === "granted";
+          return localStorage.getItem("itchyLemonTrackingConsentV2") === "granted";
         } catch {
           return false;
         }
