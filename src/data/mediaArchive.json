@@ -115,10 +115,58 @@
           "height": 1600
         },
         {
+          "slug": "2017-10-20-ade-players-amsterdam-phunkyjango",
+          "title": "Phunky Jango Closing Festival · Players, Amsterdam",
+          "alt": "Event flyer for Phunky Jango Closing Festival · Players, Amsterdam",
+          "year": "2017-10-20",
+          "width": 1440,
+          "height": 533
+        },
+        {
+          "slug": "ade-amsterdam-players-phunky-10-22",
+          "title": "Phunky · Players, Amsterdam (22 Oct)",
+          "alt": "Event flyer for Phunky · Players, Amsterdam (22 Oct)",
+          "year": null,
+          "width": 960,
+          "height": 365
+        },
+        {
+          "slug": "ade-players-amsterdam-jangoasia-10-18",
+          "title": "Jango Music Festival with Jango Asia · Players, Amsterdam",
+          "alt": "Event flyer for Jango Music Festival with Jango Asia · Players, Amsterdam",
+          "year": null,
+          "width": 960,
+          "height": 960
+        },
+        {
+          "slug": "ade-players-amsterdam-jangomusicfestival-10-17-to-19",
+          "title": "Jango Music Festival Programme · Players, Amsterdam",
+          "alt": "Event flyer for Jango Music Festival Programme · Players, Amsterdam",
+          "year": null,
+          "width": 960,
+          "height": 369
+        },
+        {
+          "slug": "playerskgp-amsterdam-mixandmeet-10-19",
+          "title": "Mix & Meet · Players, Amsterdam",
+          "alt": "Event flyer for Mix & Meet · Players, Amsterdam",
+          "year": null,
+          "width": 960,
+          "height": 503
+        },
+        {
           "slug": "kashmir-lounge-2018",
           "title": "Housestation Radio Reunion · Kashmir Lounge, Amsterdam",
           "alt": "Event flyer for Housestation Radio Reunion · Kashmir Lounge, Amsterdam",
           "year": "2018-10-18",
+          "width": 960,
+          "height": 678
+        },
+        {
+          "slug": "2017-10-18-ade-kashmirlounge-amsterdam-housestationreunion",
+          "title": "Housestation Radio Reunion · Kashmir Lounge, Amsterdam",
+          "alt": "Event flyer for Housestation Radio Reunion · Kashmir Lounge, Amsterdam",
+          "year": "2017-10-18",
           "width": 960,
           "height": 678
         },
@@ -137,6 +185,14 @@
           "year": "2015-08-01",
           "width": 679,
           "height": 960
+        },
+        {
+          "slug": "2015-09-04-kasadapraia-porto-oldnewhousemusic",
+          "title": "Old & New House Music · Kasa da Praia, Porto",
+          "alt": "Event flyer for Old & New House Music · Kasa da Praia, Porto",
+          "year": "2015-09-04",
+          "width": 1440,
+          "height": 534
         },
         {
           "slug": "imagine-festival-2015",
@@ -219,6 +275,22 @@
           "height": 355
         },
         {
+          "slug": "2015-11-14-twinsclub-porto-filhosdotwins",
+          "title": "Filhos do Twins · Twins Club, Porto",
+          "alt": "Event flyer for Filhos do Twins · Twins Club, Porto",
+          "year": "2015-11-14",
+          "width": 960,
+          "height": 355
+        },
+        {
+          "slug": "twinsclub-porto-filhosdotwins-11-21",
+          "title": "Filhos do Twins · Twins Club, Porto (21 Nov)",
+          "alt": "Event flyer for Filhos do Twins · Twins Club, Porto (21 Nov)",
+          "year": null,
+          "width": 960,
+          "height": 540
+        },
+        {
           "slug": "2017-12-30-radioam-porto-lastone",
           "title": "Last One · Rádio AM, Porto",
           "alt": "Event flyer for Last One · Rádio AM, Porto",
@@ -227,28 +299,20 @@
           "height": 528
         },
         {
-          "slug": "2015-09-04-kasadapraia-porto-oldnewhousemusic",
-          "title": "Old & New House Music · Kasa da Praia, Porto",
-          "alt": "Event flyer for Old & New House Music · Kasa da Praia, Porto",
-          "year": "2015-09-04",
-          "width": 1440,
-          "height": 534
-        },
-        {
-          "slug": "2015-11-07-2ins-foz-porto-specialbirthdayparty",
-          "title": "Special Birthday Party · 2Ins, Foz, Porto",
-          "alt": "Event flyer for Special Birthday Party · 2Ins, Foz, Porto",
-          "year": "2015-11-07",
-          "width": 1440,
-          "height": 533
-        },
-        {
-          "slug": "2015-11-14-twinsclub-porto-filhosdotwins",
-          "title": "Filhos do Twins · Twins Club, Porto",
-          "alt": "Event flyer for Filhos do Twins · Twins Club, Porto",
-          "year": "2015-11-14",
+          "slug": "radioam-porto-09-29",
+          "title": "Rádio AM · Porto (29 Sep)",
+          "alt": "Event flyer for Rádio AM · Porto (29 Sep)",
+          "year": null,
           "width": 960,
-          "height": 355
+          "height": 528
+        },
+        {
+          "slug": "radioam-porto-10-04",
+          "title": "Rádio AM · Porto (4 Oct)",
+          "alt": "Event flyer for Rádio AM · Porto (4 Oct)",
+          "year": null,
+          "width": 720,
+          "height": 396
         },
         {
           "slug": "2015-ardmar-gaia-middleweeksunsets",
@@ -265,6 +329,14 @@
           "year": "2015",
           "width": 960,
           "height": 354
+        },
+        {
+          "slug": "2017-ardmar-gaia-goes2dabeach-weeklysaturdays",
+          "title": "Goes 2 Da Beach · Ar d’Mar, Gaia",
+          "alt": "Event flyer for Goes 2 Da Beach · Ar d’Mar, Gaia",
+          "year": "2017",
+          "width": 960,
+          "height": 528
         },
         {
           "slug": "2016-07-09-belacruz-porto-summersaturdays",
@@ -299,6 +371,30 @@
           "height": 354
         },
         {
+          "slug": "zoom-porto-7thanniversary-casinoroyale-06-11",
+          "title": "Casino Royale · ZOOM Porto Anniversary",
+          "alt": "Event flyer for Casino Royale · ZOOM Porto Anniversary",
+          "year": null,
+          "width": 960,
+          "height": 348
+        },
+        {
+          "slug": "zoom-porto-lickhit-04-22",
+          "title": "Lick Hit · ZOOM Porto (22 Apr)",
+          "alt": "Event flyer for Lick Hit · ZOOM Porto (22 Apr)",
+          "year": null,
+          "width": 960,
+          "height": 355
+        },
+        {
+          "slug": "zoom-porto-pushpop-weekly-fridays",
+          "title": "Push Pop Fridays · ZOOM Porto",
+          "alt": "Event flyer for Push Pop Fridays · ZOOM Porto",
+          "year": null,
+          "width": 851,
+          "height": 315
+        },
+        {
           "slug": "2016-08-06-esplanadadoalex-valadares-gaia-beachparty",
           "title": "Beach Party · Esplanada do Alex, Valadares",
           "alt": "Event flyer for Beach Party · Esplanada do Alex, Valadares",
@@ -307,60 +403,12 @@
           "height": 532
         },
         {
-          "slug": "2017-10-18-ade-kashmirlounge-amsterdam-housestationreunion",
-          "title": "Housestation Radio Reunion · Kashmir Lounge, Amsterdam",
-          "alt": "Event flyer for Housestation Radio Reunion · Kashmir Lounge, Amsterdam",
-          "year": "2017-10-18",
-          "width": 960,
-          "height": 678
-        },
-        {
-          "slug": "2017-10-20-ade-players-amsterdam-phunkyjango",
-          "title": "Phunky Jango Closing Festival · Players, Amsterdam",
-          "alt": "Event flyer for Phunky Jango Closing Festival · Players, Amsterdam",
-          "year": "2017-10-20",
-          "width": 1440,
-          "height": 533
-        },
-        {
-          "slug": "2017-ardmar-gaia-goes2dabeach-weeklysaturdays",
-          "title": "Goes 2 Da Beach · Ar d’Mar, Gaia",
-          "alt": "Event flyer for Goes 2 Da Beach · Ar d’Mar, Gaia",
-          "year": "2017",
-          "width": 960,
-          "height": 528
-        },
-        {
           "slug": "2018-02-12-espacocedofeita-porto-carnavalelectronico",
           "title": "Carnaval Electrónico · Espaço Cedofeita, Porto",
           "alt": "Event flyer for Carnaval Electrónico · Espaço Cedofeita, Porto",
           "year": "2018-02-12",
           "width": 720,
           "height": 376
-        },
-        {
-          "slug": "ade-amsterdam-players-phunky-10-22",
-          "title": "Phunky · Players, Amsterdam (22 Oct)",
-          "alt": "Event flyer for Phunky · Players, Amsterdam (22 Oct)",
-          "year": null,
-          "width": 960,
-          "height": 365
-        },
-        {
-          "slug": "ade-players-amsterdam-jangoasia-10-18",
-          "title": "Jango Music Festival with Jango Asia · Players, Amsterdam",
-          "alt": "Event flyer for Jango Music Festival with Jango Asia · Players, Amsterdam",
-          "year": null,
-          "width": 960,
-          "height": 960
-        },
-        {
-          "slug": "ade-players-amsterdam-jangomusicfestival-10-17-to-19",
-          "title": "Jango Music Festival Programme · Players, Amsterdam",
-          "alt": "Event flyer for Jango Music Festival Programme · Players, Amsterdam",
-          "year": null,
-          "width": 960,
-          "height": 369
         },
         {
           "slug": "baixa-porto-journeyintotheroots-10-17",
@@ -579,30 +627,6 @@
           "height": 549
         },
         {
-          "slug": "playerskgp-amsterdam-mixandmeet-10-19",
-          "title": "Mix & Meet · Players, Amsterdam",
-          "alt": "Event flyer for Mix & Meet · Players, Amsterdam",
-          "year": null,
-          "width": 960,
-          "height": 503
-        },
-        {
-          "slug": "radioam-porto-09-29",
-          "title": "Rádio AM · Porto (29 Sep)",
-          "alt": "Event flyer for Rádio AM · Porto (29 Sep)",
-          "year": null,
-          "width": 960,
-          "height": 528
-        },
-        {
-          "slug": "radioam-porto-10-04",
-          "title": "Rádio AM · Porto (4 Oct)",
-          "alt": "Event flyer for Rádio AM · Porto (4 Oct)",
-          "year": null,
-          "width": 720,
-          "height": 396
-        },
-        {
           "slug": "radiobar-porto-ondeestaoosteusouvidos-day04",
           "title": "Onde Estão os Teus Ouvidos? · Radio Bar, Porto",
           "alt": "Event flyer for Onde Estão os Teus Ouvidos? · Radio Bar, Porto",
@@ -627,52 +651,12 @@
           "height": 473
         },
         {
-          "slug": "twinsclub-porto-filhosdotwins-11-21",
-          "title": "Filhos do Twins · Twins Club, Porto (21 Nov)",
-          "alt": "Event flyer for Filhos do Twins · Twins Club, Porto (21 Nov)",
-          "year": null,
-          "width": 960,
-          "height": 540
-        },
-        {
           "slug": "villa-backtohouse-day15",
           "title": "Back to House · Villa",
           "alt": "Event flyer for Back to House · Villa",
           "year": null,
           "width": 960,
           "height": 600
-        },
-        {
-          "slug": "zoom-porto-7thanniversary-casinoroyale-06-11",
-          "title": "Casino Royale · ZOOM Porto Anniversary",
-          "alt": "Event flyer for Casino Royale · ZOOM Porto Anniversary",
-          "year": null,
-          "width": 960,
-          "height": 348
-        },
-        {
-          "slug": "zoom-porto-lickhit-04-22",
-          "title": "Lick Hit · ZOOM Porto (22 Apr)",
-          "alt": "Event flyer for Lick Hit · ZOOM Porto (22 Apr)",
-          "year": null,
-          "width": 960,
-          "height": 355
-        },
-        {
-          "slug": "zoom-porto-lickhit-08-05",
-          "title": "Lick Hit · ZOOM Porto (5 Aug)",
-          "alt": "Event flyer for Lick Hit · ZOOM Porto (5 Aug)",
-          "year": null,
-          "width": 678,
-          "height": 960
-        },
-        {
-          "slug": "zoom-porto-pushpop-weekly-fridays",
-          "title": "Push Pop Fridays · ZOOM Porto",
-          "alt": "Event flyer for Push Pop Fridays · ZOOM Porto",
-          "year": null,
-          "width": 851,
-          "height": 315
         }
       ]
     },
@@ -680,6 +664,54 @@
       "id": "press-assets",
       "title": "Press Assets",
       "items": [
+        {
+          "slug": "ade-artist-profile",
+          "title": "Amsterdam Dance Event · Artist listing",
+          "alt": "Amsterdam Dance Event artist profile for Itchy Lemon",
+          "year": null,
+          "width": 960,
+          "height": 503
+        },
+        {
+          "slug": "ade-artist-announcement-2016",
+          "title": "Amsterdam Dance Event · Artist announcement (2016)",
+          "alt": "Artist announcement graphic for Amsterdam Dance Event",
+          "year": "2016",
+          "width": 1440,
+          "height": 548
+        },
+        {
+          "slug": "ade-artist-announcement-2017",
+          "title": "Amsterdam Dance Event · Artist announcement (2017)",
+          "alt": "Artist announcement graphic for Amsterdam Dance Event",
+          "year": "2017",
+          "width": 1440,
+          "height": 548
+        },
+        {
+          "slug": "ibiza-stardust-radio-fresh-beats-42",
+          "title": "Fresh Beats #42 · Ibiza Stardust Radio",
+          "alt": "Broadcast artwork with the Itchy Lemon portrait and Ibiza Stardust Radio logo",
+          "year": "2026-11-04",
+          "width": 629,
+          "height": 777
+        },
+        {
+          "slug": "the-beat-london-mr-silk",
+          "title": "Drums at Twelve · The Beat London",
+          "alt": "The Beat London banner announcing an interview and guest mix with Itchy Lemon on Mr Silk’s show",
+          "year": null,
+          "width": 850,
+          "height": 350
+        },
+        {
+          "slug": "phunky-players-artist-promo-2019",
+          "title": "Phunky · Itchy Lemon artist poster",
+          "alt": "Itchy Lemon artist poster for Phunky at Players, Amsterdam",
+          "year": "2019-10-19",
+          "width": 959,
+          "height": 960
+        },
         {
           "slug": "itchy-lemon-press-portrait",
           "title": "Itchy Lemon · Official press portrait",
@@ -695,14 +727,6 @@
           "year": null,
           "width": 960,
           "height": 354
-        },
-        {
-          "slug": "ade-artist-profile",
-          "title": "Amsterdam Dance Event · Artist listing",
-          "alt": "Amsterdam Dance Event artist profile for Itchy Lemon",
-          "year": null,
-          "width": 960,
-          "height": 503
         },
         {
           "slug": "fresh-beats-radio-archive",
@@ -737,44 +761,12 @@
           "height": 528
         },
         {
-          "slug": "ade-artist-announcement-2016",
-          "title": "Amsterdam Dance Event · Artist announcement (2016)",
-          "alt": "Artist announcement graphic for Amsterdam Dance Event",
-          "year": "2016",
-          "width": 1440,
-          "height": 548
-        },
-        {
-          "slug": "ade-artist-announcement-2017",
-          "title": "Amsterdam Dance Event · Artist announcement (2017)",
-          "alt": "Artist announcement graphic for Amsterdam Dance Event",
-          "year": "2017",
-          "width": 1440,
-          "height": 548
-        },
-        {
-          "slug": "ibiza-stardust-radio-fresh-beats-42",
-          "title": "Fresh Beats #42 · Ibiza Stardust Radio",
-          "alt": "Broadcast artwork with the Itchy Lemon portrait and Ibiza Stardust Radio logo",
-          "year": "2026-11-04",
-          "width": 629,
-          "height": 777
-        },
-        {
           "slug": "dj-life-simulator-blasted",
           "title": "Blasted · DJ Life Simulator",
           "alt": "DJ Life Simulator promotional poster featuring Itchy Lemon",
           "year": "2026",
           "width": 810,
           "height": 1440
-        },
-        {
-          "slug": "the-beat-london-mr-silk",
-          "title": "Drums at Twelve · The Beat London",
-          "alt": "The Beat London banner announcing an interview and guest mix with Itchy Lemon on Mr Silk’s show",
-          "year": null,
-          "width": 850,
-          "height": 350
         },
         {
           "slug": "fresh-beats-ginkgo-biloba",
@@ -887,14 +879,6 @@
           "year": null,
           "width": 1080,
           "height": 1350
-        },
-        {
-          "slug": "phunky-players-artist-promo-2019",
-          "title": "Phunky · Itchy Lemon artist poster",
-          "alt": "Itchy Lemon artist poster for Phunky at Players, Amsterdam",
-          "year": "2019-10-19",
-          "width": 959,
-          "height": 960
         }
       ]
     },
@@ -979,6 +963,14 @@
   ],
   "videos": [
     {
+      "slug": "ministry-of-sound-fresh-beats-28-retrospective",
+      "title": "Ministry of Sound · Fresh Beats #28",
+      "year": "2014-12-26",
+      "description": "Retrospective reel about the Boxing Day appearance in London on 26 December 2014.",
+      "width": 480,
+      "height": 854
+    },
+    {
       "slug": "calico-porto-violin",
       "title": "Calico Porto · Violin",
       "year": "2026",
@@ -991,38 +983,6 @@
       "title": "Calico Porto · Dancers",
       "year": "2026",
       "description": "Vertical venue reel featuring dancers.",
-      "width": 480,
-      "height": 854
-    },
-    {
-      "slug": "zoom-porto-live-2015",
-      "title": "ZOOM Porto · Live",
-      "year": "2015",
-      "description": "Archive footage of the DJ booth and dancefloor at ZOOM Porto.",
-      "width": 480,
-      "height": 854
-    },
-    {
-      "slug": "nye-porto-live-2015",
-      "title": "NYE Porto · Tenda Electrónica",
-      "year": "2015",
-      "description": "Archive footage of the New Year’s Eve crowd under blue lights.",
-      "width": 640,
-      "height": 480
-    },
-    {
-      "slug": "kasa-da-praia-live-2015",
-      "title": "Kasa da Praia · Live",
-      "year": "2015-08-01",
-      "description": "Full archive recording from Kasa da Praia (3 min 48 sec).",
-      "width": 426,
-      "height": 240
-    },
-    {
-      "slug": "ministry-of-sound-fresh-beats-28-retrospective",
-      "title": "Ministry of Sound · Fresh Beats #28",
-      "year": "2014-12-26",
-      "description": "Retrospective reel about the Boxing Day appearance in London on 26 December 2014.",
       "width": 480,
       "height": 854
     },
@@ -1065,6 +1025,30 @@
       "description": "Promotional reel for The Cult of Sanctuary.",
       "width": 480,
       "height": 854
+    },
+    {
+      "slug": "zoom-porto-live-2015",
+      "title": "ZOOM Porto · Live",
+      "year": "2015",
+      "description": "Archive footage of the DJ booth and dancefloor at ZOOM Porto.",
+      "width": 480,
+      "height": 854
+    },
+    {
+      "slug": "nye-porto-live-2015",
+      "title": "NYE Porto · Tenda Electrónica",
+      "year": "2015",
+      "description": "Archive footage of the New Year’s Eve crowd under blue lights.",
+      "width": 640,
+      "height": 480
+    },
+    {
+      "slug": "kasa-da-praia-live-2015",
+      "title": "Kasa da Praia · Live",
+      "year": "2015-08-01",
+      "description": "Full archive recording from Kasa da Praia (3 min 48 sec).",
+      "width": 426,
+      "height": 240
     }
   ]
 }
