@@ -815,6 +815,54 @@
           "year": "2026-11-24",
           "width": 923,
           "height": 582
+        },
+        {
+          "slug": "amsterdam-official-cover",
+          "title": "Amsterdam · Official cover",
+          "alt": "Amsterdam cover with green linework on a black background",
+          "year": "2026-09-11",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "slug": "blasted-official-cover",
+          "title": "Blasted · Official cover",
+          "alt": "Blasted cover with a dark circular design and bold lettering",
+          "year": "2026-09-25",
+          "width": 1440,
+          "height": 1440
+        },
+        {
+          "slug": "wide-open-official-cover",
+          "title": "Wide Open · Official cover",
+          "alt": "Wide Open cover with red lettering and black-and-white imagery",
+          "year": null,
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "slug": "in-my-veins-official-cover",
+          "title": "In My Veins · Official cover",
+          "alt": "In My Veins cover with a blue-grey portrait and smoke-like details",
+          "year": null,
+          "width": 900,
+          "height": 900
+        },
+        {
+          "slug": "what-the-dancefloor-taught-me",
+          "title": "What the Dancefloor Taught Me · Cover",
+          "alt": "Editorial cover with a DJ at the decks and the series title",
+          "year": null,
+          "width": 1122,
+          "height": 1402
+        },
+        {
+          "slug": "when-the-groove-works",
+          "title": "What the Dancefloor Taught Me · When the groove works",
+          "alt": "Editorial image of a dancefloor crowd with the text When the groove works, you know",
+          "year": null,
+          "width": 1122,
+          "height": 1402
         }
       ]
     }
@@ -889,6 +937,14 @@
       "title": "Blasted · Release teaser",
       "year": "2026-09-25",
       "description": "Vertical teaser for the single Blasted.",
+      "width": 480,
+      "height": 854
+    },
+    {
+      "slug": "wide-open-release-reel",
+      "title": "Wide Open · Release reel",
+      "year": null,
+      "description": "Vertical promotional reel for Wide Open.",
       "width": 480,
       "height": 854
     }
