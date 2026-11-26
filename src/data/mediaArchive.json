@@ -972,7 +972,7 @@
     },
     {
       "slug": "new-chapter-artist-reel",
-      "title": "New Chapter · Artist reel",
+      "title": "New Chapter",
       "year": null,
       "description": "Short artist film with footage from the Itchy Lemon archive.",
       "width": 480,
@@ -980,7 +980,7 @@
     },
     {
       "slug": "amsterdam-release-reel",
-      "title": "Amsterdam · Release reel",
+      "title": "Amsterdam",
       "year": "2026-09-11",
       "description": "Vertical promotional reel for the single Amsterdam.",
       "width": 480,
@@ -988,7 +988,7 @@
     },
     {
       "slug": "blasted-release-teaser",
-      "title": "Blasted · Release teaser",
+      "title": "Blasted",
       "year": "2026-09-25",
       "description": "Vertical teaser for the single Blasted.",
       "width": 480,
@@ -996,7 +996,7 @@
     },
     {
       "slug": "wide-open-release-reel",
-      "title": "Wide Open · Release reel",
+      "title": "Wide Open",
       "year": null,
       "description": "Vertical promotional reel for Wide Open.",
       "width": 480,
@@ -1012,7 +1012,7 @@
     },
     {
       "slug": "the-cult-of-sanctuary-reel",
-      "title": "The Cult of Sanctuary · Reel",
+      "title": "The Cult of Sanctuary",
       "year": null,
       "description": "Promotional reel for The Cult of Sanctuary.",
       "width": 480,
