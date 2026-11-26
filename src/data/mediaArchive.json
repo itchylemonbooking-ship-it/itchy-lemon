@@ -1,0 +1,280 @@
+{
+  "hero": {
+    "slug": "visual-archive",
+    "title": "Itchy Lemon Visual Archive",
+    "alt": "Itchy Lemon archive poster with a blue-lit DJ photograph and a list of venues",
+    "year": null,
+    "width": 960,
+    "height": 503
+  },
+  "galleries": [
+    {
+      "id": "photos",
+      "title": "Photos",
+      "items": [
+        {
+          "slug": "dancelevel-stage",
+          "title": "Dancelevel",
+          "alt": "DJ booth on the Dancelevel stage under pink and purple lights",
+          "year": null,
+          "width": 960,
+          "height": 452
+        },
+        {
+          "slug": "alc-dance-stage",
+          "title": "ALC Dance · Stage",
+          "alt": "Wide view of the ALC Dance stage under blue spotlights",
+          "year": null,
+          "width": 960,
+          "height": 640
+        },
+        {
+          "slug": "alc-dance-booth",
+          "title": "ALC Dance · DJ booth",
+          "alt": "Itchy Lemon wearing sunglasses and headphones beside the ALC Dance booth",
+          "year": null,
+          "width": 1600,
+          "height": 1068
+        },
+        {
+          "slug": "outdoor-dj-booth",
+          "title": "Outdoor DJ booth",
+          "alt": "Itchy Lemon mixing at a white outdoor DJ booth",
+          "year": null,
+          "width": 1000,
+          "height": 1200
+        },
+        {
+          "slug": "monochrome-dj-booth",
+          "title": "DJ booth · Monochrome",
+          "alt": "Black-and-white photograph of Itchy Lemon reaching across the mixer",
+          "year": null,
+          "width": 960,
+          "height": 639
+        },
+        {
+          "slug": "indoor-dj-booth",
+          "title": "DJ booth · Live archive",
+          "alt": "Itchy Lemon raising one hand behind the mixer and laptop",
+          "year": null,
+          "width": 960,
+          "height": 643
+        }
+      ]
+    },
+    {
+      "id": "flyers",
+      "title": "Flyers",
+      "items": [
+        {
+          "slug": "ministry-of-sound-2014",
+          "title": "La Bomba · Ministry of Sound, London",
+          "alt": "Event flyer for La Bomba · Ministry of Sound, London",
+          "year": "2014-12-26",
+          "width": 1500,
+          "height": 500
+        },
+        {
+          "slug": "the-qube-project-2015",
+          "title": "What Is Love? · The Qube Project, London",
+          "alt": "Event flyer for What Is Love? · The Qube Project, London",
+          "year": "2015-02-07",
+          "width": 960,
+          "height": 355
+        },
+        {
+          "slug": "thirty3hz-2016",
+          "title": "Natural Essence Takeover · Thirty3Hz, Guildford",
+          "alt": "Event flyer for Natural Essence Takeover · Thirty3Hz, Guildford",
+          "year": "2016-05-27",
+          "width": 960,
+          "height": 354
+        },
+        {
+          "slug": "ade-cafe-cha-cha-2019",
+          "title": "House Connection · Café Cha Cha, Amsterdam",
+          "alt": "Event flyer for House Connection · Café Cha Cha, Amsterdam",
+          "year": "2019-10-18",
+          "width": 960,
+          "height": 501
+        },
+        {
+          "slug": "players-phunky-2019",
+          "title": "Phunky · Players, Amsterdam",
+          "alt": "Event flyer for Phunky · Players, Amsterdam",
+          "year": "2019-10-19",
+          "width": 1139,
+          "height": 1600
+        },
+        {
+          "slug": "kashmir-lounge-2018",
+          "title": "Housestation Radio Reunion · Kashmir Lounge, Amsterdam",
+          "alt": "Event flyer for Housestation Radio Reunion · Kashmir Lounge, Amsterdam",
+          "year": "2018-10-18",
+          "width": 960,
+          "height": 678
+        },
+        {
+          "slug": "itechstyle-summit-2019",
+          "title": "iTechStyle Summit · Porto Cruise Terminal",
+          "alt": "Event flyer for iTechStyle Summit · Porto Cruise Terminal",
+          "year": "2019-04-03",
+          "width": 960,
+          "height": 503
+        },
+        {
+          "slug": "kasa-da-praia-2015",
+          "title": "Beach Party Afterparty · Kasa da Praia, Porto",
+          "alt": "Event flyer for Beach Party Afterparty · Kasa da Praia, Porto",
+          "year": "2015-08-01",
+          "width": 679,
+          "height": 960
+        },
+        {
+          "slug": "imagine-festival-2015",
+          "title": "Imagine Festival · Arouca",
+          "alt": "Event flyer for Imagine Festival · Arouca",
+          "year": "2015",
+          "width": 720,
+          "height": 281
+        },
+        {
+          "slug": "nye-porto-2015",
+          "title": "NYE Porto · Praça D. João I",
+          "alt": "Event flyer for NYE Porto · Praça D. João I",
+          "year": "2015",
+          "width": 960,
+          "height": 355
+        },
+        {
+          "slug": "hard-club-2017",
+          "title": "Release Yourself One · Hard Club, Porto",
+          "alt": "Event flyer for Release Yourself One · Hard Club, Porto",
+          "year": "2017-12-09",
+          "width": 480,
+          "height": 672
+        },
+        {
+          "slug": "zoom-club-tropicana-2015",
+          "title": "Club Tropicana · ZOOM Porto",
+          "alt": "Event flyer for Club Tropicana · ZOOM Porto",
+          "year": "2015-09-18",
+          "width": 960,
+          "height": 356
+        },
+        {
+          "slug": "porto-rio-river-sounds",
+          "title": "River Sounds · Porto Rio",
+          "alt": "Event flyer for River Sounds · Porto Rio",
+          "year": null,
+          "width": 960,
+          "height": 503
+        },
+        {
+          "slug": "orange-room-studio",
+          "title": "Orange Room Studio · Porto",
+          "alt": "Event flyer for Orange Room Studio · Porto",
+          "year": null,
+          "width": 960,
+          "height": 358
+        },
+        {
+          "slug": "mau-mau-full-moon",
+          "title": "Full Moon · Mau Mau, Porto",
+          "alt": "Event flyer for Full Moon · Mau Mau, Porto",
+          "year": null,
+          "width": 960,
+          "height": 365
+        },
+        {
+          "slug": "algarve-summer-tour-2015",
+          "title": "Itchy Lemon Records · Algarve Summer Tour",
+          "alt": "Event flyer for Itchy Lemon Records · Algarve Summer Tour",
+          "year": "2015",
+          "width": 1277,
+          "height": 473
+        }
+      ]
+    },
+    {
+      "id": "press-assets",
+      "title": "Press Assets",
+      "items": [
+        {
+          "slug": "itchy-lemon-press-portrait",
+          "title": "Itchy Lemon · Official press portrait",
+          "alt": "Itchy Lemon standing against an orange and blue lit backdrop",
+          "year": "2026",
+          "width": 1122,
+          "height": 1402
+        },
+        {
+          "slug": "dj-da-semana",
+          "title": "DJ da Semana · Issue 279",
+          "alt": "DJ da Semana feature with a black-and-white photo of Itchy Lemon",
+          "year": null,
+          "width": 960,
+          "height": 354
+        },
+        {
+          "slug": "ade-artist-profile",
+          "title": "Amsterdam Dance Event · Artist listing",
+          "alt": "Amsterdam Dance Event artist profile for Itchy Lemon",
+          "year": null,
+          "width": 960,
+          "height": 503
+        },
+        {
+          "slug": "fresh-beats-radio-archive",
+          "title": "Fresh Beats · Radio archive",
+          "alt": "Radio archive page showing Itchy Lemon and Fresh Beats artwork",
+          "year": null,
+          "width": 960,
+          "height": 375
+        }
+      ]
+    }
+  ],
+  "videos": [
+    {
+      "slug": "calico-porto-violin",
+      "title": "Calico Porto · Violin",
+      "year": "2026",
+      "description": "Vertical venue reel featuring a violin performance.",
+      "width": 480,
+      "height": 854
+    },
+    {
+      "slug": "calico-porto-dancers",
+      "title": "Calico Porto · Dancers",
+      "year": "2026",
+      "description": "Vertical venue reel featuring dancers.",
+      "width": 480,
+      "height": 854
+    },
+    {
+      "slug": "zoom-porto-live-2015",
+      "title": "ZOOM Porto · Live",
+      "year": "2015",
+      "description": "Archive footage of the DJ booth and dancefloor at ZOOM Porto.",
+      "width": 480,
+      "height": 854
+    },
+    {
+      "slug": "nye-porto-live-2015",
+      "title": "NYE Porto · Tenda Electrónica",
+      "year": "2015",
+      "description": "Archive footage of the New Year’s Eve crowd under blue lights.",
+      "width": 640,
+      "height": 480
+    },
+    {
+      "slug": "kasa-da-praia-live-2015",
+      "title": "Kasa da Praia · Live excerpt",
+      "year": "2015-08-01",
+      "description": "Excerpt from the live recording at Kasa da Praia.",
+      "width": 426,
+      "height": 240
+    }
+  ]
+}
