@@ -520,6 +520,9 @@ const assetRoot = "/media/archive/";
               <button class="carousel-button" type="button" data-next aria-controls="videos-track" aria-label="Next videos" disabled>›</button>
             </div>
           </div>
+          <button class="button gallery-toggle" type="button" data-expand aria-expanded="false" aria-controls="videos-track">
+            Show all
+          </button>
           <div class="carousel-track video-track" data-track id="videos-track">
             {videos.map(({ slug, title, description, width, height }) => (
               <figure>
@@ -559,11 +562,9 @@ const assetRoot = "/media/archive/";
               </div>
             </div>
 
-            {id === "flyers" && (
-              <button class="button gallery-toggle" type="button" data-expand aria-expanded="false" aria-controls={`${id}-track`}>
-                Show all {items.length} flyers
-              </button>
-            )}
+            <button class="button gallery-toggle" type="button" data-expand aria-expanded="false" aria-controls={`${id}-track`}>
+              Show all
+            </button>
 
             <div class:list={["carousel-track", { "flyer-track": id === "flyers" }]} data-track id={`${id}-track`}>
               {items.map(({ slug, title, alt, width, height }) => (
@@ -661,7 +662,7 @@ const assetRoot = "/media/archive/";
         expand?.addEventListener("click", () => {
           const expanded = track.classList.toggle("is-expanded");
           expand.setAttribute("aria-expanded", String(expanded));
-          expand.textContent = expanded ? "Return to carousel" : `Show all ${track.children.length} flyers`;
+          expand.textContent = expanded ? "Return to carousel" : "Show all";
           updateControls();
         });
         updateControls();
