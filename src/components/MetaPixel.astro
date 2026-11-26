@@ -222,7 +222,7 @@
     position: fixed;
     left: 50%;
     bottom: 20px;
-    z-index: 2147483640;
+    z-index: 2147483647;
     width: min(calc(100% - 28px), 720px);
     transform: translateX(-50%);
     border: 1px solid rgba(216, 255, 62, 0.24);
@@ -231,6 +231,10 @@
     color: #f4f4f0;
     box-shadow: 0 20px 70px rgba(0, 0, 0, 0.56);
     backdrop-filter: blur(18px);
+  }
+
+  :global(body:has([data-meta-consent]:not([hidden])) #hubspot-messages-iframe-container) {
+    z-index: 2147483646 !important;
   }
 
   .meta-consent[hidden],
