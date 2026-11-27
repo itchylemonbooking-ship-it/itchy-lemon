@@ -31,13 +31,6 @@ const links = [
     trackingName: "booking",
   },
   {
-    label: "Save Contact",
-    description: "Add Itchy Lemon to your contacts",
-    href: "/itchy-lemon-contact.vcf",
-    type: "download",
-    trackingName: "save_contact",
-  },
-  {
     label: "Instagram",
     description: "Follow Itchy Lemon",
     href: "https://www.instagram.com/itchy_lemon/",
@@ -101,7 +94,6 @@ const links = [
                   href={link.href}
                   target={link.type === "external" ? "_blank" : undefined}
                   rel={link.type === "external" ? "noopener noreferrer" : undefined}
-                  download={link.type === "download" ? true : undefined}
                   data-track="connect_click"
                   data-track-name={link.trackingName}
                   data-track-label={link.label}
@@ -143,7 +135,7 @@ const links = [
 
       const appendCampaignParamsToInternalLinks = () => {
         const trackedInternalLinks = document.querySelectorAll(
-          'a[data-track][href^="/"]:not([href$=".vcf"])'
+          'a[data-track-type="internal"]'
         );
 
         trackedInternalLinks.forEach((link) => {
@@ -166,6 +158,14 @@ const links = [
       };
 
       const trackConnectClick = (link) => {
+        try {
+          if (localStorage.getItem("itchyLemonTrackingConsentV2") !== "granted") {
+            return;
+          }
+        } catch {
+          return;
+        }
+
         const eventName = "connect_click";
 
         const eventParams = {
@@ -191,16 +191,7 @@ const links = [
           ]);
         }
 
-        let metaConsentGranted = false;
-
-        try {
-          metaConsentGranted =
-            localStorage.getItem("itchyLemonTrackingConsentV2") === "granted";
-        } catch {
-          // A blocked storage API must never trigger optional tracking.
-        }
-
-        if (metaConsentGranted && typeof window.fbq === "function") {
+        if (typeof window.fbq === "function") {
           window.fbq("trackCustom", "ConnectClick", eventParams);
         }
       };
