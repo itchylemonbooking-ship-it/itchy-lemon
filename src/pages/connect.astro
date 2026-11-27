@@ -1,9 +1,9 @@
 ---
 import MetaPixel from "../components/MetaPixel.astro";
 
-const pageTitle = "Itchy Lemon Connect";
+const pageTitle = "Connect | Itchy Lemon — Electronic Music Artist";
 const pageDescription =
-  "Connect with Itchy Lemon — Melodic House & Techno DJ / Producer. Listen, press kit, booking and contact.";
+  "Electronic music built on deep grooves, melodic tension and underground energy. Explore original music and DJ sets, find the press kit or get in touch for bookings.";
 
 const siteUrl = "https://itchylemon.com";
 const heroImage = "/media/connect-hero.jpg";
@@ -11,8 +11,8 @@ const heroImage = "/media/connect-hero.jpg";
 const links = [
   {
     label: "Listen",
-    description: "DJ sets, releases & latest music",
-    href: "/sets",
+    description: "Original music & DJ sets",
+    href: "/music/",
     type: "internal",
     trackingName: "listen",
   },
@@ -25,7 +25,7 @@ const links = [
   },
   {
     label: "Booking",
-    description: "Events, DJ sets & collaborations",
+    description: "DJ bookings & enquiries",
     href: "/booking",
     type: "internal",
     trackingName: "booking",
@@ -39,7 +39,7 @@ const links = [
   },
   {
     label: "Instagram",
-    description: "Follow the project",
+    description: "Follow Itchy Lemon",
     href: "https://www.instagram.com/itchy_lemon/",
     type: "external",
     trackingName: "instagram",
@@ -64,12 +64,12 @@ const links = [
 
     <title>{pageTitle}</title>
 
-    <link rel="canonical" href={`${siteUrl}/connect`} />
+    <link rel="canonical" href={`${siteUrl}/connect/`} />
 
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={pageDescription} />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content={`${siteUrl}/connect`} />
+    <meta property="og:url" content={`${siteUrl}/connect/`} />
     <meta property="og:image" content={`${siteUrl}/og-image.png`} />
 
     <link rel="icon" type="image/png" href="/favicon.png" />
@@ -83,15 +83,14 @@ const links = [
         </div>
 
         <div class="content">
-          <p class="eyebrow">Artist Connect</p>
+          <p class="eyebrow">ELECTRONIC MUSIC ARTIST</p>
 
           <h1 id="connect-title">Itchy Lemon</h1>
 
-          <p class="claim">Melodic House &amp; Techno / DJ / Producer</p>
+          <p class="claim">MELODIC · DEEP · GROOVY</p>
 
           <p class="intro">
-            Melodic electronic music with deep groove, emotional tension and
-            dancefloor instinct.
+            Electronic music built on deep grooves, melodic tension and underground energy.
           </p>
 
           <nav class="link-list" aria-label="Itchy Lemon contact links">
@@ -135,54 +134,12 @@ const links = [
     <MetaPixel />
 
     <script>
-      const campaignDefaults = {
-        utm_source: "eletrico2026",
-        utm_medium: "qr",
-        utm_campaign: "connect_card",
-      };
-
-      const utmKeys = [
-        "utm_source",
-        "utm_medium",
-        "utm_campaign",
-        "utm_content",
-        "utm_term",
-      ];
-
-      const currentUrl = new URL(window.location.href);
-      const currentParams = currentUrl.searchParams;
-
-      const getCampaignParams = () => {
-        const params = new URLSearchParams();
-
-        utmKeys.forEach((key) => {
-          const value = currentParams.get(key);
-
-          if (value) {
-            params.set(key, value);
-          }
-        });
-
-        if (!params.get("utm_source")) {
-          params.set("utm_source", campaignDefaults.utm_source);
+      const campaignParams = new URLSearchParams();
+      new URLSearchParams(window.location.search).forEach((value, key) => {
+        if (key.startsWith("utm_") && value) {
+          campaignParams.set(key, value);
         }
-
-        if (!params.get("utm_medium")) {
-          params.set("utm_medium", campaignDefaults.utm_medium);
-        }
-
-        if (!params.get("utm_campaign")) {
-          params.set("utm_campaign", campaignDefaults.utm_campaign);
-        }
-
-        return params;
-      };
-
-      const campaignParams = getCampaignParams();
-
-      const getCampaignValue = (key) => {
-        return campaignParams.get(key) || "";
-      };
+      });
 
       const appendCampaignParamsToInternalLinks = () => {
         const trackedInternalLinks = document.querySelectorAll(
@@ -217,9 +174,7 @@ const links = [
           button_type: link.dataset.trackType || "",
           button_url: link.getAttribute("href") || "",
           source_page: "connect",
-          utm_source: getCampaignValue("utm_source"),
-          utm_medium: getCampaignValue("utm_medium"),
-          utm_campaign: getCampaignValue("utm_campaign"),
+          ...Object.fromEntries(campaignParams),
         };
 
         if (typeof window.gtag === "function") {
@@ -420,7 +375,7 @@ const links = [
   .intro {
     max-width: 34ch;
     margin: 12px 0 24px;
-    color: var(--color-muted);
+    color: var(--color-acid);
     font-size: 0.98rem;
     line-height: 1.55;
   }
