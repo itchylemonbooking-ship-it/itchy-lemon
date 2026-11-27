@@ -523,7 +523,7 @@ const assetRoot = "/media/archive/";
           <button class="button gallery-toggle" type="button" data-expand aria-expanded="false" aria-controls="videos-track">
             Show all
           </button>
-          <div class="carousel-track video-track" data-track id="videos-track">
+          <div class="carousel-track video-track" data-track id="videos-track" tabindex="0" role="region" aria-label="Videos">
             {videos.map(({ slug, title, description, width, height }) => (
               <figure>
                 <video
