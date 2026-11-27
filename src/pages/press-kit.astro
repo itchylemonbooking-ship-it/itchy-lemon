@@ -340,7 +340,9 @@ import MetaPixel from "../components/MetaPixel.astro";
         backdrop-filter: blur(12px);
       }
 
-      .epk-modal.is-open {
+      .epk-modal { margin: 0; width: 100%; height: 100%; max-width: none; max-height: none; border: 0; color: inherit; }
+
+      .epk-modal[open] {
         display: flex;
       }
 
@@ -649,7 +651,7 @@ import MetaPixel from "../components/MetaPixel.astro";
             </div>
           </div>
           <div class="epk-hero-photo">
-            <img src="/media/itchy-lemon-epk-portrait.png" alt="Itchy Lemon — artist portrait" loading="eager" decoding="async" />
+            <img src="/media/itchy-lemon-epk-display.webp" alt="Itchy Lemon — artist portrait" loading="eager" decoding="async" />
             <span class="photo-mark"><strong>ITCHY LEMON</strong><span>Electronic Music Artist</span><span><span>Melodic</span><span>·</span><span>Deep</span><span>·</span><span>Groovy</span></span></span>
           </div>
         </section>
@@ -663,7 +665,7 @@ import MetaPixel from "../components/MetaPixel.astro";
             <article><span class="epk-number">03 / Radio · 2026</span><h3>Pinnacle Nexus Radio</h3><p>World Groove · tracks in rotation</p></article>
             <article><span class="epk-number">04 / Porto · 2015</span><h3>Orange Room</h3><p>DJ appearance · December 2015</p><a class="epk-credential-link" href="https://www.mixcloud.com/ITCHY_LEMON_DjProducer/itchy-lemon-fresh-beats-40-rec-live-at-orange-room-porto-studio-series-episode-108-dec-2015/" target="_blank" rel="noopener noreferrer">Listen to recorded set <span aria-hidden="true">↗</span></a></article>
             <article><span class="epk-number">05 / London · 2015</span><h3>The Qube Project</h3><p>DJ appearance · 7 February 2015</p><a class="epk-credential-proof-link" href="https://ra.co/events/671935" target="_blank" rel="noopener noreferrer">View event listing <span aria-hidden="true">↗</span></a></article>
-            <article><span class="epk-number">06 / London · 2014</span><h3>Ministry of Sound</h3><p>DJ appearance · 26 December 2014</p><a class="epk-credential-proof-link" href="https://www.fatsoma.com/e/tum8nley/la-bomba" target="_blank" rel="noopener noreferrer" aria-label="View Ministry of Sound event evidence — opens in a new tab">View event evidence <span aria-hidden="true">↗</span></a></article>
+            <article><span class="epk-number">06 / London · 2014</span><h3>Ministry of Sound</h3><p>DJ appearance · 26 December 2014</p><a class="epk-credential-proof-link" href="https://www.fatsoma.com/e/tum8nley/la-bomba" target="_blank" rel="noopener noreferrer" aria-label="View event evidence for Ministry of Sound (opens in a new tab)">View event evidence <span aria-hidden="true">↗</span></a></article>
           </div>
           <a class="epk-text-link" href="/bio">Explore the full biography <span aria-hidden="true">↗</span></a>
         </section>
@@ -810,12 +812,9 @@ import MetaPixel from "../components/MetaPixel.astro";
       </footer>
     </div>
 
-    <div class="epk-modal" data-epk-modal aria-hidden="true">
+    <dialog class="epk-modal" data-epk-modal aria-label="Download Itchy Lemon EPK">
       <div
         class="epk-modal-content"
-        role="dialog"
-        aria-modal="true"
-        aria-label="Download Itchy Lemon EPK"
       >
         <button
           class="epk-modal-close"
@@ -869,7 +868,7 @@ import MetaPixel from "../components/MetaPixel.astro";
           </a>
         </div>
       </div>
-    </div>
+    </dialog>
 
     <MetaPixel />
     <GlobalMixcloudPlayer />
@@ -996,18 +995,16 @@ import MetaPixel from "../components/MetaPixel.astro";
       };
 
       const openEpkModal = (trigger) => {
-        epkModal.classList.add("is-open");
-        epkModal.setAttribute("aria-hidden", "false");
+        epkModal.showModal();
         document.body.style.overflow = "hidden";
 
         trackEpkIntent(trigger);
       };
 
-      const closeEpkModal = () => {
-        epkModal.classList.remove("is-open");
-        epkModal.setAttribute("aria-hidden", "true");
+      const closeEpkModal = () => epkModal.close();
+      epkModal.addEventListener("close", () => {
         document.body.style.overflow = "";
-      };
+      });
 
       epkModalTriggers.forEach((trigger) => {
         trigger.addEventListener("click", (event) => {
@@ -1020,15 +1017,6 @@ import MetaPixel from "../components/MetaPixel.astro";
 
       epkModal?.addEventListener("click", (event) => {
         if (event.target === epkModal) {
-          closeEpkModal();
-        }
-      });
-
-      document.addEventListener("keydown", (event) => {
-        if (
-          event.key === "Escape" &&
-          epkModal.classList.contains("is-open")
-        ) {
           closeEpkModal();
         }
       });
