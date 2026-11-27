@@ -218,6 +218,13 @@
 </button>
 
 <style>
+  @media (max-width: 900px) {
+    /* Leave the final link above the chat launcher and privacy controls. */
+    :global(body:not(:has(.private-note)) footer:has(a[href^="/privacy-policy"])) {
+      margin-bottom: calc(100px + env(safe-area-inset-bottom, 0px));
+    }
+  }
+
   .meta-consent {
     position: fixed;
     left: 50%;
